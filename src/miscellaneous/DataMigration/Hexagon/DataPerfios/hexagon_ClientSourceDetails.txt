@@ -1,0 +1,30 @@
+51	1	ch0001	Suman Prashanth Rai	Suraj Plaza,Jayanagar,	1	560011		\N	\N	\N	\N	\N
+3	0	ex0001	Sumesh B. Thomas	Yelahanka New Town,Bangalore	8	123456	0484-453300	\N	www.sumesh.com	\N	\N	\N
+49	1	ch0002	Ravindra	\N	1	0		\N	\N	\N	\N	\N
+52	0	Ex-BGL001	Srikanth Bhagavat	Hexagon Capital Advisors Pvt.Ltd.S-201,Suraj laza,8t F Main  3rd Block,Jayanagar.	1	560011	080-6639232/6552506	srikanth@hexagononline.com	hexagononline.com	\N	\N	\N
+47	0	ex0004	Sumesh B. Thomas	\N	1	0		\N	\N	\N	\N	\N
+50	1	ch0005	Equiwealth Securities	#143, 1st Floor, 5th Cross,10th '''' A '''' Main, 1st Block,Jayanagar,	1	560011	6560931/38/40	equiwealth@sharekhan.com	\N	\N	\N	\N
+69	1	AD-BGL011	Allegro Capital Advisors Pvt Ltd	''C''Block,Sillicon Terraces30/1, Hosur Main Road,Koramangala	1	560030	56670201	\N	\N	\N	\N	\N
+70	0	EX-BGL008	Sharath	Suman	Hexagon Capital Advisors Pvt Ltd	1	560011	26572852	\N	www.hexagononline.com	\N	\N
+62	1	Ex-Bom 010	Kishore Motiwala	Hexagon Capital Advisors	7	0		\N	\N	\N	\N	\N
+63	1	Ad-BGL010	Vani Ravi	30/86,20th Main,Rajajinagar,Bangalore-10	1	10		\N	\N	\N	\N	\N
+82	0	EX-BGL019	Vishwas	Hexagon Capital Advisors Pvt Ltd	1	560011	26572682	vishwas@hexagononline.com	\N	\N	\N	\N
+68	0	Ex-BGL010	Rinku Bakshi	Hexagon Capital Advisors Pvt Ltd,s-209, suraj ganga arcade,2nd block, jayanagar	1	560011		rinku@hexagononline.com	\N	\N	\N	\N
+66	0	Ex-BGL009	Sharath	Hexagon Capital Advisors Pvt LtdS-201,Suraj laza,8t F Main  3rd Block,Jayanagar.	1	560011	9886048344	sharath@hexagononline.com	\N	\N	\N	\N
+71	0	EX-BGL010	MiniYadav	Hexagon Capital Advisors Pvt Ltd	1	560011	26572852	\N	\N	\N	\N	\N
+72	0	EX-BGL011	Sandhya Reddy	Hexagon Capital Advisors Pvt Ltd,	1	560011		sandhya@hexagononline.com	\N	\N	\N	\N
+74	0	EX-BGL013	Sumaiya	Hexagon Capital Advisors Pvt Ltd,Bangalore-11	1	560011		\N	\N	\N	\N	\N
+76	0	EX-BGL015	Pramod	Hexagon Capital Advisors Pvt Ltd	1	560011		\N	\N	\N	\N	\N
+77	0	EX-BGL016	Team3	Hexagon Capital Advisors Pvt Ltd	45	0		\N	\N	\N	\N	\N
+78	0	EX-BGL017	Suraj	Hexagon Capital Advisors Pvt Ltd	1	560011		\N	\N	\N	\N	\N
+79	0	EX-BGL018	DivyaPriya	Hexagon	1	560011		\N	\N	\N	\N	\N
+80	1	AD-BEL001	S.V.Setty	VAIBHAV 3rd Ward	Basaveswara Badavane	49	583201	08394 224248	sv.setty@rediffmail.com	\N	\N	\N
+81	1	AD-BGL012	Sanjay .S.Arangady	#587, 3rd Main Road,''A'' Block, 2nd Stage,Rajajinagar	1	560010	9343859120 / 9845871928	\N	\N	\N	\N	\N
+53	0	Ex-BGL002	Vidyadhar Cheruvu	Hexagon Capital Advisors Pvt.Ltd.S-201,Suraj laza,8t F Main  3rd Block,Jayanagar.	1	0	080-6639232/6552506	vidyadhar@hexagononline.com	hexagononline.com	\N	\N	\N
+54	0	Ex-BGL003	Smitha.S	Hexagon Capital Advisors Pvt.Ltd.S-201,Suraj laza,8t F Main  3rd Block,Jayanagar.	1	560011	080-6639232/6552506	smitha@hexagononline.com	hexagononline.com	\N	\N	\N
+55	0	Ex-BGL004	Venkatesh.	Hexagon Capital Advisors Pvt.Ltd.S-201,Suraj laza,8t F Main  3rd Block,Jayanagar.	1	560011	080-6639232/6552506	venki@hexagononline.com	\N	\N	\N	\N
+56	1	BGL001	Geetha  Gouthama	Hexagon Capital Advisors Pvt.Ltd.S-201,Suraj laza,8t F Main  3rd Block,Jayanagar.	1	560011	080-6639232/6552506	\N	hexagononline.com	\N	\N	\N
+57	0	Ex-BGL005	Joyappa	Hexagon Capital Advisors Pvt.Ltd.Hexagon Capital Advisors Pvt.Ltd.S-201,Suraj laza,8t F Main  3rd Block,Jayanagar.	1	560011	080-6639232/6552506	\N	hexagononline.com	\N	\N	\N
+67	0	Ex-BGL007	Ranjan Ramdas Nayak	Hexagon Capital Advisors Pvt Ltd,S-201, Suraj Plaza,8 ''F'' Main, Jayanagar 3rd Block,	1	560011	9886047428	ranjan@hexagononline.com	\N	\N	\N	\N
+73	0	EX-BGL012	Suman	Hexagon Capital Advisors Pvt Ltd	1	560011		\N	\N	\N	\N	\N
+75	0	EX-BGL014	Angeline	Hexagon Capital Advisors Pvt Ltd,	1	560011		\N	\N	\N	\N	\N

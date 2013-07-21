@@ -1,0 +1,62 @@
+# Description: Regex for Real Numbers
+
+# Regex
+REGEX_PERL_1_WITH_UNSIGNED_ZEROS = ^(
+                                        [+\-]
+                                        (?!             # Negative Lookahead Begin
+                                            0+          # One ore more zeros
+                                            (\.0+)?$    # 0 or 1 of all zeros after decimal point
+                                        )               # Negative Lookahead End
+                                    )?                  # 0 or 1 of above sub-pattern
+                                    \d+(\.\d+)?$        # Any Digit followed by optional decimal component
+REGEX_PERL_2_WITH_SIGNED_ZEROS = ^[-+]?\d+(\.\d+)?$
+
+# Matches
+0
+0.0
+1
++1
+-1
+1.0
++1.0
+-1.0
+1.000000
++1.000000
+-1.000000
+0.50
++0.50
+-0.50
+0000000.50000
+54321
+-54321
+
+# Non-Matches
++0
+-0
+.0
+5.
++.0
+-.0
++0.00
+-0.00
+23e4
++23e4
+-23e4
+23e-4
++23e-4
+-23e-4
++23E-4
+Text followed by 0.4
+0.4 followed by text
+345.0234A0
+Plain old text
+
+# Notes
+# 1. The hash tags Description, Regex, Matches, Non-Matches and Notes should be present.
+# 2. There content under Regex should be REGEX_PERL_..., REGEX_PYTHON_..., REGEX_JAVA_...,
+#    REGEX_VIM_..., REGEX_EGREP_... etc.
+# 3. There can be more than 1 regex for the same langauge/tool
+# 4. REGEX_PERL_... can be multi-line and can have comments (#) also.
+# 5. More notes, specific to a regex can be added under the Notes tag.
+
+# Exponent form is not supported

@@ -1,0 +1,10 @@
+<Root>
+	<Record id="1">
+		<Name>Vikash</Name>
+		<Age>26</Age>
+	</Record>
+	<Record id="2">
+		<Name>JP</Name>
+		<Age>28</Age>
+	</Record>
+</Root>
