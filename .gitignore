@@ -1,0 +1,20 @@
+#-------------------------------------------------------------------
+# Ignore everything under the following directories.
+#-------------------------------------------------------------------
+# Class files etc.
+bin/
+
+# All backups.
+*~
+
+# All logs.
+*.log
+
+# All vi swap files.
+*.swp
+
+# All open office files.
+.~lock*
+
+# Temp files by gitk
+.gitk-tmp.*
