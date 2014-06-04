@@ -3,8 +3,8 @@ JavaScriptNotes2Myself
 
 JavaScript reference through short and simple code snippets.
 
-Why you should learn ANOTHER language?
-======================================
+Why learn ANOTHER language?
+===========================
 * The limits of my language are the limits of my world. - Ludwig Wittgenstein
 * To have another language is to possess a second soul. - Charlemagne
 * Language is the blood of the soul into which thoughts run and out of which they grow. - Oliver Wendell Holmes
@@ -26,7 +26,7 @@ Feedback
 ========
 Please share your feedback about this project through any of the following communication medium.
 
-Email       : vikash.kmc@gmail.com
-Twitter     : https://twitter.com/vikash_kmc 
-LinkedIn    : http://www.linkedin.com/in/vikashkmc
-GitHub      : https://github.com/vikash-india
+* Email       : vikash.kmc@gmail.com
+* Twitter     : https://twitter.com/vikash_kmc 
+* LinkedIn    : http://www.linkedin.com/in/vikashkmc
+* GitHub      : https://github.com/vikash-india
