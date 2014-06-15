@@ -1,6 +1,6 @@
-// Description: One line description about this code snippet
+// Description: Example in JavaScript
 
-// Note
+// Topic
 // 1. Write here
 // 2. Write here
 
