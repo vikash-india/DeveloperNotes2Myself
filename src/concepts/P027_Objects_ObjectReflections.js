@@ -1,5 +1,6 @@
 // Description: Object reflections using typeof operator in JavaScript
 
+// Note
 // 1. Any object can be inspected for the properties it has by attempting to retrieve the properties and examining
 //    the values obtained. The typeof operator is used for checking the type of a property.
 var person = {
@@ -12,6 +13,7 @@ var person = {
         phone : 1234567890
     }
 };
+
 // 2. The typeof person.age is same as typeof(person.age)
 console.log(typeof person.age); // 'number'
 console.log(typeof person.firstname); // 'string'

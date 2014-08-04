@@ -1,6 +1,6 @@
 // Description: Example in JavaScript
 
-// Topic
+// Note
 // 1. Write here
 // 2. Write here
 

@@ -1,7 +1,5 @@
 // Description: The throw construct in JavaScript
 
-// TODO: Understand all FALSY values like null, undefined 0 and '' in the below code.
-
 // Note
 // 1. The throw statement allows us to create custom errors/exceptions.
 // 2. The custom exception can be a JavaScript String, Number, Boolean or an Object.
@@ -9,8 +7,8 @@
 //    invocation is abandoned, and control goes to the catch clause of the try in the calling function.
 // 4. The expression is usually an object literal containing a name property and a message property.
 // 5. The catcher of the exception can use that information to determine what to do.
-var input = NaN;
 
+var input = NaN;
 try {
     if (input == null)
         throw {
@@ -44,3 +42,5 @@ try {
     console.log(exception.name); // ErrorType
 
 }
+
+// TODO: Understand all FALSY values like null, undefined 0 and '' in the below code.

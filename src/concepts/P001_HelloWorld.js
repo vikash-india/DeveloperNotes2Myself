@@ -1,4 +1,4 @@
-// Description: A Hello World program in JavaScript
+// Description: A 'Hello World' program in JavaScript
 
 // Write to the console
 console.log("Hello World from JavaScript!");

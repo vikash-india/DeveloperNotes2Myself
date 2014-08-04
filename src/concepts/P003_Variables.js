@@ -13,22 +13,19 @@ var variableCannotStartWithANumber = 6;
 var variableCanStoreStringWithinDoubleQuotes = "String Content Within Double Quotes";
 var variableCanStoreStringWithinSingleQuotes = 'String Content Within Single Quotes';
 
-// 4. CAPITAL letters can also be used while naming variables in certain situations.
+// 4. CAPITAL letters can also be used while naming variables in certain situations like defining CONSTANTS.
 var EULER_NUMBER = 2.71828;
 var PI = 3.14159;
 
-// 5. Assigning values to an undeclared JavaScript variables will automatically declare it as a GLOBAL variable.
+// 5. Assigning values to an undeclared JavaScript variable will automatically declare it as a GLOBAL variable.
 variable1123 = 1;
 
 // 6. If a variable is not assigned any value while declaring it, it will be 'undefined'.
-var test; // undifined
+var test; // undefined
 
 // 7. Re-declaring JavaScript variables will NOT make it lose its value.
 var name = "Messi";
 var name;
-
-// Print variable values
-console.log(name);
 
 // 8. Following reserved keywords cannot be used used as variable names
 //    NOTE: NOT ALL RESERVED KEYWORDS ARE USED IN JAVASCRIPT. ONLY THE KEYWORDS IN PARANTHESIS ARE USED IN THE LANGUAGE
@@ -58,3 +55,6 @@ console.log(name);
 // 10. It is not permitted to use a reserved word in the following
 //      - As the name of an object property in an object literal.
 //      - Or following a dot in a refinement.
+
+// Print variable values
+console.log(name);

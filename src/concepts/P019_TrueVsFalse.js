@@ -9,10 +9,11 @@
 //      - The number NaN
 // 2. Truthy values
 //      - All other values are truthy, including true, the string 'false', and all objects.
-var x = NaN;
 
+var x = NaN;
 if (x) {
     console.log("True");
+
 } else {
     console.log("False");
 }

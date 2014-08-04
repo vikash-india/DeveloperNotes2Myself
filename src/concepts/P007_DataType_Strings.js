@@ -4,8 +4,8 @@
 // 1. A string literal can be wrapped in single quotes or double quotes.
 // 2. It can contain zero or more characters.
 // 3. The \ (backslash) is used to escape characters.
-// 4. JavaScript was built at a time when Unicode was a 16-bit character set, hence all characters in JavaScript are
-//    16 bits wide.
+// 4. All characters in JavaScript are 16 bits wide because JavaScript was built at a time when Unicode was a 16-bit
+//    character set.
 var string1 = "Hello World";
 var string2 = 'Hello World';
 var string3 = 'He said, "How about this?"';
@@ -18,12 +18,26 @@ var string6 = 'Isn\'t it?';
 var char1 = 'A';
 
 // Escape sequence
-// 1. The escape sequences allow for inserting characters into strings that are not
-//    normally permitted, such as backslashes, quotes, and control characters.
-// 2. Escape sequences are double quote("), single quote('), backslash(\), slash(/), backspace(b), formfeed(f),
-//    new line(n), carriage return(r), tab(t) and 4 hexadecimal digits(u).
-var char2 = "\u0041"; // The \u convention allows for specifying character code points numerically
+// 1. The escape sequences allow for inserting characters into strings that are not normally permitted, such as
+//    backslashes, quotes, and control characters.
+// 2. Some common escape sequences
+//    +-------------------------------------------------------------------------------------------------+
+//    | Escape Sequence      Unicode Character      Character                                           |
+//    +-------------------------------------------------------------------------------------------------+
+//    | \n                   \u000A                 Newline                                             |
+//    | \"                   \u0022                 ASCII Apostrophe (")                                |
+//    | \'                   \u0027                 ASCII Apostrophe (')                                |
+//    | \`                                          ASCII Grave Accent / Backtick (`)                   |
+//    | \\                   \u005C                 backslash (\)                                       |
+//    | \t                   \u0009                 Tab                                                 |
+//    | \b                   \u0008                 Backspace                                           |
+//    | \nnn                                        Character with given octal code (1, 2 or 3 digits)  |
+//    | \xnn                                        Character with given hex code (1 or 2 hex digits)   |
+//    | \unnnn                                      Unicode character with given code (1--4 hex digits) |
+//    | \Unnnnnnnn                                  Unicode character with given code (1--8 hex digits) |
+//    +-------------------------------------------------------------------------------------------------+
 
+var char2 = "\u0041"; // The \u convention allows for specifying character code points numerically
 
 // String Methods & Properties
 // 1. Strings have a length property. For example, "seven".length is 5.

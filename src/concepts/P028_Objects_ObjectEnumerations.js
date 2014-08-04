@@ -1,4 +1,4 @@
-// Description: Object enumeration in JavaScript
+// Description: Object enumerations in JavaScript
 
 // An object instance
 var person = {

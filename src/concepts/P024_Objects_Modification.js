@@ -1,5 +1,6 @@
 // Description: Objects modifications in JavaScript
 
+// An object
 var person = {
     first_name : "Lionel",
     middle_name : "Andres",

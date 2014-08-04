@@ -17,12 +17,12 @@
 var i = 5;
 var message;
 switch (i) {
-case 1:
-    message = "One";
-    break;
-case 2:
-    message = "Two";
-    break;
-default:
-    message = "Default";
+    case 1:
+        message = "One";
+        break;
+    case 2:
+        message = "Two";
+        break;
+    default:
+        message = "Default";
 }

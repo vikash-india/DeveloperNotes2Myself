@@ -1,8 +1,8 @@
-// Description: Objects prototype in JavaScript
+// Description: Object prototypes in JavaScript
 
 // Prototype-based programming
 // 1. Prototype-based programming is a style of object-oriented programming in which classes are not present, and
-//    behaviour reuse (inheritance) is performed via a process of cloning existing objects that serve as prototype.
+//    behaviour reuse (inheritance) is performed via a process of cloning existing objects that serve as a prototype.
 // 2. JavaScript includes a prototype linkage feature that allows one object to inherit the properties of another
 //    object. This feature, if used well, can reduce object initialisation time and memory consumption.
 // 3. Object.prototype is an object that comes standard with JavaScript.

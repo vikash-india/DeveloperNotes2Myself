@@ -1,4 +1,4 @@
-// Description: Function 'return' statement in JavaScript
+// Description: The 'return' statement in JavaScript Functions
 
 // 1. The return statement can be used to cause the function to return early.
 // 2. When return is executed, the function returns immediately without executing the remaining statements.

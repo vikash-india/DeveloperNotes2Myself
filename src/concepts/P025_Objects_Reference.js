@@ -1,6 +1,6 @@
 // Description: Objects reference in JavaScript
 
-// Object Reference:
+// Object Reference
 // 1. Objects are passed around by reference.
 
 // Example 1:

@@ -1,5 +1,6 @@
 // Description: Delete operator in JavaScript
 
+// Note
 // 1. The delete operator can be used to remove a property from an object if the property exists in the object.
 // 2. The delete operator will not touch any of the objects in the prototype linkage.
 var person = {

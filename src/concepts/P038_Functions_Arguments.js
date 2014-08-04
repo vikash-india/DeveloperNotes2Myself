@@ -1,9 +1,9 @@
-// Description: Function arguments in JavaScript
+// Description: Function Arguments in JavaScript
 
 // 1. A bonus parameter that is available to functions when they are invoked is the 'arguments' array. It gives the
 //    function access to all of the arguments that were supplied with the invocation, including excess arguments that
 //    were not assigned to parameters. This makes it possible to write functions that take an unspecified number of
-//    parameter.
+//    parameters.
 // 2. CAUTION:
 //      - Because of a design error, arguments is not really an array. It is an array-like object.
 //      - Arguments has a length property, but it lacks all of the array methods.

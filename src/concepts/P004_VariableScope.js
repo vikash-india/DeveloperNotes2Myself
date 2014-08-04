@@ -39,7 +39,7 @@ function demo() {
 
     bar();
 
-    // At this point, a is 21, b is 5
+    // At this point, a is 21, b is 5, and c is not defined
     console.log("Location 4: a = " + a + ", b = " + b);
 };
 

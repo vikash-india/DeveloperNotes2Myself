@@ -6,7 +6,7 @@
 //      - The OPTIONAL second part is the function's name.
 //      - The function can use its name to call itself recursively. The name can also be used by debuggers and
 //        development tools to identify the function.
-//      - ANONYMOUS FUNCTIONS:   If a function is not given a name it is callen an anonymous function.
+//      - ANONYMOUS FUNCTIONS:   If a function is not given a name it is called an anonymous function.
 // 3. Parameters
 //      - The third part is the set of parameters of the function, wrapped in parentheses. Within the parentheses
 //        is a set of zero or more parameter names, separated by commas. These names will be defined as variables in

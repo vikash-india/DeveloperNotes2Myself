@@ -1,9 +1,9 @@
-// Description: Different invocation patterns for a function in JavaScript
+// Description: Different function invocation patterns in JavaScript
 
 // 1. In addition to the declared parameters, every function receives two additional parameters
 //      - The 'this' parameters
 //      - The arguments
-// 2. The patterns differ in how the bonus parameter this is initialised. Based on this difference, There are four
+// 2. The patterns differ in how the bonus parameter this is initialised. Based on this difference, there are four
 //    patterns of invocation in JavaScript
 //      - The Method Invocation Pattern
 //      - The Function Invocation Pattern
@@ -17,4 +17,5 @@
 //      - There is no runtime error when the number of arguments and the number of parameters do not match.
 //      - If there are too many argument values, the extra argument values will be ignored.
 //      - If there are too few argument values, the undefined value will be substituted for the missing values.
+
 console.log("TODO: Add an appropriate example here.");

@@ -15,8 +15,7 @@ var y; // When a variable is not initialised, it is undefined.
 x = null; // Variables can be emptied by setting its value to null.
 x = undefined; // Variables can also be emptied by setting the value to undefined.
 
-// 6. JavaScript Booleans
-// - Possible values are true or false.
+// 6. JavaScript Booleans: Possible values are true or false.
 var response = true;
 var response = false;
 
@@ -28,16 +27,14 @@ var i = 1.23e+10;
 var i = 1.23e-10;
 var i = 1.23E-10;
 
-// 8. JavaScript Strings
-// - Strings are values within single or double quotes
+// 8. JavaScript Strings: Strings are values within single or double quotes
 var name = "Messi"; // Within double quotes
 var name = 'Ronaldo'; // Within single quotes
 var sentence = "That's it!"; // Single quotes inside double quoted string
 var sentence = 'He asked, "What are you doing?"'; // Double quotes inside single quoted string
 var escapedCharacters = 'He asked, \'What are you doing?\''; // Escape single quotes inside single quoted strings
 
-// 9. JavaScript Arrays
-// - Array indexes are zero-based
+// 9. JavaScript Arrays: Array indexes are zero-based
 var persons = new Array();
 persons[0] = "Messi";
 persons[1] = "Xavi";
@@ -45,7 +42,7 @@ persons[2] = "Ronaldo";
 var persons = new Array("Messi", "Xavi", "Ronaldo"); // Condensed way
 var persons = new Array("Messi", "Xavi", "Ronaldo"); // Literal Array
 
-// 10. JavaScript Objects:
+// 10. JavaScript Objects
 // - An object is delimited by curly braces.
 // - Inside the braces the object's properties are defined as name and value pairs (name : value).
 // - The properties are separated by commas

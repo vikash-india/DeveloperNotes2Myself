@@ -1,4 +1,4 @@
-// Description: Operators
+// Description: Operators in JavaScript
 
 // Arithmetic Operators
 var addition = 23 + 23;
@@ -16,17 +16,20 @@ assignment /= 2; // Divide and Assign
 assignment %= 5; // Modulo Division and
 
 // Relational Operators
-// 1. Use === instead of == and use !== instead of !=
+// 1. JavaScript Good Parts: Use === instead of == and use !== instead of !=
 var equalTo = (4 + 4 == 8); // true.
+var equalToTwo = (4 + 4 == '8'); // true.
 var exactEqualTo = (4 + 4 === 8); // true. Both value and type should match
-var exactEqualTo2 = (4 + 4 === "8"); // false.
+var exactEqualToTwo = (4 + 4 === "8"); // false.
 var notEqualTo = (3 != 4); // true.
-var notExactEqualTo = (3 !== "3"); // true
-var notExactEqualTo = (3 !== 3); // false. Neither value nor type should match
+var notEqualToTwo = (3 != '3'); // false.
+var notExactEqualTo = (3 !== "3"); // true. Either value or type should NOT match.
+var notExactEqualToTwo = (3 !== 3); // false. Neither value nor type should match
 var lessThan = (7 < 12); //
 var lessThanEqualTo = (4 + 4 <= 9); //
 var greaterThan = (9 > 20); //
 var greaterThanEqualTo = (12 >= 2 + 2); //
+console.log(notEqualToTwo);
 
 // Logical Operators
 // 1. Always results in true or False
@@ -53,7 +56,7 @@ var name = firstname + lastname;
 name = name + 3;
 console.log("Name:", name);
 
-// 3. JS Bad Parts: Loosely typed language should not have had operator like plus(+) symbol overloaded.
+// 3. JavaScript Bad Parts: Loosely typed language should not have had operator like plus(+) symbol overloaded.
 result = +"42"; // 42
 result = +"42" + (+"3"); // 45. Do not confuse +(+"3") as ++3
 

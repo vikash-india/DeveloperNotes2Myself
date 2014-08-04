@@ -5,7 +5,7 @@
 //    and composition. Functions are also used for specifying object behaviour.
 // 2. Function Arguments
 //      - Function can OPTIONALLY take arguments. Eg. x, y
-//      - Pass objects instead of MANY parameters to a functions to keep it clean and simple.
+//      - It is recommended to pass objects instead of MANY parameters to a functions to keep it clean and simple.
 // 3. Return Values
 //      - Function ALWAYS return value(s). If a return expression is NOT specified, then the return value will be
 //        undefined.

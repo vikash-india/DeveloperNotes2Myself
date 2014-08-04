@@ -1,15 +1,12 @@
-// Description: Object creation in JavaScript
+// Description: Objects creation in JavaScript
 
-// Object Creation
+// Objects Creation
 // 1. A property name can be any string, including an empty string.
 // 2. The quotes around a property's name in an object literal are optional if the name is a legal JavaScript name and
 //    not a reserved word.
 // 3. Commas are used to separate the name-value pairs.
 // 4. Objects can be nested.
 // 5. There are 3 ways to create an object
-//      -
-//      -
-//      -
 
 // Creating an empty object
 var empty_object = {};

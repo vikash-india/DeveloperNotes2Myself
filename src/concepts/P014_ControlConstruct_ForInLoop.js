@@ -1,4 +1,4 @@
-// Description: For-In loop construct in JavaScript
+// Description: For-In Loop construct in JavaScript
 
 // Note
 // 1. The for-in form enumerates the property names (or keys) of an object. On each iteration, another property name

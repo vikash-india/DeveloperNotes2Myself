@@ -8,13 +8,13 @@
 // Break
 // 1. The break statement breaks the loop and continues executing the code after the loop (if any).
 // 2. The break statement, without a label reference, can only be used inside a loop or a switch.
-// 3. It can optionally have a label that will cause an exit from the labeled statement.
+// 3. It can optionally have a label that will cause an exit from the 'label' statement.
 // 4. JavaScript does not allow a line end between the break and the label.
 
 // Continue
-// 5. The continue statement breaks one iteration (in the loop), if a specified condition occurs,
+// 1. The continue statement breaks one iteration (in the loop), if a specified condition occurs,
 //    and continues with the next iteration in the loop.
-// 6. The continue statement (with or without a label reference) can only be used inside a loop.
+// 2. The continue statement (with or without a label reference) can only be used inside a loop.
 
 LOOP_I: for ( var i = 0; i < 5; i++) {
     LOOP_J: for ( var j = 0; j < 5; j++) {
