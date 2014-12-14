@@ -13,3 +13,4 @@
 - [Firebug Plugin for Firefox](https://addons.mozilla.org/en-US/firefox/addon/firebug/)
 - Network Tool in Firefox Developer Edition Browser.
 - Developer Tools in Chrome Browser.
+- Any telnet client.
