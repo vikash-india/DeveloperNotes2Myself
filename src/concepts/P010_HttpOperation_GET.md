@@ -2,11 +2,11 @@
 
 ### The GET Operation
 - The GET operation is a simple two-message exchange.
-- The client initiates an HTTP Request to the server and uses the GET operation while create HTTP Request message.
+- The client initiates an HTTP Request to the server & specifies the GET operation as part of HTTP Request message.
 - The GET message includes a request for an Uniform Resource Identifier (URI).
-- The server either returns the requested object with a status code of 200 OK for a successful response or send one
-  of the many error status codes to the client.
-- The client can optionally pass one or more HTTP parameters or key-value pair to the server.
+- The client can optionally include one or more HTTP parameters (key-value pair) to the server.
+- The server returns an HTTP Response message consisting of HTTP Status Code, HTTP Response Header and an optional HTTP Response body.
+- The server sends a status code of 200 OK for a successful HTTP Response or sends one of the many error status codes.
 
 ### Connect to an HTTP Server on port 80 using any telnet client.
 ```
@@ -45,4 +45,4 @@ Post body was 0 chars long.
 ---
 ```
 - For clarity, the beginning & end of HTTP message is marked with '---' above but it is NOT a part of actual HTTP message protocol.
-- The first line in the HTTP Response is the HTTP Status code.
+- The line "HTTP/1.1 200 OK" in the HTTP Response is the HTTP version '1.1', HTTP Status code '200' and HTTP Status Code description 'OK'.
