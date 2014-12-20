@@ -37,7 +37,8 @@ public class P003_HttpRequestUsingTCPSocketInJava {
             System.out.println(line);
         bufferedReader.close();
 
-        // The output of the above code snippet will be an HTTP Response message similar to the one below
+        // The output of the above code snippet will be an HTTP Response message similar to the one below,
+        //
         // HTTP/1.1 200 OK
         // Date: Tue, 16 Dec 2014 07:52:56 GMT
         // Server: Apache
