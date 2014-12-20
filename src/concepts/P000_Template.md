@@ -12,7 +12,7 @@ Write Here
 
 ---
 ```
-- The beginning & end of HTTP message is marked with '---' above only for clarity. It is NOT a part of actual HTTP protocol.
+- For clarity, the beginning & end of HTTP message is marked with '---' above but it is NOT a part of actual HTTP message protocol.
 - Write Here
 
 ### Receive an HTTP Response Message from the server.
@@ -21,5 +21,5 @@ Write Here
 Write Here
 ---
 ```
-- The beginning & end of HTTP message above is marked with '---' only for clarity. It is NOT a part of actual HTTP protocol.
+- For clarity, the beginning & end of HTTP message is marked with '---' above but it is NOT a part of actual HTTP message protocol.
 - Write Here

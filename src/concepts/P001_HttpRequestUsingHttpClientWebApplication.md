@@ -26,7 +26,7 @@ User-Agent: runscope/0.1
 
 ---
 ```
-- The beginning & end of HTTP message is marked with '---' above only for clarity. It is NOT a part of actual HTTP protocol.
+- For clarity, the beginning & end of HTTP message is marked with '---' above but it is NOT a part of actual HTTP message protocol.
 - The HTTP Headers Accept, Accept-Encoding and User-Agent were added by the HTTP web client.
 
 ### HTTP Response Message Received from the server.
@@ -44,5 +44,5 @@ View it at http://www.posttestserver.com/data/2014/12/16/10.50.25399003028
 Post body was 0 chars long.
 ---
 ```
-- The beginning & end of HTTP message above is marked with '---' only for clarity. It is NOT a part of actual HTTP protocol.
-- The HTTP Status code is shown separately.
+- For clarity, the beginning & end of HTTP message is marked with '---' above but it is NOT a part of actual HTTP message protocol.
+- The HTTP Status code is shown separately instead of as part of the HTTP Response message.

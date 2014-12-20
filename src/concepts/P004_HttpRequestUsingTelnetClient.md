@@ -21,7 +21,7 @@ User-Agent: telnet/0.17-36build2 Linux/3.13.0-43-generic
 
 ---
 ```
-- The beginning & end of HTTP message is marked with '---' above only for clarity. It is NOT a part of actual HTTP protocol.
+- For clarity, the beginning & end of HTTP message is marked with '---' above but it is NOT a part of actual HTTP message protocol.
 - Type or paste the above HTTP Request message on telnet command prompt.
 - An empty line at the end of the HTTP Header is mandatory.
 
@@ -42,4 +42,4 @@ View it at http://www.posttestserver.com/data/2014/12/15/10.35.52907067027
 Post body was 0 chars long.
 ---
 ```
-- The beginning & end of HTTP message is marked with '---' above only for clarity. It is NOT a part of actual HTTP protocol.
+- For clarity, the beginning & end of HTTP message is marked with '---' above but it is NOT a part of actual HTTP message protocol.

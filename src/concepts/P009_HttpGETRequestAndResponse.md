@@ -16,7 +16,7 @@ User-Agent: telnet/0.17-36build2 Linux/3.13.0-43-generic
 
 ---
 ```
-- The beginning & end of HTTP message is marked with '---' above only for clarity. It is NOT a part of actual HTTP protocol.
+- For clarity, the beginning & end of HTTP message is marked with '---' above but it is NOT a part of actual HTTP message protocol.
 
 ### Receive an HTTP Response Message from the server.
 ```
@@ -36,5 +36,5 @@ View it at http://www.posttestserver.com/data/2014/12/15/05.23.291850154350
 Post body was 0 chars long.
 ---
 ```
-- The beginning & end of HTTP message is marked with '---' above only for clarity. It is NOT a part of actual HTTP protocol.
+- For clarity, the beginning & end of HTTP message is marked with '---' above but it is NOT a part of actual HTTP message protocol.
 - The first line in the HTTP Response is the HTTP Status code.
