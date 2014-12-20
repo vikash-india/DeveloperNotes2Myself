@@ -1,4 +1,12 @@
-# Description: Send an HTTP GET Request and Receive HTTP Response
+# Description: HTTP Operation - GET
+
+### The GET Operation
+- The GET operation is a simple two-message exchange.
+- The client initiates an HTTP Request to the server and uses the GET operation while create HTTP Request message.
+- The GET message includes a request for an Uniform Resource Identifier (URI).
+- The server either returns the requested object with a status code of 200 OK for a successful response or send one
+  of the many error status codes to the client.
+- The client can optionally pass one or more HTTP parameters or key-value pair to the server.
 
 ### Connect to an HTTP Server on port 80 using any telnet client.
 ```
@@ -8,7 +16,7 @@ telnet www.posttestserver.com 80
 ### Send an HTTP Request message to the server.
 ```
 ---
-GET /post.php?key2=Value+for+2&key1=Value+for+1 HTTP/1.1
+GET /post.php?key1=Value+for+1&key2=Value+for+2 HTTP/1.1
 Host: posttestserver.com
 Connection: close
 Accept: */*
