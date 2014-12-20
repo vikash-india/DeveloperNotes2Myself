@@ -5,7 +5,7 @@
 telnet www.posttestserver.com 80
 ```
 
-### Send an HTTP Request Message to the server.
+### Send an HTTP Request message to the server.
 ```
 ---
 GET /post.php?key2=Value+for+2&key1=Value+for+1 HTTP/1.1
@@ -18,7 +18,7 @@ User-Agent: telnet/0.17-36build2 Linux/3.13.0-43-generic
 ```
 - For clarity, the beginning & end of HTTP message is marked with '---' above but it is NOT a part of actual HTTP message protocol.
 
-### Receive an HTTP Response Message from the server.
+### Receive an HTTP Response message from the server.
 ```
 ---
 HTTP/1.1 200 OK

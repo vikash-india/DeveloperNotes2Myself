@@ -1,9 +1,9 @@
 # Description: Send HTTP Request Using an HTTP Client GUI Application
 
 ### Open an HTTP GUI application like REST-Client.
-- There are numerous HTTP Client GUI application like REST-Client. Choose any one.
+- There are many HTTP Client GUI application like REST-Client. Choose any one.
 
-### Create an HTTP Request Message Using the UI
+### Create an HTTP Request message using the UI.
 - URL: Type `http://posttestserver.com/post.php`.
 - Method Tab: Select `GET`.
 - Header Tab: Add the following headers.

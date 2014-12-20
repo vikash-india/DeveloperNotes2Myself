@@ -5,13 +5,13 @@
 telnet www.posttestserver.com 80
 
 # Other valid examples
-telnet www.google.com 80
 telnet www.httpbin.org 80
+telnet www.google.com 80
 telnet 192.168.1.20 8080
 ```
 - Specify port 80 explicitly otherwise telnet will connect to port 23 by default.
 
-### Send an HTTP Request Message to the server.
+### Send an HTTP Request message to the server.
 ```
 ---
 GET /post.php HTTP/1.1
@@ -25,7 +25,7 @@ User-Agent: telnet/0.17-36build2 Linux/3.13.0-43-generic
 - Type or paste the above HTTP Request message on telnet command prompt.
 - An empty line at the end of the HTTP Header is mandatory.
 
-### Receive an HTTP Response Message from the server.
+### Receive an HTTP Response message from the server.
 ```
 ---
 HTTP/1.1 200 OK

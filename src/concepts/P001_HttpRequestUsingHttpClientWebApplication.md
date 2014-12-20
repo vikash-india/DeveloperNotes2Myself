@@ -1,12 +1,12 @@
 # Description: Send HTTP Request Using an HTTP Web Client
 
-### Visit an HTTP Web Client like https://www.hurl.it/ using a Browser.
+### Visit an HTTP Web Client like https://www.hurl.it/ using any web browser.
 ```
 https://www.hurl.it/
 ```
-- There are numerous HTTP Web Clients like https://www.hurl.it/. Choose any one.
+- There are many HTTP Web Clients like `https://www.hurl.it/`. Choose any one.
 
-### Create an HTTP Request Message Using the UI
+### Create an HTTP Request message using the UI.
 - Destination: Select `GET` from the dropdown. Type URL as `posttestserver.com/post.php`.
 - Authentication: Leave it blank.
 - Headers: Add the following headers.
@@ -15,7 +15,7 @@ https://www.hurl.it/
 - Parameters: Leave it blank.
 - Click on Launch Button. This will make an HTTP Request and show the HTTP Response.
 
-### HTTP Request sent to the server.
+### HTTP Request message sent to the server.
 ```
 ---
 Accept: */*
@@ -29,7 +29,7 @@ User-Agent: runscope/0.1
 - For clarity, the beginning & end of HTTP message is marked with '---' above but it is NOT a part of actual HTTP message protocol.
 - The HTTP Headers Accept, Accept-Encoding and User-Agent were added by the HTTP web client.
 
-### HTTP Response Message Received from the server.
+### HTTP Response message received from the server.
 ```
 ---
 Access-Control-Allow-Origin: *

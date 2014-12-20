@@ -1,8 +1,8 @@
-/* Description: Send an HTTP Request Using a TCP Socket Code in Java
+/* Description: Send an HTTP Request Using TCP Socket in Java
  *
  * Note
- * Compile this code using the command  : javac P003_HttpRequestUsingTCPSocketInJava.java
- * Run this code using the command      : java P003_HttpRequestUsingTCPSocketInJava
+ * Compile using the command    : javac P006_HttpRequestUsingTCPSocketInJava.java
+ * Run using the command        : java P006_HttpRequestUsingTCPSocketInJava
  */
 
 import java.io.BufferedReader;
@@ -30,14 +30,14 @@ public class P003_HttpRequestUsingTCPSocketInJava {
         printWriter.print(httpRequestMessage);
         printWriter.flush();
 
-        // Read HTTP Response from the socket.
+        // Read HTTP Response message from the socket.
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(tcpSocket.getInputStream()));
         String line;
         while ((line = bufferedReader.readLine()) != null)
             System.out.println(line);
         bufferedReader.close();
 
-        // The output
+        // The output of the above code snippet will be an HTTP Response message similar to the one below
         // HTTP/1.1 200 OK
         // Date: Tue, 16 Dec 2014 07:52:56 GMT
         // Server: Apache

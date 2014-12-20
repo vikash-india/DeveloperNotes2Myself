@@ -1,13 +1,14 @@
-# Description: Send an HTTP Request Using a TCP Socket Code in Python
+# Description: Send an HTTP Request Using TCP Socket in Python
 
 import socket
 
-# Create a TCP Connection to the HTTP Server on port 80.
+# Create a TCP connection to the HTTP Server on port 80.
 tcpSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 tcpSocket.connect(('www.posttestserver.com', 80))
 
 # Create an HTTP GET Request message strictly adhering to the HTTP RFC 2616.
-httpRequestMessage = """GET /post.php HTTP/1.1
+httpRequestMessage = \
+"""GET /post.php HTTP/1.1
 Host: posttestserver.com
 Connection: close
 User-Agent: CPython/2.7.6 Linux/3.13.0-43-generic
@@ -23,7 +24,8 @@ while 1:
 # Close the TCP Connection
 tcpSocket.close()
 
-# The output of the above code snippet will be as follows
+# The output of the above code snippet will be an HTTP Response message similar to the one below,
+#
 # HTTP/1.1 200 OK
 # Date: Tue, 16 Dec 2014 07:36:01 GMT
 # Server: Apache
