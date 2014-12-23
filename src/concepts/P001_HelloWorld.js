@@ -1,7 +1,7 @@
-// Description: A 'Hello World' program in JavaScript
+// Description: A 'Hello World' Program in JavaScript
 
-// Write to the console
-console.log("Hello World from JavaScript!");
+// Write to console
+console.log("Hello World in JavaScript!");
 
-// Alert pop up in a browser - Use it while testing in a browser
-// alert('Hello world from JavaScript!');
+// Use alert pop up while running in a browser
+// alert('Hello world in JavaScript!');
