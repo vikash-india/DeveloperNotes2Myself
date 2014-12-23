@@ -1,4 +1,4 @@
-// Description: Different function invocation patterns in JavaScript
+// Description: Various Function Invocation Patterns in JavaScript
 
 // 1. In addition to the declared parameters, every function receives two additional parameters
 //      - The 'this' parameters
