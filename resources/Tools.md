@@ -12,6 +12,7 @@
 
 ### HTTP Monitoring and Security Testing Tools
 - [Burp Suite](http://portswigger.net/burp/)
+- [Fiddler](http://www.telerik.com/fiddler)
 - [Tamper Data Plugin for Firefox](https://addons.mozilla.org/en-US/firefox/addon/tamper-data/)
 - [Firebug Plugin for Firefox](https://addons.mozilla.org/en-US/firefox/addon/firebug/)
 - Network Tool in Firefox Developer Edition Browser.
