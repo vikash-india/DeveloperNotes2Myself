@@ -1,6 +1,6 @@
 # Description: HTTP Operation - GET
 
-### The GET Operation
+### The HTTP GET Method
 - The GET operation is a simple two-message exchange.
 - The client initiates an HTTP Request to the server & specifies the GET operation as part of HTTP Request message.
 - The GET message includes a request for an Uniform Resource Identifier (URI).
