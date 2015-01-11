@@ -1,4 +1,4 @@
-# Description: Write Here
+# Description: HTTP Informational Status Code - 100 - WriteHere
 
 ### Connect to an HTTP Server on port 80 using any Telnet client.
 ```
