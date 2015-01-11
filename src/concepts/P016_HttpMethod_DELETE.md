@@ -15,7 +15,7 @@ telnet www.httpbin.org 80
 ### Send an HTTP Request message to the server.
 ```
 ---
-DELETE /delete HTTP/1.1
+DELETE /delete/a.txt HTTP/1.1
 Host: httpbin.org
 Connection: close
 Accept: */*
