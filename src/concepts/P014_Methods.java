@@ -5,6 +5,7 @@ package concepts;
  * Note
  * 1. Methods can be public, private or protected.
  * 2. In addition to that a method can also be static or non-static.
+ * 3. Check P027_Classes_Methods.java for more about methods.
  */
 public class P014_Methods {
 
