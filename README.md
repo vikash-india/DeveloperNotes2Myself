@@ -1,2 +1,2 @@
 # JavaNotes2Myself
-Java reference through examples 
+Java reference through examples
