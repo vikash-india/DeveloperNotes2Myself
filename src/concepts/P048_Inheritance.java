@@ -12,7 +12,7 @@ package concepts;
  *    be invoked from the subclass.
  * 5. Except Object (defined in the java.lang package), which has no superclass, every class has one and only one direct
  *    superclass (single inheritance).
- * 6. Multiple Inheritance is not allowed in JAVA because only one class can be inherited by a class.
+ * 6. Multiple Inheritance is not allowed in JAVA i.e. only one class can be inherited by a class.
  * 7. A Superclass variable can reference a subclass object.
  */
 public class P048_Inheritance {

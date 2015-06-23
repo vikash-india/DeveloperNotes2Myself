@@ -4,7 +4,7 @@ package concepts;
  * Description: Method Overriding in Java
  *
  * Method Overriding
- * 1. When an INSTANCE method in a subclass has the same signature ie same method name and same number and type of
+ * 1. When an INSTANCE method in a subclass has the same signature i.e. same method name and same number and type of
  *    parameters as in its superclass, then the method in the subclass is said to override the method in the superclass.
  * 2. The ability of a subclass to override a method allows a class to inherit from a superclass whose behaviour is
  *    "close enough" and then to modify behaviour as needed.

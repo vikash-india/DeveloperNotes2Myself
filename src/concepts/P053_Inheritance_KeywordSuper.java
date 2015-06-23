@@ -1,7 +1,7 @@
 package concepts;
 
 /*
- * Description: The 'super' Keyword in Java
+ * Description: The super Keyword in Java
  * Note
  * 1. A subclass can call a constructor method defined by its superclass using super keyword as follows
  *              super(parameter-list);

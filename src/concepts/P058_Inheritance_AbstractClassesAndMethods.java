@@ -34,11 +34,11 @@ public class P058_Inheritance_AbstractClassesAndMethods {
         P058_Cat animal2 = new P058_Cat();
         P058_Duck animal3 = new P058_Duck();
 
-        System.out.println("A dog says " + animal1.getHello() + ", is carnivorous: " + animal1.isCarnivorous()
+        System.out.println("A dog says " + animal1.sayHello() + ", is carnivorous: " + animal1.isCarnivorous()
                 + ", and is a mammal: " + animal1.isAMammal());
-        System.out.println("A cat says " + animal2.getHello() + ", is carnivorous: " + animal2.isCarnivorous()
+        System.out.println("A cat says " + animal2.sayHello() + ", is carnivorous: " + animal2.isCarnivorous()
                 + ", and is a mammal: " + animal2.isAMammal());
-        System.out.println("A duck says " + animal3.getHello() + ", is carnivorous: " + animal3.isCarnivorous()
+        System.out.println("A duck says " + animal3.sayHello() + ", is carnivorous: " + animal3.isCarnivorous()
                 + ", and is a mammal: " + animal3.isAMammal());
     }
 }
@@ -55,17 +55,17 @@ abstract class P058_Animal {
     }
 
     // Must be implemented in the inherited class
-    abstract public String getHello();
+    abstract public String sayHello();
 }
 
 class P058_Dog extends P058_Animal {
-    public String getHello() {
+    public String sayHello() {
         return ("Bark");
     }
 }
 
 class P058_Cat extends P058_Animal {
-    public String getHello() {
+    public String sayHello() {
         return ("Meow");
     }
 }
@@ -81,7 +81,7 @@ class P058_Duck extends P058_Animal {
         return (false);
     }
 
-    public String getHello() {
+    public String sayHello() {
         return ("Quack");
     }
 }

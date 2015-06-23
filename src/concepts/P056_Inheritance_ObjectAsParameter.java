@@ -1,9 +1,9 @@
 package concepts;
 
 /*
- * Description: Using Objects as Parameters
+ * Description: Using Object as Parameters
  * Note
- * 1. Objects are used as parameters for creating a clone of another object.
+ * 1. Object is used as parameters for creating a clone of another object.
  * 2. Object as parameters have other uses also.
  */
 public class P056_Inheritance_ObjectAsParameter {

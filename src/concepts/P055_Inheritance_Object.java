@@ -12,7 +12,7 @@ public class P055_Inheritance_Object implements Cloneable {
 
         /*
          * Object.clone method:
-         * 1. If a class, or one of its superclass, implements the Cloneable interface, and one can use the clone()
+         * 1. If a class, or one of its superclass, implements the Cloneable interface, then one can use the clone()
          *    method to create a copy from an existing object.
          * 2. For some classes, the default behaviour of Object's clone() method works just fine. If, however, an object
          *    contains a reference to an external object, say ObjExternal, you may need to override clone() to get
@@ -20,6 +20,7 @@ public class P055_Inheritance_Object implements Cloneable {
          */
         P055_Parent parent = new P055_Parent();
         Object object = (Object) parent.clone();
+        System.out.println(object.toString());
 
         /*
          * Object.equals method:

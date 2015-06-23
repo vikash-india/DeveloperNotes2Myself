@@ -1,7 +1,7 @@
 package concepts;
 
 /*
- * Description: Final Variable, Final Methods and Final  Class in Java
+ * Description: Final Variable, Final Methods and Final Class in Java
  * Note
  * 1. Final Variable
  *      - It prevents its contents from being modified.
