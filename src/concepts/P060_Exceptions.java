@@ -49,7 +49,7 @@ package concepts;
  *    exceptional condition arises.
  */
 
-public class P072_Exceptions {
+public class P060_Exceptions {
 
     public static void main(String args[]) {
 

@@ -13,7 +13,7 @@ import java.io.IOException;
  *    resource is closed at the end of the statement. Any object that implements java.lang.AutoCloseable, which
  *    includes all objects which implement java.io.Closeable, can be used as a resource.
  */
-public class P073_Exceptions_TryWithResourcesStatement {
+public class P061_Exceptions_TryWithResourcesStatement {
 
     public static void main(String args[]) {
 

@@ -7,7 +7,7 @@ package concepts;
  * 2. For readable code, it's good practice to append the string Exception to the names of all classes that inherit
  *    (directly or indirectly) from the Exception class.
  */
-public class P075_Exceptions_CustomExceptionClass {
+public class P063_Exceptions_CustomExceptionClass {
 
     public static void main(String args[]) {
 

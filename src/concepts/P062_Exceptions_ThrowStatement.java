@@ -7,7 +7,7 @@ package concepts;
  *    stack methods. In such cases, add a throws clause to the method declaration.
  * 2. Two keywords throw and throws are used to for throwing an exception.
  */
-public class P074_Exceptions_ThrowStatement {
+public class P062_Exceptions_ThrowStatement {
 
     public static void main(String args[]) {
 
