@@ -1,4 +1,4 @@
-// Description: While Loop construct in JavaScript
+// Description: While Loop Construct in JavaScript
 
 var i = 0;
 while (i < 5) {

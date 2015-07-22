@@ -1,4 +1,4 @@
-// Description: If...Else If...Else construct in JavaScript
+// Description: If...Else If...Else Construct in JavaScript
 
 // Note
 // 1. There can be 0, 1 or more else-if blocks.

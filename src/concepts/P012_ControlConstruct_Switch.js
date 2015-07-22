@@ -1,4 +1,4 @@
-// Description: Switch construct in JavaScript
+// Description: Switch Construct in JavaScript
 
 // Note
 // 1. The break keyword is used to prevent the code from running into the next case automatically.

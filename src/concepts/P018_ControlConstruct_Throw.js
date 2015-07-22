@@ -1,4 +1,4 @@
-// Description: The throw construct in JavaScript
+// Description: The Throw Construct in JavaScript
 
 // Note
 // 1. The throw statement allows us to create custom errors/exceptions.
@@ -38,9 +38,10 @@ try {
     throw input + " Not a Number!";
 
 } catch (exception) {
-    console.log("Exception: " + exception); // Full Exception Object
-    console.log(exception.name); // ErrorType
+    console.log("Exception: " + exception);     // Full Exception Object
+    console.log(exception.name);                // ErrorType
 
 }
 
-// TODO: Understand all FALSY values like null, undefined 0 and '' in the below code.
+// TODO:
+// - Understand all FALSY values like null, undefined 0 and '' in the above code.

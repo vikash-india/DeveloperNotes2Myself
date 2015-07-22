@@ -4,8 +4,8 @@
 // 1. A string literal can be wrapped in single quotes or double quotes.
 // 2. It can contain zero or more characters.
 // 3. The \ (backslash) is used to escape characters.
-// 4. All characters in JavaScript are 16 bits wide because JavaScript was built at a time when Unicode was a 16-bit
-//    character set.
+// 4. All characters in JavaScript are 16 bits wide because JavaScript was built at a time when Unicode was a
+//    16-bit character set.
 var string1 = "Hello World";
 var string2 = 'Hello World';
 var string3 = 'He said, "How about this?"';
@@ -18,9 +18,9 @@ var string6 = 'Isn\'t it?';
 var char1 = 'A';
 
 // Escape sequence
-// 1. The escape sequences allow for inserting characters into strings that are not normally permitted, such as
-//    backslashes, quotes, and control characters.
-// 2. Some common escape sequences
+// 1. The escape sequences allow for inserting characters into strings that are not normally permitted, such
+//    as backslashes, quotes, and control characters.
+// 2. Some common escape sequences used in JavaScript are as follows
 //    +-------------------------------------------------------------------------------------------------+
 //    | Escape Sequence      Unicode Character      Character                                           |
 //    +-------------------------------------------------------------------------------------------------+
@@ -43,8 +43,8 @@ var char2 = "\u0041"; // The \u convention allows for specifying character code 
 // 1. Strings have a length property. For example, "seven".length is 5.
 // 2. Strings are immutable.
 // 3. But it is easy to make a new string by concatenating other strings together with the + operator.
-// 4. Two strings containing exactly the same characters in the same order are considered to be the same string.
-//    Eg 'c' + 'a' + 't' === 'cat'.
+// 4. Two strings containing exactly the same characters in the same order are considered to be the same
+//    string. Eg 'c' + 'a' + 't' === 'cat'.
 string7 = 'c' + 'a' + 't';
 string8 = "cat";
 console.log(string7 === string8);

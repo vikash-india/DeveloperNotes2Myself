@@ -1,4 +1,4 @@
-// Description: Do-While Loop construct in JavaScript
+// Description: Do-While Loop Construct in JavaScript
 
 // Note
 // 1. Since the condition is always tested after the execution of the do-while code block, the block is always

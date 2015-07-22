@@ -1,4 +1,4 @@
-// Description: True and False values in JavaScript
+// Description: True and False Values in JavaScript
 
 // 1. Falsy values
 //      - false
@@ -10,7 +10,7 @@
 // 2. Truthy values
 //      - All other values are truthy, including true, the string 'false', and all objects.
 
-var x = NaN;
+var x = undefined;
 if (x) {
     console.log("True");
 

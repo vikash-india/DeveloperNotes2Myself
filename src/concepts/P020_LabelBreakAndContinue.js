@@ -1,7 +1,7 @@
 // Description: Label, Break & Continue in JavaScript
 
 // Labels
-// 1. To label JavaScript statements the statements should be preceded with a colon (LABEL_NAME:)
+// 1. To label JavaScript statements the statements should be preceded with a colon (LABEL_NAME:).
 // 2. The break & the continue statements are the only JavaScript statements that can "jump out of" a
 //    code block to a particular label
 

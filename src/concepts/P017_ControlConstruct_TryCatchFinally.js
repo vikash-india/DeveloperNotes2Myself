@@ -1,12 +1,13 @@
-// Description: The try-catch-finally construct in JavaScript
+// Description: The Try-Catch-Finally Construct in JavaScript
 
 // Note
-// 1. The try statement lets you to test a block of code for errors.
-// 2. The catch statement lets you handle the error.
-// 3. The finally statement, if defined, will be executed regardless of whether an error occur in the try block or not.
+// 1. The try statement lets can be used to test a block of code for errors.
+// 2. The catch statement can be used to handle the error.
+// 3. The finally statement, if defined, will be executed regardless of whether an error occur in the try
+//    block or not.
 // 4. The catch clause defines a new variable that will receive the exception object.
-// 5. There cannot be multiple catch clause because there are no classes (like Java). So a switch statement within the
-//    ONLY catch block can be used to decide on the error type.
+// 5. There cannot be multiple catch clause because there are no classes (like Java). So a switch statement
+//    within the ONLY catch block can be used to decide on the error type.
 
 try {
     callSomeUndefinedFunction();
