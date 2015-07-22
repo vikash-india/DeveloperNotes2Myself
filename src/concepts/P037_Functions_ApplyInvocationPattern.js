@@ -1,8 +1,8 @@
-// Description: The Apply Invocation Pattern
+// Description: The Apply Invocation Pattern in JavaScript
 
 // The Apply Invocation Pattern
 // 1. Since JavaScript is a functional object-oriented language, functions can have methods.
-// 2. The apply method lets us construct an array of arguments to use to invoke a function.
+// 2. The apply method allows us to construct an array of arguments to use to invoke a function.
 // 3. It also lets us choose the value of 'this'.
 // 4. The apply method takes two parameters,
 //      - The first is the value that should be bound to 'this'.
@@ -18,7 +18,7 @@ function sum(x, y) {
 }
 
 // Invoke the function using Apply Invocation Pattern
-var result = sum.apply(null, array); // sum is 7
+var result = sum.apply(null, array);                            // sum is 7
 
 console.log("The Apply Invocation Pattern");
 console.log("Example 1: result =", result);
@@ -39,7 +39,7 @@ var statusObject = {
     status : 'A-OK'
 };
 
-// Note: StatusObject does not inherit from Quo.prototype, but we can invoke the get_status method on statusObject
-// even though statusObject does not have a get_status method.
-var status = Quo.prototype.get_status.apply(statusObject); // status is 'A-OK'
+// Note: StatusObject does not inherit from Quo.prototype, but we can invoke the get_status method on
+// statusObject even though statusObject does not have a get_status method.
+var status = Quo.prototype.get_status.apply(statusObject);      // status is 'A-OK'
 console.log("Example 2: status =", status);
