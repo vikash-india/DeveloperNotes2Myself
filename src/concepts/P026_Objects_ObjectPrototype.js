@@ -31,8 +31,8 @@ player.first_name = 'Lionel';
 player.last_name = 'Messi';
 player.nick_name = 'Messi';
 
-console.log("person = ", person);   // Remains the same '{}'
-console.log("player = ", player);   // Contains updated data
+console.log("person = ", person); // Remains the same '{}'
+console.log("player = ", player); // Contains updated data
 
 // 7. Delegation
 //    The prototype link is used ONLY in retrieval. If we try to retrieve a property value from an object,

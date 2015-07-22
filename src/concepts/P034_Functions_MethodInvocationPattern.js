@@ -3,11 +3,11 @@
 // The Method Invocation Pattern
 // 1. When a function is stored as a property of an object, it's called a method.
 // 2. When a method is invoked, 'this' is bound to the object which contains the method.
-// 3. If an invocation expression contains a refinement (that is, a . dot expression or [subscript] expression), it is
-//    invoked as a method.
+// 3. If an invocation expression contains a refinement (that is, a . dot expression or [subscript]
+//    expression), it is invoked as a method.
 // 4. A method can use 'this' to access the object to retrieve values from the object or to modify the object.
-// 5. The binding of 'this' to the object happens at invocation time. This very late binding make functions that use
-//    'this' highly reusable.
+// 5. The binding of 'this' to the object happens at invocation time. This very late binding make functions
+//    that use 'this' highly reusable.
 
 // Example: An object with 'value' & an increment method.
 var anObject = {

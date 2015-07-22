@@ -1,10 +1,10 @@
-// Description: Objects modifications in JavaScript
+// Description: Object Modification in JavaScript
 
-// An object
+// An Object
 var person = {
-    first_name : "Lionel",
+    first_name  : "Lionel",
     middle_name : "Andres",
-    last_name : "Messi",
+    last_name   : "Messi"
 };
 
 // Modifying Objects
