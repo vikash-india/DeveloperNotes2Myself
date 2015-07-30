@@ -1,12 +1,19 @@
 package topics.json;
 
-public class P005_Employee {
+import com.google.gson.annotations.SerializedName;
 
+public class P010_Employee {
+
+    @SerializedName("employee_id")
     private int id;
+
+    @SerializedName("employee_name")
     private String name;
+
+    @SerializedName("employee_salary")
     private float salary;
 
-    public P005_Employee(int id, String name, float salary) {
+    public P010_Employee(int id, String name, float salary) {
         this.id = id;
         this.name = name;
         this.salary = salary;
