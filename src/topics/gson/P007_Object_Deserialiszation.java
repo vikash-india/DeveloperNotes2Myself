@@ -16,6 +16,10 @@ import com.google.gson.Gson;
  * 7. If a field is synthetic, it is ignored and not included in JSON serialisation or deserialization.
  * 8. Fields corresponding to the outer classes in  inner classes, anonymous classes, and local classes are ignored and
  *    not included in serialization or deserialization
+ * 9. LIMITATION: Gson can also deserialize static nested classes. However, Gson can not automatically deserialize the
+ *    pure inner classes since their no-args constructor also need a reference to the containing Object which is not
+ *    available at the time of deserialization.
+ *    - TODO: Check User Guide for details.
  */
 public class P007_Object_Deserialiszation {
 
