@@ -1,4 +1,4 @@
-package topics.json;
+package topics.gson;
 
 import java.util.ArrayList;
 import com.google.gson.Gson;

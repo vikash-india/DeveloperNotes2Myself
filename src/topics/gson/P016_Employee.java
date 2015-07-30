@@ -1,22 +1,19 @@
-package topics.json;
+package topics.gson;
 
-import com.google.gson.annotations.SerializedName;
+import java.util.Arrays;
 
-public class P010_Employee {
+public class P016_Employee {
 
-    @SerializedName("employee_id")
     private int id;
-
-    @SerializedName("employee_name")
     private String name;
-
-    @SerializedName("employee_salary")
     private float salary;
+    private String subordinates[];
 
-    public P010_Employee(int id, String name, float salary) {
+    public P016_Employee(int id, String name, float salary, String subordinates[]) {
         this.id = id;
         this.name = name;
         this.salary = salary;
+        this.subordinates = subordinates;
     }
 
     public int getId() {
@@ -31,6 +28,10 @@ public class P010_Employee {
         return salary;
     }
 
+    public String[] getSubordinates() {
+        return subordinates;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -43,8 +44,13 @@ public class P010_Employee {
         this.salary = salary;
     }
 
+    public void setSubordinates(String[] subordinates) {
+        this.subordinates = subordinates;
+    }
+
     @Override
     public String toString() {
-        return "P003_Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+        return "P016_Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", subordinates="
+                + Arrays.toString(subordinates) + "]";
     }
 }

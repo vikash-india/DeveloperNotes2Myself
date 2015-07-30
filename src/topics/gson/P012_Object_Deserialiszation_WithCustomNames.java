@@ -1,4 +1,4 @@
-package topics.json;
+package topics.gson;
 
 import com.google.gson.Gson;
 
@@ -17,14 +17,14 @@ import com.google.gson.Gson;
  * 8. Fields corresponding to the outer classes in  inner classes, anonymous classes, and local classes are ignored and
  *    not included in serialization or deserialization
  */
-public class P007_Object_Deserialiszation {
+public class P012_Object_Deserialiszation_WithCustomNames {
 
     public static void main(String[] args) {
 
-        String json = "{\"id\":1,\"name\":\"Dilbert\",\"salary\":100000.0}";
+        String json = "{\"employee_id\":1,\"employee_name\":\"Dilbert\",\"employee_salary\":100000.0}";
 
         Gson gson = new Gson();
-        P005_Employee employee = gson.fromJson(json, P005_Employee.class);
+        P010_Employee employee = gson.fromJson(json, P010_Employee.class);
 
         System.out.println("Employee: " + employee.toString());
     }

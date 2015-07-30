@@ -1,4 +1,4 @@
-package topics.json;
+package topics.gson;
 
 import java.lang.reflect.Type;
 import java.util.Collection;

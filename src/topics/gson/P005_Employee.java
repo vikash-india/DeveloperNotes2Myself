@@ -1,4 +1,4 @@
-package topics.json;
+package topics.gson;
 
 public class P005_Employee {
 

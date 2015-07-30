@@ -1,19 +1,19 @@
-package topics.json;
+package topics.gson;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class P014_Object_Serialization_ControlExposure {
+public class P015_Object_Serialization_ControlExposure {
 
     public static void main(String[] args) {
-        P013_Employee employee = new P013_Employee(1, "Dilbert", 100000.0f, "12345");
+        String json = "{\"employee_id\":1,\"employee_name\":\"Dilbert\",\"employee_salary\":100000.0}";
 
         // Process Expose Annotation Using GsonBuilder
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.excludeFieldsWithoutExposeAnnotation();
         Gson gson = gsonBuilder.create();
-        String json = gson.toJson(employee);
+        P013_Employee employee = gson.fromJson(json, P013_Employee.class);
 
-        System.out.println("Object: " + json);
+        System.out.println("Object: " + employee);
     }
 }
