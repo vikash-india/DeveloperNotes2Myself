@@ -1,5 +1,5 @@
 ---
-# An Ansible playbook for showing various usage of the module WriteHere.
+# An Ansible playbook for showing various usage of the module 'WriteHere'.
 - name: Use Module 'WriteHere'
   hosts: 'localhost'
   roles:
