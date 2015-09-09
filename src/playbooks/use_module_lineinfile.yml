@@ -1,0 +1,6 @@
+---
+# An Ansible playbook for showing various usage of the module lineinfile.
+- name: Use Module 'lineinfile'
+  hosts: 'localhost'
+  roles:
+    - module_lineinfile

@@ -1,0 +1,8 @@
+---
+- name: Append a Line to the End of File
+  lineinfile:
+    dest=roles/module_lineinfile/files/sample.txt
+    backup=True
+    state=present
+    insertafter=EOF
+    line='Add 1 More Line'

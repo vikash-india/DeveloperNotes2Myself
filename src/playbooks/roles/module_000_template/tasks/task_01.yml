@@ -1,0 +1,3 @@
+---
+- name: Pause before proceeding...
+  pause: prompt='{{ message }}'
