@@ -1,0 +1,10 @@
+# Files to ignored
+
+# Ignore project files for Webstorm and Eclipse
+.idea
+.project
+
+# Ignore backup and swap files
+*.swo
+*.swp
+~
