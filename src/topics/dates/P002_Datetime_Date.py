@@ -1,40 +1,39 @@
-# Description: The datatime.data Class
+# Description: The datatime.date Class
 
 import time
-import datetime
 from datetime import date
 
 """
-The date object:
+The datetime.date object:
 * A date object represents a date (year, month and day) in the current Gregorian calendar calendar.
-* The attributes of date object are year, month, and day.
+* The attributes of the datetime.date object are year, month, and day.
 """
 
 # Constructor
-# 1. All arguments are required.
+# 1. All arguments are REQUIRED.
 # 2. Arguments may be ints or longs.
 # 3. The value of various parameters are as follows
-#   - MINYEAR <= year <= MAXYEAR
-#   - 1 <= month <= 12
-#   - 1 <= day <= number of days in the given month and year
-print "\nConstructor"
+#       - MINYEAR <= year <= MAXYEAR
+#       - 1 <= month <= 12
+#       - 1 <= day <= number of days in the given month and year
+print "Constructor"
 print date(year=2015, month=12, day=25)
 
 # Class Methods
 print "\nClass Methods"
-print date.today()  # Return the current local date. Equivalent to date.fromtimestamp(time.time()).
-print date.fromtimestamp(time.time())  # Return the local date corresponding to the POSIX timestamp.
-# NOTE: It needs built-in time module instead of datetime.time.
-print date.fromordinal(1)  # January 1 of year 1 is day number 1, January 2 of year 1 is day number 2 etc.
+print date.today()                      # Return the current local date. Equivalent to date.fromtimestamp(time.time()).
+print date.fromtimestamp(time.time())   # Return the local date corresponding to the POSIX timestamp.
+                                        # NOTE: It needs built-in time module instead of datetime.time.
+print date.fromordinal(1)               # January 1 of year 1 is day number 1, January 2 of year 1 is day number 2 etc.
 
 # Class Attributes
 print "\nClass Attributes"
-print date.min  # The earliest representable date, date(MINYEAR, 1, 1).
-print date.max  # The latest representable date, date(MAXYEAR, 12, 31).
-print date.resolution  # The smallest possible difference between non-equal date objects, timedelta(days=1).
-print date.year  # Between MINYEAR and MAXYEAR inclusive.
-print date.month  # Between 1 and 12 inclusive.
-print date.day  # Between 1 and the number of days in the given month of the given year.
+print date.min                              # The earliest representable date, date(MINYEAR, 1, 1).
+print date.max                              # The latest representable date, date(MAXYEAR, 12, 31).
+print date.resolution                       # The smallest possible difference between date objects, timedelta(days=1).
+print date.year                             # Between MINYEAR and MAXYEAR inclusive.
+print date.month                            # Between 1 and 12 inclusive.
+print date.day                              # Between 1 and the number of days in the given month of the given year.
 
 # Instance Methods
 print "\nInstance Methods"
