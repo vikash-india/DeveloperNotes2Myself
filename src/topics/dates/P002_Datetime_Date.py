@@ -13,9 +13,9 @@ The datetime.date object:
 # 1. All arguments are REQUIRED.
 # 2. Arguments may be ints or longs.
 # 3. The value of various parameters are as follows
-#       - MINYEAR <= year <= MAXYEAR
-#       - 1 <= month <= 12
-#       - 1 <= day <= number of days in the given month and year
+#       MINYEAR <= year <= MAXYEAR
+#       1 <= month <= 12
+#       1 <= day <= number of days in the given month and year
 print "Constructor"
 print date(year=2015, month=12, day=25)
 
