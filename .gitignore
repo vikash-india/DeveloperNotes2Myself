@@ -10,3 +10,6 @@
 # Ignore Eclispe related files.
 .project
 .pydevproject
+
+# Generated files.
+src/topics/csv/data_output.csv
