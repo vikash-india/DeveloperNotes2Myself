@@ -1,3 +1,5 @@
+# Description: Subclass a Dialect to Create and Use a Custom Dialect While Writing CSV Content to a File
+
 import csv
 
 FILENAME = 'data_output.csv'

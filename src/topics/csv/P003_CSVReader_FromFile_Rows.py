@@ -1,3 +1,5 @@
+# Description: Parse CSV Content From a File Row-wise
+
 import csv
 
 FILENAME= 'data_input.csv'

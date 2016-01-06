@@ -1,3 +1,5 @@
+# Description: Write CSV Content to a File From a List of Lists - One Line at a Time
+
 import csv
 
 FILENAME = 'data_output.csv'
