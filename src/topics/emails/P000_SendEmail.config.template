@@ -1,0 +1,20 @@
+# This is a template config file with default values.
+# Copy this file as P000_SendEmail.config and customise it before running other scripts in this directory.
+
+[SMTP]
+smtp.server = smtp.gmail.com
+smtp.server.port = 587
+
+from.email.id.sender.name= Catbert
+from.email.id = catbert@gmail.com
+from.email.id.password = "********"
+
+[Emails]
+to.email.id.1.sender.name = Alice
+to.email.id.1 = alice@dilbert.com
+
+to.email.id.2.sender.name = Asok
+to.email.id.2 = asok@dilbert.com
+
+to.email.id.3.sender.name = Dogbert
+to.email.id.3 = dogbert@dilbert.com
