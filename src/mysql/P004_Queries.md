@@ -1,7 +1,8 @@
 # Description: SQL Queries for Employees Database
 
 ####1. Display all databases in a MySQL instance.
-
+```sql
+```
 
 ####2. Switch to EMPLOYEES database.
 ```sql
