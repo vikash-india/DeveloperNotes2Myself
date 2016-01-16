@@ -1,2 +1,5 @@
-# Ignore backup files
+# Ignore backup files.
 *~
+
+# Ignore Eclipse files and directories.
+.project
