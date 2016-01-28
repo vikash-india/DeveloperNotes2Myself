@@ -1,79 +1,101 @@
 # Description: SQL Queries for Employees Database
 
-####1. Display all databases in a MySQL instance.
+####001. Display all databases in any MySQL instance.
 ```sql
+show databases;
 ```
 
-####2. Switch to EMPLOYEES database.
+####002. Switch to EMPLOYEES database.
 ```sql
+use employees;
 ```
 
-####3. Display all tables from the EMPLOYEES database.
+####003. Display all tables in the EMPLOYEES database.
 ```sql
+show tables;
 ```
 
-####4. Display the schema of EMPLOYEES table in the EMPLOYEES database.
+####004. Display the schema of EMPLOYEES table in the EMPLOYEES database.
 ```sql
+describe employees;
 ```
 
-####5. Display all the information from the EMPLOYEES table.
+####005. Display all the information from the EMPLOYEES table.
 ```sql
 select * from employees;
 ```
 
-####6. Display total number of records in the EMPLOYEES table.
+####006. Find the total number of records in the EMPLOYEES table.
 ```sql
+select count(*) from employees;
 ```
 
-####7. Display any 10 records from the EMPLOYEES table.
+####007. Display any 10 records from the EMPLOYEES table.
 ```sql
+select * from employees limit 10;
 ```
 
-####8. Display EMP_NO, FIRST_NAME, LAST_NAME and GENDER from the EMPLOYEES table.
+####008. Display EMP_NO, FIRST_NAME, LAST_NAME and GENDER from the EMPLOYEES table.
 ```sql
+select emp_no, first_name, last_name, gender from employees;
 ```
 
-####9. Display EMP_NO, FIRST_NAME, LAST_NAME and GENDER from the EMPLOYEES table sorted by FIRST_NAME.
+####009. Display EMP_NO, FIRST_NAME, LAST_NAME and GENDER from the EMPLOYEES table sorted by FIRST_NAME.
 ```sql
+select emp_no, first_name, last_name, gender from employees order by first_name;
 ```
 
-####10. Display EMP_NO, FIRST_NAME, LAST_NAME and GENDER from the EMPLOYEES table sorted by LAST_NAME in descending order.
+####010. Display EMP_NO, FIRST_NAME, LAST_NAME and GENDER from the EMPLOYEES table sorted by LAST_NAME in descending order.
 ```sql
+select emp_no, first_name, last_name, gender from employees order by last_name desc;
 ```
 
-####11. Display EMP_NO, FIRST_NAME, LAST_NAME and GENDER from the EMPLOYEES table sorted by LAST_NAME in descending order and FIRST_NAME in ascending order.
+####011. Display EMP_NO, FIRST_NAME, LAST_NAME and GENDER from the EMPLOYEES table sorted by LAST_NAME in descending order and FIRST_NAME in ascending order.
 ```sql
+select emp_no, first_name, last_name, gender from employees order by last_name desc, first_name asc;
 ```
 
-####12. Display EMP_NO, FIRST_NAME, LAST_NAME and GENDER from the EMPLOYEES table sorted by LAST_NAME in descending order and FIRST_NAME in ascending order. Limit the result set to just 20 records.
+####012. Display EMP_NO, FIRST_NAME, LAST_NAME and GENDER from the EMPLOYEES table sorted by LAST_NAME in descending order and FIRST_NAME in ascending order. Limit the result set to just 20 records.
 ```sql
+select emp_no, first_name, last_name, gender from employees order by last_name desc, first_name asc limit 20;
 ```
 
-####13. Find all those employees whose FIRST_NAME is 'Bikash'.
+####013. Find all those employees whose FIRST_NAME is 'Bikash'.
 ```sql
+select * from employees where first_name = 'Bikash';
 ```
 
-####14. Find all those employees whose FIRST_NAME starts with the letter 'B'.
+####014. Find all those employees whose FIRST_NAME starts with the letter 'B'.
 ```sql
+select * from employees where first_name like 'B%';
 ```
 
-####15. Find the total number of employees whose FIRST_NAME is 'Bikash'.
+####015. Find the total number of employees whose FIRST_NAME is 'Bikash'.
 ```sql
+select count(*) from employees where first_name = 'Bikash';
 ```
 
-####16. Find the total number of male and female employees.
+####016. Find the total number of male and female employees.
 ```sql
+select count(*), gender from employees group by gender;
 ```
 
-####16. Display all unique FIRST_NAME from the EMPLOYEES table.
+####016. Display all unique FIRST_NAME from the EMPLOYEES table.
 ```sql
+select distinct first_name from employees;
 ```
 
-####17. Find all those employees who joined before 1990.
+####017. Find all those employees who joined before 1986.
 ```sql
+select * from employees where hire_date < '1986-01-01';
 ```
 
-####18. Find all those 'male' employees who joined before 1990 with first_name as 'Bikash' and last_name as 'Juneja'. Sort the result in descending order of their birthdays.
+####018. Find all those employees who joined during last 3 days of 1986. Display the result in ascending order of their hiring date.
+```sql
+select * from employees where hire_date between '1986-12-29' and '1986-12-31' order by hire_date;
+```
+
+####019. Find all those male employees who joined before 1990 with first_name as 'Bikash' and last_name as 'Juneja'. Sort the result in descending order of their birthdays.
 ```sql
 select
     *
@@ -85,18 +107,20 @@ where
     and last_name  = 'Juneja'
     and gender = 'M'
 order by
-    birth_date DESC;
+    birth_date desc;
 ```
 
-####19. Find those employees who joined on 15-May-1999 or 28-Jul-1999 or 20-Nov-1999 or 28-Dec-1999.
+####020. Find those employees who joined on 3-Jan-1999 or 6-Jan-1999 or 10-March-1999 or 31-May-1999. Sort the result in ascending order of their hiring date.
 ```sql
+select * from employees where hire_date in ('1999-01-03', '1999-01-06', '1999-03-10', '1999-05-31') order by hire_date;
 ```
 
-####20. Find those employees who did NOT join on 15-May-1999 or 28-Jul-1999 or 20-Nov-1999 or 28-Dec-1999.
+####021. Find those employees who did NOT join on 3-Jan-1999 or 6-Jan-1999 or 10-March-1999 or 31-May-1999. Sort the result in ascending order of their hiring date.
 ```sql
+select * from employees where hire_date NOT in ('1999-01-03', '1999-01-06', '1999-03-10', '1999-05-31') order by hire_date;
 ```
 
-
-####21. Find those employees whose first_name has 5 characters or less.
+####022. Find those employees whose first_name has 5 characters or less.
 ```sql
+select * from employees where length(first_name) <= 5;
 ```
