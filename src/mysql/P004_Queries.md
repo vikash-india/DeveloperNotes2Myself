@@ -185,31 +185,139 @@ where
 ```sql
 ```
 
-####037. List all those employees whose salary is a multiple of 500. OR List all those employees whose salary ends with '500'.
+####037. List all those employees whose salary ends with '500'.
 ```sql
 ```
 
-####038. List all the employees whose annual salary is more than 1.8 million.
+####038. List all those employees whose salary is a multiple of 500.
 ```sql
 ```
 
-####039. List all the employees whose daily salary is more than 5151.
+####039. List all the employees whose annual salary is more than 1.8 million.
 ```sql
 ```
 
-####040. List the total number of male and female employees along with their average, maximum and minimum salaries.
+####040. List all the employees whose daily salary is more than 5151.
 ```sql
 ```
 
-####041. What is the salary that is given to the maximum number of employees. How many such employees are there.
+####041. List the total number of male and female employees along with their average, maximum and minimum salaries.
 ```sql
 ```
 
-####042. Display all unique job titles the employees database.
+####042. What is the salary that is given to the maximum number of employees. How many such employees are there.
+```sql
+```
+
+####043. Display all unique job titles the employees database.
 ```sql
 select distinct title from titles;
 ```
 
-####043. List all employees in ascending order of their salaries.
+####044. List all employees in ascending order of their salaries.
+```sql
+```
+
+####045.
+```sql
+```
+
+####046.
+```sql
+```
+
+####047.
+```sql
+```
+
+####048.
+```sql
+```
+
+####049.
+```sql
+```
+
+####050.
+```sql
+```
+
+####051.
+```sql
+```
+
+####052.
+```sql
+```
+
+####053.
+```sql
+```
+
+####054.
+```sql
+```
+
+####055.
+```sql
+```
+
+####056.
+```sql
+```
+
+####057.
+```sql
+```
+
+####058.
+```sql
+```
+
+####059.
+```sql
+```
+
+####060.
+```sql
+```
+
+####061.
+```sql
+```
+
+####062.
+```sql
+```
+
+####063.
+```sql
+```
+
+####064.
+```sql
+```
+
+####065.
+```sql
+```
+
+####066.
+```sql
+```
+
+####067.
+```sql
+```
+
+####068.
+```sql
+```
+
+####069.
+```sql
+```
+
+####070.
 ```sql
 ```
