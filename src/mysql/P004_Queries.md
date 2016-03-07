@@ -80,22 +80,22 @@ select count(*) from employees where first_name = 'Bikash';
 select count(*), gender from employees group by gender;
 ```
 
-####016. Display all unique FIRST_NAME from the EMPLOYEES table.
+####017. Display all unique FIRST_NAME from the EMPLOYEES table.
 ```sql
 select distinct first_name from employees;
 ```
 
-####017. Find all those employees who joined before 1986.
+####018. Find all those employees who joined before 1986.
 ```sql
 select * from employees where hire_date < '1986-01-01';
 ```
 
-####018. Find all those employees who joined during last 3 days of 1986. Display the result in ascending order of their hiring date.
+####019. Find all those employees who joined during last 3 days of 1986. Display the result in ascending order of their hiring date.
 ```sql
 select * from employees where hire_date between '1986-12-29' and '1986-12-31' order by hire_date;
 ```
 
-####019. Find all those male employees who joined before 1990 with first_name as 'Bikash' and last_name as 'Juneja'. Sort the result in descending order of their birthdays.
+####020. Find all those male employees who joined before 1990 with first_name as 'Bikash' and last_name as 'Juneja'. Sort the result in descending order of their birthdays.
 ```sql
 select
     *
@@ -110,89 +110,106 @@ order by
     birth_date desc;
 ```
 
-####020. Find those employees who joined on 3-Jan-1999 or 6-Jan-1999 or 10-March-1999 or 31-May-1999. Sort the result in ascending order of their hiring date.
+####021. Find those employees who joined on 3-Jan-1999 or 6-Jan-1999 or 10-March-1999 or 31-May-1999. Sort the result in ascending order of their hiring date.
 ```sql
 select * from employees where hire_date in ('1999-01-03', '1999-01-06', '1999-03-10', '1999-05-31') order by hire_date;
 ```
 
-####021. Find those employees who did NOT join on 3-Jan-1999 or 6-Jan-1999 or 10-March-1999 or 31-May-1999. Sort the result in ascending order of their hiring date.
+####022. Find those employees who did NOT join on 3-Jan-1999 or 6-Jan-1999 or 10-March-1999 or 31-May-1999. Sort the result in ascending order of their hiring date.
 ```sql
 select * from employees where hire_date NOT in ('1999-01-03', '1999-01-06', '1999-03-10', '1999-05-31') order by hire_date;
 ```
 
-####022. Find those employees whose first_name has 5 characters or less.
+####023. Find those employees whose first_name has 5 characters or less.
 ```sql
 select * from employees where length(first_name) <= 5;
 ```
 
-####023. Find the employee(s) who are getting the maximum/highest salary.
+####024. Find the employee(s) who are getting the maximum/highest salary.
+```sql
+select
+    *
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    s.salary = (select MAX(salary) from salaries);
+```
+
+####025. Find the employee(s) who are getting the second highest salary.
 ```sql
 ```
 
-####024. Find the employee(s) who are getting the second highest salary.
+####026. Find the employee(s) who are getting the third highest salary.
 ```sql
 ```
 
-####025. Find the employee(s) who are getting the third highest salary.
+####027. Find the employee(s) who are getting the Nth highest salary. Let N be 10.
 ```sql
 ```
 
-####026. Find the employee(s) who are getting the Nth highest salary. Let N be 10.
+####028. Find the employee(s) who got the maximum salary in the year 2000.
 ```sql
 ```
 
-####027. Find the employee(s) who got the maximum salary in the year 2002.
+####029. List emp_no, first_name, last_name and salary of the youngest employee.
 ```sql
 ```
 
-####028. List emp_no, first_name, last_name and salary of the youngest employee.
+####030. List emp_no, first_name, last_name and salary of the youngest female employee.
 ```sql
 ```
 
-####029. List emp_no, first_name, last_name and salary of the youngest female employee.
+####031. List emp_no, first_name, last_name and salary of the oldest male employee.
 ```sql
 ```
 
-####030. List emp_no, first_name, last_name and salary of the oldest male employee.
+####032. Find the employee(s) who are earning salaries between 155000 and 160000.
 ```sql
 ```
 
-####031. Find the employee(s) who are earning salaries between 155000 and 160000.
+####033. Find all those employee(s) whose salary is more than the salary of Mr Bikash Morton.
 ```sql
 ```
 
-####032. Find all those employee(s) whose salary is more than the salary of Mr Bikash Morton.
+####034. Find all those employee(s) whose salary is same as Mr Bikash Morton's salary or Somnath Foote's salary. Sort the result in descending order of their salaries.
 ```sql
 ```
 
-####033. Find all those employee(s) whose salary is same as Mr Bikash Morton's salary or Somnath Foote's salary. Sort the result in descending order of their salaries.
+####035. Find the number of employees whose salary is greater than the current average salary.
 ```sql
 ```
 
-####034. Find the number of employees whose salary is greater than the current average salary.
+####036. Find the average salary of all those employees who have more than 10 years of work experience.
 ```sql
 ```
 
-####035. Find the average salary of all those employees who have more than 10 years of work experience.
+####037. List all those employees whose salary is a multiple of 500. OR List all those employees whose salary ends with '500'.
 ```sql
 ```
 
-####036. List all those employees whose salary is a multiple of 500. OR List all those employees whose salary ends with '500'.
+####038. List all the employees whose annual salary is more than 1.8 million.
 ```sql
 ```
 
-####037. List all the employees whose annual salary is more than 1.8 million.
+####039. List all the employees whose daily salary is more than 5151.
 ```sql
 ```
 
-####038. List all the employees whose daily salary is more than 5151.
+####040. List the total number of male and female employees along with their average, maximum and minimum salaries.
 ```sql
 ```
 
-####039. List the total number of male and female employees along with their average, maximum and minimum salaries.
+####041. What is the salary that is given to the maximum number of employees. How many such employees are there.
 ```sql
 ```
 
-####040. What is the salary that is given to the maximum number of employees. How many such employees are there.
+####042. Display all unique job titles the employees database.
+```sql
+select distinct title from titles;
+```
+
+####043. List all employees in ascending order of their salaries.
 ```sql
 ```
