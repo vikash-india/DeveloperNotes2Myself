@@ -209,115 +209,38 @@ where
 ```sql
 ```
 
-####043. Display all unique job titles the employees database.
+####043. List all unique titles available to employees.
 ```sql
 select distinct title from titles;
 ```
 
 ####044. List all employees in ascending order of their salaries.
 ```sql
+select
+    *
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no
+order by
+    s.salary;
 ```
 
-####045.
+####045. Display employee number, first name, last name, department name and title in ascending order of their department name and descending order of their title.
 ```sql
-```
-
-####046.
-```sql
-```
-
-####047.
-```sql
-```
-
-####048.
-```sql
-```
-
-####049.
-```sql
-```
-
-####050.
-```sql
-```
-
-####051.
-```sql
-```
-
-####052.
-```sql
-```
-
-####053.
-```sql
-```
-
-####054.
-```sql
-```
-
-####055.
-```sql
-```
-
-####056.
-```sql
-```
-
-####057.
-```sql
-```
-
-####058.
-```sql
-```
-
-####059.
-```sql
-```
-
-####060.
-```sql
-```
-
-####061.
-```sql
-```
-
-####062.
-```sql
-```
-
-####063.
-```sql
-```
-
-####064.
-```sql
-```
-
-####065.
-```sql
-```
-
-####066.
-```sql
-```
-
-####067.
-```sql
-```
-
-####068.
-```sql
-```
-
-####069.
-```sql
-```
-
-####070.
-```sql
+select
+    e.emp_no, e.first_name, e.last_name,  d.dept_name, t.title
+from
+    employees e,
+    departments d,
+    dept_emp de,
+    titles t
+where
+    e.emp_no = t.emp_no and
+    e.emp_no = de.emp_no and
+    de.dept_no = d.dept_no
+order by
+    d.dept_name,
+    t.title desc;
 ```
