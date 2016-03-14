@@ -128,14 +128,18 @@ select * from employees where length(first_name) <= 5;
 ####024. Find the maximum/highest salary.
 ```sql
 select max(salary) from salaries;
+
 -- OR
+
 select distinct (salary) from salaries order by salary desc limit 0, 1;
 ```
 
 ####025. Find the second highest salary.
 ```sql
 select max(salary) from salaries where salary != (select max(salary) from salaries);
+
 -- OR
+
 select distinct (salary) from salaries order by salary desc limit 1, 1;
 ```
 
