@@ -125,7 +125,32 @@ select * from employees where hire_date NOT in ('1999-01-03', '1999-01-06', '199
 select * from employees where length(first_name) <= 5;
 ```
 
-####024. Find the employee(s) who are getting the maximum/highest salary.
+####024. Find the maximum/highest salary.
+```sql
+select max(salary) from salaries;
+-- OR
+select distinct (salary) from salaries order by salary desc limit 0, 1;
+```
+
+####025. Find the second highest salary.
+```sql
+select max(salary) from salaries where salary != (select max(salary) from salaries);
+-- OR
+select distinct (salary) from salaries order by salary desc limit 1, 1;
+```
+
+####026. Find the third highest salary.
+```sql
+select distinct (salary) from salaries order by salary desc limit 2, 1;
+```
+
+####027. Find the Nth highest salary.
+```sql
+-- Replace N with a value in the query below.
+select distinct (salary) from salaries order by salary desc limit N - 1, 1;
+```
+
+####028. Find the details of all those employee(s) who are getting the maximum/highest salary.
 ```sql
 select
     *
@@ -137,84 +162,128 @@ where
     s.salary = (select MAX(salary) from salaries);
 ```
 
-####025. Find the employee(s) who are getting the second highest salary.
+####029. Find the details of all those employee(s) who are getting the second highest salary.
+```sql
+select
+    *
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    s.salary = (select
+                    max(salary)
+                from
+                    employees e,
+                    salaries s
+                where
+                    e.emp_no = s.emp_no and
+                    s.salary != (select max(salary) from salaries)
+                );
+
+-- OR
+
+select
+    *
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    s.salary = (select distinct (salary) from salaries order by salary desc limit 1, 1);
+```
+
+####030. Find the details of all those employee(s) who are getting the third highest salary.
+```sql
+select
+    *
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    s.salary = (select distinct (salary) from salaries order by salary desc limit 2, 1);
+```
+
+####031. Find the details of all those employee(s) who are getting the Nth highest salary.
+```sql
+-- Replace N with a value
+select
+    *
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    s.salary = (select distinct (salary) from salaries order by salary desc limit N - 1, 1);
+```
+
+####032. Find the details of all those employee(s) who got the maximum salary in the year 2000.
 ```sql
 ```
 
-####026. Find the employee(s) who are getting the third highest salary.
+####033. List emp_no, first_name, last_name and salary of the youngest employee.
 ```sql
 ```
 
-####027. Find the employee(s) who are getting the Nth highest salary. Let N be 10.
+####034. List emp_no, first_name, last_name and salary of the youngest female employee.
 ```sql
 ```
 
-####028. Find the employee(s) who got the maximum salary in the year 2000.
+####035. List emp_no, first_name, last_name and salary of the oldest male employee.
 ```sql
 ```
 
-####029. List emp_no, first_name, last_name and salary of the youngest employee.
+####036. Find the employee(s) who are earning salaries between 155000 and 160000.
 ```sql
 ```
 
-####030. List emp_no, first_name, last_name and salary of the youngest female employee.
+####037. Find all those employee(s) whose salary is more than the salary of Mr Bikash Morton.
 ```sql
 ```
 
-####031. List emp_no, first_name, last_name and salary of the oldest male employee.
+####038. Find all those employee(s) whose salary is same as Mr Bikash Morton's salary or Somnath Foote's salary. Sort the result in descending order of their salaries.
 ```sql
 ```
 
-####032. Find the employee(s) who are earning salaries between 155000 and 160000.
+####039. Find the number of employees whose salary is greater than the current average salary.
 ```sql
 ```
 
-####033. Find all those employee(s) whose salary is more than the salary of Mr Bikash Morton.
+####040. Find the average salary of all those employees who have more than 10 years of work experience.
 ```sql
 ```
 
-####034. Find all those employee(s) whose salary is same as Mr Bikash Morton's salary or Somnath Foote's salary. Sort the result in descending order of their salaries.
+####041. List all those employees whose salary ends with '500'.
 ```sql
 ```
 
-####035. Find the number of employees whose salary is greater than the current average salary.
+####042. List all those employees whose salary is a multiple of 500.
 ```sql
 ```
 
-####036. Find the average salary of all those employees who have more than 10 years of work experience.
+####043. List all the employees whose annual salary is more than 1.8 million.
 ```sql
 ```
 
-####037. List all those employees whose salary ends with '500'.
+####044. List all the employees whose daily salary is more than 5151.
 ```sql
 ```
 
-####038. List all those employees whose salary is a multiple of 500.
+####045. List the total number of male and female employees along with their average, maximum and minimum salaries.
 ```sql
 ```
 
-####039. List all the employees whose annual salary is more than 1.8 million.
+####046. What is the salary that is given to the maximum number of employees. How many such employees are there.
 ```sql
 ```
 
-####040. List all the employees whose daily salary is more than 5151.
-```sql
-```
-
-####041. List the total number of male and female employees along with their average, maximum and minimum salaries.
-```sql
-```
-
-####042. What is the salary that is given to the maximum number of employees. How many such employees are there.
-```sql
-```
-
-####043. List all unique titles available to employees.
+####047. List all unique titles available to employees.
 ```sql
 select distinct title from titles;
 ```
 
-####044. List all employees in ascending order of their salaries.
+####048. List all employees in ascending order of their salaries.
 ```sql
 select
     *
@@ -227,7 +296,7 @@ order by
     s.salary;
 ```
 
-####045. Display employee number, first name, last name, department name and title in ascending order of their department name and descending order of their title.
+####049. Display employee number, first name, last name, department name and title in ascending order of their department name and descending order of their title.
 ```sql
 select
     e.emp_no, e.first_name, e.last_name,  d.dept_name, t.title
@@ -243,4 +312,8 @@ where
 order by
     d.dept_name,
     t.title desc;
+```
+
+####050. Write Here
+```sql
 ```
