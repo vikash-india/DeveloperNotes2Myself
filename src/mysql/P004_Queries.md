@@ -224,22 +224,87 @@ where
 
 ####032. Find the details of all those employee(s) who got the maximum salary in the year 2000.
 ```sql
+select
+    *
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    s.salary = (select
+                    max(salary)
+                from
+                    salaries
+                where
+                    (from_date < '2000-01-01' and to_date >= '2000-01-01') or
+                    (from_date >= '2000-01-01' and from_date < '2000-12-31'));
 ```
 
-####033. List emp_no, first_name, last_name and salary of the youngest employee.
+####033. List employee number, first name, last name, birth date, salary, salary from date, salary to date of the youngest employees. Sort the result in ascending order of employee number, salary from date and salary to date.
 ```sql
+select
+    e.emp_no, e.first_name, e.last_name, e.birth_date, s.salary, s.from_date, s.to_date
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    e.birth_date = (select
+                        min(birth_date)
+                    from
+                        employees)
+order by
+    emp_no, from_date, to_date;
 ```
 
-####034. List emp_no, first_name, last_name and salary of the youngest female employee.
+####034. List employee number, first name, last name, birth date, gender, salary, salary from date, salary to date of the youngest female employees. Sort the result in ascending order of employee number, salary from date and salary to date.
 ```sql
+select
+    e.emp_no, e.first_name, e.last_name, e.birth_date, e.gender, s.salary, s.from_date, s.to_date
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    e.gender = 'F' and
+    e.birth_date = (select
+                        min(birth_date)
+                    from
+                        employees
+                    where gender = 'F')
+order by
+    emp_no, from_date, to_date;
 ```
 
-####035. List emp_no, first_name, last_name and salary of the oldest male employee.
+####035. List employee number, first name, last name, birth date, gender, salary, salary from date, salary to date of the oldest male employees. Sort the result in ascending order of employee number, salary from date and salary to date.
 ```sql
+select
+    e.emp_no, e.first_name, e.last_name, e.birth_date, e.gender, s.salary, s.from_date, s.to_date
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    e.gender = 'M' and
+    e.birth_date = (select
+                        max(birth_date)
+                    from
+                        employees
+                    where gender = 'M')
+order by
+    emp_no, from_date, to_date;
 ```
 
 ####036. Find the employee(s) who are earning salaries between 155000 and 160000.
 ```sql
+select
+    *
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    s.salary between 155000 and 160000;
 ```
 
 ####037. Find all those employee(s) whose salary is more than the salary of Mr Bikash Morton.
