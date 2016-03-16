@@ -511,7 +511,18 @@ order by
     t.title desc;
 ```
 
-####050. Write Here
+####050. Display employee number, first name, last_name and title of all the Managers in employee database.
 ```sql
+select
+    e.emp_no, e.first_name, e.last_name,  t.title
+from
+    employees e,
+    titles t
+where
+    e.emp_no = t.emp_no and
+    t.title = 'Manager';
+```
 
+####051. Write Here
+```sql
 ```
