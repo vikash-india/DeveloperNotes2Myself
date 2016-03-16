@@ -307,44 +307,172 @@ where
     s.salary between 155000 and 160000;
 ```
 
-####037. Find all those employee(s) whose salary is more than the salary of Mr Bikash Morton.
+####037. Find all those employee(s) whose salary is more than the salary of Georgi Facello.
 ```sql
+select
+    *
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    curdate() < to_date and
+    s.salary > (select
+                    s.salary
+                    from
+                    employees e,
+                    salaries s
+                    where
+                    e.emp_no = s.emp_no and
+                    first_name = 'Georgi' and
+                    last_name = 'Facello' and
+                    curdate() < to_date);
 ```
 
-####038. Find all those employee(s) whose salary is same as Mr Bikash Morton's salary or Somnath Foote's salary. Sort the result in descending order of their salaries.
+####038. Find all those employee(s) whose salary is same as Georgi Facello's salary or Somnath Foote's salary. Sort the result in descending order of their salaries.
 ```sql
+select
+    *
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    curdate() < to_date and
+    s.salary > (select
+                    min(s.salary)
+                from
+                    employees e,
+                    salaries s
+                where
+                    e.emp_no = s.emp_no and
+                    (
+                        (first_name = 'Georgi' and last_name = 'Facello') or
+                        (first_name = 'Somnath' and last_name = 'Foote')
+                    ) and
+                    curdate() < to_date)
+order by
+    s.salary desc;
 ```
 
 ####039. Find the number of employees whose salary is greater than the current average salary.
 ```sql
+select
+    count(*)
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    curdate() < to_date and
+    s.salary > (select
+                    avg(salary)
+                from
+                    salaries
+                where
+                    curdate() < to_date);
 ```
 
-####040. Find the average salary of all those employees who have more than 10 years of work experience.
+####040. Find the average salary of all those employees who have more than 20 years of work experience. Round the average salary to 2 places of decimal. Use 365.25 as number of days in a year.
 ```sql
+select
+    ROUND(avg(s.salary), 2)
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    curdate() < to_date and
+    floor(datediff(curdate(), e.hire_date) / 365.25) > 20;
 ```
 
-####041. List all those employees whose salary ends with '500'.
+####041. List all those employees whose current salary ends with '500'.
 ```sql
+select
+    e.*, s.salary, s.from_date, s.to_date
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    curdate() < to_date and
+    s.salary like '%500';
 ```
 
 ####042. List all those employees whose salary is a multiple of 500.
 ```sql
+select
+    e.*, s.salary, s.from_date, s.to_date
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    curdate() < to_date and
+    (s.salary like '%500' or
+    s.salary like '%000');
 ```
 
-####043. List all the employees whose annual salary is more than 1.8 million.
+####043. List all the employees whose current annual salary is more than 1.85 million.
 ```sql
+select
+    e.*, s.salary, s.from_date, s.to_date
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    curdate() < to_date and
+    s.salary * 12 > 1850000
+order by s.salary desc;
 ```
 
-####044. List all the employees whose daily salary is more than 5151.
+####044. List all the employees whose daily salary is more than 5151. Assume there are 30 days in a month.
 ```sql
+select
+    e.*, s.salary, s.from_date, s.to_date
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    curdate() < to_date and
+    s.salary / 30 > 5151;
 ```
 
 ####045. List the total number of male and female employees along with their average, maximum and minimum salaries.
 ```sql
+select
+    e.gender as 'Gender',
+    count(*) 'Total Employees',
+    round(avg(s.salary), 2) as 'Average Salary',
+    max(s.salary) as 'Maximum Salary',
+    min(s.salary) as 'Minimum Salary'
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    curdate() < to_date
+group by
+    e.gender;
 ```
 
 ####046. What is the salary that is given to the maximum number of employees. How many such employees are there.
 ```sql
+select
+    s.salary as 'Salary', count(*) as 'Total Employees'
+from
+    employees e,
+    salaries s
+where
+    e.emp_no = s.emp_no and
+    curdate() < to_date
+group by
+    s.salary
+order by
+    count(*) desc
+limit 1;
 ```
 
 ####047. List all unique titles available to employees.
@@ -385,4 +513,5 @@ order by
 
 ####050. Write Here
 ```sql
+
 ```
