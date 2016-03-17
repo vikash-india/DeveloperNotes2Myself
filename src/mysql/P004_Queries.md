@@ -424,7 +424,8 @@ where
     e.emp_no = s.emp_no and
     curdate() < to_date and
     s.salary * 12 > 1850000
-order by s.salary desc;
+order by
+    s.salary desc;
 ```
 
 ####044. List all the employees whose daily salary is more than 5151. Assume there are 30 days in a month.
@@ -523,6 +524,83 @@ where
     t.title = 'Manager';
 ```
 
-####051. Write Here
+####051. Find all those pairs of employees who have the same birth dates.
 ```sql
+select
+    e1.emp_no, e1.first_name, e1.last_name, e1.birth_date, e2.emp_no, e2.first_name, e2.last_name
+from
+    employees e1,
+    employees e2
+where
+    e1.emp_no != e2.emp_no and
+    e1.birth_date = e2.birth_date;
+```
+
+####052. List employee number, first name, last name, hire date and experience in months of all the managers sorted in descending order of their experience.
+```sql
+select
+    e.emp_no, e.first_name, e.last_name, e.hire_date, t.title,
+    -- The periods parameters P1 and P2 to period_diff() should be in the format YYMM or YYYYMM.
+    -- Note that the period arguments P1 and P2 are not date values.abs().
+    period_diff(date_format(curdate(),'%Y%m'), date_format(hire_date, '%Y%m')) as 'Experience'
+from
+    employees e,
+    titles t
+where
+    e.emp_no = t.emp_no and
+    t.title = 'Manager'
+order by
+    Experience desc;
+```
+
+####053.A List all the employees along with their department names who work in department number d005 or d009.
+```sql
+select
+    e.*, d.dept_name
+from
+    employees e,
+    dept_emp de,
+    departments d
+where
+    e.emp_no = de.emp_no and
+    de.dept_no = d.dept_no and
+    d.dept_no in ('d005', 'd009')
+order by
+    d.dept_name;
+```
+
+####054. List all the employees who works as 'Senior Staff' in the 'Customer Service' department sorted based on their joining date.
+```sql
+select
+    e.*, d.dept_name, t.title, d.dept_name
+from
+    employees e,
+    titles t,
+    dept_emp de,
+    departments d
+where
+    e.emp_no = t.emp_no and
+    e.emp_no = de.emp_no and
+    de.dept_no = d.dept_no and
+    d.dept_name = 'Customer Service' and
+    t.title = 'Senior Staff' and
+    curdate() <= t.to_date and
+    curdate() <= de.to_date
+order by
+    hire_date asc;
+```
+
+####055. List all the employees who work as either 'Senior Engineer' or 'Engineer' sorted in that order.
+```sql
+select
+    e.*, t.title
+from
+    employees e,
+    titles t
+where
+    e.emp_no = t.emp_no and
+    t.title in ('Senior Engineer', 'Engineer') and
+    curdate() <= t.to_date
+order by
+    t.title desc;
 ```
