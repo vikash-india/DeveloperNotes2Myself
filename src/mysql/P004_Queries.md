@@ -604,3 +604,66 @@ where
 order by
     t.title desc;
 ```
+
+####056. List all the female employees hired in the month of Februrary of 1952, whose first name has 6 characters and starts with the letter V. Sort the result based on their hiring date.
+```sql
+select
+    *
+from
+    employees
+where
+    first_name like 'V%' and
+    length(first_name) = 6  and
+    gender = 'F' and
+    -- Alternatively, use date_format(hire_date, '%M-%Y')  = 'February-1985' for the below expression
+    hire_date between '1985-02-01' and '1985-02-29'
+order by
+    hire_date;
+```
+
+####057. List all the employees whose first name has 'V' as the third character.
+```sql
+select
+    *
+from
+    employees
+where
+    first_name like '__V%';
+```
+
+####058. List all the employees whose first name starts with the letter 'A' and has 'll' together.
+```sql
+select
+    *
+from
+    employees
+where
+    first_name like 'A%ll%';
+```
+
+####059. List all the employees who joined in the 90’s.
+```sql
+select
+    *
+from
+    employees
+where
+    -- Year in YY format
+    date_format(hire_date, '%y') like '9%';
+```
+
+####060. List all the employees who are senior to Bikash Morton.
+```sql
+select
+    *
+from
+    employees
+where
+    hire_date < (select
+                    hire_date
+                 from
+                    employees
+                 where
+                    first_name = 'Bikash' and
+                    last_name = 'Morton');
+```
