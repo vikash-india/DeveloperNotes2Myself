@@ -9,7 +9,7 @@ print sentence + str(pi)            # Convert other forms to string. Unlike Java
 # String Testing Methods
 print ' education'.islower()        # True. Return true if all cased characters in the string are lowercase and there is
                                     # at least one cased character, false otherwise.
-print 'EDUCATION   '.isupper()      # False. Return true if all cased characters in the string are uppercase and there
+print 'EDUCATION   '.isupper()      # True. Return true if all cased characters in the string are uppercase and there
                                     # is at least one cased character, false otherwise.
 print 'Education Works!'.istitle()  # True. Return true if the string is a titlecased string and there is at least one
                                     # character. Uppercase characters may only follow uncased characters and lowercase
@@ -27,7 +27,7 @@ print '12345'.isdigit()             # Return true if all characters in the strin
 print 'EdUcaTIOn'.lower()           # education. Convert all characters to lower case.
 print 'education'.upper()           # EDUCATION. Convert all characters to upper case.
 print 'education'.capitalize()      # Education. Capitalizes first letter of string.
-print "I'm a writer-editor".title() # I'M A Writer-Editor. Return a titlecased version of the string where words start
+print "I'm a writer-editor".title() # I'M A Writer-Editor. Return a title-cased version of the string where words start
                                     # with an uppercase character and the remaining characters are lowercase. A word is
                                     # a group of consecutive letters. This definition works in many contexts but it
                                     # also means that apostrophes in contractions and possessives form word boundaries,
@@ -57,6 +57,9 @@ print 'ABC'.ljust(21, '-')          # ABC------------------. Return the string l
 print 'ABC'.rjust(21, '-')          # ------------------ABC. Return the string right justified in a string of length
                                     # width. Padding is done using the specified fillchar (default is a space). The
                                     # original string is returned if width is less than or equal to len(s).
+print "-123.3".zfill(10)            # -0000123.3. Return the numeric string left filled with zeros in a string of length
+                                    # width. A sign prefix is handled correctly. The original string is returned if
+                                    # width is less than or equal to len(s).
 
 # String Search Methods
 print 'education'.startswith('edu') # True. Tests if the string starts with the given other string.
@@ -69,6 +72,10 @@ print 'abracadabra'.index('abra')   # 0. Like find(), but raise ValueError when 
                                     # start and end can be given for slicing.
 print 'abracadabra'.rindex('abra')  # 7. Like rfind() but raises ValueError when the substring sub is not found.
                                     # Optionally start and end can be given for slicing.
+str = 'A rose is a rose is a rose.'
+print str.count('rose', 0, 20)      # 2. Return the number of non-overlapping occurrences of substring 'rose' in the
+                                    # range [start, end]. Optional arguments start and end are interpreted as in slice
+                                    # notation.
 
 # String Manipulation Methods
 print 'hat sat'.replace('a', 'ea')  # heat seat. Return a copy of the string with all occurrences of substring old
@@ -100,3 +107,24 @@ print word.splitlines()             # ['ab c', '', 'de fg', 'kl']. Return a list
                                     # ['ab c\n', '\n', 'de fg\r', 'kl\r\n']
 print "---".join(['A', 'B', 'C'])   # Opposite of split(). Joins the elements in the given list together using the
                                     # string as the delimiter
+
+# String Translation Methods
+str = "An example phrase!";
+tableIn = "aeiou"
+tableOut = "12345"
+from string import maketrans        # Use the string module's maketrans() helper function to create a translation table.
+transTable = maketrans(tableIn, tableOut)
+print str.translate(transTable)     # An 2x1mpl2 phr1s2!.
+
+str = 'read this short text'
+print str.translate(None, 'aeiou')  # rd ths shrt txt. Return a copy of the string where all characters occurring in the
+                                    # optional argument deletechars are removed, and the remaining characters have been
+                                    # mapped through the given translation table, which must be a string of length 256.
+                                    # For string objects, set the table argument to None for translations that only
+                                    # delete characters:
+
+# TODO
+# unicode.isnumeric()
+# unicode.isdecimal()
+# str.decode
+# str.encode
