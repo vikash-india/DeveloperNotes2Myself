@@ -11,5 +11,9 @@
 .project
 .pydevproject
 
+# Person scripts
+src/scripts/
+
 # Generated files.
 src/topics/csv/data_output.csv
+
