@@ -667,3 +667,33 @@ where
                     first_name = 'Bikash' and
                     last_name = 'Morton');
 ```
+
+####061. Find the top 10 family names in the employees database. Assume last_name to be the family name.
+```sql
+select
+    last_name, count(emp_no) as "Total Families"
+from
+    employees
+group by
+    last_name
+order by
+    count(emp_no) desc
+limit 10;
+```
+
+####062.
+```sql
+
+```
+
+####063.
+```sql
+```
+
+####064.
+```sql
+```
+
+####065.
+```sql
+```
