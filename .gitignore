@@ -1,0 +1,6 @@
+# Files to be ignored
+
+# R and RStudio related files
+RNotes2Myself.Rproj
+.Rproj.user
+.Rhistory
