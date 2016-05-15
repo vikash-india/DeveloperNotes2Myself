@@ -1,5 +1,5 @@
 # Description: Setting Working Directory in R
-gt
+
 # Note
 # 1. R reads and writes all files and data to the working directory.
 # 2. All commands are stored in .Rhistory file in the working directory.
