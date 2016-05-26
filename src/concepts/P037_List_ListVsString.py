@@ -16,3 +16,12 @@ print(table)
 
 table[1].append('Word')
 print(table)
+
+# Extended slice syntax to reverse a string.
+# 1. Syntax is [begin:end:step]
+# 2. By leaving begin and end off and specifying a step of -1, it reverses a string or a list
+str_value = 'Hello'
+print str_value[::-1]
+
+list_values = ['One', 'Two', 'Three']
+print list_values[::-1]
