@@ -35,6 +35,12 @@ info['irv'] = 4127
 print('guido' in info)                                  # Returns True or False
 print('jack' not in info)
 
+# Looping Dictionary
+# 1. The key and the corresponding value can be retrieved at the same time using the items() method.
+a_dictionary = {'One': 1, 'Two': 2, "Three": 3}
+for key, value in a_dictionary.items():
+    print(key, value)
+
 # Dictionary comprehensions
 anotherDictionary = {x: x**2 for x in (2, 4, 6)}        # Dictionaries from an arbitrary key and value expressions
 print(anotherDictionary)
