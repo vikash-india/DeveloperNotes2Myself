@@ -16,4 +16,4 @@ src/scripts/
 
 # Generated files.
 src/topics/csv/data_output.csv
-src/topics/log/application.log
+*.log
