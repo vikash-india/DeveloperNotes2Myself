@@ -17,3 +17,6 @@ src/scripts/
 # Generated files.
 src/topics/csv/data_output.csv
 *.log
+
+# iPython Notebook Checkpoints
+.ipynb_checkpoints
