@@ -17,4 +17,4 @@ sudo apt-get remove rstudio
 ```
 
 ### TODO
-- None
+1. None

@@ -1,10 +1,9 @@
 # Description: WriteHere in R
 
 # Note
-# 1. Write
+# 1. Write Here
 
-message <- "Hello World"
-print(message)
+# Write Here
 
 # TODO
-# - None
+# 1. None

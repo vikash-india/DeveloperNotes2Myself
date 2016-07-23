@@ -11,4 +11,4 @@ getwd()
 setwd("~/Personal/Workspace/RProjects/RNotes2Myself")
 
 # TODO
-# - None
+# 1. None

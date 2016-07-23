@@ -1,6 +1,13 @@
 # Files to be ignored
 
-# R and RStudio related files
-RNotes2Myself.Rproj
+# PyCharm related files and directories
+.idea
+# R and RStudio related files and directories
 .Rproj.user
+.RData
 .Rhistory
+.Rprofile
+RNotes2Myself.Rproj
+# R packrat related files and directories
+packrat/lib*/
+packrat/src/
