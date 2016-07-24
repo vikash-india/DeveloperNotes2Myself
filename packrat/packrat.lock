@@ -3,12 +3,27 @@ PackratVersion: 0.4.7.1
 RVersion: 3.3.1
 Repos: CRAN=https://cran.rstudio.com/
 
+Package: BH
+Source: CRAN
+Version: 1.60.0-2
+Hash: be2967bcff307e561d9ba17faf03205c
+
+Package: DBI
+Source: CRAN
+Version: 0.4-1
+Hash: 6524d5c5d30ff74084ac028eeb19eb1b
+
 Package: NMF
 Source: CRAN
 Version: 0.20.6
 Hash: 632aad207ab2e551b33990c9f09ab8af
 Requires: RColorBrewer, colorspace, digest, doParallel, foreach,
     ggplot2, gridBase, pkgmaker, registry, reshape2, rngtools, stringr
+
+Package: R6
+Source: CRAN
+Version: 2.1.2
+Hash: c515e41c73294952cbb33ee1c1be5a2d
 
 Package: RColorBrewer
 Source: CRAN
@@ -19,6 +34,11 @@ Package: Rcpp
 Source: CRAN
 Version: 0.12.6
 Hash: 79f89fabd832de0a2e60aa05d9027f32
+
+Package: assertthat
+Source: CRAN
+Version: 0.1
+Hash: 0afb92b59b02593c70ff8046700ba9d3
 
 Package: colorspace
 Source: CRAN
@@ -83,6 +103,11 @@ Package: labeling
 Source: CRAN
 Version: 0.1
 Hash: 308a83189c471a3ede57969fe3ac46aa
+
+Package: lazyeval
+Source: CRAN
+Version: 0.2.0
+Hash: 3d6e7608e65bbf5cb170dab1e3c9ed8b
 
 Package: magrittr
 Source: CRAN
@@ -149,6 +174,12 @@ Source: CRAN
 Version: 1.0.0
 Hash: 2676dd5f88890910962b733b0f9540e1
 Requires: magrittr, stringi
+
+Package: tibble
+Source: CRAN
+Version: 1.1
+Hash: 5467b4aa158b2d984538f7ffde17171c
+Requires: Rcpp, assertthat, lazyeval
 
 Package: xtable
 Source: CRAN
