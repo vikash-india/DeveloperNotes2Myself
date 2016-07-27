@@ -1,0 +1,20 @@
+# Description: The group_by Verb in dplyr Package
+
+library(dplyr)
+library(ggplot2)
+
+# Note
+# 1. The group_by is related to the concept of "split-apply-combine". Split the data frame by some variable (eg.
+#    taxonomic order), apply a function to the individual data frames and then combine the output.
+
+# Split the msleep data frame by the taxonomic order, then create some summary statistics. Lets get a set of summary
+# statistics for each taxonomic order.
+msleep %>%
+    group_by(order) %>%
+    summarise(avg_sleep = mean(sleep_total),
+              min_sleep = min(sleep_total),
+              max_sleep = max(sleep_total),
+              total = n())
+
+# TODO
+# 1. None
