@@ -28,3 +28,7 @@
 
 ### Tools
 * [Pixel to Em Conversion Tool](http://pxtoem.com/)
+
+### Fluid Measurement Example
+- The file P003-ExampleWithAbsoluteMeasurement.html uses absolute measurements and hence is not responsive. 
+- The file P004-ExampleWithFluidMeasurements.html uses fluid measurements to make the content responsive. 
