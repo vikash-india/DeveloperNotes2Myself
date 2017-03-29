@@ -1,187 +1,161 @@
 PackratFormat: 1.4
-PackratVersion: 0.4.7.1
-RVersion: 3.3.1
+PackratVersion: 0.4.8.1
+RVersion: 3.3.3
 Repos: CRAN=https://cran.rstudio.com/
 
 Package: BH
 Source: CRAN
-Version: 1.60.0-2
-Hash: be2967bcff307e561d9ba17faf03205c
+Version: 1.62.0-1
 
 Package: DBI
 Source: CRAN
-Version: 0.4-1
-Hash: 6524d5c5d30ff74084ac028eeb19eb1b
+Version: 0.6
 
 Package: NMF
 Source: CRAN
 Version: 0.20.6
-Hash: 632aad207ab2e551b33990c9f09ab8af
 Requires: RColorBrewer, colorspace, digest, doParallel, foreach,
     ggplot2, gridBase, pkgmaker, registry, reshape2, rngtools, stringr
 
 Package: R6
 Source: CRAN
-Version: 2.1.2
-Hash: c515e41c73294952cbb33ee1c1be5a2d
+Version: 2.2.0
 
 Package: RColorBrewer
 Source: CRAN
 Version: 1.1-2
-Hash: c0d56cd15034f395874c870141870c25
 
 Package: Rcpp
 Source: CRAN
-Version: 0.12.6
-Hash: 79f89fabd832de0a2e60aa05d9027f32
+Version: 0.12.10
 
 Package: assertthat
 Source: CRAN
 Version: 0.1
-Hash: 0afb92b59b02593c70ff8046700ba9d3
 
 Package: colorspace
 Source: CRAN
-Version: 1.2-6
-Hash: 00bb12245cd975c450cc4a960884fa15
+Version: 1.3-2
 
 Package: dichromat
 Source: CRAN
 Version: 2.0-0
-Hash: 08eed0c80510af29bb15f840ccfe37ce
 
 Package: digest
 Source: CRAN
-Version: 0.6.9
-Hash: fd55d5a024f160fc001a5ece1e27782d
+Version: 0.6.12
 
 Package: doParallel
 Source: CRAN
 Version: 1.0.10
-Hash: df91a7abfa938c06ad87b9a2b9269adb
 Requires: foreach, iterators
+
+Package: dplyr
+Source: CRAN
+Version: 0.5.0
+Requires: BH, DBI, R6, Rcpp, assertthat, lazyeval, magrittr, tibble
 
 Package: foreach
 Source: CRAN
 Version: 1.4.3
-Hash: cd53ef4cf29dc59ce3f8c5c1af735fd1
 Requires: iterators
 
 Package: ggplot2
 Source: CRAN
-Version: 2.1.0
-Hash: 50e297b0191179c39c7dcae0eff72b51
-Requires: digest, gtable, plyr, reshape2, scales
+Version: 2.2.1
+Requires: digest, gtable, lazyeval, plyr, reshape2, scales, tibble
 
 Package: gridBase
 Source: CRAN
 Version: 0.4-7
-Hash: d4b7f73c0fdf11d18d1e1ae1643ac4ec
 
 Package: gtable
 Source: CRAN
-Version: 0.1.2
-Hash: 38a0f066373a60824cd3ade2362af363
+Version: 0.2.0
 
 Package: igraph
 Source: CRAN
 Version: 1.0.1
-Hash: 26ac36402e881905359daabfd9ba4057
 Requires: NMF, irlba, magrittr
 
 Package: irlba
 Source: CRAN
-Version: 2.0.0
-Hash: 53647cf593a0f5e5ae4f713d125499d1
+Version: 2.1.2
 
 Package: iterators
 Source: CRAN
 Version: 1.0.8
-Hash: 488b93c2a4166db0d15f1e8d882cb1d4
 
 Package: labeling
 Source: CRAN
-Version: 0.1
-Hash: 308a83189c471a3ede57969fe3ac46aa
+Version: 0.3
 
 Package: lazyeval
 Source: CRAN
 Version: 0.2.0
-Hash: 3d6e7608e65bbf5cb170dab1e3c9ed8b
 
 Package: magrittr
 Source: CRAN
 Version: 1.5
-Hash: bdc4d48c3135e8f3b399536ddf160df4
 
 Package: munsell
 Source: CRAN
-Version: 0.4.2
-Hash: 72d343a6664778029f49a7ad36de1cab
+Version: 0.4.3
 Requires: colorspace
 
 Package: packrat
 Source: CRAN
-Version: 0.4.7-1
-Hash: 16ca16d36eb18d1d16113606ecc5c400
+Version: 0.4.8-1
+Hash: 6ad605ba7b4b476d84be6632393f5765
 
 Package: pkgmaker
 Source: CRAN
 Version: 0.22
-Hash: 2e5fc2a6b7eaeb1e1d397a8dc5f54480
 Requires: digest, registry, stringr, xtable
 
 Package: plyr
 Source: CRAN
-Version: 1.8
-Hash: 6783058575f8fbb4ed2bb35eee918dd1
-
-Package: proto
-Source: CRAN
-Version: 0.3-10
-Hash: 05d7ad64db29a39d1b02c4b9f1f4edb2
+Version: 1.8.4
+Requires: Rcpp
 
 Package: registry
 Source: CRAN
 Version: 0.3
-Hash: f9447c26b51b8c96f53720c5ff862c93
 
 Package: reshape2
 Source: CRAN
-Version: 1.2.2
-Hash: fed74e4cb56564ac6304f8958ac28a45
-Requires: plyr, stringr
+Version: 1.4.2
+Requires: Rcpp, plyr, stringr
 
 Package: rngtools
 Source: CRAN
 Version: 1.2.4
-Hash: 4db0661fe95ab6eb3d6339495bf22003
 Requires: digest, pkgmaker, stringr
 
 Package: scales
 Source: CRAN
-Version: 0.4.0
-Hash: 99ca163a301d7c1d959424a2cccdcacd
+Version: 0.4.1
 Requires: RColorBrewer, Rcpp, dichromat, labeling, munsell, plyr
 
 Package: stringi
 Source: CRAN
-Version: 1.1.1
-Hash: 48f2afc5dfecb65ba32a87d38b3533ff
+Version: 1.1.3
 
 Package: stringr
 Source: CRAN
-Version: 1.0.0
-Hash: 2676dd5f88890910962b733b0f9540e1
+Version: 1.2.0
 Requires: magrittr, stringi
 
 Package: tibble
 Source: CRAN
-Version: 1.1
-Hash: 5467b4aa158b2d984538f7ffde17171c
+Version: 1.2
 Requires: Rcpp, assertthat, lazyeval
+
+Package: tidyr
+Source: CRAN
+Version: 0.6.1
+Requires: Rcpp, dplyr, lazyeval, magrittr, stringi, tibble
 
 Package: xtable
 Source: CRAN
 Version: 1.8-2
-Hash: 7293235cfcc14cdff1ce7fd1a0212031
