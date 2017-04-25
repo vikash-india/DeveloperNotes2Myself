@@ -33,9 +33,9 @@ public class MainAndroid {
         final String privateKeyFileName = "src/topics/authorisation/acme-rsa-key";
         final String privateKeyContent = readFileToString(new File(privateKeyFileName));
         addProvider(new BouncyCastleProvider());
-        RSAEncryption encrypt = new RSAEncryption();
-        final Pair<RSAPublicKey, PrivateKey> keyPair = encrypt.readKeyPair(privateKeyContent);
-        final String signature = encrypt.encrypt(sha1sum, keyPair.getLeft());
+        RSAEncryption rsaEncryption = new RSAEncryption();
+        final Pair<RSAPublicKey, PrivateKey> keyPair = rsaEncryption.readKeyPair(privateKeyContent);
+        final String signature = rsaEncryption.encrypt(sha1sum, keyPair.getLeft());
         System.out.println("Encrypted SHA1: " + signature);
     }
 }

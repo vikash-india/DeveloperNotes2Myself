@@ -16,11 +16,11 @@ public class MainServer {
 
     public static void main(String[] args) throws Exception {
         
-        // Get JSON
+        // Get JSON from Android
         String json = "{\"customerId\":1,\"customerName\":\"Acme\",\"version\":\"1.00\"}";
         System.out.println("JSON: " + json);
         
-        // Get Encrypted SHA1
+        // Get Encrypted SHA1 from Android
         String signature = "4b3a0891d27b2fb0fe1c1011fdcd85daa6e4bfc53cb45fa5eabcbdc84baf09e8ab340f0e9f05d103f1fb5d86e96d37d78f0db6720229ca09d223ed9641ffe8cd1e069d49f3a67a0d93317a80720286bfdd2ddbe422c08385e2b0b1e160e070c3a1f283d2e9e0224872b4c87727257f9af6b5ed17c0ce71779ef401bac4e17086";
         System.out.println("Encrypted SHA1: " + signature);
         
@@ -28,9 +28,9 @@ public class MainServer {
         final String privateKeyFileName = "src/topics/authorisation/acme-rsa-key";
         final String privateKeyContent = readFileToString(new File(privateKeyFileName));
         addProvider(new BouncyCastleProvider());
-        RSADecryption encrypt = new RSADecryption();
-        final Pair<RSAPublicKey, PrivateKey> keyPair = encrypt.readKeyPair(privateKeyContent);
-        final String decryptedSHA1 = encrypt.decrypt(signature, keyPair.getRight());
+        RSADecryption rsaDecryption = new RSADecryption();
+        final Pair<RSAPublicKey, PrivateKey> keyPair = rsaDecryption.readKeyPair(privateKeyContent);
+        final String decryptedSHA1 = rsaDecryption.decrypt(signature, keyPair.getRight());
         System.out.println("Decrypted SHA1: " + decryptedSHA1);
         
         // Compute SHA1 of payload
