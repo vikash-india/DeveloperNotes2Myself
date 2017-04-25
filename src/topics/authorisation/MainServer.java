@@ -30,7 +30,8 @@ public class MainServer {
         addProvider(new BouncyCastleProvider());
         RSADecryption rsaDecryption = new RSADecryption();
         final Pair<RSAPublicKey, PrivateKey> keyPair = rsaDecryption.readKeyPair(privateKeyContent);
-        final String decryptedSHA1 = rsaDecryption.decrypt(signature, keyPair.getRight());
+        PrivateKey privateKey = keyPair.getRight();
+        final String decryptedSHA1 = rsaDecryption.decrypt(signature, privateKey);
         System.out.println("Decrypted SHA1: " + decryptedSHA1);
         
         // Compute SHA1 of payload

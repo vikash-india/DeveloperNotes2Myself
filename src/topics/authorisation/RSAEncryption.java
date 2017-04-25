@@ -25,11 +25,11 @@ import org.bouncycastle.openssl.PEMReader;
 
 public class RSAEncryption {
 
-    public String encrypt(final String payload, final Key privateKey)
+    public String encrypt(final String payload, final Key publicKey)
             throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException,
             IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException {
         final Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
-        cipher.init(ENCRYPT_MODE, privateKey);
+        cipher.init(ENCRYPT_MODE, publicKey);
         final byte[] encrypted = cipher.doFinal(payload.getBytes("UTF-8"));
         final byte[] encoded = encode(encrypted);
         

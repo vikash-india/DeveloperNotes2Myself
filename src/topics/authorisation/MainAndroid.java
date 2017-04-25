@@ -29,13 +29,17 @@ public class MainAndroid {
         String sha1sum = messageDigest.sha1(json);
         System.out.println("SHA1: " + sha1sum);
 
-        // Encrypt SHA1 using private key
+        // Encrypt SHA1 using public key
+//        final String publicKeyFileName = "src/topics/authorisation/acme-rsa-key.pub";
+//        final String publicKeyContent = readFileToString(new File(publicKeyFileName));
+        
         final String privateKeyFileName = "src/topics/authorisation/acme-rsa-key";
         final String privateKeyContent = readFileToString(new File(privateKeyFileName));
         addProvider(new BouncyCastleProvider());
         RSAEncryption rsaEncryption = new RSAEncryption();
         final Pair<RSAPublicKey, PrivateKey> keyPair = rsaEncryption.readKeyPair(privateKeyContent);
-        final String signature = rsaEncryption.encrypt(sha1sum, keyPair.getLeft());
+        RSAPublicKey rsaPublicKey = keyPair.getLeft();
+        final String signature = rsaEncryption.encrypt(sha1sum, rsaPublicKey);
         System.out.println("Encrypted SHA1: " + signature);
     }
 }
