@@ -94,7 +94,7 @@ packrat::restore()
 # Check status to find unused packages
 packrat::status()
 # The following packages are installed but not needed:
-             _       
+
 #     plyr       1.8.1 
 #     Rcpp       0.11.2
 #     reshape2   1.4   
