@@ -93,5 +93,5 @@ packrat::restore()
 packrat::set_opts(local.repos = "<path_to_repo>")
 ```
 
-# TODO
-# 1. None
+### TODO
+1. None
