@@ -84,6 +84,26 @@ packrat::snapshot()
 packrat::restore()
 ```
 
+#### Cleanup Packrat Packages
+1. Package libraries can grow over time to include many packages that were needed at one time but are no longer used. 
+   Packrat can analyze your code and try to determine which packages you’re using so you can keep your library tidy.
+2. Packrat attempts to ascertain which packages your project needs by analyzing the *.R script files in your project and 
+   looking for calls like library() and require().
+
+```R
+# Check status to find unused packages
+packrat::status()
+# The following packages are installed but not needed:
+             _       
+#     plyr       1.8.1 
+#     Rcpp       0.11.2
+#     reshape2   1.4   
+#     stringr    0.6.2 
+  
+# Clean packages  
+packrat::clean() 
+```
+
 #### Set packrat options
 1. You may be working on a project with an R package that is not available on any external repository. The  packrat can 
    still handle this! With source packages, we expect these packages live in a local repository.
