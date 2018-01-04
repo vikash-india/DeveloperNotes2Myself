@@ -1,21 +1,11 @@
 PackratFormat: 1.4
 PackratVersion: 0.4.8.1
-RVersion: 3.3.3
+RVersion: 3.4.3
 Repos: CRAN=https://cran.rstudio.com/
 
 Package: BH
 Source: CRAN
 Version: 1.62.0-1
-
-Package: DBI
-Source: CRAN
-Version: 0.6
-
-Package: NMF
-Source: CRAN
-Version: 0.20.6
-Requires: RColorBrewer, colorspace, digest, doParallel, foreach,
-    ggplot2, gridBase, pkgmaker, registry, reshape2, rngtools, stringr
 
 Package: R6
 Source: CRAN
@@ -33,9 +23,27 @@ Package: assertthat
 Source: CRAN
 Version: 0.1
 
+Package: bindr
+Source: CRAN
+Version: 0.1
+
+Package: bindrcpp
+Source: CRAN
+Version: 0.2
+Requires: Rcpp, bindr, plogr
+
+Package: cli
+Source: CRAN
+Version: 1.0.0
+Requires: assertthat, crayon
+
 Package: colorspace
 Source: CRAN
 Version: 1.3-2
+
+Package: crayon
+Source: CRAN
+Version: 1.3.4
 
 Package: dichromat
 Source: CRAN
@@ -45,29 +53,20 @@ Package: digest
 Source: CRAN
 Version: 0.6.12
 
-Package: doParallel
-Source: CRAN
-Version: 1.0.10
-Requires: foreach, iterators
-
 Package: dplyr
 Source: CRAN
 Version: 0.5.0
-Requires: BH, DBI, R6, Rcpp, assertthat, lazyeval, magrittr, tibble
-
-Package: foreach
-Source: CRAN
-Version: 1.4.3
-Requires: iterators
+Requires: BH, R6, Rcpp, assertthat, glue, magrittr, pkgconfig, plogr,
+    rlang, bindrcpp, tibble
 
 Package: ggplot2
 Source: CRAN
 Version: 2.2.1
-Requires: digest, gtable, lazyeval, plyr, reshape2, scales, tibble
+Requires: digest, gtable, lazyeval, plyr, scales, reshape2, tibble
 
-Package: gridBase
+Package: glue
 Source: CRAN
-Version: 0.4-7
+Version: 1.2.0
 
 Package: gtable
 Source: CRAN
@@ -76,15 +75,11 @@ Version: 0.2.0
 Package: igraph
 Source: CRAN
 Version: 1.0.1
-Requires: NMF, irlba, magrittr
+Requires: irlba, magrittr, pkgconfig
 
 Package: irlba
 Source: CRAN
 Version: 2.1.2
-
-Package: iterators
-Source: CRAN
-Version: 1.0.8
 
 Package: labeling
 Source: CRAN
@@ -108,34 +103,43 @@ Source: CRAN
 Version: 0.4.8-1
 Hash: 6ad605ba7b4b476d84be6632393f5765
 
-Package: pkgmaker
+Package: pillar
 Source: CRAN
-Version: 0.22
-Requires: digest, registry, stringr, xtable
+Version: 1.0.1
+Requires: crayon, rlang, utf8, cli
+
+Package: pkgconfig
+Source: CRAN
+Version: 2.0.1
+
+Package: plogr
+Source: CRAN
+Version: 0.1-1
 
 Package: plyr
 Source: CRAN
 Version: 1.8.4
 Requires: Rcpp
 
-Package: registry
+Package: purrr
 Source: CRAN
-Version: 0.3
+Version: 0.2.4
+Requires: magrittr, rlang, tibble
 
 Package: reshape2
 Source: CRAN
 Version: 1.4.2
 Requires: Rcpp, plyr, stringr
 
-Package: rngtools
+Package: rlang
 Source: CRAN
-Version: 1.2.4
-Requires: digest, pkgmaker, stringr
+Version: 0.1.6
 
 Package: scales
 Source: CRAN
 Version: 0.4.1
-Requires: RColorBrewer, Rcpp, dichromat, labeling, munsell, plyr
+Requires: R6, RColorBrewer, Rcpp, dichromat, labeling, viridisLite,
+    plyr, munsell
 
 Package: stringi
 Source: CRAN
@@ -149,13 +153,23 @@ Requires: magrittr, stringi
 Package: tibble
 Source: CRAN
 Version: 1.2
-Requires: Rcpp, assertthat, lazyeval
+Requires: crayon, rlang, pillar
 
 Package: tidyr
 Source: CRAN
 Version: 0.6.1
-Requires: Rcpp, dplyr, lazyeval, magrittr, stringi, tibble
+Requires: Rcpp, glue, magrittr, rlang, stringi, tibble, dplyr, purrr,
+    tidyselect
 
-Package: xtable
+Package: tidyselect
 Source: CRAN
-Version: 1.8-2
+Version: 0.2.3
+Requires: Rcpp, glue, rlang, purrr
+
+Package: utf8
+Source: CRAN
+Version: 1.1.3
+
+Package: viridisLite
+Source: CRAN
+Version: 0.2.0
