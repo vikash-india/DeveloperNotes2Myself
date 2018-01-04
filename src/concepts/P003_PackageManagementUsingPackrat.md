@@ -9,9 +9,12 @@
 - A packrat project has its own private package library in the directory `packrat/`. Any package installed from inside 
   a packrat project is only available to that particular project and any package installed outside of the project are 
   not available to the project.
-- Isolation: Separating a project from other R projects is called 'isolation'. It means upgrading a package for one 
-  project won’t break a totally different project that just happens to reside on the same machine, even if that package 
-  contained incompatible changes.
+- Advantages of packrat
+    - Isolated: Installing a new or updated package for one project won’t break your other projects, and vice versa. 
+    - Portable: Easily transport projects from one computer to another, even across different platforms. Packrat makes 
+      it easy to install the packages your project depends on.
+    - Reproducible: Packrat records the exact package versions you depend on, and ensures those exact versions are the 
+      ones that get installed wherever you go.
 - A packrat project contains a few extra files and directories. The init() function creates these files if they don’t 
   already exist.
     - packrat/packrat.lock: Lists the precise package versions that were used to satisfy dependencies, including 
