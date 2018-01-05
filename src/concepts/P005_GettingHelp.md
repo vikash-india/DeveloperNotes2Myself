@@ -1,11 +1,11 @@
-# Description: Gettin Help in R
+# Description: Getting Help in R
 
 ### Getting Help on Command Line or R Studio Console Using ?
 ```
-# Get help on help
-?help # 
+# Get help about help
+?help
 
-# Get help on getwd command
+# Get help on a command, say getwd
 ?getwd
 ```
 
@@ -16,4 +16,4 @@ getwd()
 ```
 
 # TODO
-# 1. None
+# * None

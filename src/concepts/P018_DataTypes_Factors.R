@@ -34,4 +34,4 @@ x <- factor(c("yes", "yes", "no", "yes", "no"), levels = c("yes", "no"))
 x       # Levels are put in order mentioned in levels function.
 
 # TODO
-# 1. None
+# * None

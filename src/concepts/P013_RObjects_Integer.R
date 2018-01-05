@@ -12,4 +12,4 @@ x <- c(1L, 2L, 3L, 4L, 5L)
 print(x)
 
 # TODO
-# 1. None
+# * None

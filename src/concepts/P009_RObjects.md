@@ -17,4 +17,4 @@ R has five 'atomic' classes of objects,
 - Raw
 
 ### TODO
-1. None
+* None

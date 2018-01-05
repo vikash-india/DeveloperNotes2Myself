@@ -37,4 +37,4 @@ v <- 2 * x  + y + 1
 print(v)                # [1] 13 25 17 29 21
 
 # TODO
-# 1. None
+# * None

@@ -1,4 +1,4 @@
-# Description: Setting Working Directory in R
+# Description: Working Directory in R
 
 # Note
 # 1. R reads and writes all files and data to the working directory.
@@ -11,4 +11,4 @@ getwd()
 setwd("~/Personal/Workspace/RProjects/RNotes2Myself")
 
 # TODO
-# 1. None
+# * None

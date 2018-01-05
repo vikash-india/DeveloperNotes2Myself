@@ -34,4 +34,4 @@ print(result)
 #    vectors and their coerced numeric counterparts are not equivalent.
 
 # TODO
-# 1. None
+# * None

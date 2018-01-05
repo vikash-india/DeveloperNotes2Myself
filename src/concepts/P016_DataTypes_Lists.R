@@ -29,4 +29,4 @@ x <- vector("list", length = 3)
 # NULL
 
 # TODO
-# 1. None
+# * None

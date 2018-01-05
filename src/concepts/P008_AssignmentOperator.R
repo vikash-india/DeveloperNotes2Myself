@@ -1,31 +1,28 @@
-# Description: Assignment in R
+# Description: Assignment Operators in R
 
 # Note
-# 1. The <- symbol is the assignment operator.
+# - None
+
+# Use <- symbol as the assignment operator.
+# 1. The assignment operator (<-) can also used to point to the object receiving the value of the expression.
+# 2. The assignment operator, <- can be thought of as a syntactic short-cut to the assign() function.
 message <- "Hello World"
 print(message)
 
-#############################################################
-# 1. Using assign() function
-#    - Assignment can be made using the function assign()
-assign("message", "Hello World")
-print(message)
-
-# 2. Using the assignment operator (<-)
-#    - The assignment operator (<-) can also used to point to the object receiving the value of the expression.
-#    - The assignment operator, <-, can be thought of as a syntactic short-cut to the assign() function.
-message <- "Hello World"
-print(message)
-
-# 3. Using the assignment operator (->)
-#    - Assignments can also be made in the other direction.
+# Using -> symbol as the assignment operator.
+# 1. Assignments can also be made in the other direction.
 "Hello World" -> message
 print(message)
 
-# 4. Using the equal operator (=)
-#    - In most contexts the ‘=’ operator can be used as an alternative.
+# Using assign() function for assignments.
+assign("message", "Hello World")
+print(message)
+
+# Using the equal symbol (=) as the assignment operator.
+# 1. In most contexts the ‘=’ operator can be also used as an assignment alternative.
+# 2. Using = symbol for assignment operator in R is not the norm.
 message = "Hello World"
 print(message)
 
 # TODO
-# 1. None
+# * None

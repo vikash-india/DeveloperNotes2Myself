@@ -7,4 +7,4 @@ message <- "Hello World"
 print(message)
 
 # TODO
-# 1. None
+# * None

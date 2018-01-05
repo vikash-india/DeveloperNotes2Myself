@@ -14,4 +14,4 @@ sudo apt-get install r-cran-ggplot2
 ```
 
 # TODO
-# 1. None
+* None

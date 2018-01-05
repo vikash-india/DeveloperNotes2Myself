@@ -20,4 +20,4 @@ x <- 1
 print(x)
 
 # TODO
-# 1. None
+# * None
