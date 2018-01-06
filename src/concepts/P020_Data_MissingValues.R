@@ -35,4 +35,4 @@ print(result)
 # 9. NA values have a class also, so there are integer NA, character NA, etc.
 
 # TODO
-# 1. None
+# * None
