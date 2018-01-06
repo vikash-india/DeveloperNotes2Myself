@@ -33,4 +33,4 @@ attributes(x)   # NULL
 # [1] "factor"
 
 # TODO
-# 1. None
+# * None

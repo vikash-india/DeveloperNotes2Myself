@@ -1,6 +1,6 @@
 # Description: R Objects and Data Types
 
-### Atomic R Objects
+### Atomic R Objects or Data Types
 R has five 'atomic' classes of objects,
 - Logical (True/False)
 - Character

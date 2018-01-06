@@ -6,10 +6,10 @@
 # 3. A vector can only contain objects of the same class.
 # 4. The c() function can be used to create vectors of objects by concatenating things together. It takes an arbitrary
 #    number of vector arguments and returns a value is a vector got by concatenating its arguments end to end.
-x <- c(0.5, 0.6)        ## Numeric
 x <- c(TRUE, FALSE)     ## Logical
 x <- c(T, F)            ## Logical. T & F are short-hand ways to specify TRUE and FALSE.
 x <- c("a", "b", "c")   ## Character
+x <- c(0.5, 0.6)        ## Numeric
 x <- 9:29               ## Integer
 x <- c(1+0i, 2+4i)      ## Complex
 
