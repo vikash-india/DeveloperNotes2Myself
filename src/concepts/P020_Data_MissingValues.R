@@ -6,7 +6,7 @@
 # 2. In general any operation on an NA becomes an NA.
 # 3. The function is.na(x) gives a logical vector of the same size as x with value TRUE if and only if the
 #    corresponding element in x is NA.
-v <- c(1:3, NA)         # Same as a vector c(1, 2, 3, NA)
+v <- c(1 : 3, NA)       # Same as a vector c(1, 2, 3, NA)
 print(v)
 
 result <- is.na(v)
@@ -20,13 +20,13 @@ print(result)
 
 # 5. There is a second kind of “missing” values which are produced by numerical computation, the so-called Not a Number,
 #    NaN, values. 
-result <- 0/0           # Dividing 0/0 will result in NaN.
+result <- 0 / 0         # Dividing 0/0 will result in NaN.
 result <- Inf - Inf     # Inf and -Inf denotes Postive Infinity and Negative Infinity
 print(result)
 
 # 6. A NaN value is also NA but the converse is not true. Hence the is.na(xx) is TRUE both for NA and NaN values.
 # 7. To differentiate between NA and NaN, use is.nan(xx) which is TRUE only for NaNs.
-v <- c(1:3, NA, NaN)    # Same as a vector c(1, 2, 3, NA, NaN)
+v <- c(1 : 3, NA, NaN)    # Same as a vector c(1, 2, 3, NA, NaN)
 result <- is.na(v)      # [1] FALSE FALSE FALSE  TRUE  TRUE
 result <- is.nan(v)     # [1] FALSE FALSE FALSE FALSE  TRUE
 print(result)

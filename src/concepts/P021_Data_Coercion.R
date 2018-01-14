@@ -12,7 +12,7 @@ y <- c(TRUE, 2)         # numeric
 y <- c("a", TRUE)       # character
 
 # 2. Objects can also be explicitly coerced from one class to another using the as.* functions, if available.
-x <- 0:6
+x <- 0 : 6
 class(x)                # [1] "integer"
 as.numeric(x)           # [1] 0 1 2 3 4 5 6
 as.logical(x)           # [1] FALSE TRUE TRUE TRUE TRUE TRUE TRUE

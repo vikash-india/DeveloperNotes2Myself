@@ -38,7 +38,7 @@ print(y)
 # 2. The arguments are by default separated in the result by a single blank character, but this can be changed by the
 #    named argument, sep=string, which changes it to string, possibly empty.
 # 3. The recycling of short lists takes place; thus c("X", "Y") is repeated 5 times to match the sequence 1:10
-x <- paste(c("X","Y"), 1:10, sep="") # Same as c("X1", "Y2", "X3", "Y4", "X5", "Y6", "X7", "Y8", "X9", "Y10")
+x <- paste(c("X", "Y"), 1 : 10, sep = "") # Same as c("X1", "Y2", "X3", "Y4", "X5", "Y6", "X7", "Y8", "X9", "Y10")
 
 # TODO
 # * None

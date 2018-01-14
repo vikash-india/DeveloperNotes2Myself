@@ -8,7 +8,7 @@
 #   print by just typing the the name of the object.
 
 # Explicit printing using the print function.
-print('Hello World') 
+print('Hello World')
 
 # Implicit printing by just typing 'Hello World' in console.
 'Hello World'

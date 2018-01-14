@@ -17,18 +17,18 @@
 #    data.matrix().
 
 # Create a data frame
-x <- data.frame(foo = 1:4, bar = c(T, T, F, F))
+x <- data.frame(foo = 1 : 4, bar = c(T, T, F, F))
 #   foo   bar
 # 1   1  TRUE
 # 2   2  TRUE
-# 3   3 FALSE
-# 4   4 FALSE
+# 3   3  FALSE
+# 4   4  FALSE
 
 # Metadata about data frame
 nrow(x)         # [1] 4. Number of rows
 ncol(x)         # [1] 2. Number of columns.
 row.names(x)    # [1] "1" "2" "3" "4". A character vector of length the number of rows with no duplicates nor missing
-                # values.
+# values.
 attributes(x)   # Attributes of data frame.
 
 # TODO

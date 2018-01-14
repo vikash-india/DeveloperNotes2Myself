@@ -26,7 +26,7 @@ condition1 <- TRUE
 condition2 <- FALSE
 result <- condition1 & condition2       # The result is their intersection (“and”)
 result <- condition1 | condition2       # The result is their union (“or”)
-result <- !condition1                   # The result is the negation (“not”)
+result <- ! condition1                  # The result is the negation (“not”)
 print(result)
 
 # 6. Logical Values in Arithmetic Expressions: Logical vectors may be used in ordinary arithmetic, in which case they
