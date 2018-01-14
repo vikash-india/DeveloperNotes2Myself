@@ -24,8 +24,12 @@ x <- data.frame(foo = 1:4, bar = c(T, T, F, F))
 # 3   3 FALSE
 # 4   4 FALSE
 
-nrow(x)     # [1] 4
-ncol(x)     # [1] 2
+# Metadata about data frame
+nrow(x)         # [1] 4. Number of rows
+ncol(x)         # [1] 2. Number of columns.
+row.names(x)    # [1] "1" "2" "3" "4". A character vector of length the number of rows with no duplicates nor missing
+                # values.
+attributes(x)   # Attributes of data frame.
 
 # TODO
-# 1. None
+# * None
