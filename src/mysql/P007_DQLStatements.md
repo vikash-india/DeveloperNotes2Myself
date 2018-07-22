@@ -681,19 +681,86 @@ order by
 limit 10;
 ```
 
-####062.
+####062. Find the details of all the employees along with their current title.
+```
+select * from employees e left join titles t on e.emp_no = t.emp_no where to_date = '9999-01-01';
+```
+
+####063. Find all the current female engineers who were born before 1959, currently works in 'Development' department and currently draws a salary of more than 100000. Display employee number, birth date, first name, last name, gender, hire date, title, from fate from title table, to date from title table, salary, from date from salary table, to date from salary table, department name, from date from dept_emp table, to date from dept_emp. Sort the result in descending order of birth dates.
+```
+select
+    e.*, t.title, t.from_date, t.to_date, s.salary, s.from_date, s.to_date, d.dept_no, d.dept_name, de.from_date, de.to_date
+from
+    employees e,
+    titles t,
+    salaries s,
+    dept_emp de,
+    departments d
+where
+    e.emp_no = t.emp_no and
+    e.emp_no = s.emp_no and
+    e.emp_no = de.emp_no and
+    de.dept_no = d.dept_no
+    and e.gender = 'F'
+    and e.birth_date < '1959-01-01'
+    and t.title = 'Engineer'
+    and t.to_date = '9999-01-01'
+    and s.salary > 100000
+    and s.to_date = '9999-01-01'
+    and d.dept_name = 'Development'
+    and de.to_date = '9999-01-01'
+order by
+    e.birth_date desc
+```
+
+####064. Display employee number, first name, last name and department name of all the employees who are working in the 'Development' department. Use a left join to write this query.
+```
+select
+    e.emp_no, e.first_name, e.last_name,  d.dept_name
+from
+    departments d
+    left join dept_emp de on de.dept_no =  d.dept_no
+    left join employees e on de.emp_no = e.emp_no
+where
+    d.dept_name = 'Development' and
+    de.to_date = '9999-01-01';
+```
+
+####065. Find employee number, first name, last name and department name of all the employees who are working under the manager 110039. Use a left join between different tables.
+```
+select
+    e.emp_no, e.first_name, e.last_name, d.dept_name
+from
+    dept_manager dm
+    left join departments d on d.dept_no = dm.dept_no
+    left join dept_emp de on de.dept_no =  d.dept_no
+    left join employees e on de.emp_no = e.emp_no
+where
+    dm.emp_no = 110039 and
+    dm.to_date = '9999-01-01' and
+    de.to_date = '9999-01-01';
+```
+
+####066. Find the various job titles held by employees with employee number 69434 or 470681 or 449029 or 411165 during their entire tenure. Display the columns employee numbers, first name, last name, title, from date and to date. Sort the result in the ascending order of the period of each title. Use a left join between employees and titles table.
+```
+select
+    e.emp_no, e.first_name, e.last_name, t.title, t.from_date, t.to_date
+from
+    employees e
+    left join titles t on e.emp_no = t.emp_no
+where
+    e.emp_no in (69434, 470681, 449029, 411165)
+order by
+    e.emp_no,
+    t.to_date;
+```
+
+####067.
 ```sql
 
 ```
 
-####063.
+####068.
 ```sql
-```
 
-####064.
-```sql
-```
-
-####065.
-```sql
 ```
