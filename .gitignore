@@ -10,6 +10,7 @@
 # Temp files by gitk
 .gitk-tmp.*
 
-# Ignore Eclipse files and directories.
+# Ignore Eclipse and InteliJ files and directories.
 .project
+.idea
 
