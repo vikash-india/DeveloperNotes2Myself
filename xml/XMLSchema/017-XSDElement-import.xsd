@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The import element is used to add multiple schemas with different target namespace to a document.
+	Syntax		: 
+						<import
+							id=ID
+							namespace=anyURI
+							schemaLocation=anyURI
+							any attributes
+						>
+							(annotation?)
+						</import>
+	Attributes
+			id							: Optional. Specifies a unique ID for the element
+			namespace			: Required. Specifies the URI of the namespace to import
+			schemaLocation	: Optional. Specifies the URI to the schema for the imported namespace
+			any attributes		: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: schema 
+			2. The ? sign declares that the element can occur zero or one time inside the import element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!--Example: The following example shows importing a namespace-->
+<xs:import namespace="http://www.w3schools.com/schema"/>
+</xs:schema>

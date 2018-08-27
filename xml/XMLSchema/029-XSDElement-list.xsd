@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The list element defines a simple type element as a list of values of a specified data type
+	Syntax		: 
+						<list
+							id=ID 
+							itemType=QName 
+							any attributes
+						>
+							(annotation?,(simpleType?))
+						</list>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			itemType			: Specifies the name of a built-in data type or simpleType element defined in this or another schema. This attribute is not allowed if the content contains a simpleType element, otherwise it is required
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: simpleType 
+			2. The ? sign declares that the element can occur zero or one time inside the list element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!--
+Example: The "intvalues" element in a document could look like this (notice that the list will have five list items):
+<intvalues>100 34 56 -23 1567</intvalues> 
+Note: White space is treated as the list item separator!
+-->
+<xs:element name="intvalues" type="valuelist1">
+<xs:simpleType name="valuelist1">
+  <xs:list itemType="xs:integer"/>
+</xs:simpleType>
+</xs:element>
+<!--Example: The following example shows a simple type that is a list of strings-->
+<xs:element name="stringvalues" type="valuelist2">
+<xs:simpleType name="valuelist2">
+  <xs:list itemType="xs:string"/>
+</xs:simpleType>
+</xs:element>
+
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Description: An example to show the structure of an XML File
+	Note: 
+		1. Prolog	: Optional. Containts PI and Comments. <?xml version="1.0" encoding="UTF-8"?> and this comment is the epilog of this XML Document
+		2. Body	: Required. <PlayersProfile> and its content is body
+		3. Epilog 	: Optional. Anything after the closing tag of document element ie </PlayersProfile> is Epilog
+-->
+<PlayersProfile>
+	<Player id="1">
+		<Name>Sachin Ramesh Tendulkar</Name>
+		<Sports>Cricket</Sports>
+	</Player>
+</PlayersProfile>
+<!-- Other Comments and PI can come here -->

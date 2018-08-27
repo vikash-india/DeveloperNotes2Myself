@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: XML Schema choice element allows only one of the elements contained in the <choice> declaration to be present within the containing element.
+
+
+	Syntax		: 
+						<choice
+							id=ID
+							maxOccurs=nonNegativeInteger|unbounded
+							minOccurs=nonNegativeInteger
+							any attributes
+						>
+							(annotation?,(element|group|choice|sequence|any)*)
+						</choice>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			maxOccurs		: Optional. Specifies the maximum number of times the choice element can occur in the parent element. The value can be any number >= 0, or if you want to set no limit on the maximum number, use the value "unbounded". Default value is 1
+			minOccurs		: Optional. Specifies the minimum number of times the choice element can occur in the parent the element. The value can be any number >= 0. Default value is 1
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: group, choice, sequence, complexType, restriction (both simpleContent and complexContent), extension (both simpleContent and complexContent) 
+			2. The ? sign declares that the element can occur zero or one time, and the * sign declares that the element can occur zero or more times inside the choice element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!--Example: The example above defines an element named "person" which must contain either a "employee" element or a "member" element -->
+<xs:element name="person">
+  <xs:complexType>
+    <xs:choice>
+      <xs:element name="employee" type="xs:string"/>
+      <xs:element name="member" type="xs:integer"/>
+    </xs:choice>
+  </xs:complexType>
+</xs:element>
+</xs:schema>

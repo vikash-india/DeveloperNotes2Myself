@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Description: An example to explain about XML declaration
+	Note: 
+		1. The element <?xml version="1.0" encoding="UTF-8"?> is called XML Declaration.
+		2. If xml element is present then it has to be the first element in the XML document. No even empty space or line is allowed before this element.
+		3. This element has got 3 attributes as follows
+			version		: Required Field and value must be 1.0
+			encoding		: Optional field. Encoding value is not case sensitive so UTF-8, utf-8 and Utf-8 are all equivalent. 
+			standalone	: Optional field. Value can be yes or no. Yes means no external DTD or XML Schema while yes means external DTD or XML Schema
+		4. XML Declaration is optional if encoding is UTF-8 or UTF-16 otherwise xml declaration must be present in an XML Document
+		5. Though this element is optional but it helps in certain optimizations.
+		6. This is not a PI as it is uniquely defined as part of REC 1.0
+		7. version encoding and standalone seems to be attribute but their order has to be strictly maintained ie version should be followed by encoding and encoding should be followed by standalone
+-->
+<PlayersProfile>
+	<Player id="1">
+		<Name>Sachin Ramesh Tendulkar</Name>
+		<Sports>Cricket</Sports>
+	</Player>
+</PlayersProfile>

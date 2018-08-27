@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PlayersProfile>
+	<Player id="1">
+		<Name>Sachin Ramesh Tendulkar</Name>
+		<NickName>The Master Blaster</NickName>
+		<DOB>24-Apr-1973</DOB>
+		<PlayerRating>1</PlayerRating>
+	</Player>
+	<Player id="2">
+		<Name>Rahul Sharad Dravid</Name>
+		<NickName>The Wall</NickName>
+		<DOB>11-Jan-1973</DOB>
+		<PlayerRating>2</PlayerRating>
+	</Player>
+	<Player id="3">
+		<Name>Sourav Chandidas Ganguly</Name>
+		<NickName>The Prince of Calcutta, Dada</NickName>
+		<DOB>08-Jul-1972</DOB>
+		<PlayerRating>2</PlayerRating>
+	</Player>
+	<Player id="4">
+		<Name>Diego Armando Maradona</Name>
+		<NickName>Pelusa(Fuzz)</NickName>
+		<DOB>30-Oct-1960</DOB>
+		<PlayerRating>1</PlayerRating>
+	</Player>
+	<Player id="5">
+		<Name>Edison Arantes do Nascimento</Name>
+		<NickName>Pelé</NickName>
+		<DOB>23-Oct-1930</DOB>
+		<PlayerRating>1</PlayerRating>
+	</Player>
+	<Player id="6">
+		<Name>Pete Sampras</Name>
+		<NickName>The King of Swing</NickName>
+		<DOB>12-Aug-1971</DOB>
+		<PlayerRating>3</PlayerRating>
+	</Player>
+	<Player id="7">
+		<Name>Roger Fedrer</Name>
+		<NickName>The Legend</NickName>
+		<DOB>08-Aug-1981</DOB>
+		<PlayerRating>4</PlayerRating>
+	</Player>
+</PlayersProfile>

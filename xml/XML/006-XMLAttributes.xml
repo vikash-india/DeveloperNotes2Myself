@@ -1,0 +1,29 @@
+<!-- 
+	Description	: An example to explain valid XML Attribute names
+	Definitions	XML elements can have attributes in the start tag, just like HTML. Attributes provide additional information about elements that are not a part of the data. Attributes must be quoted
+	Note: 
+		1. Following are the valid rules for naming an attributes
+				1. All attribute Names must start with a unicode character, underscore(_) or colon(:)
+				2. Subsequent characters can be unicode character(s), unicode number(s), underscore(_), colon(:), hyphen(-) or period(.)
+				3. Two attributes with the same name is not allowed in the same element ie Only one instance of an attribute is allowed in a comment
+				4. Attributes are Name-Value pair
+				5. Attributes can have entity reference or character reference
+				6. XML Documents Form a Tree Structure 
+		2. Attributes Vs Elements
+				1. attributes cannot contain multiple values (elements can) 
+				2. attributes cannot contain tree structures (elements can) 
+				3. attributes are not easily expandable (for future changes) 
+-->
+<PlayersProfile>
+	<Player name="Sachin Ramesh Tendulkar"></Player>
+	<Player _name="Rahul Sharad Dravid"></Player>
+	<Player :name="Sourav Chandidas Ganguly"></Player> <!-- MSXML does not support this in the browser -->
+	<Player name-new="Pelé"></Player>
+	<Player name.new="Diego Armando Maradona"></Player>
+	<Player name_new="Pete Sampras"></Player>
+	<Player name7="Roger Fedrer"></Player>
+	<Player name="US&apos;s Pete Sampras"></Player>
+	<!--
+		<Player name="Roger Fedrer" name="Pelé"></Player>
+	-->
+</PlayersProfile>

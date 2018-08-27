@@ -1,0 +1,24 @@
+<!-- 
+	Description: An example to show the hierarchial relationship in an XML Document
+	Note: 
+		1. Childs				: Player is the child of PlayersProfile
+									  DateOfBirth and Name are the childs of Player
+									  Day, Month and Year are childs of DateOfBirth
+		2. Parent 			: PlayersProfile is the parent of Player
+									  Player is the parent of Name and DateOfBirth
+									  DateOfBirth is the parent of Day, Month and Year
+		3. Siblings			: Day, Month and Year are siblings. 
+									  Name and DateOfBirth are siblings
+		4. Descendants	: Player, Name, DateOfBirth, Day, Month and Year are descendants of PlayersProfile
+		5. Ancestors		: PlayersProfile, Player, DateOfBirth are ancestors of Day, Month or Year
+-->
+<PlayersProfile>
+	<Player id="1">
+		<Name>Sachin Ramesh Tendulkar</Name>
+		<DateOfBirth>
+			<Day>24</Day>
+			<Month>April</Month>
+			<Year>1973</Year>
+		</DateOfBirth>
+	</Player>
+</PlayersProfile>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The schema element defines the root element of a schema.
+	Syntax		: 
+						<schema
+							id=ID 
+							attributeFormDefault=qualified|unqualified
+							elementFormDefault=qualified|unqualified
+							blockDefault=(#all|list of (extension|restriction|substitution))
+							finalDefault=(#all|list of (extension|restriction|list|union))
+							targetNamespace=anyURI
+							version=token
+							xmlns=anyURI
+							any attributes
+						>
+							((include|import|redefine|annotation)*,(((simpleType|complexType| group|attributeGroup)|element|attribute|notation),annotation*)*)
+						</schema>
+	Attributes
+			id									: Optional. Specifies a unique ID for the element
+			attributeFormDefault	: Optional. The form for attributes declared in the target namespace of this schema. The value must be "qualified" or "unqualified". Default is "unqualified". "unqualified" indicates that attributes from the target namespace are not required to be qualified with the namespace prefix. "qualified" indicates that attributes from the target namespace must be qualified with the namespace prefix
+			elementFormDefault	: Optional. The form for elements declared in the target namespace of this schema. The value must be "qualified" or "unqualified". Default is "unqualified". "unqualified" indicates that elements from the target namespace are not required to be qualified with the namespace prefix. "qualified" indicates that elements from the target namespace must be qualified with the namespace prefix
+			blockDefault				: Optional. Specifies the default value of the block attribute on element and complexType elements in the target namespace. The block attribute prevents a complex type (or element) that has a specified type of derivation from being used in place of this complex type. This value can contain #all or a list that is a subset of extension, restriction, or substitution:
+														extension - prevents complex types derived by extension 
+														restriction - prevents complex types derived by restriction 
+														substitution - prevents substitution of elements 
+														#all - prevents all derived complex types 
+			finalDefault					: Optional. Specifies the default value of the final attribute on element, simpleType, and complexType elements in the target namespace. The final attribute prevents a specified type of derivation of an element, simpleType, or complexType element. For element and complexType elements, this value can contain #all or a list that is a subset of extension or restriction. For simpleType elements, this value can additionally contain list and union:
+														extension - prevents derivation by extension 
+														restriction - prevents derivation by restriction 
+														list - prevents derivation by list 
+														union - prevents derivation by union 
+														#all - prevents all derivation 
+			targetNamespace		: Optional. A URI reference of the namespace of this schema
+			version						: Optional. Specifies the version of the schema
+			xmlns							: A URI reference that specifies one or more namespaces for use in this schema. If no prefix is assigned, the schema components of the namespace can be used with unqualified references
+			any attributes				: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: NONE 
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>

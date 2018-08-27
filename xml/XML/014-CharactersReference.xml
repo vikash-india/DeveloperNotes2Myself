@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Description: An example to explain about character reference in an XML Document
+	Note: 
+		1. Character reference can have the form 
+				&#NNNNN;
+				&#xXXXX;
+		2. It can have upto 5 decimal digits or upto 4 hexdecimal digits.
+-->
+<CharacterReferenceList>
+	<DecimalCharacterReference>
+		<Character name="Copyright Symbol using decimal Character Reference">&#169;</Character>
+		<Character name="Registered Symbol using decimal Character Reference">&#174;</Character>
+	</DecimalCharacterReference>
+	<HexaDecimalCharacterReference>
+		<Character name="Copyright Symbol using Hexadecimal Character Reference">&#xA9;</Character>
+		<Character name="Registered Symbol using Hexadecimal Character Reference">&#xAE;</Character>
+	</HexaDecimalCharacterReference>
+</CharacterReferenceList>

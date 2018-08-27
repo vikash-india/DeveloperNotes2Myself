@@ -1,0 +1,15 @@
+<!-- 
+	Description: An example to explain the CDATA section in XML
+	Note: 
+		1. Anything in between <![CDATA[ and ]]> is not interprated by parser
+		2. CDATA section can contain markup and other special characters
+		3. CDATA section can occur anywhere in the XML Document
+		4. CDATA section CANNOT be empty
+		5. CDATA section CANNOT be nested
+-->
+<PlayersProfile>
+	<![CDATA[
+		Sachin Ramesh Tendulkar|Cricket|India
+		Diego Armando Maradona|Football|Argentina
+	]]>
+</PlayersProfile>

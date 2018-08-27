@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The field element specifies an XPath expression that specifies the value used to define an identity constraint.
+	Syntax		: 
+						<field
+							id=ID 
+							xpath=XPath expression
+							any attributes
+						>
+							(annotation?)
+						</field>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			xpath				: Required. Identifies a single element or attribute whose content or value is used for the constraint
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: key, keyref, unique 
+			2. The ? sign declares that the element can occur zero or one time inside the field element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+</xs:schema>

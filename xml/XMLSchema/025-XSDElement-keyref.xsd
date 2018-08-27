@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: Optional. Specifies any other attributes with non-schema namespace
+	Syntax		: 
+						<keyref
+							id=ID
+							name=NCName
+							refer=QName
+							any attributes
+						>
+							(annotation?,(selector,field+))
+						</keyref>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			name				: Required. Specifies the name of the keyref element
+			refer				: Required. Specifies the name of a key or unique element defined in this or another schema
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: element 
+			2. The ? sign declares that the element can occur zero or one time, and the + sign declares that the element must occur one or more times inside the keyref element
+			3. The keyref element MUST contain the following (in order):
+						1. one and only one selector element  (contains an XPath expression that specifies the set of elements across which the values specified by field must be unique) 
+						2. one or more field elements (contains an XPath expression that specifies the values that must be unique for the set of elements specified by the selector element) 
+
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"/>

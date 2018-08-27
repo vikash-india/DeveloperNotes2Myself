@@ -1,0 +1,15 @@
+<!--
+	Description: An example to show that XML is case sensitive
+	Note: 
+		1. <Player>  <PLAYER> and <player> are all different tag because XML is case sensitive.
+		2. id or ID or Id are all different attributes because XML is case sensitive
+-->
+<PlayersProfile>
+	<Player id="1" ID="1" Id="1">
+		<Name>Sachin Ramesh Tendulkar</Name>
+	</Player>
+<!--
+	</PLAYER>
+	</player>
+-->
+</PlayersProfile>

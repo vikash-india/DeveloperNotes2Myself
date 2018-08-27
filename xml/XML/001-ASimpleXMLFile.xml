@@ -1,0 +1,15 @@
+<!-- 
+	Description: An example of a simple XML file
+	Note: 
+		1. Root Element	: <PlayersProfile>. Also known as document element. There can be only one root element in an XML Document. Root element name can be any valid XML Element name. 
+		2. Elements			: <PlayersProfile>, <Player>, <Name> and <Sports>
+		3. Attribute 			: id="1" is an attribute associated with the element <Player>
+		4. Contents			: "Sachin Ramesh Tendulkar" and "Cricket"
+		5. End Tags			: </PlayersProfile>, </Player>, </Name>, </Sports>
+-->
+<PlayersProfile>
+	<Player id="1">
+		<Name>Sachin Ramesh Tendulkar</Name>
+		<Sports>Cricket</Sports>
+	</Player>
+</PlayersProfile>

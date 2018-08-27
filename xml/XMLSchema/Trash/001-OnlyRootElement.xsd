@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+	Purpose: An XML Schema for an XML file with only root element with or without text
+	Note: 
+		1. The XML file should have the following attribute for the root element in order to refer to this schema
+				 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="001-OnlyRootElement.xsd"
+	Valid XML Content: 
+		1. <PlayersProfile>Some text goes here</PlayersProfile>
+		2. <PlayersProfile></PlayersProfile>
+		3. <PlayersProfile/>
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="PlayersProfile" type="xs:string"/>
+</xs:schema>

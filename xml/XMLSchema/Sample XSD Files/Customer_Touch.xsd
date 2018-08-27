@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://schemas.dendrite.com/IS/1.0.0/Customer_Touch" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xtd="http://schemas.dendrite.com/IS/1.0.0/XTDataTypes" targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Customer_Touch" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://schemas.dendrite.com/IS/1.0.0/XTDataTypes" schemaLocation="XTDataTypes.xsd"/>
+	<!--
+		W3C XML Schema Generated using Xtelligent Schema generator.
+		Date: Fri Apr 30 13:58:14 PDT 2004-->
+	<xsd:element name="Customer_Touch" type="Customer_Touch_Type"/>
+	<xsd:complexType name="Customer_Touch_Type">
+		<xsd:all>
+			<xsd:element name="Touch_ID" type="xtd:Number16" minOccurs="0"/>
+			<xsd:element name="Reference_Number" type="xtd:String200"/>
+			<xsd:element name="Project_Identifier" type="xtd:String200" minOccurs="0"/>
+			<xsd:element name="Project_Name" type="xtd:String200" minOccurs="0"/>
+			<xsd:element name="Client_Identifier" type="xtd:String200" minOccurs="0"/>
+			<xsd:element name="Touch_Date" type="xtd:dateTimeStringType" minOccurs="0"/>
+			<xsd:element name="Status" type="xtd:Customer_Touch_Status_Code"/>
+			<xsd:element name="Status_Change_Date" type="xtd:dateTimeStringType" minOccurs ="0"/>
+			<xsd:element name="Status_Change_Reason" type="xtd:String2000" nillable="true" minOccurs ="0"/>
+			<xsd:element name="Type" type="xtd:Customer_Touch_Type_Code"/>
+			<xsd:element name="Source" type="xtd:Order_Source_Code"/>
+			<xsd:element name="Description" type="xtd:String2000" minOccurs="0"/>
+			<xsd:element name="Detail_Info" type="xtd:String2000" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Number" type="xtd:String200"/>
+			<xsd:element name="Customer_Type" type="xtd:Recipient_Type_Code"/>
+			<xsd:element name="Customer_Organization_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Last_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_First_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Middle_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Suffix" type="xtd:Contact_Suffix_Code" minOccurs="0"/>
+			<xsd:element name="Customer_Title" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Specialty_Code" type="xtd:Specialty_Code" minOccurs="0"/>
+			<xsd:element name="Customer_Specialty_Description" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Phone_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Alt_Phone_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Fax_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Email" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Address_Line1" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Address_Line2" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Address_Line3" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Attention" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_City" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Region" type="xtd:Region_Code" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Postal_Area" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Postal_Area_Extension" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Customer_Country" type="xtd:Country_Code" nillable="true" minOccurs="0"/>
+			<xsd:element name="Product_Value" type="xtd:String200" minOccurs="0"/>
+			<xsd:element name="Product_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Order_Method" type="xtd:Order_Method_Code" nillable="true" minOccurs="0"/>
+			<xsd:element name="OKID" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="UMPI" type="xtd:String200" nillable="true" minOccurs="0"/>
+		</xsd:all>
+		<xsd:attribute name="operation" type="xtd:operationType" default="NONE"/>
+		<xsd:attribute name="objectId" type="xsd:string"/>
+		<xsd:attribute name="type_name" type="xsd:string" fixed="Customer_Touch"/>
+	</xsd:complexType>
+	<xsd:complexType name="Customer_Touch_Insert_Type">
+		<xsd:complexContent>
+			<xsd:restriction base="Customer_Touch_Type">
+				<xsd:all>
+					<xsd:element name="Touch_ID" type="xtd:Number16" minOccurs="0"/>
+					<xsd:element name="Reference_Number" type="xtd:String200"/>
+					<xsd:element name="Project_Identifier" type="xtd:String200"/>
+					<xsd:element name="Project_Name" type="xtd:String200" minOccurs="0"/>
+					<xsd:element name="Client_Identifier" type="xtd:String200"/>
+					<xsd:element name="Touch_Date" type="xtd:dateTimeStringType"/>
+					<xsd:element name="Status" type="xtd:Customer_Touch_Status_Code"/>
+					<xsd:element name="Status_Change_Date" type="xtd:dateTimeStringType" minOccurs ="0"/>
+					<xsd:element name="Status_Change_Reason" type="xtd:String2000" nillable="true" minOccurs ="0"/>
+					<xsd:element name="Type" type="xtd:Customer_Touch_Type_Code"/>
+					<xsd:element name="Source" type="xtd:Order_Source_Code"/>
+					<xsd:element name="Description" type="xtd:String2000"/>
+					<xsd:element name="Detail_Info" type="xtd:String2000" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Number" type="xtd:String200"/>
+					<xsd:element name="Customer_Type" type="xtd:Recipient_Type_Code"/>
+					<xsd:element name="Customer_Organization_Name" type="xtd:String200" minOccurs="0"/>
+					<xsd:element name="Customer_Last_Name" type="xtd:String200" minOccurs="0"/>
+					<xsd:element name="Customer_First_Name" type="xtd:String200" minOccurs="0"/>
+					<xsd:element name="Customer_Middle_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Suffix" type="xtd:Contact_Suffix_Code" minOccurs="0"/>
+					<xsd:element name="Customer_Title" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Specialty_Code" type="xtd:Specialty_Code" minOccurs="0"/>
+					<xsd:element name="Customer_Specialty_Description" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Phone_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Alt_Phone_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Fax_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Email" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Address_Line1" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Address_Line2" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Address_Line3" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Attention" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_City" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Region" type="xtd:Region_Code" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Postal_Area" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Postal_Area_Extension" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Customer_Country" type="xtd:Country_Code" nillable="true" minOccurs="0"/>
+					<xsd:element name="Product_Value" type="xtd:String200" minOccurs="0"/>
+					<xsd:element name="Product_Name" type="xtd:String200" minOccurs="0"/>
+					<xsd:element name="Order_Method" type="xtd:Order_Method_Code" nillable="true" minOccurs="0"/>
+					<xsd:element name="OKID" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="UMPI" type="xtd:String200" nillable="true" minOccurs="0"/>
+				</xsd:all>
+				<xsd:attribute name="operation" type="xtd:operationType" default="NONE"/>
+				<xsd:attribute name="objectId" type="xsd:string"/>
+				<xsd:attribute name="type_name" type="xsd:string" fixed="Customer_Touch"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

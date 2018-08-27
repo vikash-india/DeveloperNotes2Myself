@@ -1,0 +1,323 @@
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Cecily Xi (Dendrite International, Inc.) -->
+<XMLDBServiceConfiguration>
+	<XmlServiceProvider class="XmlServiceProvider.XmlSvcProvider"/>
+	<Subscriptions>
+		<Subscriber connectionString="Provider=OraOLEDB.Oracle;User Id=$DI_DBUser$;Password=$DI_DBPwd$;Data Source=$DI_DBDsn$;ChunkSize=10000;SPPrmsLOB=1;PLSQLRSet=1" enableTracing="0" enableDBLogging="1">
+			<SQLCommands cmdAppInfo="{ CALL xtevents.spxtl_appinfo (?,?,?,?,?,?,?,?,?) }" cmdEvents="{ CALL xtevents.spxtl_events(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) }" cmdLogs="{ CALL xtevents.spxtl_logs (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) }"/>
+		</Subscriber>
+	</Subscriptions>
+	<KeyLookups>
+		<CacheSize>100000</CacheSize>
+		<CheckKeySql>{call xtelligent.xt_check_keys(?,?)}</CheckKeySql>
+	</KeyLookups>
+	<CodeTranslation>
+		<CacheSize>50000</CacheSize>
+		<UseClientToSystemCache>true</UseClientToSystemCache>
+		<UseSystemToClientCache>false</UseSystemToClientCache>
+		<CodeTableSql>SELECT DISTINCT translate_value,code_value,description, field_name FROM xt_translation WHERE object_name=?</CodeTableSql>
+	</CodeTranslation>
+	<Database>
+		<ConnectionString role="Standard">Provider=OraOLEDB.Oracle;User Id=$DI_DBUser$;Password=$DI_DBPwd$;Data Source=$DI_DBDsn$;</ConnectionString>
+		<ShareDataSource>true</ShareDataSource>
+		<DisableOLEDB>false</DisableOLEDB>
+		<DisableOO4O>true</DisableOO4O>
+	</Database>
+	<System>
+		<EnableTestMode>false</EnableTestMode>
+		<MachineId>999999999</MachineId>
+		<EmployeeId>1</EmployeeId>
+	</System>
+	<MultiKeyGenerator>
+		<LowWaterMark>5</LowWaterMark>
+		<HighWaterMark>20</HighWaterMark>
+		<KeyGenerationSql>{call xtelligent.xt_get_next_IDL_seq_number(?,?,?)}</KeyGenerationSql>
+	</MultiKeyGenerator>
+	<DataModelRegistrations xmlns:xtds="http://schemas.dendrite.com/xtelligent/datastreamer">
+		<DataObject xtds:schemaId="1100" name="Team" urn="Team" url="$Metadata_path$DI_MD_Team.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/Team"/>
+		<DataObject xtds:schemaId="1200" name="Employee" urn="Employee" url="$Metadata_path$DI_MD_Employee.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/Employee"/>
+		<DataObject xtds:schemaId="1300" name="PostalArea" urn="PostalArea" url="$Metadata_path$DI_MD_PostalArea.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/PostalArea"/>
+		<DataObject xtds:schemaId="1400" name="Customer" urn="Customer" url="$Metadata_path$DI_MD_Customer.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/Customer"/>
+		<DataObject xtds:schemaId="1500" name="Product" urn="Product" url="$Metadata_path$DI_MD_product.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/Product"/>
+		<DataObject xtds:schemaId="1600" name="Alignment" urn="Alignment" url="$Metadata_path$DI_MD_Alignment.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/Alignment"/>
+		<DataObject xtds:schemaId="1700" name="Address" urn="Address" url="$Metadata_path$DI_MD_Address.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/Address"/>
+		<DataObject xtds:schemaId="1800" name="PostalAreaAlignment" urn="PostalAreaAlignment" url="$Metadata_path$DI_MD_PostalAreaAlignment.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/PostalAreaAlignment"/>
+		<DataObject xtds:schemaId="1900" name="Affiliation" urn="Affiliation" url="$Metadata_path$DI_MD_Affiliation.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/Affiliation"/>
+		<DataObject xtds:schemaId="2000" name="CustomerContract" urn="CustomerContract" url="$Metadata_path$DI_MD_CustomerContract.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/CustomerContract"/>
+		<DataObject xtds:schemaId="2100" name="MCOContract" urn="MCOContract" url="$Metadata_path$DI_MD_MCOContract.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/MCOContract"/>
+		<DataObject xtds:schemaId="2200" name="MCORebate" urn="MCORebate" url="$Metadata_path$DI_MD_MCORebate.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/MCORebate"/>
+		<DataObject xtds:schemaId="2300" name="FormularyProduct" urn="FormularyProduct" url="$Metadata_path$DI_MD_FormularyProduct.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/FormularyProduct"/>
+		<DataObject xtds:schemaId="2400" name="Event" urn="Event" url="$Metadata_path$DI_MD_Event.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/Event"/>
+		<DataObject xtds:schemaId="2500" name="SampleTransaction" urn="SampleTransaction" url="$Metadata_path$DI_MD_SampleTransaction.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/SampleTransaction"/>
+		<DataObject xtds:schemaId="2600" name="Notes" urn="Notes" url="$Metadata_path$DI_MD_Notes.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/Notes"/>
+		<DataObject xtds:schemaId="2700" name="ExplicitCustomerAlignment" urn="ExplicitCustomerAlignment" url="$Metadata_path$DI_MD_ExplicitCustomerAlignment.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/ExplicitCustomerAlignment"/>
+		<DataObject xtds:schemaId="2800" name="SampleShipment" urn="SampleShipment" url="$Metadata_path$DI_MD_SampleShipment.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/SampleShipment"/>
+		<DataObject xtds:schemaId="2900" name="Reconciliation" urn="Reconciliation" url="$Metadata_path$DI_MD_Reconciliation.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/Reconciliation"/>
+		<DataObject xtds:schemaId="3000" name="TerritoryAssignment" urn="TerritoryAssignment" url="$Metadata_path$DI_MD_TerritoryAssignment.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/TerritoryAssignment"/>
+		<DataObject xtds:schemaId="3100" name="SampleTransfer" urn="SampleTransfer" url="$Metadata_path$DI_MD_SampleTransfer.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/SampleTransfer"/>
+		<DataObject xtds:schemaId="3200" name="CustomerUpdate" urn="CustomerUpdate" url="$Metadata_path$DI_MD_CustomerUpdate.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/CustomerUpdate"/>
+		<DataObject xtds:schemaId="3300" name="CustomerMEUpdate" urn="CustomerMEUpdate" url="$Metadata_path$DI_MD_CustomerMEUpdate.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/CustomerMEUpdate"/>
+		<DataObject xtds:schemaId="3600" name="SampleLotNumbers" urn="SampleLotNumber" url="$Metadata_path$DI_MD_SampleLotNumber.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/MergeRequest"/>
+		<DataObject xtds:schemaId="3800" name="ProductAlignment" urn="ProductAlignment" url="$Metadata_path$DI_MD_ProductAlignment.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/ProductAlignment"/>
+		<DataObject xtds:schemaId="3900" name="AMAOptOut" urn="AMAOptOut" url="$Metadata_path$DI_MD_AMAOptOut.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/AMAOptOut"/>
+		<DataObject xtds:schemaId="4000" name="ExternalList" urn="ExternalList" url="$Metadata_path$DI_MD_ExternalList.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/ExternalList"/>
+		<DataObject xtds:schemaId="4100" name="PromotionalOrder" urn="PromotionalOrder" url="$Metadata_path$DI_MD_PromotionalOrder.xml" enable="true" targetNamespace="HTTP://dendrite.schemas.com/di/ts/PromotionalOrder"/>
+	</DataModelRegistrations>
+	<TargetNamespaces processingMode="lax">
+		<Namespace targetNamespace="HTTP://dendrite.schemas.com/di/ts/PostalArea" inXSL="$inXSL_path$PostalArea.xsl"/>
+		<Namespace targetNamespace="HTTP://dendrite.schemas.com/di/ts/Reconciliation" inXSL="$inXSL_path$Reconciliation.xsl"/>
+		<Namespace targetNamespace="HTTP://dendrite.schemas.com/di/ts/SampleShipment" inXSL="$inXSL_path$SampleShipment.xsl"/>
+		<Namespace targetNamespace="HTTP://dendrite.schemas.com/di/ts/SampleTransfer" inXSL="$inXSL_path$SampleTransfer.xsl"/>
+		<Namespace targetNamespace="HTTP://dendrite.schemas.com/di/ts/Customer" inXSL="$inXSL_path$Customer.xsl"/>
+		<Namespace targetNamespace="HTTP://dendrite.schemas.com/di/ts/Affiliation" inXSL="$inXSL_path$Affiliation.xsl"/>
+		<Namespace targetNamespace="HTTP://dendrite.schemas.com/di/ts/ProductAlignment" inXSL="$inXSL_path$ProductAlignment.xsl"/>
+		<Namespace targetNamespace="HTTP://dendrite.schemas.com/di/ts/TerritoryAssignment" inXSL="$inXSL_path$TerritoryAssignment.xsl"/>
+		<Namespace targetNamespace="HTTP://dendrite.schemas.com/di/ts/PostalAreaAlignment" inXSL="$inXSL_path$PostalAreaAlignment.xsl"/>
+		<Namespace targetNamespace="HTTP://dendrite.schemas.com/di/ts/ExplicitCustomerAlignment" inXSL="$inXSL_path$ExplicitCustomerAlignment.xsl"/>
+	</TargetNamespaces>
+	<RegisteredObjects>
+		<xtds:dataStreamer xmlns:xtds="http://schemas.dendrite.com/xtelligent/datastreamer" processingmode="ExportImport" notify_procedure="XTDATASTREAMER_PKG.XT_NOTIFY_PRC" updateObjectProcedure="XTDATASTREAMER_PKG.XT_UPDATESTATUS_PRC" output_path="">
+			<DefinedOperations>
+				<Operation name="INSERT" value="1"/>
+				<Operation name="UPDATE" value="0"/>
+				<Operation name="DELETE" value="-1"/>
+			</DefinedOperations>
+			<!--
+			* as @table of StreamTableBehavior implies assignment applicable for all request which have @sourceTable.
+			This processing is applicable to ONLY UPDATE operation . The value of node Column specified is to be used 
+			to indicate to datastreamer service that the column is to be explicitly have NULL value assigned.
+			
+			Request should have skipNullValues as false and explicitNullvalues as true
+			
+			-->
+			<StreamTableBehavior table="*">
+				<NullValuesAssignments>
+					<Column name="CODE_1">$$$$</Column>
+					<Column name="CODE_2">$$$$</Column>
+					<Column name="CODE_3">$$$$</Column>
+					<Column name="CODE_4">$$$$</Column>
+					<Column name="CODE_5">$$$$</Column>
+					<Column name="CODE_6">$$$$</Column>
+					<Column name="CODE_7">$$$$</Column>
+					<Column name="CODE_8">$$$$</Column>
+					<Column name="CODE_9">$$$$</Column>
+					<Column name="CODE_10">$$$$</Column>
+					<Column name="CODE_11">$$$$</Column>
+					<Column name="CODE_12">$$$$</Column>
+					<Column name="CODE_13">$$$$</Column>
+					<Column name="CODE_14">$$$$</Column>
+					<Column name="CODE_15">$$$$</Column>
+					<Column name="DATE_1">1900-01-01 00:00:00</Column>
+					<Column name="DATE_2">1900-01-01 00:00:00</Column>
+					<Column name="DATE_3">1900-01-01 00:00:00</Column>
+					<Column name="DATE_4">1900-01-01 00:00:00</Column>
+					<Column name="DATE_5">1900-01-01 00:00:00</Column>
+					<Column name="IDENTIFIER_1">-9999999999</Column>
+					<Column name="IDENTIFIER_2">-9999999999</Column>
+					<Column name="IDENTIFIER_3">-9999999999</Column>
+					<Column name="IDENTIFIER_4">-9999999999</Column>
+					<Column name="IDENTIFIER_5">-9999999999</Column>
+					<Column name="IDENTIFIER_6">-9999999999</Column>
+					<Column name="IDENTIFIER_7">-9999999999</Column>
+					<Column name="IDENTIFIER_8">-9999999999</Column>
+					<Column name="IDENTIFIER_9">-9999999999</Column>
+					<Column name="IDENTIFIER_10">-9999999999</Column>
+					<Column name="IDENTIFIER_11">-9999999999</Column>
+					<Column name="IDENTIFIER_12">-9999999999</Column>
+					<Column name="IDENTIFIER_13">-9999999999</Column>
+					<Column name="IDENTIFIER_14">-9999999999</Column>
+					<Column name="IDENTIFIER_15">-9999999999</Column>
+					<Column name="MONEY_1">-999999.9999</Column>
+					<Column name="MONEY_2">-999999.9999</Column>
+					<Column name="MONEY_3">-999999.9999</Column>
+					<Column name="MONEY_4">-999999.9999</Column>
+					<Column name="MONEY_5">-999999.9999</Column>
+					<Column name="MONEY_6">-999999.9999</Column>
+					<Column name="MONEY_7">-999999.9999</Column>
+					<Column name="MONEY_8">-999999.9999</Column>
+					<Column name="MONEY_9">-999999.9999</Column>
+					<Column name="MONEY_10">-999999.9999</Column>
+					<Column name="MONEY_11">-999999.9999</Column>
+					<Column name="MONEY_12">-999999.9999</Column>
+					<Column name="STRING_1">$$$$</Column>
+					<Column name="STRING_2">$$$$</Column>
+					<Column name="STRING_3">$$$$</Column>
+					<Column name="STRING_4">$$$$</Column>
+					<Column name="STRING_5">$$$$</Column>
+					<Column name="STRING_6">$$$$</Column>
+					<Column name="STRING_7">$$$$</Column>
+					<Column name="STRING_8">$$$$</Column>
+					<Column name="STRING_9">$$$$</Column>
+					<Column name="STRING_10">$$$$</Column>
+					<Column name="STRING_11">$$$$</Column>
+					<Column name="STRING_12">$$$$</Column>
+					<Column name="STRING_13">$$$$</Column>
+					<Column name="STRING_14">$$$$</Column>
+					<Column name="TEXT_1">$$$$</Column>
+					<Column name="TEXT_2">$$$$</Column>
+				</NullValuesAssignments>
+			</StreamTableBehavior>
+			<Group name="Dataload">
+				<ConnectionString role="Standard"/>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="Team">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 1100 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="1" blockSize="100" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="Employee">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 1200 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,KEY_2,KEY_3,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="PostalArea">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 1300 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="1" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="Alignment">
+						<!-- This Request assumes that there are no child data Objects for this alignment Entity -->
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 1600 AND STATUS=0 ORDER BY SCHEMA_ID,DATA_STREAMER_ID,KEY_1,PARENT_TAG,CHILD_TAG"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="Customer">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 1400 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,KEY_2,KEY_3,KEY_4,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="Product">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 1500 AND STATUS=0 AND PARENT_TAG = '-1' ORDER BY SCHEMA_ID,KEY_1,KEY_2,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="ProductAlignment">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 3800 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,KEY_2,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="SampleLotNumbers">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_2 WHERE SCHEMA_ID = 3600 AND STATUS=0 AND PARENT_TAG = '-1' ORDER BY SCHEMA_ID,KEY_1,KEY_2,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="Product">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 1500 AND STATUS=0 AND PARENT_TAG != '-1' ORDER BY SCHEMA_ID,KEY_1,KEY_2,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="Address">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 1700 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="PostalAreaAlignment">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 1800 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="Affiliation">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 1900 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,KEY_2,KEY_3,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="CustomerContract">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 2000 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,KEY_2,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="MCOContract">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 2100 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,KEY_2,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="MCORebate">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 2200 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,KEY_2,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="FormularyProduct">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 2300 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,KEY_2,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="Event">
+						<SQL sourceTable="DATA_STREAMER_2" sql="SELECT * FROM DATA_STREAMER_2 WHERE SCHEMA_ID = 2400 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,KEY_2,KEY_3,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="SampleTransaction">
+						<SQL sourceTable="DATA_STREAMER_2" sql="SELECT * FROM DATA_STREAMER_2 WHERE SCHEMA_ID = 2500 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,KEY_2,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="Notes">
+						<SQL sourceTable="DATA_STREAMER_2" sql="SELECT * FROM DATA_STREAMER_2 WHERE SCHEMA_ID = 2600 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="ExplicitCustomerAlignment">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 2700 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="SampleShipment">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 2800 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,KEY_2,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="Reconciliation">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 2900 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,KEY_2,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="TerritoryAssignment">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 3000 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="SampleTransfer">
+						<SQL sourceTable="DATA_STREAMER_2" sql="SELECT * FROM DATA_STREAMER_2 WHERE SCHEMA_ID = 3100 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,KEY_2,KEY_3,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="CustomerUpdate">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 3200 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="CustomerMEUpdate">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 3300 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="AMAOptOut">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 3900 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="ExternalList">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 4000 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+				<xtds:ExportRequest objectsToFetch="5" blockSize="100" blockCommitSize="50" skipNullValues="true" explicitNulls="true" aggregation="false" maxThreads="1">
+					<DataObject name="PromotionalOrder">
+						<SQL sourceTable="DATA_STREAMER_1" sql="SELECT * FROM DATA_STREAMER_1 WHERE SCHEMA_ID = 4100 AND STATUS=0 ORDER BY SCHEMA_ID,KEY_1,PARENT_TAG,CHILD_TAG,DATA_STREAMER_ID"/>
+					</DataObject>
+				</xtds:ExportRequest>
+			</Group>
+		</xtds:dataStreamer>
+	</RegisteredObjects>
+	<Services>
+		<ServiceSchedule serviceName="$xDataStreamer$" serviceType="passive">
+			<!-- Let all the time periods be in seconds -->
+			<ActivationPeriod>86400</ActivationPeriod>
+			<ExecutionPeriod>20</ExecutionPeriod>
+			<ExecutionInterval>10</ExecutionInterval>
+			<taskName>ReStartDataStreamer</taskName>
+			<script><![CDATA["$DataloadServicesPath$\Configuration\svcrestart.js"]]></script>
+			<svcmonparam><![CDATA["$DataStreamer$" 6000]]></svcmonparam>
+			<maxProcessmemory>50</maxProcessmemory>
+			<minSystemmemory>5</minSystemmemory>
+		</ServiceSchedule>
+	</Services>
+</XMLDBServiceConfiguration>

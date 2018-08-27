@@ -1,0 +1,27 @@
+<!-- 
+	Description: An example to show the XML namespace
+	Note: 
+		1. When using prefixes in XML, a so-called namespace for the prefix must be defined by the xmlns attribute in the start tag of an element. which has the following syntax
+				xmlns:prefix="URI"
+			where
+				URI is Uniform Resource Identifier. A Uniform Resource Identifier (URI) is a string of characters which identifies an Internet Resource.
+				The most common URI is the Uniform Resource Locator (URL) which identifies an Internet domain address. Another, not so common type of URI is the Universal Resource Name (URN).
+		2. There will be no conflict because the two <table> elements have different names.
+		3. Namespaces can be declared in the elements where they are used or in the XML root element. So we could have defined the XML namespace in the RootElement like below
+			<RootElement  xmlns:html="http://dendrite.com/html/" xmlns:furniture="http://dendrite.com/furniture/">
+		4. When a namespace is defined for an element, all child elements with the same prefix are associated with the same namespace.		
+		5. The xmlns attribute in the <table> tag give the html: and furniture: prefixes a qualified namespace.
+-->
+<RootElement>
+	<html:table  xmlns:html="http://dendrite.com/html/">
+		<tr>
+			<td>Sachin Tendulkar</td>
+			<td>Rahul Dravid</td>
+		</tr>
+	</html:table>
+	<furniture:table xmlns:furniture="http://dendrite.com/furniture/">
+		<name>French GardenTable</name>
+		<width>80</width>
+		<length>120</length>
+	</furniture:table>
+</RootElement>

@@ -1,0 +1,18 @@
+<!-- 
+	Description: An example to show xml:base attribute
+	Note: 
+		1. The attribute xml:base may be inserted in XML documents to specify a base URI other than the base URI of the document or external entity.
+		2. The options expands to the following
+				"Option 1" resolves to the URI "http://www.google.com/option1.xml"
+				"Option 2" resolves to the URI "http://www.google.com/OptionsList/option2.xml"
+				"Option 3" resolves to the URI "http://www.google.com/OptionsList/option3.xml"
+				"Option 4" resolves to the URI "http://www.google.com/OptionsList/option4.xml"
+-->
+<RootElement xml:base="http://www.google.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<item><link xlink:type="simple" xlink:href="option1.xml">Option 1</link></item>
+	<OrderedList xml:base="/OptionsList/">
+		<item><link xlink:type="simple" xlink:href="option2.xml">Option 2</link></item>
+		<item><link xlink:type="simple" xlink:href="option3.xml">Option 3</link></item>
+		<item><link xlink:type="simple" xlink:href="option4.xml">Option 4</link></item>
+	</OrderedList>
+</RootElement>

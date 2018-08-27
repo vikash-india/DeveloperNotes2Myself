@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Description: An example to explain about entity reference in an XML Document
+	Note: 
+		1. Character reference can have the form 
+				&name;
+		2. Five entity reference have been built into the XML
+		3. HTML entity reference can also be used in HTML based prowsers
+		4. Other entity reference needs to be defined before being used in the XML document
+-->
+	<EntityReference>
+		<Character name="LessThan">&lt;</Character>
+		<Character name="GreaterThan">&gt;</Character>
+		<Character name="And">&amp;</Character>
+		<Character name="Apostrophes">&apos;</Character>
+		<Character name="Quotes">&quot;</Character>
+		<!-- 
+		<Character name="Quotes">&copy;</Character>
+		-->
+	</EntityReference>
+

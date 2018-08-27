@@ -1,0 +1,15 @@
+<!-- 
+	Description: An example to explain empty elements
+	Note: 
+		1. An element without any content is called empty elements. 
+		2. The space between element name and /> is allowed
+		3. The space between / and > is NOT allowed
+-->
+<PlayersProfile>
+	<Player></Player>
+	<Player/>
+	<Player           />
+	<!-- 
+		<Player/        >
+	-->
+</PlayersProfile>

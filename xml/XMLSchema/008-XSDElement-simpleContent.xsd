@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The simpleContent element contains extensions or restrictions on a text-only complex type or on a simple type as content and contains no elements.
+	Syntax		: 
+						<simpleContent
+							id=ID
+							any attributes
+							>
+							(annotation?,(restriction|extension))
+							</simpleContent>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: complexType 
+			2. The ? sign declares that the element can occur zero or one time inside the simpleContent element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"/>

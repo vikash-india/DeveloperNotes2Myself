@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The redefine element redefines simple and complex types, groups, and attribute groups from an external schema.
+	Syntax		: 
+						<redefine
+							id=ID
+							schemaLocation=anyURI
+							any attributes
+						>
+							(annotation|(simpleType|complexType|group|attributeGroup))*
+						</redefine>
+	Attributes
+			id							: Optional. Specifies a unique ID for the element
+			schemaLocation	: Required. A URI to the location of a schema document
+			any attributes		: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: schema 
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"/>

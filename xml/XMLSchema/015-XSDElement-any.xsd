@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The any element enables the author to extend the XML document with elements not specified by the schema.
+	Syntax		: 
+						<any
+							id=ID
+							maxOccurs=nonNegativeInteger|unbounded
+							minOccurs=nonNegativeInteger
+							namespace=namespace
+							processContents=lax|skip|strict
+							any attributes
+						>
+							(annotation?)
+						</any>
+	Attributes
+			id								: Optional. Specifies a unique ID for the element
+			maxOccurs				: Optional. Specifies the maximum number of times the any element can occur in the parent element. The value can be any number >= 0, or if you want to set no limit on the maximum number, use the value "unbounded". Default value is 1
+			minOccurs				: Optional. Specifies the minimum number of times the any element can occur in the parent element. The value can be any number >= 0. Default value is 1 
+			namespace				: Optional. Specifies the namespaces containing the elements that can be used. Can be set to one of the following:
+													##any - elements from any namespace is allowed (this is default) 
+													##other - elements from any namespace that is not the namespace of the parent element can be present 
+													##local - elements must come from no namespace 
+													##targetNamespace - elements from the namespace of the parent element can be present 
+													List of {URI references of namespaces, ##targetNamespace, ##local} - elements from a space-delimited list of the namespaces can be present 
+			processContents	: Optional. Specifies how the XML processor should handle validation against the elements specified by this any element. Can be set to one of the following:
+													strict - the XML processor must obtain the schema for the required namespaces and validate the elements (this is default) 
+													lax - same as strict but; if the schema cannot be obtained, no errors will occur 
+													skip - The XML processor does not attempt to validate any elements from the specified namespaces 
+			any attributes			: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: choice, sequence 
+			2. The ? sign declares that the element can occur zero or one time inside the any element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!--Example: By using the <any> element the author can extend (after <lastname>) the content of "person" with any element. -->
+	<xs:element name="person">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="firstname" type="xs:string"/>
+				<xs:element name="lastname" type="xs:string"/>
+				<xs:any minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

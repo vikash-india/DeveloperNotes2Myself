@@ -1,0 +1,19 @@
+<!-- 
+	Description: An example to show a default XML namespace
+	Note: 
+		1. Defining a default namespace for an element saves us from using prefixes in all the child elements. It has the following syntax:
+				xmlns="namespaceURI"
+-->
+<RootElement  xmlns="http://dendrite.com/">
+	<html:table>
+		<tr>
+			<td>Sachin Tendulkar</td>
+			<td>Rahul Dravid</td>
+		</tr>
+	</html:table>
+	<furniture:table>
+		<name>French GardenTable</name>
+		<width>80</width>
+		<length>120</length>
+	</furniture:table>
+</RootElement>

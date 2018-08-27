@@ -1,0 +1,19 @@
+<!-- 
+	Description: An example to explain how whitespaces are treated in XML
+	Note: 
+		1. Only following four characters are treated as whitespace
+			x09	: Horizontal Tab(HT)
+			x0A	: Line Feed(LF)
+			x0D	: Carriage Return(CR)
+			x20	: Space
+		2. All white spaces except CR in contents are preserved by the parser and passed on to the application unmodified 
+		3. All white spaces in element names and attributes MAY BE REMOVED by the parser
+		4. Parser converts LF, CR or LF+CR into single LF character.
+		5. New Line in various system
+				In Windows applications, a new line is normally stored as a pair of characters: carriage return (CR) and line feed (LF). 
+				In Unix applications, a new line is normally stored as a LF character. 
+				In Macintosh applications only a CR character is used to store a new line.
+-->
+<PlayersProfile>
+	<Player>Sachin     Ramesh         Tendulkar</Player>
+</PlayersProfile>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The documentation element is used to enter text comments in a schema. This element must go inside an annotation element.
+	Syntax		: 
+						<documentation
+							source=URI reference
+							xml:lang=language
+						>
+							Any well-formed XML content
+						</documentation>
+	Attributes
+			source	: Optional. Specifies the source of the application information
+			xml:lang	: Optional. Specifies the language used in the contents
+	Notes: 
+			1. Parent elements: annotation 
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:annotation>
+  <xs:documentation xml:lang="en">
+  This Schema defines a W3Schools note!
+  </xs:documentation>
+</xs:annotation>
+</xs:schema>

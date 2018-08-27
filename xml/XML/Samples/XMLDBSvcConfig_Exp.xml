@@ -1,0 +1,268 @@
+<XMLDBServiceConfiguration>
+  <ISMessageHeader headerRole="Standard">
+    <Source>WF</Source>
+    <Application_Version>4.2.0</Application_Version>
+    <COM_Version>1.2.0</COM_Version>
+    <Message_Version>1.0.0</Message_Version>
+  </ISMessageHeader>
+  <Subscriptions>
+    <Subscriber connectionString="Provider=OraOLEDB.Oracle;User Id=aeseixt134a;Password=aeseixt134a;Data Source=aesei10a;ChunkSize=10000;SPPrmsLOB=1;PLSQLRSet=1" enableTracing="0" enableDBLogging="1">
+      <SQLCommands cmdAppInfo="{ CALL xtevents.spxtl_appinfo (?,?,?,?,?,?,?,?,?) }" cmdEvents="{ CALL xtevents.spxtl_events(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) }" cmdLogs="{ CALL xtevents.spxtl_logs (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) }" />
+    </Subscriber>
+  </Subscriptions>
+  <KeyLookups>
+    <CacheSize>100000</CacheSize>
+    <CheckKeySql>{call xtelligent.xt_check_keys(?,?)}</CheckKeySql>
+  </KeyLookups>
+  <CodeTranslation>
+    <CacheSize>50000</CacheSize>
+    <UseClientToSystemCache>true</UseClientToSystemCache>
+    <UseSystemToClientCache>false</UseSystemToClientCache>
+    <CodeTableSql>SELECT DISTINCT translate_value,code_value,description, field_name FROM xt_translation WHERE object_name=?</CodeTableSql>
+  </CodeTranslation>
+  <CommandCache>
+    <ConnectionString role="Standard" />
+    <CacheSize>50</CacheSize>
+    <CachePolicy>LRU</CachePolicy>
+    <PrepareOnDemand>true</PrepareOnDemand>
+    <AutoCacheOnQuery>false</AutoCacheOnQuery>
+    <DisableCache>false</DisableCache>
+    <EnableAutoCleanup>false</EnableAutoCleanup>
+    <AutoCleanupLimit>100</AutoCleanupLimit>
+    <CachedCommandList>
+      <!-- Lookup commands -->
+      <CachedCommand prepare="true" name="CustomerLookup">SELECT customer_id, Global_Customer_id  FROM customer WHERE global_customer_id=? </CachedCommand>
+      <!-- Some other commands : stored procedure -->
+      <!--			<CachedCommand prepare="true" name="GetPrimaryAddress">	{ Call Xtelligent.GetPrimaryAddress(?,?,?) }	</CachedCommand> -->
+    </CachedCommandList>
+  </CommandCache>
+  <Database>
+    <ConnectionString role="Standard">Provider=OraOLEDB.Oracle;User Id=aeseixt134a;Password=aeseixt134a;Data Source=aesei10a;</ConnectionString>
+    <ShareDataSource>true</ShareDataSource>
+    <UserId>aeseixt134a</UserId>
+    <Password>aeseixt134a</Password>
+    <DatabaseName>aesei10a</DatabaseName>
+    <ServerLocation>aesei10a</ServerLocation>
+    <ConnectionPoolSizeMax>5</ConnectionPoolSizeMax>
+    <ConnectionPoolSizeInitial>2</ConnectionPoolSizeInitial>
+    <ConnectionTimeOut>2000</ConnectionTimeOut>
+    <SessioName>ExportSession</SessioName>
+    <DisableOLEDB>false</DisableOLEDB>
+    <DisableOO4O>false</DisableOO4O>
+  </Database>
+  <System>
+    <ConcurrencyLevel>
+      <Minimum>1</Minimum>
+      <Maximum>10</Maximum>
+    </ConcurrencyLevel>
+    <EnableTestMode>false</EnableTestMode>
+    <MachineId>999999999</MachineId>
+    <EmployeeId>1</EmployeeId>
+  </System>
+  <MultiKeyGenerator>
+    <LowWaterMark>5</LowWaterMark>
+    <HighWaterMark>20</HighWaterMark>
+    <KeyGenerationSql>{call xtelligent.xt_get_next_sequence_number(?,?,?)}</KeyGenerationSql>
+  </MultiKeyGenerator>
+  <DataModelRegistrations xmlns:xtds="http://schemas.dendrite.com/xtelligent/datastreamer" xmlns:ts="http://schemas.dendrite.com/xtelligent/XmlPublish">
+    <!---For COM Schema Data Model registration for Import and Export-->
+    <DataObject xtds:schemaId="4080" ts:schemaId="4080" name="Customer_Sales_Area" urn="http://schemas.dendrite.com/IS/1.0.0/Customer_Sales_Area" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Customer_Alignment.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="8100" ts:schemaId="8100" name="Professional" urn="http://schemas.dendrite.com/IS/1.0.0/Professional" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Professional.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="8200" ts:schemaId="8200" name="Organization" urn="http://schemas.dendrite.com/IS/1.0.0/Organization" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Organization.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="8300" ts:schemaId="8300" name="Managed_Care" urn="http://schemas.dendrite.com/IS/1.0.0/Managed_Care" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Managed_Care.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="8400" ts:schemaId="8400" name="Formulary" urn="http://schemas.dendrite.com/IS/1.0.0/Formulary" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Formulary.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="8500" ts:schemaId="8500" name="Customer_Affiliation" urn="http://schemas.dendrite.com/IS/1.0.0/Customer_Affiliation" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Customer_Affiliation.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="8600" ts:schemaId="8600" name="Customer_Rating" urn="http://schemas.dendrite.com/IS/1.0.0/Customer_Rating" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Customer_Rating.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="8700" ts:schemaId="8700" name="Company_Product_Rating" urn="http://schemas.dendrite.com/IS/1.0.0/Company_Product_Rating" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Company_Product_Rating.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="9300" ts:schemaId="9300" name="Call" urn="http://schemas.dendrite.com/IS/1.0.0/Call" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Call.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="9900" ts:schemaId="9900" name="Merge_Request" urn="http://schemas.dendrite.com/IS/1.0.0/Merge_Request" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Merge_Request.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4130" ts:schemaId="4130" name="Employee_Time_Off" urn="http://schemas.dendrite.com/IS/1.0.0/Employee_Time_Off" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Employee_Time_Off.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4010" ts:schemaId="4010" name="Sales_Force" urn="http://schemas.dendrite.com/IS/1.0.0/Sales_Force" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Sales_Force.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4030" ts:schemaId="4030" name="Sales_Area" urn="http://schemas.dendrite.com/IS/1.0.0/Sales_Area" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Sales_Area.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4040" ts:schemaId="4040" name="Sales_Area_Relation" urn="http://schemas.dendrite.com/IS/1.0.0/Sales_Area_Relation" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Sales_Area_Relation_Exp.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4060" ts:schemaId="4060" name="Employee_Sales_Area" urn="http://schemas.dendrite.com/IS/1.0.0/Employee_Sales_Area" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Employee_Sales_Area.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4070" ts:schemaId="4070" name="Geography_Sales_Area" urn="http://schemas.dendrite.com/IS/1.0.0/Geography_Sales_Area" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Geography_Alignment.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4090" ts:schemaId="4090" name="Postal_Area" urn="http://schemas.dendrite.com/IS/1.0.0/Postal_Area" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Postal_Area.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4100" ts:schemaId="4100" name="Geography" urn="http://schemas.dendrite.com/IS/1.0.0/Geography" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Geography.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4110" ts:schemaId="4110" name="Geography_Postal_Area" urn="http://schemas.dendrite.com/IS/1.0.0/Geography_Postal_Area" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Geography_Postal_Area.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4120" ts:schemaId="4120" name="Employee" urn="http://schemas.dendrite.com/IS/1.0.0/Employee" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Employee.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4140" ts:schemaId="4140" name="Product" urn="http://schemas.dendrite.com/IS/1.0.0/Product" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Product.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4150" ts:schemaId="4150" name="Product_Relation" urn="http://schemas.dendrite.com/IS/1.0.0/Product_Relation" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Product_Relation.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4160" ts:schemaId="4160" name="Product_Sales_Force" urn="http://schemas.dendrite.com/IS/1.0.0/Product_Sales_Force" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Product_Alignment.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <!---For COM Schema Data Model registration for Export Only-->
+    <DataObject xtds:schemaId="9400" ts:schemaId="9400" name="Sample_Transaction" urn="http://schemas.dendrite.com/IS/1.0.0/Sample_Transaction" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Sample_Transaction.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="9500" ts:schemaId="9500" name="Inspection" urn="http://schemas.dendrite.com/IS/1.0.0/Inspection" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Inspection.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="9600" ts:schemaId="9600" name="Inventory" urn="http://schemas.dendrite.com/IS/1.0.0/Inventory" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Inventory.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4130" ts:schemaId="4130" name="Employee_Time_Off" urn="http://schemas.dendrite.com/IS/1.0.0/Employee_Time_Off" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Employee_Time_Off.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="10100" ts:schemaId="10100" name="Employee_Synchronization_Log" urn="http://schemas.dendrite.com/IS/1.0.0/Employee_Synchronization_Log" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Employee_Synchronization_Log.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="10200" ts:schemaId="10200" name="Order" urn="http://schemas.dendrite.com/IS/1.0.0/Order" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Order.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+  </DataModelRegistrations>
+  <TargetNamespaces processingMode="lax">
+    <!-- Register  the target namespace here Import and Export -->
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Professional" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Professional_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Organization" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Organization_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Managed_Care" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Managed_Care_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Formulary" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Formulary_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Customer_Affiliation" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Customer_Affiliation_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Call" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Call_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Inspection" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Inspection_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Sample_Transaction" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Sample_Transaction_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Employee" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Employee_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Sales_Area_Relation" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Sales_Area_Relation_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Employee_Synchronization_Log" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Employee_Synchronization_Log_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Order" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Order_exp.xsl" />
+  </TargetNamespaces>
+  <RegisteredQueues>
+    <JMSQ>
+      <QProcessor>JMSQ.QueueProcessor</QProcessor>
+      <!-- Only one JMSProvider can be specified at one time  -->
+      <JMSProvider name="TIBCO EMS Server">
+        <!-- ConnectionConfig contains provider specific connection parameters that are defined by administrator and used to connect to the JMS provider   -->
+        <ConnectionConfig>
+          <ServerUrl>tcp://192.168.162.71:7222</ServerUrl>
+          <ClientIdentification username="admin" password="admin" />
+          <Timeout>0</Timeout>
+          <ConnectionFactories>
+            <!--  type = queue|topic|generic  -->
+            <ConnectionFactory id="IS_JMS_CF" type="queue">IS_JMS_CF</ConnectionFactory>
+          </ConnectionFactories>
+        </ConnectionConfig>
+      </JMSProvider>
+      <MessageType />
+      <QueueNames>
+        <Queue qid="WF_X_Q" type="queue">
+          <LookupName>IS_JNDI_WF_X_Q</LookupName>
+          <ConnectionFactoryId>IS_JMS_CF</ConnectionFactoryId>
+          <!--  Delivery mode: 1 [non-persistent]; 2 [persistent]; default is 2   -->
+          <DeliveryMode>2</DeliveryMode>
+          <!--  Durable subscriber is for topic destination only: true [use durable subscriber]; false [use non-durable subscriber]; default is true with name="Default_Subscriber"  -->
+          <DurableSubscriber name="mySubscriber1">false</DurableSubscriber>
+        </Queue>
+        <Queue qid="WF_OUT_Q" type="queue">
+          <LookupName>IS_JNDI_WF_OUT_Q</LookupName>
+          <ConnectionFactoryId>IS_JMS_CF</ConnectionFactoryId>
+          <!--  Delivery mode: 1 [non-persistent]; 2 [persistent]; default is 2   -->
+          <DeliveryMode>2</DeliveryMode>
+          <!--  Durable subscriber is for topic destination only: true [use durable subscriber]; false [use non-durable subscriber]; default is true with name="Default_Subscriber"  -->
+          <DurableSubscriber name="mySubscriber1">false</DurableSubscriber>
+        </Queue>
+      </QueueNames>
+    </JMSQ>
+  </RegisteredQueues>
+  <RegisteredObjects>
+    <xtts:transactionStreamer exceptionqid="WF_X_Q" xmlns:xtts="http://schemas.dendrite.com/xtelligent/XmlPublish" processingmode="SaveAndPublishTransactions" updateObjectProcedure="XTTRANSACTION_PKG.XT_UPDATESTATUS_PRC" notify_procedure="XTTRANSACTION_PKG.XT_NOTIFY_PRC" output_path="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Data\Exports">
+      <!-- Uncomment to enable custom-plug-in hooks-->
+      <!--TransactionStreamerProvider class="XmlStreamerProvider.XmlStmProvider"/-->
+      <DefinedOperations>
+        <Operation name="INSERT" value="1" />
+        <Operation name="UPDATE" value="0" />
+        <Operation name="DELETE" value="-2" />
+        <Operation name="REFRESH" value="3" />
+        <Operation name="APPREFRESHREQUEST" value="4" />
+        <Operation name="ISREFRESHREQUEST" value="5" />
+      </DefinedOperations>
+      <!--
+			* as @table of StreamTableBehavior implies assignment applicable for all request which have @sourceTable.
+			This processing is applicable to ONLY UPDATE operation . The value of node Column specified is to be used
+			to indicate to transactionservice that the column is to be explicitly have NULL value assigned.		-->
+      <StreamTableBehavior table="*">
+        <NullValuesAssignments>
+          <Column name="CODE_1">$$$$</Column>
+          <Column name="CODE_2">$$$$</Column>
+          <Column name="CODE_3">$$$$</Column>
+          <Column name="CODE_4">$$$$</Column>
+          <Column name="CODE_5">$$$$</Column>
+          <Column name="CODE_6">$$$$</Column>
+          <Column name="CODE_7">$$$$</Column>
+          <Column name="CODE_8">$$$$</Column>
+          <Column name="CODE_9">$$$$</Column>
+          <Column name="CODE_10">$$$$</Column>
+          <Column name="CODE_11">$$$$</Column>
+          <Column name="CODE_12">$$$$</Column>
+          <Column name="CODE_13">$$$$</Column>
+          <Column name="CODE_14">$$$$</Column>
+          <Column name="CODE_15">$$$$</Column>
+          <Column name="DATE_1">1900-01-01 00:00:00</Column>
+          <Column name="DATE_2">1900-01-01 00:00:00</Column>
+          <Column name="DATE_3">1900-01-01 00:00:00</Column>
+          <Column name="DATE_4">1900-01-01 00:00:00</Column>
+          <Column name="DATE_5">1900-01-01 00:00:00</Column>
+          <Column name="IDENTIFIER_1">-9999999999</Column>
+          <Column name="IDENTIFIER_2">-9999999999</Column>
+          <Column name="IDENTIFIER_3">-9999999999</Column>
+          <Column name="IDENTIFIER_4">-9999999999</Column>
+          <Column name="IDENTIFIER_5">-9999999999</Column>
+          <Column name="IDENTIFIER_6">-9999999999</Column>
+          <Column name="IDENTIFIER_7">-9999999999</Column>
+          <Column name="IDENTIFIER_8">-9999999999</Column>
+          <Column name="IDENTIFIER_9">-9999999999</Column>
+          <Column name="IDENTIFIER_10">-9999999999</Column>
+          <Column name="IDENTIFIER_11">-9999999999</Column>
+          <Column name="IDENTIFIER_12">-9999999999</Column>
+          <Column name="IDENTIFIER_13">-9999999999</Column>
+          <Column name="IDENTIFIER_14">-9999999999</Column>
+          <Column name="IDENTIFIER_15">-9999999999</Column>
+          <Column name="MONEY_1">-999999.9999</Column>
+          <Column name="MONEY_2">-999999.9999</Column>
+          <Column name="MONEY_3">-999999.9999</Column>
+          <Column name="MONEY_4">-999999.9999</Column>
+          <Column name="MONEY_5">-999999.9999</Column>
+          <Column name="MONEY_6">-999999.9999</Column>
+          <Column name="MONEY_7">-999999.9999</Column>
+          <Column name="MONEY_8">-999999.9999</Column>
+          <Column name="MONEY_9">-999999.9999</Column>
+          <Column name="MONEY_10">-999999.9999</Column>
+          <Column name="MONEY_11">-999999.9999</Column>
+          <Column name="MONEY_12">-999999.9999</Column>
+          <Column name="STRING_1">$$$$</Column>
+          <Column name="STRING_2">$$$$</Column>
+          <Column name="STRING_3">$$$$</Column>
+          <Column name="STRING_4">$$$$</Column>
+          <Column name="STRING_5">$$$$</Column>
+          <Column name="STRING_6">$$$$</Column>
+          <Column name="STRING_7">$$$$</Column>
+          <Column name="STRING_8">$$$$</Column>
+          <Column name="STRING_9">$$$$</Column>
+          <Column name="STRING_10">$$$$</Column>
+          <Column name="STRING_11">$$$$</Column>
+          <Column name="STRING_12">$$$$</Column>
+          <Column name="STRING_13">$$$$</Column>
+          <Column name="STRING_14">$$$$</Column>
+          <Column name="TEXT_1">$$$$</Column>
+          <Column name="TEXT_2">$$$$</Column>
+        </NullValuesAssignments>
+      </StreamTableBehavior>
+      <Group name="NEWGRP1">
+        <ConnectionString role="Standard" />
+        <xtts:ExportRequest skipNullValues="true" qid="WF_OUT_Q" priority="0" headerRole="Standard" corrid="status=0" dateTimeFormat="YYYY-MM-DD HH24:MI:SS">
+          <DataObject name="TransactionPublication">
+            <SQL sourceTable="XTTRANSACTION_TABLE_1" sql="SELECT * FROM XTTRANSACTION_TABLE_1 WHERE status = 0 and xttransaction_id between (select start_sequence from xttransaction_request where request_name like 'TransactionPublication' ) and (select end_sequence from xttransaction_request where request_name like 'TransactionPublication') and schema_id not in (9400, 9500, 9600) order by xttransaction_id" />
+          </DataObject>
+        </xtts:ExportRequest>
+        <xtts:ExportRequest skipNullValues="true" qid="WF_OUT_Q" priority="0" headerRole="Standard" corrid="status=0" dateTimeFormat="YYYY-MM-DD HH24:MI:SS">
+          <DataObject name="TransactionPublication1">
+            <SQL sourceTable="XTTRANSACTION_TABLE_1" sql="SELECT * FROM XTTRANSACTION_TABLE_1 WHERE status = 0 and xttransaction_id between (select start_sequence from xttransaction_request where request_name like 'TransactionPublication1' ) and (select end_sequence from xttransaction_request where request_name like 'TransactionPublication1') and schema_id in (9500, 9600) order by xttransaction_id" />
+          </DataObject>
+        </xtts:ExportRequest>
+        <xtts:ExportRequest skipNullValues="true" qid="WF_OUT_Q" priority="0" headerRole="Standard" corrid="status=0" dateTimeFormat="YYYY-MM-DD HH24:MI:SS">
+          <DataObject name="TransactionPublication2">
+            <SQL sourceTable="XTTRANSACTION_TABLE_1" sql="SELECT * FROM XTTRANSACTION_TABLE_1 WHERE status = 0 and xttransaction_id between (select start_sequence from xttransaction_request  where request_name like 'TransactionPublication2' ) and (select end_sequence from xttransaction_request  where request_name like 'TransactionPublication2' ) and schema_id  in (9400) order by xttransaction_id" />
+          </DataObject>
+        </xtts:ExportRequest>
+      </Group>
+    </xtts:transactionStreamer>
+  </RegisteredObjects>
+  <Services>
+    <ServiceSchedule serviceName="RS440B1010 MIISA TransactionPublisher Vikash" serviceType="active">
+      <!-- Let all the time periods be in seconds -->
+      <ActivationPeriod>30</ActivationPeriod>
+      <ExecutionPeriod>30</ExecutionPeriod>
+      <ExecutionInterval>30</ExecutionInterval>
+      <taskName>ReStartTS</taskName>
+      <script><![CDATA["C:\Program Files\Dendrite\Xtelligent\1.3.5\Standard\Configuration\svcrestart.js"]]></script>
+      <svcmonparam><![CDATA["RS440B1010 MIISA TransactionPublisher Vikash" 6000]]></svcmonparam>
+      <maxProcessmemory>50</maxProcessmemory>
+      <minSystemmemory>15</minSystemmemory>
+    </ServiceSchedule>
+  </Services>
+</XMLDBServiceConfiguration>

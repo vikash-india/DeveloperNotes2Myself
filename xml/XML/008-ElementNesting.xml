@@ -1,0 +1,15 @@
+<!-- 
+	Description: An example to show the nesting of an element
+	Note: 
+		1. The elements can be nested to create hierarchial XML Document
+-->
+<PlayersProfile>
+	<Player id="1">
+		<Name>Sachin Ramesh Tendulkar</Name>
+		<DateOfBirth>
+			<Day>24</Day>
+			<Month>April</Month>
+			<Year>1973</Year>
+		</DateOfBirth>
+	</Player>
+</PlayersProfile>

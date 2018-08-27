@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The selector element specifies an XPath expression that selects a set of elements for an identity constraint (unique, key, and keyref elements).
+	Syntax		: 
+						<selector
+							id=ID
+							xpath=a subset of XPath expression
+							any attributes
+						>
+							(annotation?)
+						</selector>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			xpath				: Required. Specifies an XPath expression, relative to the element being declared, that identifies the child elements to which the identity constraint applies
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: key, keyref, unique 
+			2. The ? sign declares that the element can occur zero or one time inside the selector element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"/>

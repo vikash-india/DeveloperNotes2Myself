@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The attributeGroup element is used to group a set of attribute declarations so that they can be incorporated as a group into complex type definitions.
+	Syntax		: 
+						<attributeGroup
+							id=ID
+							name=NCName
+							ref=QName
+							any attributes
+						>
+							(annotation?),((attribute|attributeGroup)*,anyAttribute?))
+						</attributeGroup>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			name				: Optional. Specifies the name of the attribute group. Name and ref attributes cannot both be present
+			ref					: Optional. Specifies a reference to a named attribute group. Name and ref attributes cannot both be present
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: attributeGroup, complexType, schema, restriction (both simpleContent and complexContent), extension (both simpleContent and complexContent)
+			2. The ? sign declares that the element can occur zero or one time, and the * sign declares that the element can occur zero or more times inside the attributeGroup element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!--Example: The example below defines an attribute group named "personattr" which is used in a complex type named "person". -->
+<xs:attributeGroup name="personattr">
+  <xs:attribute name="attr1" type="xs:string"/>
+  <xs:attribute name="attr2" type="xs:integer"/>
+</xs:attributeGroup><xs:complexType name="person">
+  <xs:attributeGroup ref="personattr"/>
+</xs:complexType>
+</xs:schema>

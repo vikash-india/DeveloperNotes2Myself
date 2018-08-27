@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The simpleType element defines a simple type and specifies the constraints and information about the values of attributes or text-only elements.
+	Syntax		: 
+						<simpleType
+							id=ID
+							name=NCName
+							any attributes
+						>
+							(annotation?,(restriction|list|union))
+						</simpleType>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			name				: Specifies a name for the element. This attribute is required if the simpleType element is a child of the schema element, otherwise it is not allowed
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: attribute, element, list, restriction, schema, union 
+			2. The ? sign declares that the element can occur zero or one time inside the simpleType element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="age">
+  <xs:simpleType>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+</xs:schema>

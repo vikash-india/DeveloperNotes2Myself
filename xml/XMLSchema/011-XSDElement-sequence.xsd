@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The sequence element specifies that the child elements must appear in a sequence. Each child element can occur from 0 to any number of times.
+	Syntax		: 
+						<sequence
+							id=ID
+							maxOccurs=nonNegativeInteger|unbounded
+							minOccurs=nonNegativeInteger
+							any attributes
+						>
+							(annotation?,(element|group|choice|sequence|any)*)
+						</sequence>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			maxOccurs		: Optional. Specifies the maximum number of times the sequence element can occur in the parent element. The value can be any number >= 0, or if you want to set no limit on the maximum number, use the value "unbounded". Default value is 1
+			minOccurs		: Optional. Specifies the minimum number of times the sequence element can occur in the parent element. The value can be any number >= 0. Default value is 1 
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: group, choice, sequence, complexType, restriction (both simpleContent and complexContent), extension (both simpleContent and complexContent) 
+			2. The ? sign declares that the element can occur zero or one time inside the sequence element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"/>

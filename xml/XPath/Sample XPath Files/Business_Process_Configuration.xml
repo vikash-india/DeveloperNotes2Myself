@@ -1,0 +1,410 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<Configuration xmlns = "http://schemas.dendrite.com/IS/1.0.0" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://schemas.dendrite.com/IS/1.0.0 config.xsd">
+	<Sub_Configuration>
+		<EntityList>
+			<Entity BoB = "false" Conflicting = "0" Name = "Sales_Force">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "SMS">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Sales_Force' and Activity_Status='CURR'])) ))</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Sales_Force' and Activity_Status='CURR'])) ))</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "OM"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Sales_Force_Relation">
+				<SubscriberList>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList/>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Sales_Area">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "SMS">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Sales_Area' and Activity_Status='CURR'])) )) and //*[(local-name()='Sales_Area') and (Sales_Area_Type = 'TERR' or Sales_Area_Type = 'DIST' or Sales_Area_Type = 'REGN' or Sales_Area_Type = 'AREA')]</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Sales_Area' and Activity_Status='CURR'])) )) and //*[(local-name()='Sales_Area') and (Sales_Area_Type = 'TERR' or Sales_Area_Type = 'DIST' or Sales_Area_Type = 'REGN' or Sales_Area_Type = 'AREA')]</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "OM"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Sales_Area_Relation">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "SMS">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Sales_Area_Relation' and Activity_Status='CURR'])) )) and (//*[local-name()='Sales_Area_Relation' and (Sales_Area_Relation_Type='RPT')])</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Sales_Area_Relation' and Activity_Status='CURR'])) )) and (//*[local-name()='Sales_Area_Relation' and (Sales_Area_Relation_Type='RPT' or Sales_Area_Relation_Type='OCOV') and (@operation != 'UPDATE' and @operation != 'NONE')])</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "OM"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Employee_Sales_Area">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "SMS">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Employee_Sales_Area' and Activity_Status='CURR'])) )) and (//*[local-name()='Employee_Sales_Area' and Employee_Assignment_Type='PRIM'])</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Employee_Sales_Area' and Activity_Status='CURR'])) )) and (//*[local-name()='Employee_Sales_Area' and Employee_Assignment_Type='PRIM' and (@operation != 'UPDATE' and @operation != 'NONE')])</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "OM"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Geography_Sales_Area">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Geography_Sales_Area' and Activity_Status='CURR'])))) and (//*[local-name()='Geography_Sales_Area' and Geography_Sales_Area_Type='SFA' and (@operation != 'UPDATE' and @operation != 'NONE')])</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "OM"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Customer_Sales_Area">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "OM">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Customer_Sales_Area' and Activity_Status='CURR']))))</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Customer_Sales_Area' and Activity_Status='CURR'])))) and (//*[local-name()='Customer_Sales_Area' and Customer_Sales_Area_Type='SFA' and (@operation != 'UPDATE' and @operation != 'NONE')])</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "OM"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Postal_Area">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Postal_Area' and Activity_Status='CURR']))))</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "OM"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Geography">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Geography' and Activity_Status='CURR'])) ))</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "OM"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Geography_Postal_Area">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Geography_Postal_Area' and Activity_Status='CURR'])) )) and (//*[local-name()='Geography_Postal_Area' and (@operation != 'UPDATE' and @operation != 'NONE')])</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "OM"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Employee">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "SMS"/>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Employee' and Activity_Status='CURR'])) ))</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "OM"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Employee_Time_Off">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF"/>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Product">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "SMS">
+						<Rule>(//*[local-name()='Product' and Product_Type='SMPL'])</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Product' and Activity_Status='CURR'])) ))</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "OM"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Product_Relation">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Product_Relation' and Activity_Status='CURR'])) )) and (//*[local-name()='Product_Relation' and Relation_Type='HEIR' and (@operation != 'UPDATE' and @operation != 'NONE')]) </Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "OM"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Product_Sales_Force">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Product_Sales_Force' and Activity_Status='CURR'])) ))</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "OM"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Merge_Request">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>(//*/TransactionSetProperties/Source = 'NP') and (//*[@type_name = 'Merge_Request']/Merge_Type = 'CUST')</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "OM">
+						<Rule>//*/TransactionSetProperties/Source = 'WF'</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList/>
+			</Entity>
+			<Entity BoB = "true" Conflicting = "0" Name = "Professional">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "OM">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Professional' and Activity_Status='CURR']))))  and (//*[local-name()='Professional' and Data_Source!='BOB'])</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "NP">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Professional' and Activity_Status='CURR'])) ))</Rule>
+					</Application>
+					<Application BoB_Processing = "true" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Professional' and Activity_Status='CURR']))))</Rule>
+					</Application>
+					<Application BoB_Processing = "true" COM_Version = "1.0.0" Name = "SMS">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Professional' and Activity_Status='CURR'])))) and (//*[local-name()='Professional' and Data_Source!='BOB']) </Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "NP"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "true" Conflicting = "0" Name = "Organization">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "OM">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Organization' and Activity_Status='CURR'])))) and (//*[local-name()='Organization' and Data_Source!='BOB'])</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "NP">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Organization' and Activity_Status='CURR']))))</Rule>
+					</Application>
+					<Application BoB_Processing = "true" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Organization' and Activity_Status='CURR']))))</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "NP"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Managed_Care">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "OM">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Managed_Care' and Activity_Status='CURR']))))</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Managed_Care' and Activity_Status='CURR']))))</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Formulary">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Formulary' and Activity_Status='CURR']))))</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "OM"/>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Customer_Affiliation">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "OM">
+						<Rule>(//*/TransactionSetProperties/Source != 'NP') and ((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Customer_Affiliation' and Activity_Status='CURR']))))</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "NP">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[@type_name='Customer_Affiliation']/Affiliation_Type[.!='MCO' and .!='PBM' and .!='FORM']) and (//*[@type_name='Customer_Affiliation']/Parent_Customer_Type[.!='MCO' and .!='PBM' and .!='FORM']) and (//*[@type_name='Customer_Affiliation']/Child_Customer_Type[.!='MCO' and .!='PBM' and .!='FORM']) and ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Customer_Affiliation' and Activity_Status='CURR'])))))</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>((//*/TransactionSetProperties/Refresh_Response='true') or ((//*[(@operation != 'NONE' and Activity_Status='CURR') or @operation='REFRESH']) or (count(//*[(@operation != 'NONE' and count(Activity_Status) =0)]) >0 and (//*[@type_name = 'Customer_Affiliation' and Activity_Status='CURR'])))) and (//*[local-name()='Customer_Affiliation' and Data_Source!='BOB'])</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "NP"/>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Customer_Rating">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF"/>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Company_Product_Rating">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF"/>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Call">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "SMS">
+						<Rule>//*[local-name()='Call' and Call_Type='DS'  or Call_Type='SO' or Call_Type='AS' or Call_Type='DAS']</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF"/>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Sample_Transaction">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "SMS">
+						<Rule>//*[local-name()='Sample_Transaction' and Transaction_Type!='LOST']</Rule>
+					</Application>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "WF">
+						<Rule>//*[local-name()='Sample_Transaction' and Transaction_Type='SHIP' and Transaction_Sub_Type = 'SENT' ]</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+					<Application COM_Version = "1.0.0" Name = "TP"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Inventory">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "SMS">
+						<Rule>//*[local-name()='Inventory' and Inventory_Subtype='ANNU' or Inventory_Subtype='FCUS' or Inventory_Subtype='TERM' or Inventory_Subtype='INTR']</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Inspection">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "SMS">
+						<Rule>//*[local-name()='Inspection' and Inspection_Subtype='ANNU'  or Inspection_Subtype='FCUS' or Inspection_Subtype='TERM' or Inspection_Subtype='INTR']</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.0.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.0.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Employee_Synchronization_Log">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.1.0" Name = "SMS">
+						<Rule>//*[local-name()='Employee_Synchronization_Log' and Synchronization_Status='SU' ]</Rule>
+					</Application>
+					<!--Application BoB_Processing = "false" COM_Version = "1.1.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.1.0" Name = "WF"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Mail_Fulfillment_Transaction">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.1.0" Name = "SMS"/>
+					<!--Application BoB_Processing = "false" COM_Version = "1.1.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.1.0" Name = "TP"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Order">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.1.0" Name = "WF"/>
+					<Application BoB_Processing = "false" COM_Version = "1.1.0" Name = "SAM"/>
+					<!--Application BoB_Processing = "false" COM_Version = "1.1.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.1.0" Name = "WF"/>
+					<Application COM_Version = "1.1.0" Name = "TP"/>
+					<Application COM_Version = "1.1.0" Name = "SAM"/>
+				</PublisherList>
+			</Entity>
+			<Entity BoB = "false" Conflicting = "0" Name = "Customer_Touch">
+				<SubscriberList>
+					<Application BoB_Processing = "false" COM_Version = "1.1.0" Name = "WF"/>
+					<Application BoB_Processing = "false" COM_Version = "1.1.0" Name = "SAM"/>
+					<!--Application BoB_Processing = "false" COM_Version = "1.1.0" Name = "TP"/-->
+				</SubscriberList>
+				<PublisherList>
+					<Application COM_Version = "1.1.0" Name = "TP"/>
+					<Application COM_Version = "1.1.0" Name = "SAM"/>
+				</PublisherList>
+			</Entity>
+		</EntityList>
+	</Sub_Configuration>
+	<Application_Configuration>
+		<Application Name = "SMS" In_Q = "SMS_IN_Q" PIn_Q = "SMS_PIN_Q" Out_Q = "SMS_OUT_Q" X_Q = "SMS_X_Q" Ref_Req_Q = "SMS_PIN_Q"/>
+		<Application Name = "WF" In_Q = "WF_IN_Q" PIn_Q = "WF_PIN_Q" Out_Q = "WF_OUT_Q" X_Q = "WF_X_Q" Ref_Req_Q = "WF_PIN_Q"/>
+		<Application Name = "OM" In_Q = "OM_IN_Q" PIn_Q = "OM_PIN_Q" Out_Q = "OM_OUT_Q" X_Q = "OM_X_Q" Ref_Req_Q = "OM_PIN_Q"/>
+		<Application Name = "NP" In_Q = "NP_IN_Q" PIn_Q = "NP_PIN_Q" Out_Q = "NP_OUT_Q" X_Q = "NP_X_Q" Ref_Req_Q = "NP_PIN_Q"/>
+		<Application Name = "TP" In_Q = "3P_IN_Q" PIn_Q = "3P_PIN_Q" Out_Q = "3P_OUT_Q" X_Q = "3P_X_Q" Ref_Req_Q = "3P_PIN_Q"/>
+		<Application Name = "SAM" In_Q = "SAM_IN_Q" PIn_Q = "SAM_PIN_Q" Out_Q = "SAM_OUT_Q" X_Q = "SAM_X_Q" Ref_Req_Q = "SAM_PIN_Q"/>
+	</Application_Configuration>
+</Configuration>

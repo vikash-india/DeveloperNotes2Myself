@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Definition	: A simple element is an XML element that contains only text. It cannot contain any other elements or attributes.
+	Syntax: 	  <xs:element name="xxx" type="yyy"/>
+	Attributes:
+		name	: xxx is the name of the element 
+		type		: yyy is the data type of the element. XML Schema has a lot of built-in data types. The most common types are 
+						xs:string 
+						xs:decimal 
+						xs:integer 
+						xs:boolean 
+						xs:date 
+						xs:time 
+	Notes: 
+		1. The text can be of many different types. It can be one of the types included in the XML Schema definition (boolean, string, date, etc.), or it can be a custom type that you can define yourself
+		2. You can also add restrictions (facets) to a data type in order to limit its content, or you can require the data to match a specific pattern.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="PlayersProfile" type="xs:integer"/>
+</xs:schema>

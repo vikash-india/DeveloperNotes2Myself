@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Definition	: The <schema> element is the root element of every XML Schema
+	Syntax: 	  <xs:schema ...>
+						...
+					</xs:schema>
+	Attributes:
+					attributeFormDefault	: Optional. Value can be qualified or unqualified. The value of the attributeFormDefault attribute determines the default value of the form attribute for all attribute types.
+					blockDefault				: Optional. The value of the blockDefault attribute determines the default value of the block attribute for element types and complex types.
+					elementFormDefault	: Optional. Value can be qualified or unqualified. The value of the elementFormDefault attribute determines the default value of the form attribute for all element types.
+					finalDefault					: Optional. The value of the finalDefault attribute determines the default value of the final attribute for element types, simple types, and complex types.
+					id									: Optional. The value of an id attribute uniquely identifies an element within an XML schema.
+					targetNamespace		: Optional. The value of the targetNamespace is the namespace for any component described in the XML schema document. There may be explicitly no target namespace.
+					version						: Optional. The version attribute has no special meaning. The schema writer might wish to version the XML schema or the XML schema document.
+					xml:lang						: Optional. The value of the xml:lang attribute indicates the language of all human-readable information in a schema.
+					xmlns							: Required. The value of an xmlns attribute specifies an XML namespace. The xmlns attribute identifies existing namespaces to which qualified names might apply. Without a namespace qualifier, the value of this attribute may also identify a default namespace for the XML schema document.
+	Notes: 
+		1. An XML Schema Document must have exactly one schema element
+		2. xmlns:xsd attribute indicates that the elements and data types used in the schema come from the "http://www.w3.org/2001/XMLSchema" namespace. 
+			It also specifies that the elements and data types that come from the "http://www.w3.org/2001/XMLSchema" namespace should be prefixed with xsd:. One can use xs or xmlns:anyName also
+		3. targetNamespace indicates that the elements defined by this schema come from the defined namespace which is http://www.google.com/target
+		4. xmlns indicates that the default namespace is "http://www.google.com/"
+		5. elementFormDefault	: Indicates that any elements used by the XML instance document which were declared in this schema must be namespace qualified or not
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:invoice="http://www.google.com/Invoice" xmlns="http://www.google.com/" targetNamespace="http://www.google.com/target" elementFormDefault="unqualified" attributeFormDefault="unqualified" blockDefault="#all" finalDefault="restriction" version="FFS:1" id="Full-Featured-Schema" xml:lang="en-US">
+
+</xs:schema>

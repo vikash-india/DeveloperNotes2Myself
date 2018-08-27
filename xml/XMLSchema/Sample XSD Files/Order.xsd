@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://schemas.dendrite.com/IS/1.0.0/Order" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xtd="http://schemas.dendrite.com/IS/1.0.0/XTDataTypes" targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Order" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://schemas.dendrite.com/IS/1.0.0/XTDataTypes" schemaLocation="XTDataTypes.xsd"/>
+	<!--
+		W3C XML Schema Generated using Xtelligent Schema generator.
+		Date: Fri Apr 30 13:58:14 PDT 2004-->
+	<xsd:element name="Order" type="Order_Type"/>
+	<xsd:complexType name="Order_Detail_Type">
+		<xsd:all>
+			<xsd:element name="Order_Detail_ID" type="xtd:Number16" minOccurs="0"/>
+			<xsd:element name="Order_Line_Number" type="xtd:Number16"/>
+			<xsd:element name="Product_Value" type="xtd:String200"/>
+			<xsd:element name="Product_Name" type="xtd:String200" minOccurs="0"/>
+			<xsd:element name="Job_Type" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Order_Detail_Status" type="xtd:Order_Detail_Status_Code"/>
+			<xsd:element name="Status_Change_Date" type="xtd:dateTimeStringType" minOccurs="0"/>
+			<xsd:element name="Order_Detail_Status_Reason" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Actual_Execution_Date" type="xtd:dateTimeStringType" minOccurs="0"/>
+			<xsd:element name="Expected_Delivery_Date" type="xtd:dateTimeStringType" nillable="true" minOccurs="0"/>
+			<xsd:element name="Expected_Shipment_Date" type="xtd:dateTimeStringType" nillable="true" minOccurs="0"/>
+			<xsd:element name="Requested_Unit_Of_Measure" type="xtd:String200" minOccurs="0"/>
+			<xsd:element name="Requested_Quantity" type="xtd:Number9" minOccurs="0"/>
+			<xsd:element name="Shipped_Quantity" type="xtd:Number9" nillable="true" minOccurs="0"/>
+		</xsd:all>
+		<xsd:attribute name="operation" type="xtd:operationType" default="NONE"/>
+		<xsd:attribute name="objectId" type="xsd:string"/>
+		<xsd:attribute name="type_name" type="xsd:string" fixed="Order_Detail"/>
+	</xsd:complexType>
+	<xsd:complexType name="Order_Detail_Insert_Type">
+		<xsd:complexContent>
+			<xsd:restriction base="Order_Detail_Type">
+				<xsd:all>
+					<xsd:element name="Order_Detail_ID" type="xtd:Number16" minOccurs="0"/>
+					<xsd:element name="Order_Line_Number" type="xtd:Number16"/>
+					<xsd:element name="Product_Value" type="xtd:String200"/>
+					<xsd:element name="Product_Name" type="xtd:String200"/>
+					<xsd:element name="Job_Type" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Order_Detail_Status" type="xtd:Order_Detail_Status_Code"/>
+					<xsd:element name="Status_Change_Date" type="xtd:dateTimeStringType" minOccurs="0"/>
+					<xsd:element name="Order_Detail_Status_Reason" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Actual_Execution_Date" type="xtd:dateTimeStringType" minOccurs="0"/>
+					<xsd:element name="Expected_Delivery_Date" type="xtd:dateTimeStringType" nillable="true" minOccurs="0"/>
+					<xsd:element name="Expected_Shipment_Date" type="xtd:dateTimeStringType" nillable="true" minOccurs="0"/>
+					<xsd:element name="Requested_Unit_Of_Measure" type="xtd:String200"/>
+					<xsd:element name="Requested_Quantity" type="xtd:Number9"/>
+					<xsd:element name="Shipped_Quantity" type="xtd:Number9" nillable="true" minOccurs="0"/>
+				</xsd:all>
+				<xsd:attribute name="operation" type="xtd:operationType" default="NONE"/>
+				<xsd:attribute name="objectId" type="xsd:string"/>
+				<xsd:attribute name="type_name" type="xsd:string" fixed="Order_Detail"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="Order_Container_Type">
+		<xsd:all>
+			<xsd:element name="Order_Container_ID" type="xtd:Number16" minOccurs="0"/>
+			<xsd:element name="Execution_Date_Time" type="xtd:dateTimeStringType" minOccurs="0"/>
+			<xsd:element name="Carrier_Service_Symbol" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Carrier_Service_Description" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Tracking_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="URI" type="xtd:String200" minOccurs="0"/>
+			<xsd:element name="Product_Value" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Product_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+		</xsd:all>
+		<xsd:attribute name="operation" type="xtd:operationType" default="NONE"/>
+		<xsd:attribute name="objectId" type="xsd:string"/>
+		<xsd:attribute name="type_name" type="xsd:string" fixed="Order_Container"/>
+	</xsd:complexType>
+	<xsd:complexType name="Order_Container_Insert_Type">
+		<xsd:complexContent>
+			<xsd:restriction base="Order_Container_Type">
+				<xsd:all>
+					<xsd:element name="Order_Container_ID" type="xtd:Number16" minOccurs="0"/>
+					<xsd:element name="Execution_Date_Time" type="xtd:dateTimeStringType" minOccurs="0"/>
+					<xsd:element name="Carrier_Service_Symbol" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Carrier_Service_Description" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Tracking_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="URI" type="xtd:String200" minOccurs="0"/>
+					<xsd:element name="Product_Value" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Product_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+				</xsd:all>
+				<xsd:attribute name="operation" type="xtd:operationType" default="NONE"/>
+				<xsd:attribute name="objectId" type="xsd:string"/>
+				<xsd:attribute name="type_name" type="xsd:string" fixed="Order_Container"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="Order_Type">
+		<xsd:all>
+			<xsd:element name="Order_ID" type="xtd:Number16" minOccurs="0"/>
+			<xsd:element name="Order_Number" type="xtd:String200"/>
+			<xsd:element name="Project_Identifier" type="xtd:String200" minOccurs="0"/>
+			<xsd:element name="Project_Name" type="xtd:String200" minOccurs="0"/>
+			<xsd:element name="Client_Identifier" type="xtd:String200" minOccurs="0"/>
+			<xsd:element name="Order_Date" type="xtd:dateTimeStringType" minOccurs="0"/>
+			<xsd:element name="Order_Status" type="xtd:Order_Status_Code" minOccurs="0"/>
+			<xsd:element name="Order_Type" type="xtd:Order_Type_Code"/>
+			<xsd:element name="Order_Activity_Type" type="xtd:Order_Activity_Type_Code"/>
+			<xsd:element name="Order_Billing_Type" type="xtd:String200" minOccurs="0"/>
+			<xsd:element name="Order_Billing_SubType" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Order_Source" type="xtd:Order_Source_Code" minOccurs="0"/>
+			<xsd:element name="Recipient_Number" type="xtd:String200"/>
+			<xsd:element name="Recipient_Type" type="xtd:Recipient_Type_Code"/>
+			<xsd:element name="Recipient_Organization_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Last_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_First_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Middle_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Suffix" type="xtd:Contact_Suffix_Code" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Title" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Specialty_Code" type="xtd:Specialty_Code" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Specialty_Description" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Phone_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Alt_Phone_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Fax_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Email" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Address_Line1" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Address_Line2" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Address_Line3" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Attention" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_City" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Region" type="xtd:Region_Code" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Postal_Area" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Postal_Area_Extension" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Recipient_Country" type="xtd:Country_Code" nillable="true" minOccurs="0"/>
+			<xsd:element name="Same_Day_Ship" type="xtd:Boolean_Code" minOccurs="0"/>
+			<xsd:element name="Actual_Exeuction_Date" type="xtd:dateTimeStringType" minOccurs="0"/>
+			<xsd:element name="Number_Of_Containers_Shipped" type="xtd:Number16" minOccurs="0"/>
+			<xsd:element name="Requestor_Name" type="xtd:String200"/>
+			<xsd:element name="Requestor_Type" type="xtd:Requestor_Type_Code"/>
+			<xsd:element name="Requestor_Email" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Carrier_Code" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Carrier_Description" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Carrier_Service_Symbol" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Carrier_Service_Description" type="xtd:String200" nillable="true" minOccurs="0"/>
+			<xsd:element name="Third_Party_Freight_Code" type="xtd:String100" nillable="true" minOccurs="0"/>
+			<xsd:element name="Order_Detail_List">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Order_Detail" type="Order_Detail_Type" maxOccurs="unbounded"/>
+					</xsd:sequence>
+					<xsd:attribute name="type_name" type="xsd:string" fixed="Order_Detail_List"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Order_Container_List" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Order_Container" type="Order_Container_Type" maxOccurs="unbounded"/>
+					</xsd:sequence>
+					<xsd:attribute name="type_name" type="xsd:string" fixed="Order_Container_List"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:all>
+		<xsd:attribute name="operation" type="xtd:operationType" default="NONE"/>
+		<xsd:attribute name="objectId" type="xsd:string"/>
+		<xsd:attribute name="type_name" type="xsd:string" fixed="Order"/>
+	</xsd:complexType>
+	<xsd:complexType name="Order_Insert_Type">
+		<xsd:complexContent>
+			<xsd:restriction base="Order_Type">
+				<xsd:all>
+					<xsd:element name="Order_ID" type="xtd:Number16" minOccurs="0"/>
+					<xsd:element name="Order_Number" type="xtd:String200"/>
+					<xsd:element name="Project_Identifier" type="xtd:String200"/>
+					<xsd:element name="Project_Name" type="xtd:String200" minOccurs="0"/>
+					<xsd:element name="Client_Identifier" type="xtd:String200"/>
+					<xsd:element name="Order_Date" type="xtd:dateTimeStringType"/>
+					<xsd:element name="Order_Status" type="xtd:Order_Status_Code" minOccurs="0"/>
+					<xsd:element name="Order_Type" type="xtd:Order_Type_Code"/>
+					<xsd:element name="Order_Activity_Type" type="xtd:Order_Activity_Type_Code"/>
+					<xsd:element name="Order_Billing_Type" type="xtd:String200"/>
+					<xsd:element name="Order_Billing_SubType" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Order_Source" type="xtd:Order_Source_Code"/>
+					<xsd:element name="Recipient_Number" type="xtd:String200"/>
+					<xsd:element name="Recipient_Type" type="xtd:Recipient_Type_Code"/>
+					<xsd:element name="Recipient_Organization_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Last_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_First_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Middle_Name" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Suffix" type="xtd:Contact_Suffix_Code" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Title" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Specialty_Code" type="xtd:Specialty_Code" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Specialty_Description" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Phone_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Alt_Phone_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Fax_Number" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Email" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Address_Line1" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Address_Line2" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Address_Line3" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Attention" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_City" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Region" type="xtd:Region_Code" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Postal_Area" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Postal_Area_Extension" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Recipient_Country" type="xtd:Country_Code" nillable="true" minOccurs="0"/>
+					<xsd:element name="Same_Day_Ship" type="xtd:Boolean_Code"/>
+					<xsd:element name="Actual_Exeuction_Date" type="xtd:dateTimeStringType" minOccurs="0"/>
+					<xsd:element name="Number_Of_Containers_Shipped" type="xtd:Number16" minOccurs="0"/>
+					<xsd:element name="Requestor_Name" type="xtd:String200"/>
+					<xsd:element name="Requestor_Type" type="xtd:Requestor_Type_Code"/>
+					<xsd:element name="Requestor_Email" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Carrier_Code" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Carrier_Description" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Carrier_Service_Symbol" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Carrier_Service_Description" type="xtd:String200" nillable="true" minOccurs="0"/>
+					<xsd:element name="Third_Party_Freight_Code" type="xtd:String100" nillable="true" minOccurs="0"/>
+					<xsd:element name="Order_Detail_List">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Order_Detail" type="Order_Detail_Type" maxOccurs="unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="type_name" type="xsd:string" fixed="Order_Detail_List"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="Order_Container_List" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Order_Container" type="Order_Container_Type" maxOccurs="unbounded"/>
+							</xsd:sequence>
+							<xsd:attribute name="type_name" type="xsd:string" fixed="Order_Container_List"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:all>
+				<xsd:attribute name="operation" type="xtd:operationType" default="NONE"/>
+				<xsd:attribute name="objectId" type="xsd:string"/>
+				<xsd:attribute name="type_name" type="xsd:string" fixed="Order"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Cecily Xi (Dendrite International Inc.) -->
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Viresh Vadiwala (Dendrite) -->
+<SDLConfiguration>
+	<Common>
+		<ConnectionString role="Standard">DSN=$DI_DBDsn$;DRIVER={Microsoft ODBC for Oracle};SERVER=$DI_DBDsn$;UID=$DI_DBUser$; PWD=$DI_DBPwd$;</ConnectionString>
+		<SQLLoaderConnection>$DI_DBUser$/$DI_DBPwd$@$DI_DBDsn$</SQLLoaderConnection>
+		<CacheSize/>
+		<FieldDelimiter>|</FieldDelimiter>
+		<TranslationTraceTime>0</TranslationTraceTime>
+		<ControlFileXsl>SdlCtlGen.xsl</ControlFileXsl>
+		<!-- Initial Output file size = input file size and then in blocks of chunksize specified in bytes, default 10MB -->
+		<OutChunkSize>10240000</OutChunkSize>
+		<!-- Report file allocated in blocks of chunksize specified in bytes, default 2MB-->
+		<ReportChunkSize>1024000</ReportChunkSize>
+	</Common>
+	<Interface Name="CUSTOMER_RATING" OutPath="$DataloadOutput$" NumberOfSlices="1" TableName="CUSTOMER_RATING">
+		<CacheCommands>
+			<CacheCommand Name="CustomerKey" sql="SELECT EXTERNAL_ID_2,CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES'"/>
+			<CacheCommand Name="AlignmentKey" sql="SELECT EXTERNAL_ID_1,ALIGNMENT_ID FROM ALIGNMENT"/>
+			<CacheCommand Name="CallClassValidation" sql="select CODE,CODE from code_table where upper(role) = 'CALL_CLASS'"/>
+			<CacheCommand Name="RepSpecialtyValidation" sql="select CODE,CODE from code_table where upper(role) = 'SPECIALTY_1'"/>
+		</CacheCommands>
+		<Field Name="LABEL" DatabaseColumn="" Role="out" Order="1" Nullable="false"/>
+		<Field Name="OPERATION" DatabaseColumn="" Role="out" Order="2" Nullable="false"/>
+		<Field Name="CLIENT_ALIGNMENT_ID" DatabaseColumn="" Role="out" Order="3" Nullable="false"/>
+		<Field Name="CLIENT_CUSTOMER_ID" DatabaseColumn="" Role="out" Order="4" Nullable="false"/>
+		<Field Name="CUSTOMER_RATING" DatabaseColumn="CALL_CLASS" Role="inout" Order="5" Nullable="false">
+			<SQLLookUp Name="CallClassValidation" sql="select CODE,CODE from code_table where upper(role) = 'CALL_CLASS' and code = ?" Validation="true">
+				<Param>CUSTOMER_RATING</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="CALL_GOAL" DatabaseColumn="CALL_GOAL" Role="inout" Order="6" Nullable="true"/>
+		<Field Name="REP_SPECIALITY" DatabaseColumn="MINOR_SPECIALTY" Role="inout" Order="7" Nullable="true">
+			<SQLLookUp Name="RepSpecialtyValidation" sql="select CODE,CODE from code_table where upper(role) = 'SPECIALTY_1' and code = ?" ParamsMode="ifNotEmpty" Validation="true">
+				<Param>REP_SPECIALITY</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="ALIGNMENT_ID" DatabaseColumn="ALIGNMENT_ID" Role="in" Order="8" Nullable="false">
+			<SQLLookUp Name="AlignmentKey" sql="SELECT EXTERNAL_ID_1,ALIGNMENT_ID FROM ALIGNMENT WHERE EXTERNAL_ID_1=?" Validation="false">
+				<Param>CLIENT_ALIGNMENT_ID</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="CUSTOMER_ID" DatabaseColumn="CUSTOMER_ID" Role="in" Order="9" Nullable="false">
+			<SQLLookUp Name="CustomerKey" sql="SELECT EXTERNAL_ID_2,CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES' AND EXTERNAL_ID_2=?" Validation="false">
+				<Param>CLIENT_CUSTOMER_ID</Param>
+			</SQLLookUp>
+		</Field>
+	</Interface>
+	<Interface Name="PRODUCT_RATING" OutPath="$DataloadOutput$" NumberOfSlices="1" TableName="EXTERNAL_PRODUCT_MEASURE">
+		<CacheCommands>
+			<CacheCommand Name="MeNumber" sql="SELECT EXTERNAL_ID_1,CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES'"/>
+			<CacheCommand Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT"/>
+			<CacheCommand Name="ProductRATGValidation" sql="select unique p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) = 'RATG' and p.product_id = pa.product_id"/>
+			<CacheCommand Name="CallClassValidation" sql="select CODE,CODE from code_table where upper(role) = 'CLIENT_RATING_NUMERIC'"/>
+			<CacheCommand Name="CustomerOptOut" sql="SELECT EXTERNAL_ID_1, SALES_DATA_RESTRICTION FROM PRESCRIBER P, CUSTOMER C WHERE SALES_DATA_RESTRICTION=-1 AND P.CUSTOMER_ID = C.CUSTOMER_ID AND CUSTOMER_TYPE = 'PRES'"/>
+		</CacheCommands>
+		<Field Name="LABEL" DatabaseColumn="" Role="out" Order="1" Nullable="false"/>
+		<Field Name="ME_NUMBER" DatabaseColumn="EXTERNAL_ID" Role="inout" Order="2" Nullable="false"/>
+		<Field Name="CLIENT_PRODUCT_ID" DatabaseColumn="" Role="out" Order="3" Nullable="false"/>
+		<Field Name="MEASURE_1" DatabaseColumn="MEASURE_1" Role="inout" Order="4" Nullable="true">
+			<SQLLookUp Name="CallClassValidation1" sql="select CODE,CODE from code_table where upper(role) = 'CLIENT_RATING_NUMERIC' and code = ?" ParamsMode="ifNotEmpty" Validation="true">
+				<Param>MEASURE_1</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="MEASURE_2" DatabaseColumn="MEASURE_2" Role="inout" Order="5" Nullable="true">
+			<SQLLookUp Name="CallClassValidation2" sql="select CODE,CODE from code_table where upper(role) = 'CLIENT_RATING_NUMERIC' and code = ?" ParamsMode="ifNotEmpty" Validation="true">
+				<Param>MEASURE_2</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="MEASURE_3" DatabaseColumn="MEASURE_3" Role="inout" Order="6" Nullable="true">
+			<SQLLookUp Name="CallClassValidation3" sql="select CODE,CODE from code_table where upper(role) = 'CLIENT_RATING_NUMERIC' and code = ?" ParamsMode="ifNotEmpty" Validation="true">
+				<Param>MEASURE_3</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="PRODUCT_ID" DatabaseColumn="PRODUCT_ID" Role="in" Order="7" Nullable="false">
+			<SQLLookUp Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT where EXTERNAL_ID_1=?" Validation="false">
+				<Param>CLIENT_PRODUCT_ID</Param>
+			</SQLLookUp>
+			<SQLLookUp Name="ProductRATGValidation" sql="select p.product_id,p.product_id from product p where upper(p.product_type) in ('MKDF','MKTP') and p.product_id = ?" Validation="true">
+				<Param>PRODUCT_ID</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="CUSTOMER_ID" DatabaseColumn="" Role="" Order="9" Nullable="true">
+			<SQLLookUp Name="MeNumber" sql="SELECT EXTERNAL_ID_1,CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES' AND EXTERNAL_ID_1=?" Validation="true">
+				<Param>ME_NUMBER</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="CUSTOMER_OPTOUT" DatabaseColumn="" Role="" Order="10" Nullable="false">
+			<SQLLookUp Name="CustomerOptOut" sql="SELECT CUSTOMER_ID, SALES_DATA_RESTRICTION FROM PRESCRIBER WHERE SALES_DATA_RESTRICTION=-1 AND CUSTOMER_ID IN (SELECT CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES' AND EXTERNAL_ID_1=?)" Validation="true" OptOut="true">
+				<Param>ME_NUMBER</Param>
+			</SQLLookUp>
+		</Field>		
+		<PostLoadSQL>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.SalesdataRefresh('EXTERNAL_PRODUCT_MEASURE', '', '', '') }"/>
+		</PostLoadSQL>
+	</Interface>
+	<Interface Name="PRESCRIBER_SALES" OutPath="$DataloadOutput$" NumberOfSlices="8" Sequential="true" TableName="PRESCRIBER_SALES">
+		<CacheCommands>
+			<CacheCommand Name="MeNumber" sql="SELECT EXTERNAL_ID_1,CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES'"/>
+			<CacheCommand Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT"/>
+			<CacheCommand Name="ProductValidation" sql="select unique p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) in ('SALE','SPDA') and p.product_id = pa.product_id"/>
+			<CacheCommand Name="CustomerOptOut" sql="SELECT EXTERNAL_ID_1, SALES_DATA_RESTRICTION FROM PRESCRIBER P, CUSTOMER C WHERE SALES_DATA_RESTRICTION=-1 AND P.CUSTOMER_ID = C.CUSTOMER_ID AND CUSTOMER_TYPE = 'PRES'"/>
+		</CacheCommands>
+		<Field Name="LABEL" DatabaseColumn="" Role="out" Order="1" Nullable="false"/>
+		<Field Name="ME_NUMBER" DatabaseColumn="EXTERNAL_ID" Role="inout" Order="2" Nullable="false"/>
+		<Field Name="CLIENT_PRODUCT_ID" DatabaseColumn="" Role="out" Order="3" Nullable="false"/>
+		<Field Name="MONTH" DatabaseColumn="MONTH" Role="inout" Order="4" Nullable="false"/>
+		<Field Name="TRX" DatabaseColumn="MEASURE_2" Role="inout" Order="5" Nullable="true"/>
+		<Field Name="NRX" DatabaseColumn="MEASURE_1" Role="inout" Order="6" Nullable="true"/>
+		<Field Name="MARKET_SHARE" DatabaseColumn="MEASURE_3" Role="inout" Order="7" Nullable="true"/>
+		<Field Name="PRODUCT_ID" DatabaseColumn="PRODUCT_ID" Role="in" Order="8" Nullable="false">
+			<SQLLookUp Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT where EXTERNAL_ID_1=?" Validation="false">
+				<Param>CLIENT_PRODUCT_ID</Param>
+			</SQLLookUp>
+			<SQLLookUp Name="ProductValidation" sql="select p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) in ('SALE','SPDA') and p.product_id = pa.product_id and p.product_id = ?" Validation="true">
+				<Param>PRODUCT_ID</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="CUSTOMER_ID" DatabaseColumn="" Role="" Order="9" Nullable="false">
+			<SQLLookUp Name="MeNumber" sql="SELECT EXTERNAL_ID_1,CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES' AND EXTERNAL_ID_1=?" Validation="true">
+				<Param>ME_NUMBER</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="CUSTOMER_OPTOUT" DatabaseColumn="" Role="" Order="10" Nullable="false">
+			<SQLLookUp Name="CustomerOptOut" sql="SELECT CUSTOMER_ID, SALES_DATA_RESTRICTION FROM PRESCRIBER WHERE SALES_DATA_RESTRICTION=-1 AND CUSTOMER_ID IN (SELECT CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES' AND EXTERNAL_ID_1=?)" Validation="true" OptOut="true">
+				<Param>ME_NUMBER</Param>
+			</SQLLookUp>
+		</Field>		
+		<PostLoadSQL>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.sales_period_range_prc('PRESCRIBER_SALES') }"/>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.SalesdataRefresh('PRESCRIBER_SALES', 'SALES_PERIOD', '', '') }"/>
+		</PostLoadSQL>
+	</Interface>
+	<Interface Name="PAYER_SALES" OutPath="$DataloadOutput$" NumberOfSlices="1" TableName="PAYER_SALES">
+		<CacheCommands>
+			<CacheCommand Name="MeNumber" sql="SELECT EXTERNAL_ID_1,CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES'"/>
+			<CacheCommand Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT"/>
+			<CacheCommand Name="ProductValidation" sql="select unique p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) in ('SALE','SPDA') and p.product_id = pa.product_id"/>
+			<CacheCommand Name="CustomerOptOut" sql="SELECT EXTERNAL_ID_1, SALES_DATA_RESTRICTION FROM PRESCRIBER P, CUSTOMER C WHERE SALES_DATA_RESTRICTION=-1 AND P.CUSTOMER_ID = C.CUSTOMER_ID AND CUSTOMER_TYPE = 'PRES'"/>
+		</CacheCommands>
+		<Field Name="LABEL" DatabaseColumn="" Role="out" Order="1" Nullable="false"/>
+		<Field Name="ME_NUMBER" DatabaseColumn="EXTERNAL_ID" Role="inout" Order="2" Nullable="false"/>
+		<Field Name="CLIENT_PRODUCT_ID" DatabaseColumn="" Role="out" Order="3" Nullable="false"/>
+		<Field Name="MONTH" DatabaseColumn="MONTH" Role="inout" Order="4" Nullable="false"/>
+		<Field Name="CASH" DatabaseColumn="MEASURE_1" Role="inout" Order="5" Nullable="true"/>
+		<Field Name="MAID" DatabaseColumn="MEASURE_2" Role="inout" Order="6" Nullable="true"/>
+		<Field Name="OTHR" DatabaseColumn="MEASURE_3" Role="inout" Order="7" Nullable="true"/>
+		<Field Name="PRODUCT_ID" DatabaseColumn="PRODUCT_ID" Role="in" Order="8" Nullable="false">
+			<SQLLookUp Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT where EXTERNAL_ID_1=?" Validation="false">
+				<Param>CLIENT_PRODUCT_ID</Param>
+			</SQLLookUp>
+			<SQLLookUp Name="ProductValidation" sql="select p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) in ('SALE','SPDA') and p.product_id = pa.product_id and p.product_id = ?" Validation="true">
+				<Param>PRODUCT_ID</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="CUSTOMER_ID" DatabaseColumn="" Role="" Order="9" Nullable="true">
+			<SQLLookUp Name="MeNumber" sql="SELECT EXTERNAL_ID_1,CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES' AND EXTERNAL_ID_1=?" Validation="true">
+				<Param>ME_NUMBER</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="CUSTOMER_OPTOUT" DatabaseColumn="" Role="" Order="10" Nullable="false">
+			<SQLLookUp Name="CustomerOptOut" sql="SELECT CUSTOMER_ID, SALES_DATA_RESTRICTION FROM PRESCRIBER WHERE SALES_DATA_RESTRICTION=-1 AND CUSTOMER_ID IN (SELECT CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES' AND EXTERNAL_ID_1=?)" Validation="true" OptOut="true">
+				<Param>ME_NUMBER</Param>
+			</SQLLookUp>
+		</Field>
+		<PostLoadSQL>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.sales_period_range_prc('PAYER_SALES') }"/>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.SalesdataRefresh('PAYER_SALES', '', '', '') }"/>
+		</PostLoadSQL>
+	</Interface>
+	<Interface Name="HOSPITAL_SALES" OutPath="$DataloadOutput$" NumberOfSlices="1" TableName="HOSPITAL_SALES">
+		<CacheCommands>
+			<CacheCommand Name="HospitalKeyValidation" sql="Select EXTERNAL_ID_2,CUSTOMER_ID from CUSTOMER where CUSTOMER_TYPE='HOSP'"/>
+			<CacheCommand Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT"/>
+			<CacheCommand Name="ProductValidation" sql="select unique p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) in ('SALE','SPDA') and p.product_id = pa.product_id"/>
+		</CacheCommands>
+		<Field Name="LABEL" DatabaseColumn="" Role="out" Order="1" Nullable="false"/>
+		<Field Name="CLIENT_CUSTOMER_ID" DatabaseColumn="EXTERNAL_ID" Role="inout" Order="2" Nullable="false"/>
+		<Field Name="CLIENT_PRODUCT_ID" DatabaseColumn="" Role="out" Order="3" Nullable="false"/>
+		<Field Name="MONTH" DatabaseColumn="MONTH" Role="inout" Order="4" Nullable="false"/>
+		<Field Name="MEASURE_1" DatabaseColumn="MEASURE_1" Role="inout" Order="5" Nullable="true"/>
+		<Field Name="MEASURE_2" DatabaseColumn="MEASURE_2" Role="inout" Order="6" Nullable="true"/>
+		<Field Name="MEASURE_3" DatabaseColumn="MEASURE_3" Role="inout" Order="7" Nullable="true"/>
+		<Field Name="PRODUCT_ID" DatabaseColumn="PRODUCT_ID" Role="in" Order="9" Nullable="false">
+			<SQLLookUp Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT where EXTERNAL_ID_1=?" Validation="false">
+				<Param>CLIENT_PRODUCT_ID</Param>
+			</SQLLookUp>
+			<SQLLookUp Name="ProductValidation" sql="select p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) in ('SALE','SPDA') and p.product_id = pa.product_id and p.product_id = ?" Validation="true">
+				<Param>PRODUCT_ID</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="CUSTOMER_ID" DatabaseColumn="" Role="" Order="10" Nullable="false">
+			<SQLLookUp Name="HospitalKeyValidation" sql="SELECT EXTERNAL_ID_2,CUSTOMER_ID FROM CUSTOMER where CUSTOMER_TYPE='HOSP' and EXTERNAL_ID_2=?" Validation="true">
+				<Param>CLIENT_CUSTOMER_ID</Param>
+			</SQLLookUp>
+		</Field>
+		<PostLoadSQL>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.sales_period_range_prc('HOSPITAL_SALES') }"/>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.SalesdataRefresh('HOSPITAL_SALES', '', '', '') }"/>
+		</PostLoadSQL>
+	</Interface>
+	<Interface Name="MCO_SALES" OutPath="$DataloadOutput$" NumberOfSlices="1" TableName="MCO_SALES">
+		<CacheCommands>
+			<CacheCommand Name="MCOKeyValidation" sql="SELECT EXTERNAL_ID_2,CUSTOMER_ID FROM CUSTOMER where CUSTOMER_TYPE='MCO'"/>
+			<CacheCommand Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT"/>
+			<CacheCommand Name="ProductValidation" sql="select unique p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) in ('SALE','SPDA') and p.product_id = pa.product_id"/>
+		</CacheCommands>
+		<Field Name="LABEL" DatabaseColumn="" Role="out" Order="1" Nullable="false"/>
+		<Field Name="CLIENT_CUSTOMER_ID" DatabaseColumn="EXTERNAL_ID" Role="inout" Order="2" Nullable="false"/>
+		<Field Name="CLIENT_PRODUCT_ID" DatabaseColumn="" Role="out" Order="3" Nullable="false"/>
+		<Field Name="MONTH" DatabaseColumn="MONTH" Role="inout" Order="4" Nullable="false"/>
+		<Field Name="MEASURE_1" DatabaseColumn="MEASURE_1" Role="inout" Order="5" Nullable="true"/>
+		<Field Name="MEASURE_2" DatabaseColumn="MEASURE_2" Role="inout" Order="6" Nullable="true"/>
+		<Field Name="MEASURE_3" DatabaseColumn="MEASURE_3" Role="inout" Order="7" Nullable="true"/>
+		<Field Name="CUSTOMER_ID" DatabaseColumn="" Role="" Order="8" Nullable="true">
+			<SQLLookUp Name="MCOKeyValidation" sql="SELECT EXTERNAL_ID_2,CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE='MCO' and EXTERNAL_ID_2=?" Validation="true">
+				<Param>CLIENT_CUSTOMER_ID</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="PRODUCT_ID" DatabaseColumn="PRODUCT_ID" Role="in" Order="9" Nullable="false">
+			<SQLLookUp Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT where EXTERNAL_ID_1=?" Validation="false">
+				<Param>CLIENT_PRODUCT_ID</Param>
+			</SQLLookUp>
+			<SQLLookUp Name="ProductValidation" sql="select p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) in ('SALE','SPDA') and p.product_id = pa.product_id and p.product_id = ?" Validation="true">
+				<Param>PRODUCT_ID</Param>
+			</SQLLookUp>
+		</Field>
+		<PostLoadSQL>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.sales_period_range_prc('MCO_SALES') }"/>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.SalesdataRefresh('MCO_SALES', '', '', '') }"/>
+		</PostLoadSQL>
+	</Interface>
+	<Interface Name="ALIGNMENT_SALES" OutPath="$DataloadOutput$" NumberOfSlices="1" TableName="ALIGNMENT_SALES">
+		<CacheCommands>
+			<CacheCommand Name="AlignmentKey" sql="Select EXTERNAL_ID_1,ALIGNMENT_ID from ALIGNMENT"/>
+			<CacheCommand Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT"/>
+			<CacheCommand Name="ProductValidation" sql="select unique p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) in ('SALE','SPDA') and p.product_id = pa.product_id"/>
+		</CacheCommands>
+		<Field Name="LABEL" DatabaseColumn="" Role="out" Order="1" Nullable="false"/>
+		<Field Name="CLIENT_ALIGNMENT_ID" DatabaseColumn="" Role="out" Order="2" Nullable="false"/>
+		<Field Name="CLIENT_PRODUCT_ID" DatabaseColumn="" Role="out" Order="3" Nullable="false"/>
+		<Field Name="MONTH" DatabaseColumn="MONTH" Role="inout" Order="4" Nullable="false"/>
+		<Field Name="MEASURE_1" DatabaseColumn="MEASURE_1" Role="inout" Order="5" Nullable="true"/>
+		<Field Name="MEASURE_2" DatabaseColumn="MEASURE_2" Role="inout" Order="6" Nullable="true"/>
+		<Field Name="MEASURE_3" DatabaseColumn="MEASURE_3" Role="inout" Order="7" Nullable="true"/>
+		<Field Name="MEASURE_4" DatabaseColumn="MEASURE_4" Role="inout" Order="8" Nullable="true"/>
+		<Field Name="MEASURE_5" DatabaseColumn="MEASURE_5" Role="inout" Order="9" Nullable="true"/>
+		<Field Name="MEASURE_6" DatabaseColumn="MEASURE_6" Role="inout" Order="10" Nullable="true"/>
+		<Field Name="DATE_TYPE" DatabaseColumn="DATE_TYPE" Role="inout" Order="11" Nullable="true">
+			<SQLLookUp Name="DateTypeValidation" sql="select 'DATE_TYPE',decode(?,'M','M','Q','Q',null) from dual" ParamsMode="ifNotEmpty" Validation="true">
+				<Param>DATE_TYPE</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="ALIGNMENT_ID" DatabaseColumn="ALIGNMENT_ID" Role="in" Order="12" Nullable="false">
+			<SQLLookUp Name="AlignmentKey" sql="Select EXTERNAL_ID_1,ALIGNMENT_ID from ALIGNMENT where EXTERNAL_ID_1=?" Validation="false">
+				<Param>CLIENT_ALIGNMENT_ID</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="PRODUCT_ID" DatabaseColumn="PRODUCT_ID" Role="in" Order="13" Nullable="false">
+			<SQLLookUp Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT where EXTERNAL_ID_1=?" Validation="false">
+				<Param>CLIENT_PRODUCT_ID</Param>
+			</SQLLookUp>
+			<SQLLookUp Name="ProductValidation" sql="select p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) in ('SALE','SPDA') and p.product_id = pa.product_id and p.product_id = ?" Validation="true">
+				<Param>PRODUCT_ID</Param>
+			</SQLLookUp>
+		</Field>
+		<PostLoadSQL>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.SalesdataRefresh('ALIGNMENT_SALES', '', '', '') }"/>
+		</PostLoadSQL>
+	</Interface>
+	<Interface Name="PLAN_SALES" OutPath="$DataloadOutput$" NumberOfSlices="1" TableName="PLAN_SALES">
+		<CacheCommands>
+			<CacheCommand Name="MeNumber" sql="SELECT EXTERNAL_ID_1,CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES'"/>
+			<CacheCommand Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT"/>
+			<CacheCommand Name="ProductValidation" sql="select unique p.product_id,p.product_id from product p,product_alignment pa where p.product_id = pa.product_id"/>
+			<CacheCommand Name="CustomerOptOut" sql="SELECT EXTERNAL_ID_1, SALES_DATA_RESTRICTION FROM PRESCRIBER P, CUSTOMER C WHERE SALES_DATA_RESTRICTION=-1 AND P.CUSTOMER_ID = C.CUSTOMER_ID AND CUSTOMER_TYPE = 'PRES'"/>
+		</CacheCommands>
+		<Field Name="LABEL" DatabaseColumn="" Role="out" Order="1" Nullable="false"/>
+		<Field Name="ME_NUMBER" DatabaseColumn="EXTERNAL_ID_1" Role="inout" Order="2" Nullable="false"/>
+		<Field Name="CLIENT_PRODUCT_ID" DatabaseColumn="" Role="out" Order="3" Nullable="false"/>
+		<Field Name="MONTH" DatabaseColumn="MONTH" Role="inout" Order="4" Nullable="false"/>
+		<Field Name="CLIENT_PLAN_ID" DatabaseColumn="EXTERNAL_ID_2" Role="inout" Order="5" Nullable="true"/>
+		<Field Name="PLAN_NAME" DatabaseColumn="NAME" Role="inout" Order="6" Nullable="false"/>
+		<Field Name="TRX" DatabaseColumn="MEASURE_1" Role="inout" Order="7" Nullable="true"/>
+		<Field Name="MEASURE_2" DatabaseColumn="MEASURE_2" Role="inout" Order="8" Nullable="true"/>
+		<Field Name="MEASURE_3" DatabaseColumn="MEASURE_3" Role="inout" Order="9" Nullable="true"/>
+		<Field Name="PRODUCT_ID" DatabaseColumn="PRODUCT_ID" Role="in" Order="10" Nullable="false">
+			<SQLLookUp Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT where EXTERNAL_ID_1=?" Validation="false">
+				<Param>CLIENT_PRODUCT_ID</Param>
+			</SQLLookUp>
+			<SQLLookUp Name="ProductValidation" sql="select p.product_id,p.product_id from product p,product_alignment pa where p.product_id = pa.product_id and p.product_id = ?" Validation="true">
+				<Param>PRODUCT_ID</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="CUSTOMER_ID" DatabaseColumn="" Role="" Order="11" Nullable="true">
+			<SQLLookUp Name="MeNumber" sql="SELECT EXTERNAL_ID_1,CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES' AND EXTERNAL_ID_1=?" Validation="true">
+				<Param>ME_NUMBER</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="CUSTOMER_OPTOUT" DatabaseColumn="" Role="" Order="12" Nullable="false">
+			<SQLLookUp Name="CustomerOptOut" sql="SELECT CUSTOMER_ID, SALES_DATA_RESTRICTION FROM PRESCRIBER WHERE SALES_DATA_RESTRICTION=-1 AND CUSTOMER_ID IN (SELECT CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES' AND EXTERNAL_ID_1=?)" Validation="true" OptOut="true">
+				<Param>ME_NUMBER</Param>
+			</SQLLookUp>
+		</Field>		
+		<PostLoadSQL>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.sales_period_range_prc('PLAN_SALES') }"/>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.SalesdataRefresh('PLAN_SALES', '', '', '') }"/>
+		</PostLoadSQL>
+	</Interface>
+	<Interface Name="GEOGRAPHY_SALES" OutPath="$DataloadOutput$" NumberOfSlices="1" TableName="GEOGRAPHY_SALES">
+		<CacheCommands>
+			<CacheCommand Name="GeographyKey" sql="SELECT POSTAL_AREA,GEOGRAPHY_ID FROM POSTAL_AREA PA,GEOGRAPHY_POSTAL_AREA GPA WHERE PA.POSTAL_AREA_ID = GPA.POSTAL_AREA_ID"/>
+			<CacheCommand Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT"/>
+			<CacheCommand Name="ProductValidation" sql="select unique p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) in ('SALE','SPDA') and p.product_id = pa.product_id"/>
+		</CacheCommands>
+		<Field Name="LABEL" DatabaseColumn="" Role="out" Order="1" Nullable="false"/>
+		<Field Name="POSTAL_AREA" DatabaseColumn="" Role="out" Order="2" Nullable="false"/>
+		<Field Name="CLIENT_PRODUCT_ID" DatabaseColumn="" Role="out" Order="3" Nullable="false"/>
+		<Field Name="MONTH" DatabaseColumn="MONTH" Role="inout" Order="4" Nullable="false"/>
+		<Field Name="MEASURE_1" DatabaseColumn="MEASURE_1" Role="inout" Order="5" Nullable="true"/>
+		<Field Name="MEASURE_2" DatabaseColumn="MEASURE_2" Role="inout" Order="6" Nullable="true"/>
+		<Field Name="MEASURE_3" DatabaseColumn="MEASURE_3" Role="inout" Order="7" Nullable="true"/>
+		<Field Name="GEOGRAPHY_ID" DatabaseColumn="GEOGRAPHY_ID" Role="in" Order="8" Nullable="true">
+			<SQLLookUp Name="GeographyKey" sql="SELECT POSTAL_AREA,GEOGRAPHY_ID FROM POSTAL_AREA PA,GEOGRAPHY_POSTAL_AREA GPA WHERE PA.POSTAL_AREA_ID = GPA.POSTAL_AREA_ID AND PA.POSTAL_AREA=?" Validation="false">
+				<Param>POSTAL_AREA</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="PRODUCT_ID" DatabaseColumn="PRODUCT_ID" Role="in" Order="10" Nullable="false">
+			<SQLLookUp Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT where EXTERNAL_ID_1=?" Validation="false">
+				<Param>CLIENT_PRODUCT_ID</Param>
+			</SQLLookUp>
+			<SQLLookUp Name="ProductValidation" sql="select p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) in ('SALE','SPDA') and p.product_id = pa.product_id and p.product_id = ?" Validation="true">
+				<Param>PRODUCT_ID</Param>
+			</SQLLookUp>
+		</Field>
+		<PostLoadSQL>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.SalesdataRefresh('GEOGRAPHY_SALES', '', '', '') }"/>
+		</PostLoadSQL>
+	</Interface>
+	<Interface Name="COMPANY_PRODUCT_MEASURE" OutPath="$DataloadOutput$" NumberOfSlices="1" TableName="COMPANY_PRODUCT_MEASURE">
+		<CacheCommands>
+			<CacheCommand Name="MeNumber" sql="SELECT EXTERNAL_ID_1,CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES'"/>
+			<CacheCommand Name="ProductKey" sql="Select EXTERNAL_ID_1,PRODUCT_ID from PRODUCT"/>
+			<CacheCommand Name="ProductRATGValidation" sql="select unique p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type)  IN ( 'MKDF', 'MKTP') and p.product_id = pa.product_id"/>
+		</CacheCommands>
+		<Field Name="LABEL" DatabaseColumn="" Role="out" Order="1" Nullable="false"/>
+		<Field Name="ME_NUMBER" DatabaseColumn="" Role="out" Order="2" Nullable="false"/>
+		<Field Name="CLIENT_PRODUCT_ID" DatabaseColumn="" Role="out" Order="3" Nullable="false"/>
+		<Field Name="MEASURE_1" DatabaseColumn="MEASURE_1" Role="inout" Order="4" Nullable="true">
+			<SQLLookUp Name="CallClassValidation1" sql="select CODE,CODE from code_table where upper(role) = 'CLIENT_RATING_NUMERIC' and code = ?" ParamsMode="ifNotEmpty" Validation="true">
+				<Param>MEASURE_1</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="MEASURE_2" DatabaseColumn="MEASURE_2" Role="inout" Order="5" Nullable="true">
+			<SQLLookUp Name="CallClassValidation2" sql="select CODE,CODE from code_table where upper(role) = 'CLIENT_RATING_NUMERIC' and code = ?" ParamsMode="ifNotEmpty" Validation="true">
+				<Param>MEASURE_2</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="MEASURE_3" DatabaseColumn="MEASURE_3" Role="inout" Order="6" Nullable="true">
+			<SQLLookUp Name="CallClassValidation3" sql="select CODE,CODE from code_table where upper(role) = 'CLIENT_RATING_NUMERIC' and code = ?" ParamsMode="ifNotEmpty" Validation="true">
+				<Param>MEASURE_3</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="LAST_UPDATE" DatabaseColumn="LAST_UPDATE" Role="inout" Order="7" Nullable="true"/>
+		<Field Name="EXTERNAL_ID_1" DatabaseColumn="EXTERNAL_ID_1" Role="inout" Order="8" Nullable="true"/>
+		<Field Name="PRODUCT_ID" DatabaseColumn="PRODUCT_ID" Role="in" Order="9" Nullable="false">
+			<SQLLookUp Name="ProductKey" sql="Select EXTERNAL_ID_1, PRODUCT_ID from PRODUCT where EXTERNAL_ID_1=?" Validation="false">
+				<Param>CLIENT_PRODUCT_ID</Param>
+			</SQLLookUp>
+			<SQLLookUp Name="ProductRATGValidation" sql="select p.product_id,p.product_id from product p,product_alignment pa where upper(pa.product_alignment_type) in ( 'MKDF', 'MKTP') and p.product_id = pa.product_id and p.product_id = ?" Validation="true">
+				<Param>PRODUCT_ID</Param>
+			</SQLLookUp>
+		</Field>
+		<Field Name="CUSTOMER_ID" DatabaseColumn="CUSTOMER_ID" Role="in" Order="10" Nullable="false">
+			<SQLLookUp Name="MeNumber" sql="SELECT EXTERNAL_ID_1,CUSTOMER_ID FROM CUSTOMER WHERE CUSTOMER_TYPE = 'PRES' AND EXTERNAL_ID_1=?" Validation="false">
+				<Param>ME_NUMBER</Param>
+			</SQLLookUp>
+		</Field>
+		<PostLoadSQL>
+			<SQL Sql="{CALL SALESDATALOAD_PKG.SalesdataRefresh('COMPANY_PRODUCT_MEASURE', '', '', '') }"/>
+		</PostLoadSQL>
+	</Interface>
+</SDLConfiguration>

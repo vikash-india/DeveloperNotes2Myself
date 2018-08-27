@@ -1,0 +1,13 @@
+<!-- 
+	Description: An example to explain how to handle string literals
+	Note: 
+		1. The strings can be enclosed either in quotes(") or apostrophe(') but both should not be mixed for the same string
+		2. apostrophe(') can be used inside quotes(")
+		3. quotes(") can be used inside apostrophe(') 
+-->
+<PlayersProfile>
+	<Player name="Sachin Ramesh Tendulkar"></Player>
+	<Player name='Sourav Chandidas Ganguly'></Player>
+	<Player name='Sachin"s Favourite Player Bradman'></Player>
+	<Player name="Sachin's Favourite Player Bradman"></Player>
+</PlayersProfile>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The include element is used to add multiple schemas with the same target namespace to a document.
+	Syntax		: 
+						<include
+							id=ID
+							schemaLocation=anyURI
+							any attributes
+						>
+							(annotation?)
+						</include>
+	Attributes
+			id							: Optional. Specifies a unique ID for the element
+			schemaLocation	: Required. Specifies the URI to the schema to include in the target namespace of the containing schema
+			any attributes		: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: schema 
+			2. The ? sign declares that the element can occur zero or one time inside the include element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+
+<xs:include schemaLocation="http://www.w3schools.com/schema/customer.xsd"/>
+<xs:include schemaLocation="http://www.w3schools.com/schema/company.xsd"/>
+
+
+</xs:schema>

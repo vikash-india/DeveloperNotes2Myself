@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Description: An example to explain about 5 special character in an XML Document
+	Note: 
+		1. Following are 5 special characters in an XML Document and needs to be handled in differnt manner
+			&	: Ampersand
+			<	: Less Than
+			>	: Greater Than
+			"	: Quotes
+			'	: Apostrophe
+		2. These 5 special characters can be used as a part of data in element or attribute using Entity Reference or Character Reference. 
+-->
+<SpecialCharacterList>
+	<EntityReference>
+		<Character name="LessThan">Special Character 		- &lt;				</Character>
+		<Character name="GreaterThan">Special Character 	- &gt;				</Character>
+		<Character name="And">Special Character 					- &amp;			</Character>
+		<Character name="Apostrophes">Special Character	- &apos;			</Character>
+		<Character name="Quotes">Special Character 			- &quot;	        </Character>
+	</EntityReference>
+	<DecimalCharacterReference>
+		<Character name="LessThan">Special Character 		- &#60;			</Character>
+		<Character name="GreaterThan">Special Character 	- &#62;			</Character>
+		<Character name="And">Special Character 					- &#38;			</Character>
+		<Character name="Apostrophes">Special Character	- &#39;			</Character>
+		<Character name="Quotes">Special Character 			- &#34;	        </Character>
+	</DecimalCharacterReference>
+	<HexaDecimalCharacterReference>
+		<Character name="LessThan">Special Character 		- &#x3C;			</Character>
+		<Character name="GreaterThan">Special Character 	- &#x3E;			</Character>
+		<Character name="And">Special Character 					- &#x26;			</Character>
+		<Character name="Apostrophes">Special Character	- &#x27;			</Character>
+		<Character name="Quotes">Special Character 			- &#x22;	        </Character>
+	</HexaDecimalCharacterReference>
+</SpecialCharacterList>

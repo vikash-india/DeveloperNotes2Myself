@@ -1,0 +1,189 @@
+<XMLDBServiceConfiguration>
+  <ISMessageHeader headerRole="Standard">
+    <Source>WF</Source>
+    <Application_Version>4.2.0</Application_Version>
+    <COM_Version>1.2.0</COM_Version>
+    <Message_Version>1.0.0</Message_Version>
+  </ISMessageHeader>
+  <Subscriptions>
+    <Subscriber connectionString="Provider=OraOLEDB.Oracle;User Id=aeseixt134a;Password=aeseixt134a;Data Source=aesei10a;ChunkSize=10000;SPPrmsLOB=1;PLSQLRSet=1" enableTracing="0" enableDBLogging="1">
+      <SQLCommands cmdAppInfo="{ CALL xtevents.spxtl_appinfo (?,?,?,?,?,?,?,?,?) }" cmdEvents="{ CALL xtevents.spxtl_events(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) }" cmdLogs="{ CALL xtevents.spxtl_logs (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) }" />
+    </Subscriber>
+  </Subscriptions>
+  <KeyLookups>
+    <CacheSize>100000</CacheSize>
+    <CheckKeySql>{call xtelligent.xt_check_keys(?,?)}</CheckKeySql>
+  </KeyLookups>
+  <CodeTranslation>
+    <CacheSize>50000</CacheSize>
+    <UseClientToSystemCache>true</UseClientToSystemCache>
+    <UseSystemToClientCache>false</UseSystemToClientCache>
+    <CodeTableSql>SELECT DISTINCT translate_value,code_value,description, field_name FROM xt_translation WHERE object_name=?</CodeTableSql>
+  </CodeTranslation>
+  <CommandCache>
+    <ConnectionString role="Lookup" />
+    <CacheSize>50</CacheSize>
+    <CachePolicy>LRU</CachePolicy>
+    <PrepareOnDemand>true</PrepareOnDemand>
+    <AutoCacheOnQuery>false</AutoCacheOnQuery>
+    <DisableCache>false</DisableCache>
+    <EnableAutoCleanup>false</EnableAutoCleanup>
+    <AutoCleanupLimit>100</AutoCleanupLimit>
+    <CachedCommandList>
+      <!-- Lookup commands for -->
+      <CachedCommand prepare="true" name="CustomerLookup">SELECT customer_id, Global_Customer_id  FROM customer WHERE global_customer_id=? </CachedCommand>
+      <!-- Some other commands : stored procedure -->
+      <!--			<CachedCommand prepare="true" name="GetPrimaryAddress">	{ Call Xtelligent.GetPrimaryAddress(?,?,?) }	</CachedCommand> -->
+    </CachedCommandList>
+  </CommandCache>
+  <Database>
+    <ConnectionString role="Standard">Provider=TsunamiORAOLEDB;Data Source=aesei10a;User ID=aeseixt134a_xml;Password=aeseixt134a_xml;Role=HostUser;Configuration=RS440B1010;Application=DataImport;Content=IMP;AccountId=9999;MachineID=999999999</ConnectionString>
+    <ConnectionString role="Lookup">Provider=OraOLEDB.Oracle;User Id=aeseixt134a;Password=aeseixt134a;Data Source=aesei10a</ConnectionString>
+    <ShareDataSource>true</ShareDataSource>
+    <UserId>aeseixt134a</UserId>
+    <Password>aeseixt134a</Password>
+    <DatabaseName>aesei10a</DatabaseName>
+    <ServerLocation>aesei10a</ServerLocation>
+    <ConnectionPoolSizeMax>5</ConnectionPoolSizeMax>
+    <ConnectionPoolSizeInitial>2</ConnectionPoolSizeInitial>
+    <ConnectionTimeOut>2000</ConnectionTimeOut>
+    <SessioName>ExportSession</SessioName>
+    <DisableOLEDB>false</DisableOLEDB>
+    <DisableOO4O>true</DisableOO4O>
+  </Database>
+  <System>
+    <ConcurrencyLevel>
+      <Minimum>1</Minimum>
+      <Maximum>10</Maximum>
+    </ConcurrencyLevel>
+    <EnableTestMode>false</EnableTestMode>
+    <MachineId>999999999</MachineId>
+    <EmployeeId>1</EmployeeId>
+  </System>
+  <MultiKeyGenerator>
+    <LowWaterMark>1</LowWaterMark>
+    <HighWaterMark>2</HighWaterMark>
+    <KeyGenerationSql>{call xtelligent.xt_get_next_sequence_number(?,?,?)}</KeyGenerationSql>
+  </MultiKeyGenerator>
+  <DataModelRegistrations xmlns:xtds="http://schemas.dendrite.com/xtelligent/datastreamer" xmlns:ts="http://schemas.dendrite.com/xtelligent/XmlPublish">
+    <!---For COM Schema Data Model registration for Imports Only-->
+    <DataObject xtds:schemaId="4010" ts:schemaId="4010" name="Sales_Force" urn="http://schemas.dendrite.com/IS/1.0.0/Sales_Force" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Sales_Force.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4030" ts:schemaId="4030" name="Sales_Area" urn="http://schemas.dendrite.com/IS/1.0.0/Sales_Area" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Sales_Area.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4040" ts:schemaId="4040" name="Sales_Area_Relation" urn="http://schemas.dendrite.com/IS/1.0.0/Sales_Area_Relation" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Sales_Area_Relation.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4060" ts:schemaId="4060" name="Employee_Sales_Area" urn="http://schemas.dendrite.com/IS/1.0.0/Employee_Sales_Area" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Employee_Sales_Area.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4070" ts:schemaId="4070" name="Geography_Sales_Area" urn="http://schemas.dendrite.com/IS/1.0.0/Geography_Sales_Area" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Geography_Sales_Area.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4080" ts:schemaId="4080" name="Customer_Sales_Area" urn="http://schemas.dendrite.com/IS/1.0.0/Customer_Sales_Area" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Customer_Sales_Area.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4090" ts:schemaId="4090" name="Postal_Area" urn="http://schemas.dendrite.com/IS/1.0.0/Postal_Area" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Postal_Area.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4100" ts:schemaId="4100" name="Geography" urn="http://schemas.dendrite.com/IS/1.0.0/Geography" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Geography.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4110" ts:schemaId="4110" name="Geography_Postal_Area" urn="http://schemas.dendrite.com/IS/1.0.0/Geography_Postal_Area" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Geography_Postal_Area.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4120" ts:schemaId="4120" name="Employee" urn="http://schemas.dendrite.com/IS/1.0.0/Employee" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Employee.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4130" ts:schemaId="4130" name="Employee_Time_Off" urn="http://schemas.dendrite.com/IS/1.0.0/Employee_Time_Off" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Employee_Time_Off.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4140" ts:schemaId="4140" name="Product" urn="http://schemas.dendrite.com/IS/1.0.0/Product" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Product.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4150" ts:schemaId="4150" name="Product_Relation" urn="http://schemas.dendrite.com/IS/1.0.0/Product_Relation" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Product_Relation.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="4160" ts:schemaId="4160" name="Product_Sales_Force" urn="http://schemas.dendrite.com/IS/1.0.0/Product_Sales_Force" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Product_Sales_Force.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="9900" ts:schemaId="9900" name="Merge_Request" urn="http://schemas.dendrite.com/IS/1.0.0/Merge_Request" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Merge_Request.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="9910" ts:schemaId="9910" name="Refresh_Request" urn="http://schemas.dendrite.com/IS/1.0.0/Refresh_Request" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Refresh_Request.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <!---For COM Schema Data Model registration for Imports and Exports -->
+    <DataObject xtds:schemaId="8100" ts:schemaId="8100" name="Professional" urn="http://schemas.dendrite.com/IS/1.0.0/Professional" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Professional.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="8200" ts:schemaId="8200" name="Organization" urn="http://schemas.dendrite.com/IS/1.0.0/Organization" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Organization.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="8300" ts:schemaId="8300" name="Managed_Care" urn="http://schemas.dendrite.com/IS/1.0.0/Managed_Care" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Managed_Care.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="8400" ts:schemaId="8400" name="Formulary" urn="http://schemas.dendrite.com/IS/1.0.0/Formulary" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Formulary.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="8500" ts:schemaId="8500" name="Customer_Affiliation" urn="http://schemas.dendrite.com/IS/1.0.0/Customer_Affiliation" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Customer_Affiliation.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="8600" ts:schemaId="8600" name="Customer_Rating" urn="http://schemas.dendrite.com/IS/1.0.0/Customer_Rating" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Customer_Rating.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="8700" ts:schemaId="8700" name="Company_Product_Rating" urn="http://schemas.dendrite.com/IS/1.0.0/Company_Product_Rating" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Company_Product_Rating.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="9300" ts:schemaId="9300" name="Call" urn="http://schemas.dendrite.com/IS/1.0.0/Call" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Call.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="9400" ts:schemaId="9400" name="Sample_Transaction" urn="http://schemas.dendrite.com/IS/1.0.0/Sample_Transaction" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Sample_Transaction.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="10200" ts:schemaId="10200" name="Order" urn="http://schemas.dendrite.com/IS/1.0.0/Order" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Order.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+    <DataObject xtds:schemaId="10300" ts:schemaId="10300" name="Customer_Touch" urn="http://schemas.dendrite.com/IS/1.0.0/Customer_Touch" url="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Customer_Touch.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0" />
+  </DataModelRegistrations>
+  <TargetNamespaces processingMode="lax">
+    <!-- Register  the target namespace here -->
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Employee" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Employee_imp.xsl" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\Employee_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Professional" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Professional_imp.xsl" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Professional_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Organization" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Organization_imp.xsl" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Organization_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Managed_Care" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Managed_Care_imp.xsl" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Managed_Care_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Formulary" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Formulary_imp.xsl" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Formulary_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Customer_Affiliation" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Customer_Affiliation_imp.xsl" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Customer_Affiliation_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Call" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Call_imp.xsl" outXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Call_exp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Refresh_Request" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Refresh_Request_imp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Sales_Area_Relation" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Sales_Area_Relation_imp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Geography_Sales_Area" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Geography_Sales_Area_imp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Product_Sales_Force" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Product_Sales_Force_imp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Customer_Sales_Area" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Customer_Sales_Area_imp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Sample_Transaction" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Sample_Transaction_imp.xsl" />
+    <Namespace targetNamespace="http://schemas.dendrite.com/IS/1.0.0/Order" inXSL="C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Interfaces\MetaData\DI_WF_Order_imp.xsl" />
+  </TargetNamespaces>
+  <RegisteredQueues>
+    <JMSQ>
+      <QProcessor>JMSQ.QueueProcessor</QProcessor>
+      <!-- Only one JMSProvider can be specified at one time  -->
+      <JMSProvider name="TIBCO EMS Server">
+        <!-- ConnectionConfig contains provider specific connection parameters that are defined by administrator and used to connect to the JMS provider   -->
+        <ConnectionConfig>
+          <ServerUrl>tcp://192.168.162.71:7222</ServerUrl>
+          <ClientIdentification username="admin" password="admin" />
+          <Timeout>0</Timeout>
+          <ConnectionFactories>
+            <!--  type = queue|topic|generic  -->
+            <ConnectionFactory id="IS_JMS_CF" type="queue">IS_JMS_CF</ConnectionFactory>
+          </ConnectionFactories>
+        </ConnectionConfig>
+      </JMSProvider>
+      <MessageType />
+      <QueueNames>
+        <Queue qid="WF_X_Q" type="queue">
+          <LookupName>IS_JNDI_WF_X_Q</LookupName>
+          <ConnectionFactoryId>IS_JMS_CF</ConnectionFactoryId>
+          <!--  Delivery mode: 1 [non-persistent]; 2 [persistent]; default is 2   -->
+          <DeliveryMode>2</DeliveryMode>
+          <!--  Durable subscriber is for topic destination only: true [use durable subscriber]; false [use non-durable subscriber]; default is true with name="Default_Subscriber"  -->
+          <DurableSubscriber name="mySubscriber1">false</DurableSubscriber>
+        </Queue>
+        <Queue qid="WF_IN_Q" type="queue">
+          <LookupName>IS_JNDI_WF_IN_Q</LookupName>
+          <ConnectionFactoryId>IS_JMS_CF</ConnectionFactoryId>
+          <!--  Delivery mode: 1 [non-persistent]; 2 [persistent]; default is 2   -->
+          <DeliveryMode>2</DeliveryMode>
+          <!--  Durable subscriber is for topic destination only: true [use durable subscriber]; false [use non-durable subscriber]; default is true with name="Default_Subscriber"  -->
+          <DurableSubscriber name="mySubscriber1">false</DurableSubscriber>
+        </Queue>
+        <Queue qid="WF_PIN_Q" type="queue">
+          <LookupName>IS_JNDI_WF_PIN_Q</LookupName>
+          <ConnectionFactoryId>IS_JMS_CF</ConnectionFactoryId>
+          <!--  Delivery mode: 1 [non-persistent]; 2 [persistent]; default is 2   -->
+          <DeliveryMode>2</DeliveryMode>
+          <!--  Durable subscriber is for topic destination only: true [use durable subscriber]; false [use non-durable subscriber]; default is true with name="Default_Subscriber"  -->
+          <DurableSubscriber name="mySubscriber1">false</DurableSubscriber>
+        </Queue>
+      </QueueNames>
+    </JMSQ>
+  </RegisteredQueues>
+  <RegisteredObjects>
+    <ImportService>
+      <MaxThreads>1</MaxThreads>
+      <LowWaterMark>5</LowWaterMark>
+      <HighWaterMark>10</HighWaterMark>
+      <ApplytoDatabase>true</ApplytoDatabase>
+      <OutputFilesPath>"C:\Deployment\MIISA440B1010\RS440B1010\DataInterfaces\Data\Imports"</OutputFilesPath>
+      <DisableConcurrentProcessing>true</DisableConcurrentProcessing>
+      <Connectstring>Provider=OraOLEDB.Oracle;User Id=aeseixt134a;Password=aeseixt134a;Data Source=aesei10a;</Connectstring>
+      <Group name="G1" before_procedure="b1" after_procedure="a1">
+        <Object exceptionqid="WF_X_Q" qid="WF_IN_Q" corr_id="" parameterizedDML="false" Objectname="Example" blockCommitSize="2000" />
+      </Group>
+    </ImportService>
+  </RegisteredObjects>
+  <Services>
+    <ServiceSchedule serviceName="RS440B1010 MIISA DataImport Vikash" serviceType="active">
+      <!-- Let all the time periods be in seconds -->
+      <ActivationPeriod>30</ActivationPeriod>
+      <ExecutionPeriod>30</ExecutionPeriod>
+      <ExecutionInterval>30</ExecutionInterval>
+      <taskName>ReStartDataImport</taskName>
+      <script><![CDATA["C:\Program Files\Dendrite\Xtelligent\1.3.5\Standard\Configuration\svcrestart.js"]]></script>
+      <svcmonparam><![CDATA["RS440B1010 MIISA DataImport Vikash" 6000]]></svcmonparam>
+      <maxProcessmemory>50</maxProcessmemory>
+      <minSystemmemory>15</minSystemmemory>
+    </ServiceSchedule>
+  </Services>
+  <XmlServiceProvider class="WFImportValidator.WFXmlSvcProvider" />
+</XMLDBServiceConfiguration>

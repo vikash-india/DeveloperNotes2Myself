@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- A sample files for the various ratings for a player -->
+<RatingChart>
+	<Rating id="1">Great</Rating>
+	<Rating id="2">Very Good</Rating>
+	<Rating id="3">Good</Rating>
+	<Rating id="4">Average</Rating>
+	<Rating id="5">Poor</Rating>
+</RatingChart>

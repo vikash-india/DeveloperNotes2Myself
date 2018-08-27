@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Definition	: The <schema> element is the root element of every XML Schema
+	Syntax: 	  <xs:schema>
+						...
+					</xs:schema>
+	Attributes:
+	Notes: 
+		1. An XML Schema Document must have exactly one schema element
+		2. An XML Schema element may contain attributes as shown in the next example.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"/>

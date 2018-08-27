@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The all element specifies that the child elements can appear in any order and that each child element can occur zero or one time. 
+	Syntax		: 
+						<all
+							id=ID
+							maxOccurs=1
+							minOccurs=0|1
+							any attributes
+						>
+								(annotation?,element*)
+							</all>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			maxOccurs 	: Optional. Specifies the maximum number of times the element can occur. The value must be 1.
+			minOccurs		: Optional. Specifies the minimum number of times the element can occur. The value can be 0 or 1. Default value is 1
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: group, complexType, restriction (both simpleContent and complexContent), extension (both simpleContent and complexContent)
+			2. (The ? sign declares that the element can occur zero or one time, and the * sign declares that the element can occur zero or more times inside the all element) 
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!--Example: the "firstname" and the "lastname" elements can appear in any order but both elements MUST occur once and only once! -->
+	<xs:element name="person1">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="firstname" type="xs:string"/>
+				<xs:element name="lastname" type="xs:string"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	
+	<!--Example: The example above indicates that the "firstname" and the "lastname" elements can appear in any order and each element CAN appear zero or one time! -->
+	<xs:element name="person2">
+		<xs:complexType>
+			<xs:all minOccurs="0">
+				<xs:element name="firstname" type="xs:string"/>
+				<xs:element name="lastname" type="xs:string"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

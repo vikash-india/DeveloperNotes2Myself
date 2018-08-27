@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The annotation element is a top level element that specifies schema comments. The comments serve as inline documentation.
+	Syntax		: 
+						<annotation
+							id=ID
+							any attributes
+						>
+							(appinfo|documentation)*
+						</annotation>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: Any element
+			2. The * sign declares that the element can occur zero or more times inside the annotation element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:annotation>
+  <xs:documentation xml:lang="en">This Schema defines a W3Schools note!</xs:documentation>
+</xs:annotation>
+</xs:schema>

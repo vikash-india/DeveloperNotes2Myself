@@ -1,0 +1,18 @@
+<!-- 
+	Description: An example to show xml:lang attribute
+	Note:
+		1.  xml:lang attribute is used to specify human language associated with XML Data just as encoding parameter of XML declaration specifies the character encoding used to represent that language
+		2. xml:lang can use any one of the following forms to specify the language
+				1. Two-letter ISO 639 Language Code. Examples: en, la
+				2. Two-letter ISO 639 Language Code followed by ISO 3166 Country Code. Examples: en-US, en-GB
+				3. Two-letter ISO 639 Language Code followed by one or more sub tags, which usually describes a dialect, a regional variation or differnt form of a language.Example: no-bokmaal, az-arabic
+				4. A registered IANA langauge tag("I-" or "i-") followed by 1 to 8 character IANA langauge name. Example: I-navajo, i-klingon
+				5. An unregistered ("user") IANA language tag ( "X-" or "x-") followed by a string that does not correspond to a registered ISO Langauge Code or IANA Language tag. Example: X-InverseMy
+		3. The value of xml:lang attribute is not just applied to the element including the attribute but it also applies to all the childs elements and attributes of that element
+		4. The child element can override the xml:lang attribute with their own xml:lang attribute
+-->
+<RootElement xml:lang="en">
+	<Quote xml:lang="la">Gallia est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.</Quote>
+	<Description>Caesar begins by describing the geography of Gaul.</Description>
+	<Explanation xml:lang="en">It isn't the most thrilling opening to a great work on war, but it does explain some key issues to Romans who probably have never been anywhere near Rome.</Explanation>
+</RootElement>

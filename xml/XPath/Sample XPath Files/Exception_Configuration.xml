@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<Exception_Configuration xmlns = "http://schemas.dendrite.com/IS/1.0.0" xmlns:dts = "http://schemas/dendrite/xt/database" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns:xtc = "http://schemas/dendrite/xt/core" xmlns:xtd = "http://schemas/dendrite/xt/datatypes" xsi:schemaLocation = "http://schemas.dendrite.com/IS/1.0.0/Notification ../Shared%20Resources/Schema%20Definitions/Custom/Exception_Notification.xsd http://www.dendrite.IS/1.0.0/schemas IS_Exception_config.xsd http://schemas.dendrite.com/IS/1.0.0 ../Shared%20Resources/Schema%20Definitions/Custom/Exception_Configuration.xsd">
+	<Notification From_EMail_Address = "ISSystem@Dendrite.com" On = "1" Threshold = "100" To_EMail_Address = "ISAdmin@dendrite.com"/>
+	<Critical Notification = "true" StopImport = "true" on = "true">
+		<Entity_List/>
+		<Application CriticalCommand = "" Enabled = "1" Name = "WF"/>
+		<Application CriticalCommand = "" Enabled = "0" Name = "NP"/>
+	</Critical>
+</Exception_Configuration>

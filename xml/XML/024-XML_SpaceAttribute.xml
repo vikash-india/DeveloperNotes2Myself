@@ -1,0 +1,15 @@
+<!-- 
+	Description: An example to show xml:space attribute
+	Note: 
+		1. xml:space attribute is used to specify how the whitespace should be treated in the XML elements
+		2. Its syntax is xml:space="preserve" or xml:space="default". The attribute value "preserve" preserves the white space while the value "default" signifies the default behaviour of the parser or the application.
+		3. The xml:space attribute is not just applied to the element including the attribute but it also applies to all the childs elements and attributes of that element
+-->
+<RootElement>
+	<Code xml:space="preserve">
+		for (int i = 0; i &lt; 10; i++)
+		{
+			printf("*");
+		}
+	</Code>
+</RootElement>

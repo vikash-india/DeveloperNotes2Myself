@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The restriction element defines restrictions on a simpleType, simpleContent, or complexContent definition.
+	Syntax		: 
+						<restriction
+							id=ID
+							base=QName
+							any attributes
+						>
+							Content for simpleType:
+							(annotation?,(simpleType?,(minExclusive|minInclusive| 
+							maxExclusive|maxInclusive|totalDigits|fractionDigits|
+							length|minLength|maxLength|enumeration|whiteSpace|pattern)*))
+							
+							Content for simpleContent:
+							(annotation?,(simpleType?,(minExclusive |minInclusive| 
+							maxExclusive|maxInclusive|totalDigits|fractionDigits|
+							length|minLength|maxLength|enumeration|whiteSpace|pattern)*)?, 
+							((attribute|attributeGroup)*,anyAttribute?))
+							
+							Content for complexContent:
+							(annotation?,(group|all|choice|sequence)?,
+							((attribute|attributeGroup)*,anyAttribute?))
+						</restriction>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			base				: Required. Specifies the name of a built-in data type, simpleType element, or complexType element defined in this schema or another schema
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: simpleType, simpleContent, complexContent
+			2. The ? sign declares that the element can occur zero or one time inside the restriction element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"/>

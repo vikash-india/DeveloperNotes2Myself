@@ -1,0 +1,20 @@
+<!-- 
+	Description: An example to show the need for XML namespace
+	Note: 
+		1. XML Namespaces provide a method to avoid element name conflicts	
+		2. Both contain a <table> element, but the elements have different content and meaning. An XML parser will not know how to handle these differences.
+		3. Name conflicts in XML can easily be avoided using a name prefix.This prefix is called the XML Namespace
+-->
+<RootElement>
+	<table>
+		<tr>
+			<td>Sachin Tendulkar</td>
+			<td>Rahul Dravid</td>
+		</tr>
+	</table>
+	<table>
+		<name>French GardenTable</name>
+		<width>80</width>
+		<length>120</length>
+	</table>
+</RootElement>

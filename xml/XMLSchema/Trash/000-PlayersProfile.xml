@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+<?xml-stylesheet type="text/xsl" href="[FileName]"?>
+Example: 
+<?xml-stylesheet type="text/xsl" href="004-XSLTElement-Template.xsl"?>
+-->
+<?xml-stylesheet type="text/xsl" href="073-ComplexSort.xsl"?>
+<PlayersProfile>
+	<Player id="1">
+		<Name>Sachin Ramesh Tendulkar</Name>
+		<NickName>The Master Blaster</NickName>
+		<Sports>Cricket</Sports>
+		<Country>India</Country>
+		<DOB>24-04-1973</DOB>
+		<Debut>1989</Debut>
+		<Income>12.68</Income>
+		<Remarks>Like loads of other cricketers, Sachin is pretty superstitious-he will always put on his left pad before his right whenever he is getting padded up</Remarks>
+	</Player>
+	<Player id="2">
+		<Name>Rahul Sharad Dravid</Name>
+		<NickName>the Wall</NickName>
+		<Sports>Cricket</Sports>
+		<Country>India</Country>
+		<DOB>11-01-1973</DOB>
+		<Debut>1996</Debut>
+		<Income>5.68</Income>
+		<Remarks>Wisden Cricketer of the Year 2000</Remarks>
+	</Player>
+	<Player id="3">
+		<Name>Sourav Chandidas Ganguly</Name>
+		<NickName>The Prince of Calcutta, Dada</NickName>
+		<Sports>Cricket</Sports>
+		<Country>India</Country>
+		<DOB>08-07-1972</DOB>
+		<Debut>1992</Debut>
+		<Income>6.67</Income>
+		<Remarks>In one county match Ganguly, after reaching his fifty, raised his bat to the home balcony, only to find it deserted.</Remarks>
+	</Player>
+	<Player id="4">
+		<Name>Edison Arantes do Nascimento</Name>
+		<NickName>Pelé</NickName>
+		<Sports>Football</Sports>
+		<Country>Brazil</Country>
+		<DOB>23-10-1930</DOB>
+		<Debut>1957</Debut>
+		<Income>2.38</Income>
+		<Remarks>He was given the title of Athlete of the Century by the International Olympic Committee</Remarks>
+	</Player>
+	<Player id="5">
+		<Name>Diego Armando Maradona</Name>
+		<NickName>Pelusa(Fuzz)</NickName>
+		<Sports>Football</Sports>
+		<Country>Argentina</Country>
+		<DOB>30-10-1960</DOB>
+		<Debut>1977</Debut>
+		<Income>7.96</Income>
+		<Remarks>His Remarks after the Hand of God Goal, I was waiting for my teammates to embrace me, and no one came . . . I told them, 'Come hug me, or the referee isn't going to allow it.</Remarks>
+	</Player>
+	<Player id="6">
+		<Name>Pete Sampras</Name>
+		<NickName>the King of Swing</NickName>
+		<Sports>Tennis</Sports>
+		<Country>USA</Country>
+		<DOB>12-08-1971</DOB>
+		<Debut>1988</Debut>
+		<Income>12.38</Income>
+		<Remarks>Sampras won a record 14 Grand Slam singles titles during his career</Remarks>
+	</Player>
+	<Player id="7">
+		<Name>Roger Fedrer</Name>
+		<NickName>the Legend</NickName>
+		<Sports>Tennis</Sports>
+		<Country>Switzerland</Country>
+		<DOB>08-08-1981</DOB>
+		<Debut>1998</Debut>
+		<Income>8.38</Income>
+		<Remarks>Sampras won a 12 Grand Slam singles titles during his career</Remarks>
+	</Player>
+</PlayersProfile>

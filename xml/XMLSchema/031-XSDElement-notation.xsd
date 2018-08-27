@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The notation element describes the format of non-XML data within an XML document.
+	Syntax		: 
+						<notation
+							id=ID
+							name=NCName
+							public=anyURI
+							system=anyURI
+							any attributes
+						>
+							(annotation?)
+						</notation>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			name				: Required. Specifies a name for the element
+			public				: Required. Specifies a URI corresponding to the public identifier
+			system			: Optional. Specifies a URI corresponding to the system identifier
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: schema 
+			2. The ? sign declares that the element can occur zero or one time inside the notation element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:notation name="gif" public="image/gif" system="view.exe"/>
+<xs:notation name="jpeg" public="image/jpeg" system="view.exe"/><xs:element name="image">
+  <xs:complexType>
+    <xs:simpleContent>
+      <xs:attribute name="type">
+        <xs:simpleType>
+          <xs:restriction base="xs:NOTATION">
+            <xs:enumeration value="gif"/>
+            <xs:enumeration value="jpeg"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:element>
+</xs:schema>

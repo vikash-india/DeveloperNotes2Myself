@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The attribute element defines an attribute.
+	Syntax		: 
+						<attribute
+							default=string
+							fixed=string
+							form=qualified|unqualified
+							id=ID
+							name=NCName
+							ref=QName
+							type=QName
+							use=optional|prohibited|required
+							any attributes
+						>
+							(annotation?,(simpleType?))
+						</attribute>
+	Attributes
+			default				: Optional. Specifies a default value for the attribute. Default and fixed attributes cannot both be present
+			fixed				: Optional. Specifies a fixed value for the attribute. Default and fixed attributes cannot both be present
+			form				: Optional. Specifies the form for the attribute. The default value is the value of the attributeFormDefault attribute of the element containing the attribute. Can be set to one of the following:
+											"qualified" - indicates that this attribute must be qualified with the namespace prefix and the no-colon-name (NCName) of the attribute 
+											unqualified - indicates that this attribute is not required to be qualified with the namespace prefix and is matched against the (NCName) of the attribute 
+			id						: Optional. Specifies a unique ID for the element
+			name				: Optional. Specifies the name of the attribute. Name and ref attributes cannot both be present
+			ref					: Optional. Specifies a reference to a named attribute. Name and ref attributes cannot both be present. If ref is present, simpleType element, form, and type cannot be present
+			type					: Optional. Specifies a built-in data type or a simple type. The type attribute can only be present when the content does not contain a simpleType element
+			use					: Optional. Specifies how the attribute is used. Can be one of the following values:
+											optional - the attribute is optional (this is default) 
+											prohibited - the attribute cannot be used 
+											required - the attribute is required 
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: attributeGroup, schema, complexType, restriction (both simpleContent and complexContent), extension (both simpleContent and complexContent) 
+			2. The ? sign declares that the element can occur zero or one time inside the attribute element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!--Example: The "id" attribute has a restriction. The only acceptable value is two of the uppercase letters from A to Z followed by a number-->
+	<xs:attribute name="id">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[A-Z][A-Z][0-9]"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<!--Example: To declare an attribute using an existing attribute definition within a complex type, use the ref attribute.-->
+	<xs:attribute name="CountryCode">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[A-Z][A-Z]"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:complexType name="someComplexType">
+		<xs:attribute ref="CountryCode"/>
+	</xs:complexType>
+	<!--Example: Attributes can have either a default value OR a fixed value specified. A default value is automatically assigned to the attribute when no other value is specified. -->
+	<xs:attribute name="PlayerLanguage" type="xs:string" default="EN"/>
+	<!--Example: A fixed value is also automatically assigned to the attribute when no other value is specified. But unlike default values; if you specify another value than the fixed, the document is considered invalid. The fixed value is "EN":-->
+	<xs:attribute name="PlayerLanguage2" type="xs:string" fixed="EN"/>
+	<!--Example: All attributes are optional by default. To explicitly specify that the attribute as optional or required, use the "use" attribute.-->
+	<xs:element name="Player">
+		<xs:complexType>
+			<xs:attribute name="NickName" type="xs:string" use="optional"/>
+			<xs:attribute name="Sports" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

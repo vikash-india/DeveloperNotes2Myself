@@ -1,0 +1,18 @@
+<!-- 
+	Description: An example to explain the comments in XML
+	Note: 
+		1. Comments can come anywhere
+		2. Comments CANNOT be nested
+		3. Comments CANNOT have two hyphens as the part of the data. This is for SGML compatibility
+		4. Comments are not part of data so it should not be relied upon for data information. 
+		5. Markups and entity reference are not expanded inside comments
+		6. Comments CANNOT be put inside Element tags
+-->
+
+<!-- Comments can be here -->
+<PlayersProfile>
+	<Player name="Sachin Ramesh Tendulkar">
+		<!-- Comments can be here -->
+	</Player>
+</PlayersProfile>
+<!-- Comments can be here -->

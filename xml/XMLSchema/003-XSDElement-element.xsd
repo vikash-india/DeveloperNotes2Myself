@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The element element defines an element.
+	Syntax		: 
+						<element
+							id=ID 
+							name=NCName
+							ref=QName
+							type=QName
+							substitutionGroup=QName
+							default=string
+							fixed=string
+							form=qualified|unqualified
+							maxOccurs=nonNegativeInteger|unbounded
+							minOccurs=nonNegativeInteger
+							nillable=true|false
+							abstract=true|false 
+							block=(#all|list of (extension|restriction))
+							final=(#all|list of (extension|restriction))
+							any attributes
+							>
+								annotation?,((simpleType|complexType)?,(unique|key|keyref)*))
+							</element>
+	Attributes
+			id								: Optional. Specifies a unique ID for the element
+			name						: Optional. Specifies a name for the element. This attribute is required if the parent element is the schema element
+			ref							: Optional. Refers to the name of another element. The ref attribute can include a namespace prefix. This attribute cannot be used if the parent element is the schema element
+			type							: Optional. Specifies either the name of a built-in data type, or the name of a simpleType or complexType element
+			substitutionGroup	: Optional. Specifies the name of an element that can be substituted with this element. This attribute cannot be used if the parent element is not the schema element
+			default						: Optional. Specifies a default value for the element (can only be used if the element's content is a simple type or text only)
+			fixed						: Optional. Specifies a fixed value for the element (can only be used if the element's content is a simple type or text only)
+			form						: Optional. Specifies the form for the element. "unqualified" indicates that this attribute is not required to be qualified with the namespace prefix. "qualified" indicates that this attribute must be qualified with the namespace prefix. The default value is the value of the elementFormDefault attribute of the schema element. This attribute cannot be used if the parent element is the schema element
+			maxOccurs				: Optional. Specifies the maximum number of times this element can occur in the parent element. The value can be any number >= 0, or if you want to set no limit on the maximum number, use the value "unbounded". Default value is 1. This attribute cannot be used if the parent element is the schema element
+			minOccurs				: Optional. Specifies the minimum number of times this element can occur in the parent element. The value can be any number >= 0. Default value is 1. This attribute cannot be used if the parent element is the schema element
+			nillable						: Optional. Specifies whether an explicit null value can be assigned to the element. True enables an instance of the element to have the null attribute set to true. The null attribute is defined as part of the XML Schema namespace for instances. Default is false
+			abstract					: Optional. Specifies whether the element can be used in an instance document. True indicates that the element cannot appear in the instance document. Instead, another element whose substitutionGroup attribute contains the qualified name (QName) of this element must appear in this element's place. Default is false
+			block						: Optional. Prevents an element with a specified type of derivation from being used in place of this element. This value can contain #all or a list that is a subset of extension, restriction, or equivClass:
+														extension - prevents elements derived by extension 
+														restriction - prevents elements derived by restriction 
+														substitution - prevents elements derived by substitution 
+														#all - prevents all derived elements 
+			final							: Optional. Sets the default value of the final attribute on the element element.  This attribute cannot be used if the parent element is not the schema element. This value can contain #all or a list that is a subset of extension or restriction:
+														extension - prevents elements derived by extension 
+														restriction - prevents elements derived by restriction 
+														#all - prevents all derived elements 
+			any attributes			: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: schema, choice, all, sequence, group
+			2. The ? sign declares that the element can occur zero or one time, and the * sign declares that the element can occur zero or more times inside the element element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<!--Example: 4 elements with different data types-->
+	<xs:element name="Name" type="xs:string"/>
+	<xs:element name="NickName" type="xs:string"/>
+	<xs:element name="Debut" type="xs:nonNegativeInteger"/>
+	<xs:element name="DOB" type="xs:date"/>
+	
+	<!--Example: A complex type where the "Player" element contains four other simple elements; "Name", "NickName", "Debut", and "DOB":-->
+	<xs:element name="Player">
+		<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Name" type="xs:string"/>
+						<xs:element name="NickName" type="xs:string"/>
+						<xs:element name="Debut" type="xs:nonNegativeInteger"/>
+						<xs:element name="DOB" type="xs:date"/>
+					</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<!--Example: Same as the above example but the ref attribute is used to refer to the element names.-->
+	<xs:element name="NewPlayer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="NewName"/>
+				<xs:element ref="NewNickName"/>
+				<xs:element ref="NewDebut"/>
+				<xs:element ref="NewDOB"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NewName" type="xs:string"/>
+	<xs:element name="NewNickName" type="xs:string"/>
+	<xs:element name="NewDebut" type="xs:nonNegativeInteger"/>
+	<xs:element name="NewDOB" type="xs:date"/>
+
+</xs:schema>

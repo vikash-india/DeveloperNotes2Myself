@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- 
+	Definition		: The group element is used to define a group of elements to be used in complex type definitions.
+	Syntax		: 
+						<group
+							id=ID
+							name=NCName
+							ref=QName
+							maxOccurs=nonNegativeInteger|unbounded
+							minOccurs=nonNegativeInteger
+							any attributes
+						>
+							(annotation?,(all|choice|sequence)?)
+						</group>
+	Attributes
+			id						: Optional. Specifies a unique ID for the element
+			name				: Optional. Specifies a name for the group. This attribute is used only when the schema element is the parent of this group element. Name and ref attributes cannot both be present
+			ref					: Optional. Refers to the name of another group. Name and ref attributes cannot both be present
+			maxOccurs		: Optional. Specifies the maximum number of times the group element can occur in the parent element. The value can be any number >= 0, or if you want to set no limit on the maximum number, use the value "unbounded". Default value is 1
+			minOccurs		: Optional. Specifies the minimum number of times the group element can occur in the parent element. The value can be any number >= 0. Default value is 1
+			any attributes	: Optional. Specifies any other attributes with non-schema namespace
+	Notes: 
+			1. Parent elements: schema, choice, sequence, complexType, restriction (both simpleContent and complexContent), extension (both simpleContent and complexContent) 
+			2. The ? sign declares that the element can occur zero or one time inside the group element
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!--Example: The following example defines a group containing a sequence of four elements and uses the group element in a complex type definition-->
+<xs:group name="custGroup">
+ <xs:sequence>
+  <xs:element name="customer" type="xs:string"/>
+  <xs:element name="orderdetails" type="xs:string"/>
+  <xs:element name="billto" type="xs:string"/>
+  <xs:element name="shipto" type="xs:string"/>
+ </xs:sequence>
+</xs:group>
+
+<xs:element name="order" type="ordertype"/><xs:complexType name="ordertype">
+  <xs:group ref="custGroup"/>
+  <xs:attribute name="status" type="xs:string"/>
+</xs:complexType>
+</xs:schema>

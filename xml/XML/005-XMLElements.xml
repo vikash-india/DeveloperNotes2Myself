@@ -1,0 +1,35 @@
+<!-- 
+	Description	: An example to explain valid XML Element names
+	Definition		: An XML element is everything from (including) the element's start tag to (including) the element's end tag. An element can contain other elements, simple text or a mixture of both. Elements can also have attributes.
+	Note: 
+		a. Rules for valid element names are as follows
+				1. All element Names must start with a unicode character, underscore(_) or colon(:)
+				2. Subsequent characters can be unicode character(s), unicode number(s), underscore(_), colon(:), hyphen(-) or period(.)
+				3. Element Names must not start with the letters xml (or XML, or Xml, etc)
+				4. Space between Element name and > is allowed 
+				5. Space between < and element name is NOT allowed
+				6. Space between </ and element name is NOT allowed
+				7. Space between < and / in the closing element name is NOT allowed
+		b. Following naming convention can be used 
+				1. Make names descriptive. Names with an underscore separator are nice: <player_name>, <nick_name>.
+				2. Names should be short and simple, like this: <player_name> not like this: <the_name_of_the_player>. 
+				3. Avoid "-" characters. If you name something "player-name," some software may think you want to subtract name from player
+				4. Avoid "." characters. If you name something "player.name," some software may think that "name" is a property of the object "player."
+				5. Avoid ":" characters. Colons are reserved to be used for something called namespaces (more later).
+				6. XML documents often have a corresponding database. A good practice is to use the naming rules of your database for the elements in the XML documents.
+				7. Non-English letters like éòá are perfectly legal in XML, but watch out for problems if your software vendor doesn't support them.
+-->
+<PlayersProfile>
+	<Player          >Sachin Ramesh Tendulkar</Player>
+	<_Player>Rahul Sharad Dravid</_Player>
+	<:Player>Sourav Chandidas Ganguly</:Player>
+	<Player4>Pelé</Player4>
+	<Player.5>Diego Armando Maradona</Player.5>
+	<Player-6>Pete Sampras</Player-6>
+	<Player_7>Roger Fedrer</Player_7>
+	<Player            >Steffi Graf</Player>
+	<!--
+	<   Player>Michael Schumacher</Player>
+	<Player>Michael Schumacher<           /Player>	
+	-->
+</PlayersProfile>

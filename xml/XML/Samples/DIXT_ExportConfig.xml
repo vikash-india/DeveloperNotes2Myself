@@ -1,0 +1,150 @@
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Cecily Xi (Dendrite International, Inc.) -->
+<XMLDBServiceConfiguration>
+	<!--<XmlServiceProvider class="XmlServiceProvider.XmlSvcProvider"/>-->
+	<Subscriptions>
+		<Subscriber connectionString="Provider=OraOLEDB.Oracle;User Id=$DI_DBUser$;Password=$DI_DBPwd$;Data Source=$DI_DBDsn$;ChunkSize=10000;SPPrmsLOB=1;PLSQLRSet=1" enableTracing="0" enableDBLogging="1">
+			<SQLCommands cmdAppInfo="{ CALL xtevents.spxtl_appinfo (?,?,?,?,?,?,?,?,?) }" cmdEvents="{ CALL xtevents.spxtl_events(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) }" cmdLogs="{ CALL xtevents.spxtl_logs (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) }"/>
+		</Subscriber>
+	</Subscriptions>
+	<KeyLookups>
+		<CacheSize>100000</CacheSize>
+		<CheckKeySql>{call xtelligent.xt_check_keys(?,?)}</CheckKeySql>
+	</KeyLookups>
+	<CodeTranslation>
+		<CacheSize>50000</CacheSize>
+		<UseClientToSystemCache>true</UseClientToSystemCache>
+		<UseSystemToClientCache>false</UseSystemToClientCache>
+		<CodeTableSql>SELECT DISTINCT translate_value,code_value,description, field_name FROM xt_translation WHERE object_name=?</CodeTableSql>
+	</CodeTranslation>
+	<Database>
+		<ConnectionString role="Standard">Provider=OraOLEDB.Oracle;User Id=$DI_DBUser$;Password=$DI_DBPwd$;Data Source=$DI_DBDsn$;</ConnectionString>
+		<ShareDataSource>true</ShareDataSource>
+		<DisableOLEDB>false</DisableOLEDB>
+		<DisableOO4O>true</DisableOO4O>
+	</Database>
+	<System>
+		<EnableTestMode>false</EnableTestMode>
+		<MachineId>999999999</MachineId>
+		<EmployeeId>1</EmployeeId>
+	</System>
+	<MultiKeyGenerator>
+		<LowWaterMark>5</LowWaterMark>
+		<HighWaterMark>20</HighWaterMark>
+		<KeyGenerationSql>{call xtelligent.xt_get_next_IDL_seq_number(?,?,?)}</KeyGenerationSql>
+	</MultiKeyGenerator>
+	<DataModelRegistrations xmlns:xtds="http://schemas.dendrite.com/xtelligent/dataexport" xmlns:ts="http://schemas.dendrite.com/xtelligent/XmlPublish">
+		<DataObject xtds:schemaId="2100" ts:schemaId="2100" name="Supply_Order" urn="http://schemas.dendrite.com/IS/1.0.0/Supply_Order" url="$Metadata_path$DI_MD_PromotionalOrder_Exp.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0"/>
+		<DataObject xtds:schemaId="2200" ts:schemaId="2200" name="Supply_Order_Detail" urn="http://schemas.dendrite.com/IS/1.0.0/Supply_Order_Detail" url="$Metadata_path$DI_MD_PromotionalOrderDetail_Exp.xml" enable="true" targetNamespace="http://schemas.dendrite.com/IS/1.0.0"/>
+	</DataModelRegistrations>
+	<TargetNamespaces processingMode="lax">
+	</TargetNamespaces>
+	<RegisteredQueues/>
+	<RegisteredObjects>
+		<xtde:dataexport xmlns:xtde="http://schemas.dendrite.com/xtelligent/DataExport" updateObjectProcedure="XTDATAEXPORT_PKG.XT_UPDATESTATUS_PRC" notify_procedure="XTDATAEXPORT_PKG.XT_NOTIFY_PRC" output_path="$DataloadOutput$">
+			<!-- I=insert U=update D=delete L=refresh-->
+			<DefinedOperations>
+				<Operation name="I" value="1"/>
+				<Operation name="U" value="0"/>
+				<Operation name="D" value="-2"/>
+				<Operation name="L" value="3"/>
+			</DefinedOperations>
+			<!--
+		   * as @table of StreamTableBehavior implies assignment applicable for all request which have @sourceTable.
+		   This processing is applicable to ONLY UPDATE operation . The value of node Column specified is to be used 
+		   to indicate to xtexport that the column is to be explicitly have NULL value assigned.  -->
+			<StreamTableBehavior table="*">
+				<NullValuesAssignments>
+					<Column name="CODE_1">$$$$</Column>
+					<Column name="CODE_2">$$$$</Column>
+					<Column name="CODE_3">$$$$</Column>
+					<Column name="CODE_4">$$$$</Column>
+					<Column name="CODE_5">$$$$</Column>
+					<Column name="CODE_6">$$$$</Column>
+					<Column name="CODE_7">$$$$</Column>
+					<Column name="CODE_8">$$$$</Column>
+					<Column name="CODE_9">$$$$</Column>
+					<Column name="CODE_10">$$$$</Column>
+					<Column name="CODE_11">$$$$</Column>
+					<Column name="CODE_12">$$$$</Column>
+					<Column name="CODE_13">$$$$</Column>
+					<Column name="CODE_14">$$$$</Column>
+					<Column name="CODE_15">$$$$</Column>
+					<Column name="DATE_1">1900-01-01 00:00:00</Column>
+					<Column name="DATE_2">1900-01-01 00:00:00</Column>
+					<Column name="DATE_3">1900-01-01 00:00:00</Column>
+					<Column name="DATE_4">1900-01-01 00:00:00</Column>
+					<Column name="DATE_5">1900-01-01 00:00:00</Column>
+					<Column name="IDENTIFIER_1">-9999999999</Column>
+					<Column name="IDENTIFIER_2">-9999999999</Column>
+					<Column name="IDENTIFIER_3">-9999999999</Column>
+					<Column name="IDENTIFIER_4">-9999999999</Column>
+					<Column name="IDENTIFIER_5">-9999999999</Column>
+					<Column name="IDENTIFIER_6">-9999999999</Column>
+					<Column name="IDENTIFIER_7">-9999999999</Column>
+					<Column name="IDENTIFIER_8">-9999999999</Column>
+					<Column name="IDENTIFIER_9">-9999999999</Column>
+					<Column name="IDENTIFIER_10">-9999999999</Column>
+					<Column name="IDENTIFIER_11">-9999999999</Column>
+					<Column name="IDENTIFIER_12">-9999999999</Column>
+					<Column name="IDENTIFIER_13">-9999999999</Column>
+					<Column name="IDENTIFIER_14">-9999999999</Column>
+					<Column name="IDENTIFIER_15">-9999999999</Column>
+					<Column name="MONEY_1">-999999.9999</Column>
+					<Column name="MONEY_2">-999999.9999</Column>
+					<Column name="MONEY_3">-999999.9999</Column>
+					<Column name="MONEY_4">-999999.9999</Column>
+					<Column name="MONEY_5">-999999.9999</Column>
+					<Column name="MONEY_6">-999999.9999</Column>
+					<Column name="MONEY_7">-999999.9999</Column>
+					<Column name="MONEY_8">-999999.9999</Column>
+					<Column name="MONEY_9">-999999.9999</Column>
+					<Column name="MONEY_10">-999999.9999</Column>
+					<Column name="MONEY_11">-999999.9999</Column>
+					<Column name="MONEY_12">-999999.9999</Column>
+					<Column name="STRING_1">$$$$</Column>
+					<Column name="STRING_2">$$$$</Column>
+					<Column name="STRING_3">$$$$</Column>
+					<Column name="STRING_4">$$$$</Column>
+					<Column name="STRING_5">$$$$</Column>
+					<Column name="STRING_6">$$$$</Column>
+					<Column name="STRING_7">$$$$</Column>
+					<Column name="STRING_8">$$$$</Column>
+					<Column name="STRING_9">$$$$</Column>
+					<Column name="STRING_10">$$$$</Column>
+					<Column name="STRING_11">$$$$</Column>
+					<Column name="STRING_12">$$$$</Column>
+					<Column name="STRING_13">$$$$</Column>
+					<Column name="STRING_14">$$$$</Column>
+					<Column name="TEXT_1">$$$$</Column>
+					<Column name="TEXT_2">$$$$</Column>
+				</NullValuesAssignments>
+			</StreamTableBehavior>
+			<Group name="DataExport">
+				<ConnectionString role="Standard"/>
+				<xtde:ExportRequest label="PROMORD" encoding="ansi" blockSize="100" blockCommitSize="50" FieldDelimiter="|" extension="IDL">
+					<DataObject name="Supply_Order">
+						<SQL sourceTable="XTEXPORT_TABLE_1" sql="SELECT * FROM XTEXPORT_TABLE_1 WHERE  status=0 and schema_id= 2100 order by xtexport_id"/>
+					</DataObject>
+				</xtde:ExportRequest>
+				<xtde:ExportRequest label="PROMORDDETL" encoding="utf-8" blockSize="100" blockCommitSize="50" FieldDelimiter="|" extension="IDL">
+					<DataObject name="Supply_Order_Detail">
+						<SQL sourceTable="XTEXPORT_TABLE_1" sql="SELECT * FROM XTEXPORT_TABLE_1 WHERE status=0 and schema_id= 2200 order by xtexport_id"/>
+					</DataObject>
+				</xtde:ExportRequest>
+			</Group>
+		</xtde:dataexport>
+	</RegisteredObjects>
+	<Services>
+		<ServiceSchedule serviceName="$xDataExport$" serviceType="passive">
+			<!-- Let all the time periods be in seconds -->
+			<ActivationPeriod>30</ActivationPeriod>
+			<ExecutionPeriod>20</ExecutionPeriod>
+			<ExecutionInterval>1000</ExecutionInterval>
+			<taskName>ReStartDataExport</taskName>
+			<script><![CDATA["$DataloadServicesPath$\Configuration\svcrestart.js"]]></script>
+			<svcmonparam><![CDATA["$DataExport$" 6000]]></svcmonparam>
+			<maxProcessmemory>90</maxProcessmemory>
+			<minSystemmemory>1</minSystemmemory>
+		</ServiceSchedule>
+	</Services>
+</XMLDBServiceConfiguration>

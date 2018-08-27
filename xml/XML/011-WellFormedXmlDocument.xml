@@ -1,0 +1,13 @@
+<!-- 
+	Description: An example to show the well formed XML Document
+	Note: 
+		1. Root Element	: There should only be one root element
+		2. All element should have only ONE parent 
+		3. Elements should be nested properly
+-->
+<PlayersProfile>
+	<Player id="1">
+		<Name>Sachin Ramesh Tendulkar</Name>
+		<Sports>Cricket</Sports>
+	</Player>
+</PlayersProfile>

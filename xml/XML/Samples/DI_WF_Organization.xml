@@ -1,0 +1,1055 @@
+<DataModel version="1.0" xmlns:ts="http://schemas.dendrite.com/xtelligent/XmlPublish">
+	<ObjectModel>
+		<Organization>
+			<ObjectType data_type="ORGANIZATION_t" object_oid="Customer_ID" generate_object_type="true" object_list_type_name="Organization_list_t" object_view_name="Organization_obj_view" relation="CUSTOMER"/>
+			<ObjectFields dml_table="CUSTOMER">
+				<Customer_ID column_name="GLOBAL_CUSTOMER_ID" nullable="false" scale="0" precision="16" data_type="NUMBER" column_type="Simple" dtd_role="inout" role="EPK" ts:column="IDENTIFIER_1"/>
+				<Organization_Type column_name="" nullable="false" length="4" data_type="VARCHAR2" column_type="Simple" dtd_role="out" role="ECD"/>
+				<Organization_Name column_name="NAME" nullable="false" length="200" data_type="VARCHAR2" column_type="Simple" dtd_role="inout" ts:column="STRING_3"/>
+				<Organization_Name2 column_name="ALTERNATIVE_NAME" nullable="true" length="200" data_type="VARCHAR2" column_type="Simple" dtd_role="inout" ts:column="STRING_12"/>
+				<Status_Reason column_name="" nullable="true" length="4" data_type="VARCHAR2" column_type="Simple" dtd_role="out" role="ECD"/>
+				<Call_Class column_name="" nullable="true" length="4" data_type="VARCHAR2" column_type="Simple" dtd_role="out" role="ECD"/>
+				<Validation_Status column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="out" role="ECD"/>
+				<Prescriber_Count column_name="" nullable="true" scale="0" precision="9" data_type="NUMBER" column_type="Simple" dtd_role="out"/>
+				<Patient_Count column_name="" nullable="true" scale="0" precision="9" data_type="NUMBER" column_type="Simple" dtd_role="out"/>
+				<Organization_Subtype column_name="" nullable="true" length="4" data_type="VARCHAR2" column_type="Simple" dtd_role="out" role="ECD"/>
+				<Resident_Count column_name="" nullable="true" scale="0" precision="9" data_type="NUMBER" column_type="Simple" dtd_role="out"/>
+				<Total_Bed_Count column_name="" nullable="true" scale="0" precision="9" data_type="NUMBER" column_type="Simple" dtd_role="out"/>
+				<Facility_Count column_name="" nullable="true" scale="0" precision="9" data_type="NUMBER" column_type="Simple" dtd_role="out"/>
+				<Rx_Volume_Range column_name="" nullable="true" length="4" data_type="VARCHAR2" column_type="Simple" dtd_role="out" role="ECD"/>
+				<Home_Health_Care_Flag column_name="" nullable="true" length="4" data_type="VARCHAR2" column_type="Simple" dtd_role="out" role="ECD"/>
+				<Third_Party_Rx column_name="" nullable="true" length="200" data_type="VARCHAR2" column_type="Simple" dtd_role="out"/>
+				<Computerized_Flag column_name="" nullable="true" length="4" data_type="VARCHAR2" column_type="Simple" dtd_role="out"/>
+				<Classification_Trade column_name="" nullable="true" length="4" data_type="VARCHAR2" column_type="Simple" dtd_role="out" role="ECD"/>
+				<Outlet_Count column_name="" nullable="true" scale="0" precision="9" data_type="NUMBER" column_type="Simple" dtd_role="out"/>
+				<Nursing_Home_Count column_name="" nullable="true" scale="0" precision="9" data_type="NUMBER" column_type="Simple" dtd_role="out"/>
+				<Activity_Status column_name="" data_type="VARCHAR2" nullable="false" length="4" column_type="Simple" dtd_role="out" ts:column="CODE_8"/>
+				<Effective_Date column_name="" data_type="DATE" nullable="true" column_type="Simple" dtd_role="out" ts:column="DATE_1"/>
+				<End_Date column_name="" data_type="DATE" nullable="true" column_type="Simple" dtd_role="out" ts:column="DATE_2"/>
+				<WF_Customer_ID column_name="CUSTOMER_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" role="PK" ts:key="KEY_1"/>
+				<WF_Status column_name="STATUS" nullable="false" length="4" data_type="VARCHAR2" column_type="Simple" dtd_role="in" ts:column=""/>
+				<WF_Status_Change_Date column_name="STATUS_CHANGE_DATE" data_type="DATE" nullable="true" column_type="Simple" dtd_role="in"/>
+				<WF_External_ID_1 column_name="EXTERNAL_ID_1" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_6"/>
+				<WF_External_ID_2 column_name="EXTERNAL_ID_2" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_7"/>
+				<WF_External_ID_3 column_name="EXTERNAL_ID_3" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_8"/>
+				<WF_External_ID_4 column_name="EXTERNAL_ID_4" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_9"/>
+				<WF_External_ID_5 column_name="EXTERNAL_ID_5" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_10"/>
+				<WF_Organization_Type column_type="Simple" column_name="CUSTOMER_TYPE" data_type="VARCHAR2" nullable="false" scale="" precision="" dtd_role="in" type="" nodeType="" role="SCD" length="4" ts:column="CODE_1"/>
+				<WF_Status_Reason column_type="Simple" column_name="STATUS_CHANGE_REASON" data_type="VARCHAR2" nullable="true" scale="" precision="" dtd_role="in" type="" nodeType="" role="SCD" length="4" ts:column="CODE_5"/>
+				<WF_Call_Class column_type="Simple" column_name="CALL_CLASS" data_type="VARCHAR2" nullable="true" scale="" precision="" dtd_role="in" type="" nodeType="" role="SCD" length="4" ts:column="CODE_4"/>
+				<WF_Validation_Status column_name="VALIDATION_STATUS" data_type="VARCHAR2" nullable="false" length="4" column_type="Simple" dtd_role="in" ts:column="CODE_7"/>
+				<WF_Customer_Sub_Type column_name="CUSTOMER_SUB_TYPE" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" ts:column="CODE_9"/>
+				<WF_Validation_Change_Date column_name="VALIDATION_CHANGE_DATE" data_type="DATE" nullable="true" column_type="Simple" dtd_role="in"/>
+				<WF_First_Name column_name="FIRST_NAME" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="in"/>
+				<WF_Middle_Name column_name="MIDDLE_NAME" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="in"/>
+				<WF_Second_Last_Name column_name="SECOND_LAST_NAME" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="in"/>
+				<WF_Salutation_Name column_name="SALUTATION_NAME" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="in"/>
+				<WF_Suffix_Name column_name="SUFFIX_NAME" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="in"/>
+				<WF_Appointment_Only column_name="APPOINTMENT_ONLY" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in"/>
+				<WF_Industry column_name="INDUSTRY" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in"/>
+				<WF_Affiliation_ID column_name="AFFILIATION_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" column_type="Simple" dtd_role="in"/>
+				<WF_Acronym_Name column_name="ACRONYM_NAME" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="in"/>
+				<WF_Creator_Alignment_ID column_name="CREATOR_ALIGNMENT_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" column_type="Simple" dtd_role="in"/>
+				<WF_Enable_Third_Party_Updates column_name="ENABLE_THIRD_PARTY_UPDATES" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in"/>
+				<WF_Sample_Received column_name="SAMPLE_RECEIVED" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in"/>
+				<Validation_Change_Reason column_name="VALIDATION_CHANGE_REASON" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="inout"/>
+				<WF_Customer_Class column_name="CUSTOMER_CLASS" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in"/>
+				<WF_Nationality column_name="NATIONALITY" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in"/>
+				<Hospital data_type="HOSPITAL_t" nullable="Y" column_type="ObjectList">
+					<relationship parent="CUSTOMER" parent-key="CUSTOMER_ID" child="HOSPITAL" child-key="CUSTOMER_ID" mandatory="true"/>
+				</Hospital>
+				<Department data_type="DEPARTMENT_t" nullable="Y" column_type="ObjectList">
+					<relationship parent="CUSTOMER" parent-key="CUSTOMER_ID" child="DEPARTMENT" child-key="CUSTOMER_ID" mandatory="true"/>
+				</Department>
+				<Pharmacy data_type="PHARMACY_t" nullable="Y" column_type="ObjectList">
+					<relationship parent="CUSTOMER" parent-key="CUSTOMER_ID" child="PHARMACY" child-key="CUSTOMER_ID" mandatory="true"/>
+				</Pharmacy>
+				<IDN data_type="IDN_t" nullable="Y" column_type="ObjectList">
+					<relationship parent="CUSTOMER" parent-key="CUSTOMER_ID" child="IDN" child-key="CUSTOMER_ID" mandatory="true"/>
+				</IDN>
+				<Address data_type="ADDRESS_t" nullable="Y" column_type="ObjectList">
+					<other-relationship parent="CUSTOMER" parent-key="CUSTOMER_ID" child="ADDRESS" child-key="ADDRESS_ID" number-of-parameter="1" mandatory="false">
+						<Sql><![CDATA[select address_id from affiliation where affiliation_type <> 'OENT' and from_Customer_id = ? and status = 'ACTV' and validation_status <> 'INVL' ]]><Parameter source="WF_Customer_ID"/>
+						</Sql>
+					</other-relationship>
+				</Address>
+				<Communication data_type="COMMUNICATION_t" nullable="Y" column_type="ObjectList">
+					<relationship parent="CUSTOMER" parent-key="CUSTOMER_ID" child="PHONE" child-key="CUSTOMER_ID"/>
+				</Communication>
+				<Formulary_Product data_type="FORMULARY_PRODUCT_t" nullable="Y" column_type="ObjectList">
+					<relationship parent="CUSTOMER" parent-key="CUSTOMER_ID" child="FORMULARY_PRODUCT" child-key="CUSTOMER_ID"/>
+				</Formulary_Product>
+				<Specialty column_type="Simple" column_name="" data_type="VARCHAR2" nullable="true" length="4" dtd_role="out"/>
+				<Organization_Medical_School data_type="ORGANIZATION_MEDICAL_SCHOOL_t" nullable="Y" column_type="ObjectList"/>
+				<Dummy column_type="Simple" column_name="" data_type="VARCHAR2" nullable="true" scale="" precision="" role="" dtd_role="" type="" nodeType=""/>
+				<Funding_Type column_type="Simple" column_name="" data_type="VARCHAR2" nullable="true" length="4" role="ECD" dtd_role="out"/>
+				<WF_Funding_Type column_type="Simple" column_name="" data_type="VARCHAR2" nullable="true" length="4" role="SCD" dtd_role="in" ts:column="CODE_12"/>
+				<Data_Source column_type="Simple" column_name="" data_type="VARCHAR2" nullable="true" length="4" dtd_role="out"/>
+				<WF_BOB_RF_Operation column_name="" data_type="VARCHAR2" nullable="true" length="10" column_type="Simple" ts:column="" dtd_role="in"/>
+				<Master_Identifier column_name="MASTER_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" column_type="Simple" dtd_role="inout" ts:column="IDENTIFIER_3"/>
+				<Customer_Master_ID column_name="NUCLEUS_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" column_type="Simple" ts:column="IDENTIFIER_2" dtd_role="inout"/>
+				<WF_Validation_Status_CT column_name="" data_type="VARCHAR2" nullable="false" length="4" column_type="Simple" dtd_role="in" role="SCD"/>
+				<Account_Type column_type="Simple" column_name="" data_type="VARCHAR2" nullable="true" length="4" role="ECD" dtd_role="out" type="" nodeType=""/>
+				<WF_Account_Type column_type="Simple" column_name="ACCOUNT_TYPE" data_type="VARCHAR2" nullable="true" length="4" role="SCD" dtd_role="in" type="" nodeType="" ts:column="CODE_14"/>
+				<Email_Address column_type="Simple" column_name="EMAIL_ADDRESS" data_type="VARCHAR2" nullable="true" length="200" dtd_role="inout" type="" nodeType="" ts:column="STRING_13"/>
+				<Web_Address column_name="WEB_ADDRESS" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_14"/>
+			</ObjectFields>
+		</Organization>
+		<Hospital>
+			<ObjectType data_type="HOSPITAL_t" object_oid="Customer_ID" generate_object_type="true" object_list_type_name="Hospital_list_t" object_view_name="Hospital_obj_view" relation="HOSPITAL"/>
+			<ObjectFields dml_table="HOSPITAL">
+				<WF_Customer_ID column_name="CUSTOMER_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" ts:column="" ts:key="KEY_1" dtd_role="inout" role="PK"/>
+				<Resident_Count column_name="RESIDENT_COUNT" data_type="NUMBER" nullable="true" scale="0" precision="9" column_type="Simple" ts:column="IDENTIFIER_2" dtd_role="inout"/>
+				<Total_Bed_Count column_name="TOTAL_BED_COUNT" data_type="NUMBER" nullable="true" scale="0" precision="9" column_type="Simple" ts:column="IDENTIFIER_3" dtd_role="inout"/>
+				<Customer_ID column_name="GLOBAL_CUSTOMER_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" ts:column="IDENTIFIER_1" dtd_role="inout" role="EPK"/>
+				<WF_Organization_Subtype column_type="Simple" column_name="TYPE" data_type="VARCHAR2" nullable="true" length="4" dtd_role="in" ts:column="CODE_1" role="SCD"/>
+				<Organization_Subtype column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="out" role="ECD"/>
+				<WF_Hospital_ID column_type="Simple" column_name="" data_type="" nullable="true" scale="" precision="" role="" dtd_role="" type="" nodeType=""/>
+				<Medical_School_Name column_name="MEDICAL_SCHOOL" data_type="VARCHAR2" length="200" nullable="true" column_type="Simple" dtd_role="in"/>
+				<Org_Medical_School_ID column_name="GLOBAL_MEDICAL_SCHOOL_ID" data_type="NUMBER" nullable="true" scale="" precision="16" column_type="Simple" dtd_role="in"/>
+				<WF_Specialty column_type="Simple" column_name="SPECIALTY" data_type="VARCHAR2" nullable="true" scale="" precision="" role="SCD" dtd_role="in" type="" nodeType="" ts:column="CODE_2"/>
+				<Specialty column_type="Simple" column_name="" data_type="VARCHAR2" nullable="true" scale="" precision="" role="ECD" dtd_role="out" type="" nodeType=""/>
+				<External_ID_1 column_name="EXTERNAL_ID_1" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="in"/>
+				<NeedToGenGlbMSID column_name="" data_type="NUMBER" nullable="true" scale="" precision="1" column_type="Simple" dtd_role="in"/>
+				<Master_Identifier column_type="Simple" column_name="MASTER_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" role="" dtd_role="inout" ts:column="IDENTIFIER_4"/>
+				<WF_Accreditation column_type="Simple" column_name="ACCREDITATION" data_type="VARCHAR2" nullable="true" length="4" role="SCD" dtd_role="in" type="" nodeType="" ts:column="CODE_3"/>
+				<Accreditation column_type="Simple" column_name="" data_type="VARCHAR2" nullable="true" length="4" role="ECD" dtd_role="out" type="" nodeType=""/>
+				<Prescriber_Count column_type="Simple" column_name="PHYSICIAN_COUNT" data_type="NUMBER" nullable="true" scale="0" precision="9" role="" dtd_role="inout" type="" nodeType="" ts:column="IDENTIFIER_5"/>
+				<Patient_Count column_type="Simple" column_name="ADMISSION_PER_YEAR" data_type="NUMBER" nullable="true" scale="0" precision="9" role="" dtd_role="inout" type="" nodeType="" ts:column="IDENTIFIER_6"/>
+			</ObjectFields>
+		</Hospital>
+		<Department>
+			<ObjectType data_type="DEPARTMENT_t" object_oid="Customer_ID" generate_object_type="true" object_list_type_name="Department_list_t" object_view_name="Department_obj_view" relation="DEPARTMENT"/>
+			<ObjectFields dml_table="DEPARTMENT">
+				<WF_Customer_ID column_name="CUSTOMER_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" ts:key="KEY_1" dtd_role="in" role="PK"/>
+				<Customer_ID column_name="GLOBAL_CUSTOMER_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" column_type="Simple" ts:column="IDENTIFIER_1" dtd_role="inout" role="EPK"/>
+				<WF_Department_ID column_type="Simple" column_name="" data_type="" nullable="true" scale="" precision="" role="" dtd_role="" type="" nodeType=""/>
+				<Facility_Count column_name="FACILITIES_COUNT" data_type="NUMBER" nullable="true" scale="0" precision="9" column_type="Simple" ts:column="IDENTIFIER_2" dtd_role="inout"/>
+				<Organization_Name column_name="DEPARTMENT_NAME" nullable="true" length="200" data_type="VARCHAR2" column_type="Simple" dtd_role="inout" ts:column="STRING_1"/>
+			</ObjectFields>
+		</Department>
+		<Pharmacy>
+			<ObjectType data_type="PHARMACY_t" object_oid="Customer_ID" generate_object_type="true" object_list_type_name="Pharmacy_list_t" object_view_name="Pharmacy_obj_view" relation="PHARMACY"/>
+			<ObjectFields dml_table="PHARMACY">
+				<WF_Classification_Trade column_name="CLASSIFICATION_TRADE" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" ts:column="STRING_3" dtd_role="in" role="SCD"/>
+				<WF_Customer_ID column_name="CUSTOMER_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" role="PK" ts:key="KEY_1" dtd_role="in"/>
+				<Customer_ID column_name="GLOBAL_CUSTOMER_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" column_type="Simple" ts:column="IDENTIFIER_1" role="EPK" dtd_role="inout"/>
+				<Rx_Volume_Range column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" role="ECD" dtd_role="out"/>
+				<WF_Rx_Volume_Range column_type="Simple" column_name="RX_VOLUME_RANGE" data_type="VARCHAR2" nullable="true" length="4" dtd_role="in" role="SCD" ts:column="CODE_2"/>
+				<Home_Health_Care_Flag column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" role="ECD" dtd_role="out"/>
+				<WF_Home_Health_Care_Flag column_type="Simple" column_name="HOME_HEALTH_CARE_FLAG" data_type="VARCHAR2" nullable="true" length="4" role="SCD" ts:column="CODE_3" dtd_role="in"/>
+				<Third_Party_Rx column_name="THIRD_PARTY_RX" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" ts:column="STRING_1" dtd_role="inout"/>
+				<Computerized_Flag column_name="COMPUTERIZED" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" ts:column="STRING_2" dtd_role="inout"/>
+				<Classification_Trade column_type="Simple" column_name="" data_type="VARCHAR2" nullable="true" length="4" role="ECD" dtd_role="out" type="" nodeType=""/>
+				<Nursing_Home_Count column_name="NURSING_HOME_COUNT" data_type="NUMBER" nullable="true" scale="0" precision="9" column_type="Simple" ts:column="IDENTIFIER_3" dtd_role="inout"/>
+				<Outlet_Count column_name="OUTLET_COUNT" data_type="NUMBER" nullable="true" scale="0" precision="9" column_type="Simple" ts:column="IDENTIFIER_2" dtd_role="inout"/>
+				<Organization_Subtype column_type="Simple" column_name="" data_type="VARCHAR2" nullable="true" length="4" role="ECD" dtd_role="out" type="" nodeType=""/>
+				<WF_Pharmacy_ID column_type="Simple" column_name="" data_type="NUMBER" nullable="true" scale="" precision="16" dtd_role="in"/>
+				<WF_Type column_type="Simple" column_name="" data_type="VARCHAR2" nullable="true" length="4" dtd_role="in"/>
+			</ObjectFields>
+		</Pharmacy>
+		<IDN>
+			<ObjectType object_oid="Customer_ID" generate_object_type="true" object_list_type_name="IDN_list_t" object_view_name="IDN_obj_view" data_type="IDN_t" relation="IDN"/>
+			<ObjectFields dml_table="IDN">
+				<WF_Customer_ID column_name="CUSTOMER_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" ts:key="KEY_1" dtd_role="in" role="PK"/>
+				<Customer_ID column_name="" data_type="NUMBER" nullable="true" scale="0" precision="16" column_type="Simple" ts:column="IDENTIFIER_1" dtd_role="inout" role=""/>
+				<Parent_Company column_name="PARENT_COMPANY" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_1"/>
+				<WF_IDN_ID column_type="Simple" column_name="" data_type="NUMBER" nullable="true" scale="0" precision="16" role="" dtd_role="" type="" nodeType=""/>
+			</ObjectFields>
+		</IDN>
+		<Address>
+			<ObjectType data_type="ADDRESS_t" object_oid="Address_ID" generate_object_type="true" object_list_type_name="Address_list_t" object_view_name="Address_obj_view" relation="CUSTOMER_ADDRESS"/>
+			<ObjectFields dml_table="ADDRESS">
+				<Address_ID column_name="GLOBAL_ADDRESS_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" ts:key="" ts:column="IDENTIFIER_1" dtd_role="inout" role="EPK"/>
+				<Address_Type data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" column_name="" role="ECD" dtd_role="out"/>
+				<Address_Line1 column_name="LINE_1_ADDRESS" data_type="VARCHAR2" nullable="false" length="200" column_type="Simple" ts:column="STRING_1" dtd_role="inout"/>
+				<Address_Line2 column_name="LINE_2_ADDRESS" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" ts:column="STRING_2" dtd_role="inout"/>
+				<Address_Line3 column_name="LINE_3_ADDRESS" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" ts:column="STRING_3" dtd_role="inout"/>
+				<City column_name="CITY" data_type="VARCHAR2" nullable="false" length="200" column_type="Simple" ts:column="STRING_4" dtd_role="inout"/>
+				<Region column_type="Simple" nullable="true" scale="" precision="" type="" nodeType="" dtd_role="out" column_name="" role="ECD" ts:column="" data_type="VARCHAR2" length="4"/>
+				<Postal_Area column_name="POSTAL_AREA" data_type="VARCHAR2" nullable="false" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_6"/>
+				<Postal_Area_Extension column_name="POSTAL_AREA_2" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_7"/>
+				<Country column_type="Simple" nullable="true" scale="" precision="" type="" nodeType="" dtd_role="out" role="ECD" data_type="VARCHAR2" length="4" ts:column="" column_name=""/>
+				<Geography1 column_name="GEOGRAPHY_CODE_1" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" ts:column="STRING_8" dtd_role="inout"/>
+				<Geography2 column_name="GEOGRAPHY_CODE_2" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" ts:column="STRING_9" dtd_role="inout"/>
+				<Geography3 column_name="GEOGRAPHY_CODE_3" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" ts:column="STRING_10" dtd_role="inout"/>
+				<Activity_Status column_name="" data_type="VARCHAR2" nullable="false" length="4" column_type="Simple" dtd_role="out" ts:column="CODE_1"/>
+				<Effective_Date column_name="" data_type="DATE" nullable="true" column_type="Simple" ts:column="DATE_1" dtd_role="out"/>
+				<End_Date column_name="" data_type="DATE" nullable="true" column_type="Simple" ts:column="DATE_2" dtd_role="out"/>
+				<External_ID_1 column_name="EXTERNAL_ID_1" data_type="VARCHAR2" length="200" nullable="true" column_type="Simple" dtd_role="inout" ts:column="STRING_5"/>
+				<DEA_Number column_name="" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" ts:column="" dtd_role="out"/>
+				<DEA_Expiration_Date column_name="" data_type="DATE" nullable="true" column_type="Simple" ts:column="" dtd_role="out"/>
+				<DEA_Sampling_Validation_Status column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" ts:column="" dtd_role="out"/>
+				<WF_Address_ID column_name="ADDRESS_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" ts:key="KEY_2" dtd_role="in" role="PK"/>
+				<WF_Customer_ID data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" column_name="" dtd_role="in" role="" ts:key="KEY_1"/>
+				<WF_Address_Type column_name="ADDRESS_TYPE" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" role="SCD" ts:column="CODE_3"/>
+				<WF_Region column_type="Simple" nullable="true" scale="" precision="" type="" nodeType="" dtd_role="in" column_name="STATE" role="" ts:column="CODE_4" data_type="VARCHAR2" length="4"/>
+				<WF_Country column_type="Simple" nullable="true" scale="" precision="" type="" nodeType="" dtd_role="in" column_name="COUNTRY" role="" data_type="VARCHAR2" length="4" ts:column="CODE_5"/>
+				<WF_Status column_name="STATUS" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in"/>
+				<WF_Status_Change_Date column_name="STATUS_CHANGE_DATE" data_type="DATE" nullable="true" column_type="Simple" dtd_role="in"/>
+				<WF_Zone column_name="ZONE" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="in"/>
+				<WF_Validation_Status column_name="" data_type="VARCHAR2" nullable="false" length="4" column_type="Simple" dtd_role="in" role="SCD"/>
+				<Validation_Change_Reason column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="inout"/>
+				<WF_Validation_Change_Date column_name="VALIDATION_CHANGE_DATE" data_type="DATE" nullable="true" column_type="Simple" dtd_role="in"/>
+				<WF_Affiliation_ID column_type="Simple" column_name="" data_type="NUMBER" nullable="true" scale="0" precision="16" role="" dtd_role="in" type="" nodeType="" ts:column="IDENTIFIER_2"/>
+				<Master_Identifier column_type="Simple" column_name="MASTER_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" role="" dtd_role="inout" ts:column="IDENTIFIER_3"/>
+				<Affiliation data_type="AFFILIATION_t" nullable="Y" column_type="ObjectList">
+					<other-relationship parent="ADDRESS" parent-key="ADDRESS_ID" child="AFFILIATION" child-key="AFFILIATION_ID" number-of-parameter="2" mandatory="false">
+						<Sql><![CDATA[select affiliation_id from affiliation where affiliation_type <> 'OENT' and Address_ID = ? and status = 'ACTV' and validation_status <> 'INVL' and from_customer_id = ?]]><Parameter source="WF_Address_ID"/>
+							<Parameter source="../../WF_Customer_ID"/>
+						</Sql>
+					</other-relationship>
+				</Affiliation>
+				<Owner_Customer_Identifier column_type="Simple" column_name="" data_type="NUMBER" nullable="true" scale="0" precision="16" role="" dtd_role="out" type="" nodeType="" ts:key="" ts:column=""/>
+				<Validation_Status column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="out" role="ECD"/>
+				<Validation_Status2 column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" role="ECD"/>
+				<WF_Validation_Status2 column_name="VALIDATION_STATUS" data_type="VARCHAR2" nullable="false" length="4" column_type="Simple" dtd_role="in" role="SCD"/>
+			</ObjectFields>
+		</Address>
+		<Affiliation>
+			<ObjectType data_type="AFFILIATION_t" object_oid="Affiliation_ID" generate_object_type="true" object_list_type_name="Affiliation_list_t" object_view_name="Affiliation_obj_view" relation="AFFILIATION"/>
+			<ObjectFields dml_table="AFFILIATION">
+				<WF_Affiliation_ID column_name="AFFILIATION_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" ts:key="KEY_3" role="PK"/>
+				<WF_From_Customer_ID column_name="FROM_CUSTOMER_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in"/>
+				<WF_To_Customer_ID column_name="TO_CUSTOMER_ID" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" data_type="NUMBER" ts:key="KEY_1"/>
+				<WF_Address_ID column_name="ADDRESS_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" column_type="Simple" dtd_role="in" ts:key="KEY_2"/>
+				<WF_Affiliation_Type column_name="AFFILIATION_TYPE" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in"/>
+				<WF_To_Name column_name="TO_NAME" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="in" ts:column=""/>
+				<WF_Status column_name="STATUS" data_type="VARCHAR2" nullable="false" length="4" column_type="Simple" dtd_role="in"/>
+				<WF_Status_Change_Date column_name="STATUS_CHANGE_DATE" data_type="DATE" nullable="false" column_type="Simple" dtd_role="in"/>
+				<WF_External_ID_2 column_name="EXTERNAL_ID_2" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="in"/>
+				<WF_External_ID_3 column_name="EXTERNAL_ID_3" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="in"/>
+				<WF_External_ID_2_Date column_name="EXTERNAL_ID_2_DATE" data_type="DATE" nullable="true" column_type="Simple" dtd_role="in"/>
+				<WF_External_ID_3_Date column_name="EXTERNAL_ID_3_DATE" data_type="DATE" nullable="true" column_type="Simple" dtd_role="in"/>
+				<WF_Role column_name="ROLE" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in"/>
+				<WF_Comments column_name="COMMENTS" data_type="VARCHAR2" nullable="true" length="2000" column_type="Simple" dtd_role="in"/>
+				<WF_Validation_Status column_name="VALIDATION_STATUS" data_type="VARCHAR2" nullable="false" length="4" column_type="Simple" dtd_role="in"/>
+				<WF_Validation_Change_Reason column_name="VALIDATION_CHANGE_REASON" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in"/>
+				<WF_Validation_Change_Date column_name="VALIDATION_CHANGE_DATE" data_type="DATE" nullable="true" column_type="Simple" dtd_role="in"/>
+				<DEA_Number column_type="Simple" column_name="" data_type="VARCHAR2" length="200" nullable="true" role="" dtd_role="out" type="" nodeType="" ts:column=""/>
+				<DEA_Expiration_Date column_type="Simple" column_name="" data_type="DATE" nullable="true" scale="" precision="" role="" dtd_role="out" type="" nodeType="" ts:column=""/>
+				<External_ID_1 column_name="EXTERNAL_ID_1" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" ts:column="STRING_1" dtd_role="inout"/>
+				<External_ID_1_Date column_name="EXTERNAL_ID_1_DATE" data_type="DATE" nullable="true" column_type="Simple" ts:column="DATE_1" dtd_role="inout"/>
+				<WF_Own_Address column_name="OWN_ADDRESS" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in"/>
+				<WF_Parent_Customer_Type column_name="PARENT_CUSTOMER_TYPE" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in"/>
+				<WF_Child_Customer_Type column_name="CHILD_CUSTOMER_TYPE" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in"/>
+			</ObjectFields>
+		</Affiliation>
+		<Communication>
+			<ObjectType data_type="COMMUNICATION_t" object_oid="Communication_ID" generate_object_type="true" object_list_type_name="Communication_list_t" object_view_name="Communication_obj_view" relation="PHONE"/>
+			<ObjectFields dml_table="PHONE">
+				<Communication_ID column_name="GLOBAL_COMMUNICATION_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" ts:key="" dtd_role="inout" ts:column="IDENTIFIER_1" role="EPK"/>
+				<Address_ID column_name="" data_type="NUMBER" scale="0" precision="16" column_type="Simple" ts:key="" nullable="true" dtd_role="out"/>
+				<Communication_Type column_name="" data_type="VARCHAR2" nullable="false" length="4" column_type="Simple" role="ECD" dtd_role="out"/>
+				<Communication_Value1 column_name="PHONE_NUMBER" data_type="VARCHAR2" nullable="false" length="200" column_type="Simple" ts:column="STRING_1" dtd_role="inout"/>
+				<Communication_Value2 column_name="" data_type="VARCHAR2" length="200" column_type="Simple" nullable="true" dtd_role="inout"/>
+				<External_ID_1 column_name="EXTERNAL_ID_1" data_type="VARCHAR2" length="200" nullable="true" column_type="Simple" dtd_role="inout" ts:column="STRING_2"/>
+				<WF_Phone_ID column_name="PHONE_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" ts:key="KEY_2" role="PK"/>
+				<WF_Affiliation_ID column_name="AFFILIATION_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" column_type="Simple" dtd_role="in" role="FK" ts:column="IDENTIFIER_2"/>
+				<WF_Communication_Type column_name="PHONE_TYPE" data_type="VARCHAR2" nullable="false" length="4" column_type="Simple" dtd_role="in" ts:column="CODE_1" role="SCD"/>
+				<WF_Customer_ID data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" column_name="CUSTOMER_ID" ts:key="KEY_1" role="FK"/>
+				<Master_Identifier column_type="Simple" column_name="MASTER_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" role="" dtd_role="inout" ts:column="IDENTIFIER_3"/>
+			</ObjectFields>
+		</Communication>
+		<Formulary_Product>
+			<ObjectType data_type="FORMULARY_PRODUCT_t" object_oid="Formulary_Product_ID" generate_object_type="true" object_list_type_name="Formulary_Product_list_t" object_view_name="Formulary_Product_obj_view" relation="FORMULARY_PRODUCT"/>
+			<ObjectFields dml_table="FORMULARY_PRODUCT">
+				<Formulary_Product_ID column_name="GLOBAL_FORMULARY_PRODUCT_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" role="EPK" dtd_role="inout" ts:column="IDENTIFIER_1"/>
+				<Product_ID column_name="" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" role="EFK" ts:column="" dtd_role="out"/>
+				<Active column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" role="ECD" dtd_role="out"/>
+				<Tier column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" role="ECD" dtd_role="out"/>
+				<Closed column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" role="ECD" dtd_role="out"/>
+				<Opened column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" role="ECD" dtd_role="out"/>
+				<Total column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" role="ECD" dtd_role="out"/>
+				<Status column_name="" data_type="VARCHAR2" nullable="false" length="4" column_type="Simple" role="ECD" dtd_role="out"/>
+				<Review_Date column_name="REVIEW_DATE" data_type="DATE" nullable="true" column_type="Simple" dtd_role="inout" ts:column="DATE_1"/>
+				<Next_Review_Date column_name="NEXT_REVIEW_DATE" data_type="DATE" nullable="true" column_type="Simple" dtd_role="inout" ts:column="DATE_2"/>
+				<Step_Protocol column_name="STEP_PROTOCOL" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_1"/>
+				<Step_Protocol_Comments column_name="" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="inout" ts:column=""/>
+				<Third_Party_Status column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" role="ECD" dtd_role="out"/>
+				<Third_Party_Date column_name="THIRD_PARTY_DATE" data_type="DATE" nullable="true" column_type="Simple" dtd_role="inout" ts:column="DATE_3"/>
+				<External_ID_1 column_name="EXTERNAL_ID_1" data_type="VARCHAR2" length="200" nullable="true" column_type="Simple" dtd_role="inout" ts:column="STRING_3"/>
+				<WF_Formulary_Product_ID column_name="FORMULARY_PRODUCT_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" role="PK" ts:key="KEY_2"/>
+				<WF_Status_Change_Date column_name="STATUS_CHANGE_DATE" data_type="DATE" nullable="false" column_type="Simple" dtd_role="in"/>
+				<WF_Customer_ID column_name="CUSTOMER_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" role="FK" ts:key="KEY_1"/>
+				<WF_Product_ID column_name="PRODUCT_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" role="FK" ts:key="" ts:column="IDENTIFIER_2"/>
+				<WF_Active column_name="ACTIVE" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" role="SCD" ts:column="CODE_2"/>
+				<WF_Tier column_name="TIER" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" role="SCD" ts:column="CODE_3"/>
+				<WF_Closed column_name="CLOSED" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" role="SCD" ts:column="CODE_4"/>
+				<WF_Opened column_name="OPENED" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" role="SCD" ts:column="CODE_5"/>
+				<WF_Total column_name="TOTAL" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" role="SCD" ts:column="CODE_6"/>
+				<WF_Status column_name="STATUS" data_type="VARCHAR2" nullable="false" length="4" column_type="Simple" dtd_role="in" role="SCD" ts:column="CODE_7"/>
+				<WF_Third_Party_Status column_name="THIRD_PARTY_STATUS" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" role="SCD" ts:column="CODE_8"/>
+				<Comment column_name="COMMENTS" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_2"/>
+				<Formulary_Product_Detail data_type="FORMULARY_PRODUCT_DETAIL_t" nullable="Y" column_type="ObjectList">
+					<relationship parent="FORMULARY_PRODUCT" parent-key="FORMULARY_PRODUCT_ID" child="FORMULARY_PRODUCT_DETAIL" child-key="FORMULARY_PRODUCT_ID"/>
+				</Formulary_Product_Detail>
+			</ObjectFields>
+		</Formulary_Product>
+		<Formulary_Product_Detail>
+			<ObjectType data_type="FORMULARY_PRODUCT_DETAIL_t" object_oid="Formulary_Product_Detail_ID" generate_object_type="true" object_list_type_name="Formulary_Product_Detail_list_t" object_view_name="Formulary_Product_Detail_obj_view" relation="FORMULARY_PRODUCT_DETAIL"/>
+			<ObjectFields dml_table="FORMULARY_PRODUCT_DETAIL">
+				<Formulary_Product_Detail_ID column_name="GLOBAL_FRMLR_PRODUCT_DETAIL_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="inout" ts:column="IDENTIFIER_1" role="EPK"/>
+				<Generic_Mac_Flag column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="out" role="ECD"/>
+				<Generic_Mac_Amount column_name="GENERIC_MAC_AMOUNT" data_type="NUMBER" nullable="true" scale="2" precision="15" column_type="Simple" dtd_role="inout" ts:column="MONEY_1"/>
+				<Active_Flag column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" role="ECD" dtd_role="out"/>
+				<Pull_Through_Message column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" role="ECD" dtd_role="out"/>
+				<Pull_Through_Date column_name="PULL_THROUGH_DATE" data_type="DATE" nullable="true" column_type="Simple" dtd_role="inout" ts:column="DATE_1"/>
+				<Promotional_Tools column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" role="ECD" dtd_role="out"/>
+				<Promotional_Details column_name="PROMOTIONAL_DETAILS" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_1"/>
+				<Step_Protocol column_name="STEP_PROTOCOL" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_2"/>
+				<Currency_Type column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="out"/>
+				<External_ID_1 column_name="EXTERNAL_ID_1" data_type="VARCHAR2" length="200" nullable="true" column_type="Simple" dtd_role="inout" ts:column="STRING_3"/>
+				<WF_Formulary_Product_Detail_ID column_name="FORMULARY_PRODUCT_DETAIL_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" role="PK" dtd_role="in" ts:key="KEY_3"/>
+				<WF_Formulary_Product_ID column_name="FORMULARY_PRODUCT_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" role="FK" ts:key="KEY_2"/>
+				<WF_Generic_Mac_Flag column_name="GENERIC_MAC" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" role="SCD" ts:column="CODE_1"/>
+				<WF_Active_Flag column_name="ACTIVE" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" role="SCD" ts:column="CODE_2"/>
+				<WF_Pull_Through_Message column_name="PULL_THROUGH_MESSAGE" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" role="SCD" ts:column="CODE_3"/>
+				<WF_Promotional_Tools column_name="PROMOTIONAL_TOOLS" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" role="SCD" ts:column="CODE_4"/>
+				<!--<WF_Dummy_Customer_ID column_type="Simple" column_name="" data_type="" nullable="" scale="" precision="" role="" type="" nodeType="" dtd_role="in" ts:key="KEY_1"/>-->
+				<WF_Customer_ID column_type="Simple" column_name="" role="" type="" nodeType="" nullable="false" data_type="NUMBER" scale="0" precision="16" dtd_role="in" ts:key="KEY_1"/>
+			</ObjectFields>
+		</Formulary_Product_Detail>
+		<Organization_Medical_School>
+			<ObjectType data_type="ORGANIZATION_MEDICAL_SCHOOL_t" object_oid="Organization_Medical_School_ID" generate_object_type="true" object_list_type_name="Organization_Medical_School_list_t" object_view_name="Organization_Medical_School_obj_view" relation="HOSPITAL"/>
+			<ObjectFields dml_table="HOSPITAL">
+				<Org_Medical_School_ID column_name="" nullable="false" scale="0" precision="16" data_type="NUMBER" column_type="Simple" dtd_role="out" role="EPK" ts:column="IDENTIFIER_1"/>
+				<Medical_School_Name column_name="" nullable="true" length="200" data_type="VARCHAR2" column_type="Simple" dtd_role="out" ts:column="STRING_1"/>
+				<External_ID_1 column_name="EXTERNAL_ID_1" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="out" ts:column="STRING_2"/>
+				<WF_Customer_ID column_name="" nullable="false" scale="0" precision="16" data_type="NUMBER" column_type="Simple" dtd_role="in" role="PK" ts:key="KEY_1"/>
+			</ObjectFields>
+		</Organization_Medical_School>
+		<Customer_Identifier>
+			<ObjectType data_type="CUSTOMER_IDENTIFIER_t" object_oid="Customer_Identifier_ID" generate_object_type="true" object_list_type_name="Customer_Identifier_list_t" object_view_name="Customer_Identifier_obj_view" relation="CUSTOMER"/>
+			<ObjectFields dml_table="CUSTOMER">
+				<Customer_Identifier_ID column_name="" data_type="NUMBER" nullable="true" scale="0" precision="16" dtd_role="inout" column_type="Simple" ts:key="KEY_2"/>
+				<Address_ID column_name="" data_type="NUMBER" nullable="true" scale="0" precision="16" column_type="Simple" dtd_role="out"/>
+				<ID_Type column_name="" data_type="VARCHAR2" nullable="false" length="4" dtd_role="inout" column_type="Simple" ts:column="CODE_1"/>
+				<ID_Value column_name="" data_type="VARCHAR2" nullable="false" length="200" column_type="Simple" dtd_role="inout" ts:column="STRING_1"/>
+				<Effective_Date column_name="" data_type="DATE" nullable="true" column_type="Simple" dtd_role="inout"/>
+				<End_Date column_name="" data_type="DATE" nullable="true" column_type="Simple" dtd_role="inout"/>
+				<Master_Identifier_ID column_name="" data_type="NUMBER" nullable="true" scale="0" precision="16" column_type="Simple" dtd_role="inout"/>
+				<WF_Customer_ID column_name="" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" ts:key="KEY_1"/>
+			</ObjectFields>
+		</Customer_Identifier>
+		<Formulary_Design>
+			<ObjectType data_type="FORMULARY_DESIGN_t" object_oid="Formulary_Design_ID" generate_object_type="true" object_list_type_name="Formulary_Design_list_t" object_view_name="Formulary_Design_obj_view" relation="FORMULARY_DESIGN"/>
+			<ObjectFields dml_table="FORMULARY_DESIGN">
+				<Formulary_Design_ID column_name="GLOBAL_FORMULARY_DESIGN_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" dtd_role="inout" column_type="Simple" ts:key="" role="EPK" ts:column="IDENTIFIER_1"/>
+				<Parent_Customer_ID column_name="PARENT_CUSTOMER_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" dtd_role="inout" column_type="Simple" ts:column="IDENTIFIER_2"/>
+				<Total_Lives column_name="TOTAL_LIVES" data_type="NUMBER" nullable="true" scale="0" precision="9" dtd_role="inout" column_type="Simple" ts:column="IDENTIFIER_3"/>
+				<Rx_Lives column_name="RX_LIVES" data_type="NUMBER" nullable="true" scale="0" precision="9" dtd_role="inout" column_type="Simple" ts:column="IDENTIFIER_4"/>
+				<Comments column_name="COMMENTS" data_type="VARCHAR2" nullable="true" length="2000" dtd_role="inout" column_type="Simple" ts:column="TEXT_1"/>
+				<Last_Updated_User column_name="LAST_UPDATED_USER" data_type="NUMBER" nullable="true" scale="0" precision="16" dtd_role="inout" column_type="Simple" ts:column="IDENTIFIER_5"/>
+				<Last_Updated_Date column_name="LAST_UPDATED_DATE" data_type="DATE" nullable="true" dtd_role="inout" column_type="Simple" ts:column="DATE_1"/>
+				<External_ID_1 column_name="EXTERNAL_ID_1" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="out" ts:column="STRING_1"/>
+				<WF_Formulary_Design_ID column_name="FORMULARY_DESIGN_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" role="PK" ts:key="KEY_2"/>
+				<WF_Customer_ID column_name="CUSTOMER_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" ts:key="KEY_1" role="FK"/>
+				<Formulary_Geography data_type="FORMULARY_GEOGRAPHY_t" nullable="Y" column_type="ObjectList">
+					<relationship parent="FORMULARY_DESIGN" parent-key="FORMULARY_DESIGN_ID" child="FORMULARY_GEOGRAPHY" child-key="FORMULARY_DESIGN_ID"/>
+				</Formulary_Geography>
+				<Formulary_Comments data_type="FORMULARY_COMMENTS_t" nullable="Y" column_type="ObjectList">
+					<relationship parent="FORMULARY_DESIGN" parent-key="FORMULARY_DESIGN_ID" child="FORMULARY_COMMENTS" child-key="FORMULARY_DESIGN_ID"/>
+				</Formulary_Comments>
+			</ObjectFields>
+		</Formulary_Design>
+		<Formulary_Geography>
+			<ObjectType data_type="FORMULARY_GEOGRAPHY_t" object_oid="Formulary_Geography_ID" generate_object_type="true" object_list_type_name="Formulary_Geography_list_t" object_view_name="Formulary_Geography_obj_view" relation="FORMULARY_GEOGRAPHY"/>
+			<ObjectFields dml_table="FORMULARY_GEOGRAPHY">
+				<Formulary_Geography_ID column_name="GLOBAL_FORMULARY_GEOGRAPHY_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" dtd_role="inout" column_type="Simple" ts:key="" role="EPK" ts:column="IDENTIFIER_1"/>
+				<Region column_name="" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="out" role="ECD"/>
+				<Last_Updated_User column_name="LAST_UPDATED_USER" data_type="NUMBER" nullable="true" scale="0" precision="16" dtd_role="inout" column_type="Simple" ts:column="IDENTIFIER_2"/>
+				<Last_Updated_Date column_name="LAST_UPDATED_DATE" data_type="DATE" nullable="true" dtd_role="inout" column_type="Simple" ts:column="DATE_1"/>
+				<External_ID_1 column_name="EXTERNAL_ID_1" data_type="VARCHAR2" nullable="true" length="200" column_type="Simple" dtd_role="out" ts:column="STRING_1"/>
+				<WF_Region column_name="STATE" data_type="VARCHAR2" nullable="true" length="4" column_type="Simple" dtd_role="in" role="SCD" ts:column="CODE_1"/>
+				<WF_Formulary_Geography_ID column_name="FORMULARY_GEOGRAPHY_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" role="PK" ts:key="KEY_3"/>
+				<WF_Formulary_Design_ID column_name="FORMULARY_DESIGN_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" role="FK" ts:key="KEY_2"/>
+				<WF_Customer_ID column_name="" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" role="" ts:key="KEY_1"/>
+			</ObjectFields>
+		</Formulary_Geography>
+		<Formulary_Comments>
+			<ObjectType data_type="FORMULARY_COMMENTS_t" object_oid="Formulary_Comments_ID" generate_object_type="true" object_list_type_name="Formulary_Comments_list_t" object_view_name="Formulary_Comments_obj_view" relation="FORMULARY_COMMENTS"/>
+			<ObjectFields dml_table="FORMULARY_COMMENTS">
+				<Formulary_Comments_ID column_name="GLOBAL_FORMULARY_COMMENTS_ID" data_type="NUMBER" nullable="true" scale="0" precision="16" dtd_role="inout" column_type="Simple" ts:key="" role="EPK" ts:column="IDENTIFIER_1"/>
+				<Product_ID column_name="" data_type="NUMBER" nullable="true" scale="0" precision="16" dtd_role="out" column_type="Simple" ts:column="" role="EFK"/>
+				<Comments column_name="COMMENTS" data_type="VARCHAR2" nullable="true" length="2000" column_type="Simple" dtd_role="out" ts:column="TEXT_1"/>
+				<Last_Updated_User column_name="LAST_UPDATED_USER" data_type="NUMBER" nullable="true" scale="0" precision="16" dtd_role="inout" column_type="Simple" ts:column="IDENTIFIER_3"/>
+				<Last_Updated_Date column_name="LAST_UPDATED_DATE" data_type="DATE" nullable="true" dtd_role="inout" column_type="Simple" ts:column="DATE_1"/>
+				<WF_Formulary_Design_ID column_name="FORMULARY_DESIGN_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" role="FK" ts:key="KEY_2"/>
+				<WF_Customer_ID column_name="" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" role="" ts:key="KEY_1"/>
+				<WF_Product_ID column_name="PRODUCT_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" role="FK" ts:key="" ts:column="IDENTIFIER_2"/>
+				<WF_Formulary_Comments_ID column_name="FORMULARY_COMMENTS_ID" data_type="NUMBER" nullable="false" scale="0" precision="16" column_type="Simple" dtd_role="in" role="PK" ts:key="KEY_3"/></ObjectFields>
+		</Formulary_Comments>
+	</ObjectModel>
+	<ModuleCollection>
+		<xt:DataModule xmlns:xt="http://schemas.dendrite.com/IS/1.0.0/Organization">
+			<DataObject object_name="Organization" cardinality="*" type_name="Organization" ts:tag="82100" processCodesFirst="false">
+				<ObjectKeys>
+					<WF_BOB_RF_Operation>
+						<SQLLookup sql="select 'REFRESH', 1 from dual where 'BOB'=? and 'REFRESH'=? and 'PAST'=?" lookup_table_name="dual" enable_cache="false" parameterized="false" skip_if_null="true" mode="lax">
+							<Parameter source="Data_Source"/>
+							<Parameter source="@operation"/>
+							<Parameter source="Activity_Status"/>
+						</SQLLookup>
+					</WF_BOB_RF_Operation>
+					<WF_Customer_ID mode="strict" key_type="PK">
+						<StandardLookup lookup_table_name="CUSTOMER" lookup_column_name="CUSTOMER_ID" lookup_source_column="GLOBAL_CUSTOMER_ID" lookup_source="Customer_ID" enable_cache="false" parameterized="false"/>
+					</WF_Customer_ID>
+					<WF_Customer_ID>
+						<StandardLookup lookup_table_name="Customer" lookup_column_name="Customer_ID" lookup_source_column="GLOBAL_CUSTOMER_ID" lookup_source="Customer_ID" enable_cache="false" parameterized="false" mode="strict"/>
+					</WF_Customer_ID>
+					<!--<Organization_Type>
+						<ReverseSQLLookup sql="select customer_type, customer_type from customer where customer_id = ?" lookup_table_name="Customer" enable_cache="false" parameterized="false" skip_if_null="false" mode="strict">
+							<Parameter source="WF_Customer_ID"/>
+						</ReverseSQLLookup>
+					</Organization_Type> -->
+					<WF_Organization_Type>
+						<ReverseSQLLookup sql="select customer_type, customer_type from customer where customer_id =  ?" lookup_table_name="Customer" enable_cache="false" parameterized="false" skip_if_null="false" mode="lax">
+							<Parameter source="WF_Customer_ID"/>
+						</ReverseSQLLookup>
+					</WF_Organization_Type>
+					<Data_Source>
+						<ReverseSQLLookup sql="select 'SFA', 'SFA' from dual " lookup_table_name="dual" enable_cache="false" parameterized="false" skip_if_null="false" mode="lax">
+							<Parameter source="WF_Customer_ID"/>
+						</ReverseSQLLookup>
+					</Data_Source>
+					<Master_Identifier>
+						<ReverseSQLLookup sql="select MASTER_ID, MASTER_ID from CUSTOMER where Customer_ID=?" lookup_table_name="CUSTOMER" enable_cache="false" parameterized="false" skip_if_null="false" mode="lax">
+							<Parameter source="WF_Customer_ID"/>
+						</ReverseSQLLookup>
+					</Master_Identifier>
+					<Customer_Master_ID>
+						<ReverseSQLLookup sql="select NUCLEUS_ID, NUCLEUS_ID from CUSTOMER where Customer_ID=?" lookup_table_name="CUSTOMER" enable_cache="false" parameterized="false" skip_if_null="false" mode="lax">
+							<Parameter source="WF_Customer_ID"/>
+						</ReverseSQLLookup>
+					</Customer_Master_ID>
+					<WF_Validation_Status_CT>
+						<ReverseSQLLookup sql="select 1, ? from dual" lookup_table_name="DUAL" enable_cache="false" parameterized="false" skip_if_null="true" mode="lax">
+							<Parameter source="WF_Validation_Status"/>
+						</ReverseSQLLookup>
+					</WF_Validation_Status_CT>
+					<Organization_Name>
+						<ReverseSQLLookup sql="select 1, nvl(Department_Name, C.Name ) from customer c, department d  where c.customer_id = D.customer_id (+) and c.customer_id = ? " lookup_table_name="DEPARTMENT" enable_cache="false" parameterized="false" skip_if_null="true" mode="lax">
+							<Parameter source="WF_Customer_ID"/>
+						</ReverseSQLLookup>
+					</Organization_Name>
+					<Validation_Change_Reason>
+						<ReverseSQLLookup sql="select VALIDATION_CHANGE_REASON, VALIDATION_CHANGE_REASON from CUSTOMER where Customer_ID=?" lookup_table_name="CUSTOMER" enable_cache="false" parameterized="false" skip_if_null="true" mode="lax">
+							<Parameter source="WF_Customer_ID"/>
+						</ReverseSQLLookup>
+					</Validation_Change_Reason>
+				</ObjectKeys>
+				<UpdateKeys>
+					<_UpdateGroup>
+						<UpdateKey>WF_Customer_ID</UpdateKey>
+					</_UpdateGroup>
+				</UpdateKeys>
+				<CodeTranslations>
+					<Code field_name="WF_Organization_Type" code_table="Organization.Organization" code_column="Organization_Type" code_value_source="Organization_Type" mode="strict"/>
+					<Code field_name="WF_Call_Class" code_table="Customer" code_column="Call_Class" code_value_source="Call_Class" mode="strict"/>
+					<Code field_name="WF_Status_Reason" code_table="Customer" code_column="Status_Reason" code_value_source="Status_Reason" mode="strict"/>
+					<Code field_name="WF_Validation_Status_CT" code_table="Customer" code_column="Validation_Status" code_value_source="Validation_Status" mode="strict"/>
+					<Code field_name="WF_Customer_Sub_Type" code_table="Organization.Organization" code_column="Organization_Sub_Type" code_value_source="Organization_Subtype" mode="strict"/>
+					<Code field_name="WF_Funding_Type" code_table="Organization.Organization" code_column="Funding_Type" code_value_source="Funding_Type" mode="strict"/>
+					<Code field_name="WF_Account_Type" code_table="Customer" code_column="Account_Type" code_value_source="Account_Type" mode="strict"/>
+				</CodeTranslations>
+				<DefaultValues>
+					<Default field_name="WF_Appointment_Only" value="0"/>
+				</DefaultValues>
+				<FieldLookups>
+					<MultiFieldLookup>
+						<StoredProcedureLookup sql="{ call IS_WF171_ADAPTER_PKG.IS_GET_STATUS ( 'Customer', 'Global_Customer_ID',?,?,?,?,?,?,?,?,?,?,?,?) }" enable_cache="false" parameterized="true" skip_if_null="false">
+							<Parameter parameter_type="in" source="Customer_ID"/>
+							<Parameter parameter_type="in" source="@operation"/>
+							<Parameter parameter_type="in" source="Activity_Status"/>
+							<Parameter parameter_type="in" source="Effective_Date"/>
+							<Parameter parameter_type="in" source="End_Date"/>
+							<Parameter parameter_type="in" source="Dummy"/>
+							<Parameter parameter_type="in" source="Dummy"/>
+							<Parameter parameter_type="in" source="WF_Validation_Status_CT"/>
+							<Parameter parameter_type="out" destination="WF_Status"/>
+							<Parameter parameter_type="out" destination="WF_Status_Change_Date"/>
+							<Parameter parameter_type="out" destination="WF_Validation_Status"/>
+							<Parameter parameter_type="out" destination="WF_Validation_Change_Date"/>
+						</StoredProcedureLookup>
+						<ReverseStoredProcedureLookup sql="{ call IS_WF171_ADAPTER_PKG.IS_SET_STATUS ('Customer','Status','Customer_ID',?,?,?,?,?,?,?,?,?) }" enable_cache="false" parameterized="true" skip_if_null="false">
+							<Parameter parameter_type="in" source="WF_Customer_ID"/>
+							<Parameter parameter_type="in" source="Activity_Status"/>
+							<Parameter parameter_type="in" source="Dummy"/>
+							<Parameter parameter_type="in" source="Dummy"/>
+							<Parameter parameter_type="in" source="@operation"/>
+							<Parameter parameter_type="in" source="Dummy"/>
+							<Parameter parameter_type="in" source="Dummy"/>
+							<Parameter parameter_type="out" destination="Activity_Status"/>
+							<Parameter parameter_type="out" destination="Effective_Date"/>
+						</ReverseStoredProcedureLookup>
+					</MultiFieldLookup>
+				</FieldLookups>
+				<DataObject object_name="Hospital" cardinality="?" type_name="Hospital" ts:tag="82101">
+					<ObjectKeys>
+						<Org_Medical_School_ID>
+							<SQLLookup sql="SELECT Global_Medical_School_ID, 1 from HOSPITAL where MASTER_ID=? and '1'=? " lookup_table_name="HOSPITAL" enable_cache="false" parameterized="false" skip_if_null="true" mode="lax">
+								<Parameter source="Master_Identifier"/>
+								<Parameter source="NeedToGenGlbMSID"/>
+							</SQLLookup>
+						</Org_Medical_School_ID>
+						<Org_Medical_School_ID>
+							<SQLLookup sql="select SEQ_IS_GLOBAL_IDENTIFIER.nextval, 1 from dual where '1'=? " lookup_table_name="dual" enable_cache="false" parameterized="false" skip_if_null="true" mode="strict">
+								<Parameter source="NeedToGenGlbMSID"/>
+							</SQLLookup>
+						</Org_Medical_School_ID>
+						<WF_Customer_ID>
+							<DOMLookup lookup_source="../WF_Customer_ID" mode="strict"/>
+						</WF_Customer_ID>
+						<Customer_ID key_type="EPK">
+							<DOMLookup lookup_source="../Customer_ID" mode="strict"/>
+						</Customer_ID>
+						<WF_Hospital_ID key_type="PK" mode="strict">
+							<SQLLookup sql="select customer_id, customer_id from hospital  where global_customer_id =  ?" lookup_table_name="Hospital" enable_cache="false" parameterized="true" skip_if_null="true">
+								<Parameter source="Customer_ID"/>
+							</SQLLookup>
+						</WF_Hospital_ID>
+						<WF_Hospital_ID>
+							<SQLLookup sql="select customer_id, customer_id from hospital  where global_customer_id =  ?" lookup_table_name="Hospital" enable_cache="false" parameterized="true" skip_if_null="true" mode="strict">
+								<Parameter source="Customer_ID"/>
+							</SQLLookup>
+						</WF_Hospital_ID>
+					</ObjectKeys>
+					<UpdateKeys>
+						<_UpdateGroup>
+							<UpdateKey>WF_Customer_ID</UpdateKey>
+						</_UpdateGroup>
+					</UpdateKeys>
+					<CodeTranslations>
+						<Code field_name="WF_Organization_Subtype" code_table="Organization.Organization" code_column="Organization_HOSP_Sub_Type" code_value_source="Organization_Subtype" mode="strict"/>
+						<Code field_name="WF_Specialty" code_table="Organization.Organization" code_column="Specialty" code_value_source="Specialty" mode="strict"/>
+						<Code field_name="WF_Accreditation" code_table="Organization.Organization" code_column="Accreditation" code_value_source="Accreditation" mode="strict"/>
+					</CodeTranslations>
+					<DefaultValues/>
+				</DataObject>
+				<DataObject object_name="Department" type_name="Department" cardinality="?" ts:tag="82102">
+					<ObjectKeys>
+						<WF_Customer_ID>
+							<DOMLookup lookup_source="../WF_Customer_ID" mode="strict"/>
+						</WF_Customer_ID>
+						<Customer_ID key_type="EPK">
+							<DOMLookup lookup_source="../Customer_ID" mode="strict"/>
+						</Customer_ID>
+						<Organization_Name>
+							<DOMLookup lookup_source="../Organization_Name" mode="lax"/>
+						</Organization_Name>
+						<WF_Department_ID key_type="PK" mode="strict">
+							<SQLLookup sql="select CUSTOMER_ID, CUSTOMER_ID from CUSTOMER where GLOBAL_CUSTOMER_ID =  ?" lookup_table_name="Department" enable_cache="false" parameterized="true" skip_if_null="true">
+								<Parameter source="Customer_ID"/>
+							</SQLLookup>
+						</WF_Department_ID>
+						<WF_Department_ID>
+							<SQLLookup sql="select customer_id, customer_id from department where global_customer_id =  ?" lookup_table_name="Department" enable_cache="false" parameterized="true" skip_if_null="true" mode="strict">
+								<Parameter source="Customer_ID"/>
+							</SQLLookup>
+						</WF_Department_ID>
+					</ObjectKeys>
+					<UpdateKeys>
+						<_UpdateGroup>
+							<UpdateKey>WF_Customer_ID</UpdateKey>
+						</_UpdateGroup>
+					</UpdateKeys>
+					<CodeTranslations/>
+					<DefaultValues/>
+				</DataObject>
+				<DataObject object_name="Pharmacy" type_name="Pharmacy" cardinality="?" ts:tag="82103">
+					<ObjectKeys>
+						<WF_Customer_ID>
+							<DOMLookup lookup_source="../WF_Customer_ID" mode="strict"/>
+						</WF_Customer_ID>
+						<Customer_ID key_type="EPK">
+							<DOMLookup lookup_source="../Customer_ID" mode="strict"/>
+						</Customer_ID>
+						<WF_Pharmacy_ID key_type="PK" mode="strict">
+							<SQLLookup sql="select customer_id, customer_id from pharmacy where global_customer_id =  ?" lookup_table_name="Pharmacy" enable_cache="false" parameterized="true" skip_if_null="true">
+								<Parameter source="Customer_ID"/>
+							</SQLLookup>
+						</WF_Pharmacy_ID>
+						<WF_Pharmacy_ID>
+							<SQLLookup sql="select customer_id, customer_id from pharmacy where global_customer_id =  ?" lookup_table_name="Pharmacy" enable_cache="false" parameterized="true" skip_if_null="true" mode="strict">
+								<Parameter source="Customer_ID"/>
+							</SQLLookup>
+						</WF_Pharmacy_ID>
+					</ObjectKeys>
+					<UpdateKeys>
+						<_UpdateGroup>
+							<UpdateKey>WF_Customer_ID</UpdateKey>
+						</_UpdateGroup>
+					</UpdateKeys>
+					<CodeTranslations>
+						<Code field_name="WF_Rx_Volume_Range" code_table="Organization.Pharmacy" code_column="Rx_Volume_Range" code_value_source="Rx_Volume_Range" mode="strict"/>
+						<Code field_name="WF_Home_Health_Care_Flag" code_table="Organization.Pharmacy" code_column="Home_Health_Care_Flag" code_value_source="Home_Health_Care_Flag" mode="strict"/>
+						<Code field_name="WF_Classification_Trade" code_table="Organization.Pharmacy" code_column="Classification_Trade" code_value_source="Classification_Trade" mode="strict"/>
+					</CodeTranslations>
+					<DefaultValues/>
+				</DataObject>
+				<DataObject object_name="IDN" type_name="IDN" ccardinality="?" ts:tag="82104">
+					<ObjectKeys>
+						<WF_Customer_ID>
+							<DOMLookup lookup_source="../WF_Customer_ID" mode="strict"/>
+						</WF_Customer_ID>
+						<Customer_ID key_type="EPK">
+							<DOMLookup lookup_source="../Customer_ID" mode="strict"/>
+						</Customer_ID>
+						<WF_IDN_ID key_type="PK" mode="strict">
+							<SQLLookup sql="select customer_id, customer_id from idn where global_customer_id =  ?" lookup_table_name="IDN" enable_cache="false" parameterized="true" skip_if_null="true">
+								<Parameter source="Customer_ID"/>
+							</SQLLookup>
+						</WF_IDN_ID>
+						<WF_IDN_ID>
+							<SQLLookup sql="select customer_id, customer_id from idn  where global_customer_id =  ?" lookup_table_name="IDN" enable_cache="false" parameterized="true" skip_if_null="true" mode="strict">
+								<Parameter source="Customer_ID"/>
+							</SQLLookup>
+						</WF_IDN_ID>
+					</ObjectKeys>
+					<UpdateKeys>
+						<_UpdateGroup>
+							<UpdateKey>WF_Customer_ID</UpdateKey>
+						</_UpdateGroup>
+					</UpdateKeys>
+					<CodeTranslations/>
+					<DefaultValues/>
+				</DataObject>
+				<DataObject object_name="" cardinality="?" type_name="Address_List" ts:tag="82110">
+					<DataObject object_name="Address" cardinality="*" type_name="Address" ts:tag="82111">
+						<ObjectKeys>
+							<Address_ID>
+								<SQLLookup sql="SELECT Global_Address_ID, 1 from ADDRESS where 'BOB'=? and MASTER_ID=? and ('REFRESH'=? or 'UPDATE'=? or 'DELETE'=?) " lookup_table_name="ADDRESS" enable_cache="false" parameterized="false" skip_if_null="true" mode="lax">
+									<Parameter source="../../Data_Source"/>
+									<Parameter source="Master_Identifier"/>
+									<Parameter source="@operation"/>
+									<Parameter source="@operation"/>
+									<Parameter source="@operation"/>
+								</SQLLookup>
+							</Address_ID>
+							<Address_ID>
+								<SQLLookup sql="select SEQ_IS_GLOBAL_IDENTIFIER.nextval, 1 from dual where 'BOB'=? and 'REFRESH'=?" lookup_table_name="dual" enable_cache="false" parameterized="false" skip_if_null="true" mode="strict">
+									<Parameter source="../../Data_Source"/>
+									<Parameter source="@operation"/>
+								</SQLLookup>
+							</Address_ID>
+							<WF_Address_ID mode="strict" key_type="PK">
+								<StandardLookup lookup_table_name="ADDRESS" lookup_column_name="ADDRESS_ID" lookup_source_column="GLOBAL_ADDRESS_ID" lookup_source="Address_ID" enable_cache="false" parameterized="false"/>
+							</WF_Address_ID>
+							<WF_Address_ID>
+								<StandardLookup lookup_table_name="ADDRESS" lookup_column_name="ADDRESS_ID" lookup_source_column="GLOBAL_ADDRESS_ID" lookup_source="Address_ID" enable_cache="false" parameterized="false" mode="strict"/>
+							</WF_Address_ID>
+							<WF_Customer_ID>
+								<DOMLookup lookup_source="../../WF_Customer_ID" mode="strict"/>
+							</WF_Customer_ID>
+							<Validation_Status2>
+								<DOMLookup lookup_source="Validation_Status" mode="strict"/>
+							</Validation_Status2>
+							<WF_Affiliation_ID>
+								<ReverseSQLLookup sql="SELECT AFFILIATION_ID, AFFILIATION_ID FROM AFFILIATION WHERE FROM_CUSTOMER_ID = ? AND AFFILIATION_TYPE= ? AND ADDRESS_ID = ? AND FROM_CUSTOMER_ID = TO_CUSTOMER_ID" lookup_table_name="AFFILIATION" enable_cache="false" parameterized="false" skip_if_null="true" mode="lax">
+									<Parameter source="../../WF_Customer_ID"/>
+									<Parameter source="../../WF_Organization_Type"/>
+									<Parameter source="WF_Address_ID"/>
+								</ReverseSQLLookup>
+							</WF_Affiliation_ID>
+							<WF_Validation_Status>
+								<ReverseSQLLookup sql="select VALIDATION_STATUS, VALIDATION_STATUS from AFFILIATION where AFFILIATION_ID=?" lookup_table_name="AFFILIATION" enable_cache="false" parameterized="false" skip_if_null="true" mode="lax">
+									<Parameter source="WF_Affiliation_ID"/>
+								</ReverseSQLLookup>
+							</WF_Validation_Status>
+							<Validation_Change_Reason>
+								<ReverseSQLLookup sql="select VALIDATION_CHANGE_REASON, VALIDATION_CHANGE_REASON from AFFILIATION where AFFILIATION_ID=?" lookup_table_name="AFFILIATION" enable_cache="false" parameterized="false" skip_if_null="true" mode="lax">
+									<Parameter source="WF_Affiliation_ID"/>
+								</ReverseSQLLookup>
+							</Validation_Change_Reason>
+						</ObjectKeys>
+						<UpdateKeys>
+							<_UpdateGroup>
+								<UpdateKey>WF_Address_ID</UpdateKey>
+							</_UpdateGroup>
+						</UpdateKeys>
+						<CodeTranslations>
+							<Code field_name="WF_Address_Type" code_table="Address" code_column="Address_Type" code_value_source="Address_Type" mode="strict"/>
+							<Code field_name="WF_Region" code_table="Address" code_column="Region" code_value_source="Region" mode="strict"/>
+							<Code field_name="WF_Country" code_table="Address" code_column="Country" code_value_source="Country" mode="strict"/>
+							<Code field_name="WF_Validation_Status" code_table="Customer" code_column="Validation_Status" code_value_source="Validation_Status" mode="strict"/>
+							<Code field_name="WF_Validation_Status2" code_table="Customer" code_column="Validation_Status" code_value_source="Validation_Status2" mode="strict"/>
+						</CodeTranslations>
+						<DefaultValues>
+							<Default field_name="Validation_Status" value="VALD"/>
+						</DefaultValues>
+						<DataObject object_name="Affiliation" cardinality="?" type_name="Affiliation" ts:tag="85100">
+							<ObjectKeys>
+								<WF_Affiliation_ID key_type="PK" mode="strict">
+									<SQLLookup sql="select affiliation_id,global_customer_affiliation_id from affiliation where from_customer_id = ? and address_id = ? " lookup_table_name="Affiliation" enable_cache="false" parameterized="true" skip_if_null="true">
+										<Parameter source="../../../WF_Customer_ID"/>
+										<Parameter source="../WF_Address_ID"/>
+									</SQLLookup>
+								</WF_Affiliation_ID>
+								<WF_Affiliation_ID>
+									<SQLLookup sql="select affiliation_id,global_customer_affiliation_id from affiliation where from_customer_id = ?  and address_id = ? " lookup_table_name="Affiliation" enable_cache="false" parameterized="true" skip_if_null="true" mode="strict">
+										<Parameter source="../../../WF_Customer_ID"/>
+										<Parameter source="../WF_Address_ID"/>
+									</SQLLookup>
+								</WF_Affiliation_ID>
+								<WF_From_Customer_ID>
+									<DOMLookup lookup_source="../../../WF_Customer_ID" mode="lax"/>
+								</WF_From_Customer_ID>
+								<WF_To_Customer_ID>
+									<DOMLookup lookup_source="../../../WF_Customer_ID" mode="lax"/>
+								</WF_To_Customer_ID>
+								<WF_Address_ID>
+									<DOMLookup lookup_source="../WF_Address_ID" mode="lax"/>
+								</WF_Address_ID>
+								<WF_Affiliation_Type>
+									<DOMLookup lookup_source="../../../WF_Organization_Type" mode="lax"/>
+								</WF_Affiliation_Type>
+								<WF_Status_Change_Date>
+									<DOMLookup lookup_source="../WF_Status_Change_Date" mode="lax"/>
+								</WF_Status_Change_Date>
+								<WF_Status>
+									<DOMLookup lookup_source="../WF_Status" mode="lax"/>
+								</WF_Status>
+								<WF_Validation_Status>
+									<DOMLookup lookup_source="../WF_Validation_Status" mode="lax"/>
+								</WF_Validation_Status>
+								<WF_Validation_Change_Reason>
+									<DOMLookup lookup_source="../Validation_Change_Reason" mode="lax"/>
+								</WF_Validation_Change_Reason>
+								<WF_Validation_Change_Date>
+									<DOMLookup lookup_source="WF_Status_Change_Date" mode="lax"/>
+								</WF_Validation_Change_Date>
+								<DEA_Number>
+									<DOMLookup lookup_source="External_ID_1" mode="lax"/>
+								</DEA_Number>
+								<DEA_Expiration_Date>
+									<DOMLookup lookup_source="External_ID_1_Date" mode="lax"/>
+								</DEA_Expiration_Date>
+								<External_ID_1>
+									<DOMLookup lookup_source="../DEA_Number" mode="lax"/>
+								</External_ID_1>
+								<External_ID_1_Date>
+									<DOMLookup lookup_source="../DEA_Expiration_Date" mode="lax"/>
+								</External_ID_1_Date>
+								<WF_Child_Customer_Type>
+									<DOMLookup lookup_source="../../../WF_Organization_Type" mode="lax"/>
+								</WF_Child_Customer_Type>
+								<WF_Parent_Customer_Type>
+									<SQLLookup sql="select ?,  1 from DUAL where ?=?" lookup_table_name="DUAL" enable_cache="true" parameterized="false" skip_if_null="true" mode="lax">
+										<Parameter source="../../../WF_Organization_Type"/>
+										<Parameter source="WF_From_Customer_ID"/>
+										<Parameter source="WF_To_Customer_ID"/>
+									</SQLLookup>
+									<SQLLookup sql="select Customer_Type,  Customer_Type from CUSTOMER where CUSTOMER_ID =?" lookup_table_name="CUSTOMER" enable_cache="true" parameterized="false" skip_if_null="true" mode="lax">
+										<Parameter source="WF_To_Customer_ID"/>
+									</SQLLookup>
+								</WF_Parent_Customer_Type>
+								<WF_To_Name>
+									<DOMLookup lookup_source="../../../Organization_Name" mode="lax"/>
+									<SQLLookup sql="select NAME,  1 from CUSTOMER where CUSTOMER_ID =? AND 'INSERT'=? AND 'CURR'=?" lookup_table_name="CUSTOMER" enable_cache="true" parameterized="false" skip_if_null="true" mode="lax">
+										<Parameter source="WF_To_Customer_ID"/>
+										<Parameter source="@operation"/>
+										<Parameter source="../Activity_Status"/>
+									</SQLLookup>
+								</WF_To_Name>
+							</ObjectKeys>
+							<UpdateKeys>
+								<_UpdateGroup>
+									<UpdateKey>WF_Affiliation_ID</UpdateKey>
+								</_UpdateGroup>
+							</UpdateKeys>
+							<CodeTranslations/>
+							<DefaultValues>
+							</DefaultValues>
+							<FieldLookups/>
+						</DataObject>
+						<FieldLookups>
+							<MultiFieldLookup>
+								<StoredProcedureLookup sql="{ call IS_WF171_ADAPTER_PKG.IS_GET_STATUS ( 'Affiliation', 'From_Customer_ID',?,?,?,?,?,?,?,?,?,?,?,?) }" enable_cache="false" parameterized="true" skip_if_null="false">
+									<Parameter parameter_type="in" source="WF_Customer_ID"/>
+									<Parameter parameter_type="in" source="@operation"/>
+									<Parameter parameter_type="in" source="Activity_Status"/>
+									<Parameter parameter_type="in" source="Effective_Date"/>
+									<Parameter parameter_type="in" source="End_Date"/>
+									<Parameter parameter_type="in" source="WF_Address_ID"/>
+									<Parameter parameter_type="in" source="../../Organization_Type"/>
+									<Parameter parameter_type="in" source="WF_Validation_Status"/>
+									<Parameter parameter_type="out" destination="WF_Status"/>
+									<Parameter parameter_type="out" destination="WF_Status_Change_Date"/>
+									<Parameter parameter_type="out" destination="WF_Validation_Status"/>
+									<Parameter parameter_type="out" destination="WF_Validation_Change_Date"/>
+								</StoredProcedureLookup>
+								<ReverseStoredProcedureLookup sql="{ call IS_WF171_ADAPTER_PKG.IS_SET_STATUS ('Affiliation','Status','From_Customer_ID',?,?,?,?,?,?,?,?,?) }" enable_cache="false" parameterized="true" skip_if_null="false">
+									<Parameter parameter_type="in" source="WF_Customer_ID"/>
+									<Parameter parameter_type="in" source="Activity_Status"/>
+									<Parameter parameter_type="in" source="WF_Address_ID"/>
+									<Parameter parameter_type="in" source="../../Organization_Type"/>
+									<Parameter parameter_type="in" source="@operation"/>
+									<Parameter parameter_type="in" source="WF_Affiliation_ID"/>
+									<Parameter parameter_type="in" source="./*[@type_name='Affiliation']/WF_Affiliation_ID"/>
+									<Parameter parameter_type="out" destination="Activity_Status"/>
+									<Parameter parameter_type="out" destination="Effective_Date"/>
+								</ReverseStoredProcedureLookup>
+								<ReverseStoredProcedureLookup sql="{ call IS_WF171_ADAPTER_PKG.IS_SET_OWNER_CID(?,?,?,?,?,?,?) }" enable_cache="false" parameterized="true" skip_if_null="false">
+									<Parameter parameter_type="in" source="WF_Customer_ID"/>
+									<Parameter parameter_type="in" source="WF_Address_ID"/>
+									<Parameter parameter_type="in" source="../../WF_Organization_Type"/>
+									<Parameter parameter_type="in" source="WF_Affiliation_ID"/>
+									<Parameter parameter_type="in" source="./*[@type_name='Affiliation']/WF_Affiliation_ID"/>
+									<Parameter parameter_type="in" source="Activity_Status"/>
+									<Parameter parameter_type="out" destination="Owner_Customer_Identifier"/>
+								</ReverseStoredProcedureLookup>
+							</MultiFieldLookup>
+						</FieldLookups>
+					</DataObject>
+				</DataObject>
+				<DataObject object_name="" cardinality="?" type_name="Communication_List" ts:tag="82120">
+					<DataObject object_name="Communication" cardinality="*" ts:tag="82121" type_name="Communication">
+						<ObjectKeys>
+							<Communication_ID>
+								<SQLLookup sql="SELECT Global_Communication_ID, 1 from PHONE where 'BOB'=? and MASTER_ID=? and ('REFRESH'=? or 'UPDATE'=? or 'DELETE'=?) " lookup_table_name="PHONE" enable_cache="false" parameterized="false" skip_if_null="true" mode="lax">
+									<Parameter source="../../Data_Source"/>
+									<Parameter source="Master_Identifier"/>
+									<Parameter source="@operation"/>
+									<Parameter source="@operation"/>
+									<Parameter source="@operation"/>
+								</SQLLookup>
+							</Communication_ID>
+							<Communication_ID>
+								<SQLLookup sql="select SEQ_IS_GLOBAL_IDENTIFIER.nextval, 1 from dual where 'BOB'=? and 'REFRESH'=?" lookup_table_name="dual" enable_cache="false" parameterized="false" skip_if_null="true" mode="strict">
+									<Parameter source="../../Data_Source"/>
+									<Parameter source="@operation"/>
+								</SQLLookup>
+							</Communication_ID>
+							<WF_Phone_ID key_type="PK" mode="strict">
+								<StandardLookup lookup_table_name="PHONE" lookup_column_name="PHONE_ID" lookup_source_column="GLOBAL_COMMUNICATION_ID" lookup_source="Communication_ID" enable_cache="true" parameterized="true"/>
+							</WF_Phone_ID>
+							<WF_Phone_ID>
+								<StandardLookup lookup_table_name="PHONE" lookup_column_name="PHONE_ID" lookup_source_column="GLOBAL_COMMUNICATION_ID" lookup_source="Communication_ID" enable_cache="true" parameterized="true" mode="strict"/>
+							</WF_Phone_ID>
+							<Address_ID>
+								<ReverseSQLLookup sql="select ADDRESS_ID, GLOBAL_ADDRESS_ID   from ADDRESS where ADDRESS_ID in (select ADDRESS_ID from AFFILIATION where AFFILIATION_ID = ?)" lookup_table_name="Address" enable_cache="false" parameterized="true" skip_if_null="true" mode="lax">
+									<Parameter source="WF_Affiliation_ID"/>
+								</ReverseSQLLookup>
+							</Address_ID>
+							<WF_Customer_ID>
+								<DOMLookup lookup_source="../../WF_Customer_ID" mode="strict"/>
+							</WF_Customer_ID>
+							<WF_Affiliation_ID>
+								<SQLLookup sql="select affiliation_id, affiliation_id from affiliation where address_id  in(select address_id from address where global_address_id = ?) and from_customer_id = to_customer_id and from_Customer_id = ?" lookup_table_name="Affiliation" enable_cache="false" parameterized="false" skip_if_null="false" mode="lax">
+									<Parameter source="Address_ID"/>
+									<Parameter source="WF_Customer_ID"/>
+								</SQLLookup>
+							</WF_Affiliation_ID>
+						</ObjectKeys>
+						<UpdateKeys>
+							<_UpdateGroup>
+								<UpdateKey>WF_Phone_ID</UpdateKey>
+							</_UpdateGroup>
+						</UpdateKeys>
+						<CodeTranslations>
+							<Code field_name="WF_Communication_Type" code_table="Communication" code_column="Communication_Type" code_value_source="Communication_Type" mode="strict"/>
+						</CodeTranslations>
+						<DefaultValues/>
+					</DataObject>
+				</DataObject>
+				<DataObject object_name="" type_name="Formulary_Product_List" cardinality="?" ts:tag="82160">
+					<DataObject object_name="Formulary_Product" cardinality="*" ts:tag="82161" type_name="Formulary_Product">
+						<ObjectKeys>
+							<WF_Formulary_Product_ID mode="strict" key_type="PK">
+								<StandardLookup lookup_table_name="FORMULARY_PRODUCT" lookup_column_name="FORMULARY_PRODUCT_ID" lookup_source_column="GLOBAL_FORMULARY_PRODUCT_ID" lookup_source="Formulary_Product_ID" enable_cache="true" parameterized="true"/>
+							</WF_Formulary_Product_ID>
+							<WF_Formulary_Product_ID>
+								<StandardLookup lookup_table_name="FORMULARY_PRODUCT" lookup_column_name="FORMULARY_PRODUCT_ID" lookup_source_column="GLOBAL_FORMULARY_PRODUCT_ID" lookup_source="Formulary_Product_ID" enable_cache="true" parameterized="true" mode="strict"/>
+							</WF_Formulary_Product_ID>
+							<WF_Customer_ID>
+								<DOMLookup lookup_source="../../WF_Customer_ID" mode="strict"/>
+							</WF_Customer_ID>
+							<WF_Product_ID>
+								<SQLLookup sql="select PRODUCT_ID, PRODUCT_ID from PRODUCT where GLOBAL_PRODUCT_ID=?" lookup_table_name="PRODUCT" enable_cache="true" parameterized="true" skip_if_null="true" mode="lax">
+									<Parameter source="Product_ID"/>
+								</SQLLookup>
+							</WF_Product_ID>
+							<Product_ID>
+								<ReverseSQLLookup sql="select GLOBAL_PRODUCT_ID, GLOBAL_PRODUCT_ID from PRODUCT where PRODUCT_ID=?" lookup_table_name="PRODUCT" enable_cache="true" parameterized="true" skip_if_null="false" mode="lax">
+									<Parameter source="WF_Product_ID"/>
+								</ReverseSQLLookup>
+							</Product_ID>
+						</ObjectKeys>
+						<UpdateKeys>
+							<_UpdateGroup>
+								<UpdateKey>WF_Formulary_Product_ID</UpdateKey>
+							</_UpdateGroup>
+						</UpdateKeys>
+						<CodeTranslations>
+							<Code field_name="WF_Active" code_table="Formulary.Formulary_Product" code_column="Active" code_value_source="Active" mode="strict"/>
+							<Code field_name="WF_Tier" code_table="Formulary.Formulary_Product" code_column="Tier" code_value_source="Tier" mode="strict"/>
+							<Code field_name="WF_Closed" code_table="Formulary.Formulary_Product" code_column="Closed" code_value_source="Closed" mode="strict"/>
+							<Code field_name="WF_Opened" code_table="Formulary.Formulary_Product" code_column="Opened" code_value_source="Opened" mode="strict"/>
+							<Code field_name="WF_Total" code_table="Formulary.Formulary_Product" code_column="Total" code_value_source="Total" mode="strict"/>
+							<Code field_name="WF_Status" code_table="Formulary.Formulary_Product" code_column="Status" code_value_source="Status" mode="strict"/>
+							<Code field_name="WF_Third_Party_Status" code_table="Formulary.Formulary_Product" code_column="Third_Party_Status" code_value_source="Third_Party_Status" mode="strict"/>
+						</CodeTranslations>
+						<DefaultValues/>
+						<FieldLookups>
+							<MultiFieldLookup>
+								<StoredProcedureLookup sql="{ call IS_WF171_ADAPTER_PKG.IS_GET_STATUS_CHANGE_DATE ( ?,?,?) }" enable_cache="false" parameterized="true" skip_if_null="false">
+									<Parameter parameter_type="in" source="@operation"/>
+									<Parameter parameter_type="in" source="Status"/>
+									<Parameter parameter_type="out" destination="WF_Status_Change_Date"/>
+								</StoredProcedureLookup>
+							</MultiFieldLookup>
+						</FieldLookups>
+						<DataObject object_name="" type_name="Formulary_Product_Detail_List" cardinality="?" ts:tag="82170">
+							<DataObject object_name="Formulary_Product_Detail" cardinality="*" ts:tag="82171" type_name="Formulary_Product_Detail">
+								<ObjectKeys>
+									<WF_Formulary_Product_ID>
+										<DOMLookup lookup_source="../../WF_Formulary_Product_ID" mode="strict"/>
+									</WF_Formulary_Product_ID>
+									<WF_Formulary_Product_Detail_ID mode="strict" key_type="PK">
+										<StandardLookup lookup_table_name="FORMULARY_PRODUCT_DETAIL" lookup_column_name="FORMULARY_PRODUCT_DETAIL_ID" lookup_source_column="GLOBAL_FRMLR_PRODUCT_DETAIL_ID" lookup_source="Formulary_Product_Detail_ID" enable_cache="true" parameterized="true"/>
+									</WF_Formulary_Product_Detail_ID>
+									<WF_Formulary_Product_Detail_ID>
+										<StandardLookup lookup_table_name="FORMULARY_PRODUCT_DETAIL" lookup_column_name="FORMULARY_PRODUCT_DETAIL_ID" lookup_source_column="GLOBAL_FRMLR_PRODUCT_DETAIL_ID" lookup_source="Formulary_Product_Detail_ID" enable_cache="true" parameterized="true" mode="strict"/>
+									</WF_Formulary_Product_Detail_ID>
+									<WF_Customer_ID>
+										<DOMLookup lookup_source="../../WF_Customer_ID" mode="strict"/>
+									</WF_Customer_ID>
+								</ObjectKeys>
+								<UpdateKeys>
+									<_UpdateGroup>
+										<UpdateKey>WF_Formulary_Product_Detail_ID</UpdateKey>
+									</_UpdateGroup>
+								</UpdateKeys>
+								<CodeTranslations>
+									<Code field_name="WF_Generic_Mac_Flag" code_table="Formulary.Formulary_Product_Detail" code_column="Generic_Mac_Flag" code_value_source="Generic_Mac_Flag" mode="strict"/>
+									<Code field_name="WF_Active_Flag" code_table="Formulary.Formulary_Product_Detail" code_column="Active_Flag" code_value_source="Active_Flag" mode="strict"/>
+									<Code field_name="WF_Pull_Through_Message" code_table="Formulary.Formulary_Product_Detail" code_column="Pull_Through_Message" code_value_source="Pull_Through_Message" mode="strict"/>
+									<Code field_name="WF_Promotional_Tools" code_table="Formulary.Formulary_Product_Detail" code_column="Promotional_Tools" code_value_source="Promotional_Tools" mode="strict"/>
+								</CodeTranslations>
+								<DefaultValues/>
+							</DataObject>
+						</DataObject>
+					</DataObject>
+				</DataObject>
+				<DataObject object_name="" type_name="Organization_Medical_School_List" cardinality="?" ts:tag="82150">
+					<DataObject object_name="Organization_Medical_School" type_name="Organization_Medical_School" cardinality="*" ts:tag="82151">
+						<ObjectKeys>
+							<WF_Customer_ID>
+								<DOMLookup lookup_source="../../WF_Customer_ID" mode="strict"/>
+							</WF_Customer_ID>
+						</ObjectKeys>
+						<UpdateKeys>
+							<_UpdateGroup>
+								<UpdateKey>WF_Customer_ID</UpdateKey>
+							</_UpdateGroup>
+						</UpdateKeys>
+						<CodeTranslations/>
+						<DefaultValues/>
+						<CheckRecord/>
+					</DataObject>
+				</DataObject>
+				<DataObject type_name="Customer_Identifier_List" cardinality="?" ts:tag="82130">
+					<DataObject object_name="Customer_Identifier" cardinality="*" type_name="Customer_Identifier" ts:tag="82131">
+						<ObjectKeys>
+							<WF_Customer_ID key_type="">
+								<DOMLookup lookup_source="../../WF_Customer_ID" mode="strict"/>
+							</WF_Customer_ID>
+						</ObjectKeys>
+						<UpdateKeys>
+							<_UpdateGroup>
+								<UpdateKey>WF_Customer_ID</UpdateKey>
+							</_UpdateGroup>
+						</UpdateKeys>
+						<CodeTranslations/>
+						<DefaultValues/>
+					</DataObject>
+				</DataObject>
+				<DataObject type_name="Formulary_Design_List" cardinality="?" ts:tag="82180">
+					<DataObject object_name="Formulary_Design" cardinality="*" type_name="Formulary_Design" ts:tag="82181">
+						<ObjectKeys>
+							<WF_Customer_ID key_type="">
+								<DOMLookup lookup_source="../../WF_Customer_ID" mode="strict"/>
+							</WF_Customer_ID>
+							<WF_Formulary_Design_ID key_type="PK" mode="strict">
+								<StandardLookup lookup_table_name="FORMULARY_DESIGN" lookup_column_name="FORMULARY_DESIGN_ID" lookup_source_column="GLOBAL_FORMULARY_DESIGN_ID" lookup_source="Formulary_Design_ID" enable_cache="true" parameterized="true"/>
+							</WF_Formulary_Design_ID>
+							<WF_Formulary_Design_ID>
+								<StandardLookup lookup_table_name="FORMULARY_DESIGN" lookup_column_name="FORMULARY_DESIGN_ID" lookup_source_column="GLOBAL_FORMULARY_DESIGN_ID" lookup_source="Formulary_Design_ID" enable_cache="true" parameterized="true" mode="strict"/>
+							</WF_Formulary_Design_ID>
+						</ObjectKeys>
+						<UpdateKeys>
+							<_UpdateGroup>
+								<UpdateKey>WF_Formulary_Design_ID</UpdateKey>
+							</_UpdateGroup>
+						</UpdateKeys>
+						<CodeTranslations/>
+						<DefaultValues/>
+						<DataObject object_name="" type_name="Formulary_Geography_List" cardinality="?" ts:tag="82190">
+							<DataObject object_name="Formulary_Geography" cardinality="*" ts:tag="82191" type_name="Formulary_Geography">
+								<ObjectKeys>
+									<WF_Formulary_Design_ID>
+										<DOMLookup lookup_source="../../WF_Formulary_Design_ID" mode="strict"/>
+									</WF_Formulary_Design_ID>
+									<WF_Formulary_Geography_ID mode="strict" key_type="PK">
+										<StandardLookup lookup_table_name="FORMULARY_GEOGRAPHY" lookup_column_name="FORMULARY_GEOGRAPHY_ID" lookup_source_column="GLOBAL_FORMULARY_GEOGRAPHY_ID" lookup_source="Formulary_Geography_ID" enable_cache="true" parameterized="true"/>
+									</WF_Formulary_Geography_ID>
+									<WF_Formulary_Geography_ID>
+										<StandardLookup lookup_table_name="FORMULARY_GEOGRAPHY" lookup_column_name="FORMULARY_GEOGRAPHY_ID" lookup_source_column="GLOBAL_FORMULARY_GEOGRAPHY_ID" lookup_source="Formulary_Geography_ID" enable_cache="true" parameterized="true" mode="strict"/>
+									</WF_Formulary_Geography_ID>
+									<WF_Customer_ID>
+										<DOMLookup lookup_source="../../../../WF_Customer_ID" mode="strict"/>
+									</WF_Customer_ID>
+								</ObjectKeys>
+								<UpdateKeys>
+									<_UpdateGroup>
+										<UpdateKey>WF_Formulary_Geography_ID</UpdateKey>
+									</_UpdateGroup>
+								</UpdateKeys>
+								<CodeTranslations>
+									<Code field_name="WF_Region" code_table="Address" code_column="Region" code_value_source="Region" mode="strict"/>
+								</CodeTranslations>
+								<DefaultValues/>
+							</DataObject>
+						</DataObject>
+						<DataObject object_name="" type_name="Formulary_Comments_List" cardinality="?" ts:tag="82210">
+							<DataObject object_name="Formulary_Comments" cardinality="*" ts:tag="82211" type_name="Formulary_Comments">
+								<ObjectKeys>
+									<WF_Formulary_Design_ID>
+										<DOMLookup lookup_source="../../WF_Formulary_Design_ID" mode="strict"/>
+									</WF_Formulary_Design_ID>
+									<WF_Formulary_Comments_ID mode="strict" key_type="PK">
+										<StandardLookup lookup_table_name="FORMULARY_COMMENTS" lookup_column_name="FORMULARY_COMMENTS_ID" lookup_source_column="GLOBAL_FORMULARY_COMMENTS_ID" lookup_source="Formulary_Comments_ID" enable_cache="true" parameterized="true"/>
+									</WF_Formulary_Comments_ID>
+									<WF_Formulary_Comments_ID>
+										<StandardLookup lookup_table_name="FORMULARY_COMMENTS" lookup_column_name="FORMULARY_COMMENTS_ID" lookup_source_column="GLOBAL_FORMULARY_COMMENTS_ID" lookup_source="Formulary_Comments_ID" enable_cache="true" parameterized="true" mode="strict"/>
+									</WF_Formulary_Comments_ID>
+									<WF_Customer_ID>
+										<DOMLookup lookup_source="../../../../WF_Customer_ID" mode="strict"/>
+									</WF_Customer_ID>
+									<WF_Product_ID>
+										<SQLLookup sql="select PRODUCT_ID, PRODUCT_ID from PRODUCT where GLOBAL_PRODUCT_ID=?" lookup_table_name="PRODUCT" enable_cache="false" parameterized="true" skip_if_null="true" mode="lax">
+											<Parameter source="Product_ID"/>
+										</SQLLookup>
+									</WF_Product_ID>
+									<Product_ID>
+										<ReverseSQLLookup sql="select GLOBAL_PRODUCT_ID, GLOBAL_PRODUCT_ID from PRODUCT where PRODUCT_ID=?" lookup_table_name="PRODUCT" enable_cache="false" parameterized="true" skip_if_null="false" mode="lax">
+											<Parameter source="WF_Product_ID"/>
+										</ReverseSQLLookup>
+									</Product_ID>
+								</ObjectKeys>
+								<UpdateKeys>
+									<_UpdateGroup>
+										<UpdateKey>WF_Formulary_Comments_ID</UpdateKey>
+									</_UpdateGroup>
+								</UpdateKeys>
+								<CodeTranslations/>
+								<DefaultValues/>
+							</DataObject>
+						</DataObject>
+					</DataObject>
+				</DataObject>
+			</DataObject>
+		</xt:DataModule>
+	</ModuleCollection>
+</DataModel>
