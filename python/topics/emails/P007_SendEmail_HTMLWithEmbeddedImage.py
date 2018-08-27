@@ -54,7 +54,7 @@ messageText = MIMEText('This is the alternative plain text message.')
 messageAlternative.attach(messageText)
 
 # Attach an HTML message where the image is referenced in the IMG SRC attribute by the ID mentioned below.
-messageHTML = MIMEText('<font color="red"><b>Some <i>HTML</i> message</b> with an image.</font><br><img src="cid:image1"><br>', 'html')
+messageHTML = MIMEText('<font color="red"><b>Some <i>HTML</i> message</b> with an image.</font><br><img python="cid:image1"><br>', 'html')
 messageAlternative.attach(messageHTML)
 
 # This example assumes the image is in the current directory
