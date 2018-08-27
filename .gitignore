@@ -1,3 +1,4 @@
+############################################################################################# Java
 *.class
 
 # Mobile Tools for Java (J2ME)
@@ -12,3 +13,27 @@ hs_err_pid*
 
 # TestNG output files
 test-output/
+############################################################################################# Python
+# Ignore generated python files.
+*.py[cod]
+
+# C extensions
+*.so
+
+# Ignore PyCharm related files.
+.idea
+
+# Ignore Eclispe related files.
+.project
+.pydevproject
+
+# Person scripts
+src/scripts/
+
+# Generated files.
+src/topics/csv/data_output.csv
+*.log
+
+# iPython Notebook Checkpoints
+.ipynb_checkpoints
+############################################################################################# 
