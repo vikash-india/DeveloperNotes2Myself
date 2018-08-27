@@ -1,2 +1,2 @@
-# AnsibleNotes2Myself
-Ansible Notes 2 Myself
+# DeveloperNotes2Myself
+DeveloperNotes2Myself
