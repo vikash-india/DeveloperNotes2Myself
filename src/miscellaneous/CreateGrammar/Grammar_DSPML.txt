@@ -1,0 +1,102 @@
+1,ID:252|253|254,Fund:DSP Merrill Lynch|DSP,Scheme:Bond Fund,IsPeriod:true#skip:true,IsPlan:true
+2,ID:255|256|257|258|259|260,Fund:DSP Merrill Lynch|DSP,Scheme:Liquid Plus Fund|LIQUIDITY PLUS,IsPeriod:true#skip:true,IsPlan:true#skip:false
+3,ID:261|262|263|264|265|266|267|268|269,Fund:DSP Merrill Lynch|DSP,Scheme:Saving Plus Fund|SAVINGS PLUS,IsRiskType:true#skip:true,IsPeriod:true#skip:true,IsPlan:true#skip:false
+4,ID:270|271|272|273,Fund:DSP Merrill Lynch|DSP,Scheme:Short Term Fund,IsPeriod:true#skip:true,IsPlan:true#skip:false
+5,ID:274|275|276|277|278|279|280|281,Fund:DSP Merrill Lynch|DSPML,Scheme:Strategic Bond Fund,IsPeriod:true#skip:true,IsPlan:true#skip:false
+6,ID:1178|1179,Fund:DSP Merrill Lynch|DSP,Scheme:Equity Fund,IsPlan:true#skip:false
+7,ID:1180|1181|1182|1183,Fund:DSP Merrill Lynch,Scheme:T.I.G.E.R. Fund|T.I.G.E.R Fund,IsPlan:true#skip:false
+8,ID:1184|1185|1186,Fund:DSP Merrill Lynch|DSPML,Scheme:Natural Resources and New Energy Fund,IsPlan:true#skip:false
+9,ID:1187|1188|1189|1190,Fund:DSP Merrill Lynch|DSP,Scheme:Opportunities Fund,IsPlan:true#skip:false
+10,ID:1191|1192|1193,Fund:DSP Merrill Lynch|DSPML,Scheme:Small and MidCap Fund|Small and Mid Cap Fund,IsPlan:true#skip:false
+11,ID:1194|1195,Fund:DSP Merrill Lynch|DSP,Scheme:Technology.com Fund,IsPlan:true#skip:false
+12,ID:1196|1197|1198|1199,Scheme:Top 100 Equity Fund|TOP 100 EQUITY,IsPlan:true#skip:false
+13,ID:1665|1666,Fund:DSP Merrill Lynch|DSP,Scheme:Balanced Fund,IsPlan:true#skip:false
+14,ID:1784|1785|1786,Fund:DSP Merrill Lynch|DSP,Scheme:Liquidity Fund|LIQUID FUND,IsPeriod:true#skip:true,IsPlan:true#skip:false
+15,ID:1787|1788|1789|1790|1791,Fund:DSP Merrill Lynch|DSPML,Scheme:Cash Plus Fund,IsPeriod:true#skip:true,IsPlan:true#skip:false
+16,ID:1792|1793|1794,Fund:DSP Merrill Lynch|DSP,Scheme:Liquidity Fund,IsPeriod:true#skip:true,IsPlan:true#skip:false
+17,ID:2145|2146|2147|2148|2149|2150,Fund:DSP Merrill Lynch|DSP,Scheme:Government Securities Fund Plan|GOVERNMENT SECURITIES PLAN,,RequiresAlpha:true#skip:false,IsPeriod:true#skip:true,IsPlan:true#skip:false
+18,ID:2292|2293,Fund:DSP Merrill Lynch|DSPML,Scheme:Tax Saver Fund,IsPlan:true#skip:false
+19,ID:2349|2350|2351|2352|2353|2354,Fund:DSP Merrill Lynch|DSP,Scheme:Floating Rate Fund,IsPeriod:true#skip:true,IsPlan:true#skip:false
+20,ID:2518|2519,Fund:DSP Merrill Lynch,Scheme:World Gold Fund,IsPlan:true#skip:false
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+
+

@@ -1,0 +1,7 @@
+1	ABAN	523204          2
+2	3IINFOTECH	532628      10
+3	NA	523395              10
+4	VIKASH	524348          10
+5	NA	VIKASH              ER
+6	ABAN	523204          2
+7	NA	500002              2
