@@ -51,14 +51,11 @@ RNotes2Myself.Rproj
 packrat/lib*/
 packrat/src/
 ############################################################################################# Perl
-# All backups.
-*~
-
-# All logs.
-*.log
-
-# All vi swap files.
-*.swp
+#-------------------------------------------------------------------
+# Ignore everything under the following directories.
+#-------------------------------------------------------------------
+# Class files etc.
+bin/
 
 # Temp files by gitk
 .gitk-tmp.*
@@ -68,4 +65,19 @@ packrat/src/
 .project
 .idea
 
-############################################################################################# MySQL
+############################################################################################# Scala
+# All backups.
+*~
+
+# All logs.
+*.log
+
+# All vi swap files.
+*.swp
+
+# All open office files.
+.~lock*
+
+# Temp files by gitk
+.gitk-tmp.*
+############################################################################################# 
