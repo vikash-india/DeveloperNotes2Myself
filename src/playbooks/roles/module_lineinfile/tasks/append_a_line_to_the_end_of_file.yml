@@ -1,0 +1,11 @@
+---
+# Note
+# - This task is idempotent ie the line will be added only once even when executed multiple times.
+# - The line will NOT be added even if it is present anywhere in the file.
+- name: Append a Line to the End of File
+  lineinfile:
+    dest=roles/module_lineinfile/files/sample.txt
+    backup=yes
+    state=present
+    insertafter=EOF
+    line='ADD A NEW LINE AT THE END OF FILE IF IT IS NOT PRESENT ANYWHERE IN THE FILE.'

@@ -1,0 +1,10 @@
+---
+# An Ansible playbook for showing various usage of the module 'pause'.
+- name: Use Module 'pause'
+  hosts: 'localhost'
+  roles:
+    # Pass variables to roles using the following syntax. These variables are available to all tasks in that role.
+    - {
+        role: module_pause,
+        message: 'Ubuntu server will be upgraded. Press any key to continue...'
+      }
