@@ -1,0 +1,9 @@
+Social Communities and Social Media Resources on JavaScript
+
+1. An online community on Twitter for JavaScript news. 
+   URL: https://twitter.com/vikash_kmc/lists/javascript
+
+   About the URL:
+   A list of people or resources on twitter with interestesting content
+   related to JavaScript. 
+
