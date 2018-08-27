@@ -1,2 +1,2 @@
-# PerlNotes2Myself
-Perl notes to myself.
+# RNotes2Myself
+R notes to myself
