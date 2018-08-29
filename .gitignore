@@ -1,25 +1,4 @@
-############################################################################################# Java
-*.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-
-# TestNG output files
-test-output/
-############################################################################################# Python
-# Ignore generated python files.
-*.py[cod]
-
-# C extensions
-*.so
-
+# ------------------------------------------------------------------------------ Generic
 # Ignore PyCharm related files.
 .idea
 
@@ -27,69 +6,66 @@ test-output/
 .project
 .pydevproject
 
-# Person scripts
-src/scripts/
-
-# Generated files.
-src/topics/csv/data_output.csv
-*.log
-
-# iPython Notebook Checkpoints
-.ipynb_checkpoints
-############################################################################################# R
-# Files to be ignored
-
-# PyCharm related files and directories
-.idea
-# R and RStudio related files and directories
-.Rproj.user
-.RData
-.Rhistory
-.Rprofile
-RNotes2Myself.Rproj
-# R packrat related files and directories
-packrat/lib*/
-packrat/src/
-############################################################################################# Perl
-#-------------------------------------------------------------------
-# Ignore everything under the following directories.
-#-------------------------------------------------------------------
-# Class files etc.
-bin/
-
-# Temp files by gitk
-.gitk-tmp.*
-############################################################################################# MySQL
-
-# Ignore Eclipse and InteliJ files and directories.
-.project
-.idea
-
-############################################################################################# Scala
-# All backups.
-*~
-
 # All logs.
 *.log
 
-# All vi swap files.
+# All vi temporary files.
+*~
 *.swp
+*.swo
 
 # All open office files.
 .~lock*
 
 # Temp files by gitk
 .gitk-tmp.*
-############################################################################################# Ansible
-# Files to ignored
 
-# Ignore project files for Webstorm and Eclipse
-.idea
-.project
+# ------------------------------------------------------------------------------ Java
+*.class
 
-# Ignore backup and swap files
-*~
-*.swo
-*.swp
-~
-############################################################################################# 
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files
+*.war
+*.ear
+
+# Virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# TestNG output files
+test-output/
+
+# ------------------------------------------------------------------------------ Python
+# Ignore generated python files.
+*.py[cod]
+
+# C extensions
+*.so
+
+# Generated files.
+languages/python/topics/csv/data_output.csv
+
+# iPython Notebook Checkpoints
+.ipynb_checkpoints
+# ------------------------------------------------------------------------------ R
+# R and RStudio related files and directories
+.Rproj.user
+.RData
+.Rhistory
+.Rprofile
+RNotes2Myself.Rproj
+
+# R packrat related files and directories
+languages/r/packrat/lib*/
+languages/r/packrat/src/
+
+# ------------------------------------------------------------------------------ Perl
+
+# ------------------------------------------------------------------------------ MySQL
+
+# ------------------------------------------------------------------------------ Scala
+
+# ------------------------------------------------------------------------------ Ansible
+
+# ------------------------------------------------------------------------------ Miscellaneous
