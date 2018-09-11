@@ -226,7 +226,6 @@ SET server:port "8080"          # Keys can have colon (:)
     - Integer reply -2 if the key does not exist.
     - Integer reply -1 if the key exists but has no associated expire.
 ```shell
-
 SET key1 1                      # OK
 EXPIRE key1 100                 # 1
 
