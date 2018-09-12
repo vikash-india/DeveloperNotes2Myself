@@ -137,6 +137,130 @@ INCR key1                       # 11
 DECR key2                       # 1. Since key2 does not exist, it is set to 0 and then decremented.
 ```
 
+### LINDEX Command
+* Returns the element at index index in the list stored at key. 
+* The index is zero-based, so 0 means the first element, 1 the second element and so on. 
+* Negative indices can be used to designate elements starting at the tail of the list. Here, -1 means the last element, 
+  -2 means the penultimate and so forth.
+* When the value at key is not a list, an error is returned.
+* Return value
+    - Bulk string reply: the requested element, or nil when index is out of range.
+```shell
+LPUSH list "World"              # 1
+LPUSH list "Hello"              # 2
+
+LINDEX list 0                   # "Hello"
+LINDEX list -1                  # "World"
+LINDEX list 3                   # (nil)
+```
+
+### LINSERT Command
+* Inserts value in the list stored at key either before or after the reference value pivot.
+* When key does not exist, it is considered an empty list and no operation is performed.
+* An error is returned when key exists but does not hold a list value.
+* Return value
+    - Integer reply: the length of the list after the insert operation, or -1 when the value pivot was not found.
+```shell
+RPUSH list "Hello"              # 1
+RPUSH list "World"              # 2
+
+LINSERT list BEFORE "World" "1" # 3
+
+LRANGE list 0 -1                # "Hello", "There", "World"
+```
+
+### LLEN Command
+* Returns the length of the list stored at key. 
+* If key does not exist, it is interpreted as an empty list and 0 is returned. 
+* An error is returned when the value stored at key is not a list.
+* Return value
+    - Integer reply: the length of the list at key.
+```shell
+LPUSH list "World"              # 1
+LPUSH list "Hello"              # 2
+
+LLEN list                       # 2
+```
+
+### LPOP Command
+* Removes and returns the first element of the list stored at key.
+* Return value
+    - Bulk string reply: the value of the first element, or nil when key does not exist.
+```shell
+RPUSH list "one"                # 1
+RPUSH list "two"                # 2
+RPUSH list "three"              # 3
+
+LPOP list                       # "one"
+```
+
+### LPUSH Command
+* Insert all the specified values at the head of the list stored at key. 
+* If key does not exist, it is created as empty list before performing the push operations. 
+* When key holds a value that is not a list, an error is returned.
+* It is possible to push multiple elements using a single command call just specifying multiple arguments at the end of 
+  the command. Elements are inserted one after the other to the head of the list, from the leftmost element to the 
+  rightmost element. So for instance the command LPUSH mylist a b c will result into a list containing c as first 
+  element, b as second element and a as third element.
+* Return value
+    - Integer reply: the length of the list after the push operations.
+```shell
+LPUSH list 00                   # 1. The length of the list after the lpush command.
+LPUSH list 11 22 33             # 4. The length of the list after the lpush command.
+
+LRANGE list 0 -1                # Show all elements of the list. 
+```
+
+### LPUSHX Command
+* Inserts value at the head of the list stored at key, only if key already exists and holds a list. 
+* In contrary to LPUSH, no operation will be performed when key does not yet exist.
+* Return value
+    - Integer reply: the length of the list after the push operation.
+```shell
+LPUSH list "World"              # 1
+
+LPUSHX list "Hello"             # 2
+LPUSHX otherlist "Hello"        # 0
+
+LRANGE list 0 -1                # "Hello", "World"
+LRANGE otherlist 0 -1           # (empty list or set)
+```
+
+### LRANGE Command
+* Returns the specified elements of the list stored at key. 
+* The offsets start and stop are zero-based indexes, with 0 being the first element of the list (the head of the list), 
+  1 being the next element and so on.
+* These offsets can also be negative numbers indicating offsets starting at the end of the list. For example, -1 is the 
+  last element of the list, -2 the penultimate, and so on.
+```shell
+RPUSH list "one"                # 1
+RPUSH list "two"                # 2
+RPUSH list "three"              # 3
+
+LRANGE list 0 0                 # "one"
+LRANGE list -3 2                # "one", "two", "three"
+LRANGE list -100 100            # "one", "two", "three"
+LRANGE list 5 10                # (empty list or set)
+```
+
+### LSET Command
+* Sets the list element at index to value. 
+* An error is returned for out of range indexes.
+* Return value
+    - Simple string reply
+```shell
+LPUSH list "one"                # 1
+LPUSH list "two"                # 2
+LPUSH list "three"              # 3
+LPUSH list "four"               # 4
+LPUSH list "five"               # 5
+
+LSET list 0 "four"              # OK
+LSET list -2 "five"             # OK
+
+LRANGE mylist 0 -1              # "four", "five", "three"
+```
+
 ### MSET Command
 * Sets the given keys to their respective values. 
 * MSET replaces existing values with new values, just as regular SET. 
@@ -187,6 +311,50 @@ SET key1 1                      # OK
 
 RENAME key1 newkey              # OK
 GET newkey                      # "1"
+```
+
+### RPOP Command
+* Removes and returns the last element of the list stored at key.
+* Return value
+    - Bulk string reply: the value of the last element, or nil when key does not exist.
+```shell
+RPUSH list "one"                # 1
+RPUSH list "two"                # 2
+RPUSH list "three"              # 3
+
+RPOP list                       # "three"
+```
+
+### RPUSH Command
+* Insert all the specified values at the tail of the list stored at key. 
+* If key does not exist, it is created as empty list before performing the push operation. 
+* When key holds a value that is not a list, an error is returned.
+* It is possible to push multiple elements using a single command call just specifying multiple arguments at the end of 
+  the command. Elements are inserted one after the other to the tail of the list, from the leftmost element to the 
+  rightmost element. So for instance the command RPUSH mylist a b c will result into a list containing a as first 
+  element, b as second element and c as third element.
+* Return value
+    - Integer reply: the length of the list after the push operation.
+```shell
+RPUSH list 00                   # 1. The length of the list after the rpush command.
+RPUSH list 11 22 33             # 4. The length of the list after the rpush command.
+
+LRANGE list 0 -1                # Show all elements of the list. 
+```
+
+### RPUSHX Command
+* Inserts value at the tail of the list stored at key, only if key already exists and holds a list. 
+* In contrary to RPUSH, no operation will be performed when key does not yet exist.
+* Return value
+    - Integer reply: the length of the list after the push operation.
+```shell
+RPUSH list "Hello"              # 1
+
+RPUSHX list "World              # 2
+RPUSHX otherlist "World"        # 0
+
+LRANGE list 0 -1                # "Hello", "World"
+LRANGE myotherlist 0 -1         # (empty list or set)
 ```
 
 ### SET Command
