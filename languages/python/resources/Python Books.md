@@ -1,3 +1,0 @@
-# Python Books
-
-* None
