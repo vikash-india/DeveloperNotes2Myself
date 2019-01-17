@@ -15,7 +15,7 @@ cp <tomcat-installation-directory>/lib/servlet-api.jar <project-directory>/lib/
 # Add the lib directory to the Ecliplse Project Lib Directory
 ```
 
-### Write HelloWorldServelet.java
+### Write HelloWorldServlet.java
 * Check HelloWorldServlet.java for a reference implementation.
 * This class file should implement the doGet() method.
 
