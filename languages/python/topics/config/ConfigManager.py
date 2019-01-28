@@ -10,6 +10,9 @@ from ConfigParser import SafeConfigParser
 class ConfigManager():
     """Reads a config file, stores in a dictionary of dictionary and serves request"""
 
+    def init(self):
+        read(fileName)
+
     def read(self, fileName):
         """Reads the config file fileName and stores in a dictionary"""
 

@@ -8,11 +8,23 @@ openssl genrsa -out example.com.application.pem 1024
 # Key 1 - Extract public key
 openssl rsa -in example.com.application.pem -out example.com.application.pub -pubout
 
+# Key 1 - Extract public key and encode it in DER format
+openssl rsa -in example.com.application.pem -pubout -outform DER -out example.com.application.der
+
+# Key 1 - Transforms the private key from PKCS#1 to PKCS#8 format (unencrypted) and DER encoding
+openssl pkcs8 -topk8 -inform PEM -outform DER -in example.com.application.pem -out example.com.application.der -nocrypt
+
 # Key 2 - Generate private key
 openssl genrsa -out example.com.google.pem 1024
 
 # Key 2 - Extract public key
 openssl rsa -in example.com.google.pem -out example.com.google.pub -pubout
+
+# Key 2 - Extract public key in DER format
+openssl rsa -in example.com.google.pem -pubout -outform DER -out example.com.google.der
+
+# Key 2 - Transforms the private key from PKCS#1 to PKCS#8 format (unencrypted) and DER encoding
+openssl pkcs8 -topk8 -inform PEM -outform DER -in example.com.google.pem -out example.com.google.der -nocrypt
 ```
 
 ### Install Public Key as DNS TXT Record
@@ -42,10 +54,7 @@ pip install dkimpy
 ```
 
 ### Send Emails Signed Using DKMI
-```
-
-```
-
+* Check the file `004_SendEmail_UsingSMTPRelay_WithDKIM.py` on how to sign using DKIM keys.
 
 ### TODO
 * None
