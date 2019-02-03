@@ -6,6 +6,9 @@
 languages/java/JavaNotes2Myself.iml
 languages/java/build/
 
+# Exclude Gradle Files
+languages/java/.gradle/
+
 # Ignore Eclispe related files.
 .project
 .pydevproject
