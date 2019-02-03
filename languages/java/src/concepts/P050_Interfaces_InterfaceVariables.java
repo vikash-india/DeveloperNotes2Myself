@@ -11,10 +11,10 @@ package concepts;
  *    anything. It is as if that class were importing the constant variables into the class name space as final
  *    variables.
  */
-public class P046_Interfaces_InterfaceVariables {
+public class P050_Interfaces_InterfaceVariables {
 
     public static void main(String args[]) {
-        P046_CarDelivery carDelivery = new P046_CarDelivery();
+        P050_CarDelivery carDelivery = new P050_CarDelivery();
 
         carDelivery.getCarDeliveryDetails(carDelivery.getCarDeliveryCode(20));
         carDelivery.getCarDeliveryDetails(carDelivery.getCarDeliveryCode(50));
@@ -36,7 +36,7 @@ interface P050_CarDeliveryInterface {
     public int getCarDeliveryCode(int probability);
 }
 
-class P046_CarDelivery implements P046_CarDeliveryInterface {
+class P050_CarDelivery implements P050_CarDeliveryInterface {
 
     public int getCarDeliveryCode(int probability) {
         if (probability < 30)

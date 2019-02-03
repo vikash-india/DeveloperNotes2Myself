@@ -1,7 +1,7 @@
 package concepts;
 
-import static concepts.P003_Constants.PI;
-import static concepts.P003_Constants.TAU;
+import static concepts.P037_Constants.PI;
+import static concepts.P037_Constants.TAU;
 
 /*
  * Description: Constants in Java
@@ -12,7 +12,7 @@ import static concepts.P003_Constants.TAU;
  * 4. By convention, the names of constant values are spelled in uppercase letters. If the name is composed of more
  *    than one word, the words are separated by an underscore (_).
  */
-public class P033_Classes_StaticConstants {
+public class P037_Classes_StaticConstants {
 
     public static void main(String args[]) {
         System.out.println("PI (" + PI + ") is wrong. Start simplifying things using TAU (" + TAU + ")");

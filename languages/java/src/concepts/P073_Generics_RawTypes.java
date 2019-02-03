@@ -19,10 +19,10 @@ public class P073_Generics_RawTypes {
     public static void main(String[] args) {
 
         // Normal way of creating a generic class
-        P073_Generic<Integer> generic = new P069_Generic<Integer>();
+        P073_Generic<Integer> generic = new P073_Generic<Integer>();
 
         // If the actual type argument is omitted, you create a raw type of P239_Generic<T>
-        P073_Generic rawGeneric = new P069_Generic();
+        P073_Generic rawGeneric = new P073_Generic();
 
         // Note 1: This is OK
         rawGeneric = generic;
@@ -39,7 +39,7 @@ public class P073_Generics_RawTypes {
     }
 }
 
-class P069_Generic<T> {
+class P073_Generic<T> {
     // T stands for "Type"
     private T t;
 

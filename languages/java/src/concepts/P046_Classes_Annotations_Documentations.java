@@ -15,14 +15,14 @@ public class P046_Classes_Annotations_Documentations {
     }
 }
 
-@P041_Classes_Annotations_ClassPreamble(
-        author = "Vikash",
-        date = "10-Oct-2004",
-        currentRevision = 6,
-        lastModified = "10-Oct-2004",
-        lastModifiedBy = "Ashok Kumar",
-        // Note array notation
-        reviewers = { "AAA", "BBB", "CCC" })
-class P042_MyAnnotationClass {
-    // Class code goes here
-}
+//@P046_Classes_Annotations_ClassPreamble(
+//        author = "Vikash",
+//        date = "10-Oct-2004",
+//        currentRevision = 6,
+//        lastModified = "10-Oct-2004",
+//        lastModifiedBy = "Ashok Kumar",
+//        // Note array notation
+//        reviewers = { "AAA", "BBB", "CCC" })
+//class P046_MyAnnotationClass {
+//    // Class code goes here
+//}

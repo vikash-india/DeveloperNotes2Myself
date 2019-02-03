@@ -10,12 +10,12 @@ import java.util.ArrayList;
  * 3. Static data members should be accessed using class names rather than instance variables.
  */
 
-public class P032_Classes_StaticVariables {
+public class P036_Classes_StaticVariables {
 
     public static void main(String args[]) {
 
-        System.out.println("Value of i: " + P032_Sample.i);
-        System.out.println("Size of ArrayList is: " + P032_Sample.myList.size());
+        System.out.println("Value of i: " + P036_Sample.i);
+        System.out.println("Size of ArrayList is: " + P036_Sample.myList.size());
     }
 }
 

@@ -11,7 +11,7 @@ public class P056_Inheritance_Polymorphism_MethodOverloading {
 
     public static void main(String args[]) {
 
-        P052_Inheritance_Polymorphism_MethodOverloading object = new P052_Inheritance_Polymorphism_MethodOverloading(1,
+        P056_Inheritance_Polymorphism_MethodOverloading object = new P056_Inheritance_Polymorphism_MethodOverloading(1,
                 2);
 
         // Calling Overloaded Methods
@@ -22,19 +22,19 @@ public class P056_Inheritance_Polymorphism_MethodOverloading {
     private int i, j;
 
     // Overloaded Constructors
-    P052_Inheritance_Polymorphism_MethodOverloading(int i, int j) {
+    P056_Inheritance_Polymorphism_MethodOverloading(int i, int j) {
         this.i = i;
         this.j = j;
         System.out.println("i,j = " + i + "," + j);
     }
 
-    P052_Inheritance_Polymorphism_MethodOverloading(int i) {
+    P056_Inheritance_Polymorphism_MethodOverloading(int i) {
         this.i = i;
         this.j = 0;
         System.out.println("i,j = " + i + "," + j);
     }
 
-    P052_Inheritance_Polymorphism_MethodOverloading() {
+    P056_Inheritance_Polymorphism_MethodOverloading() {
         this.i = 0;
         this.j = 0;
         System.out.println("i,j = " + i + "," + j);
