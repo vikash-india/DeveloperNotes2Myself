@@ -2,6 +2,10 @@
 # Ignore PyCharm related files.
 .idea
 
+# Exclude IntelliJ Java Project Files
+languages/java/JavaNotes2Myself.iml
+languages/java/out/
+
 # Ignore Eclispe related files.
 .project
 .pydevproject
