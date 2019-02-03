@@ -4,7 +4,7 @@
 
 # Exclude IntelliJ Java Project Files
 languages/java/JavaNotes2Myself.iml
-languages/java/out/
+languages/java/build/
 
 # Ignore Eclispe related files.
 .project
