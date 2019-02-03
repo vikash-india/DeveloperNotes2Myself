@@ -8,7 +8,7 @@ package concepts;
  * 3. A type parameter (i.e., K or V) can be substituted with another parameterised type (i.e., List<String>). Example,
  *              OrderedPair<String, Box<Integer>> p = new OrderedPair<>("Primes", new Box<Integer>());
  */
-public class P068_Generics_GenericTypeInterfaceWithMultipleTypeParameters {
+public class P072_Generics_GenericTypeInterfaceWithMultipleTypeParameters {
 
     public static void main(String[] args) {
 
@@ -27,7 +27,7 @@ interface P068_Pair<K, V> {
     public V getValue();
 }
 
-class P072_OrderedPair<K, V> implements P068_Pair<K, V> {
+class P068_OrderedPair<K, V> implements P068_Pair<K, V> {
 
     private K key;
     private V value;
