@@ -30,6 +30,9 @@ languages/java/.gradle/
 # ------------------------------------------------------------------------------ Java
 *.class
 
+# Java Libraries that are downloaded but not used YET
+languages/java/lib/downloads/
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
