@@ -1,0 +1,12 @@
+# Merge this with .gitignore at the top
+
+# Ignore list
+
+# Latex intermediary files
+*.pdf
+*.aux
+*.log
+*.synctex.gz
+
+*.dvi
+*.ps
