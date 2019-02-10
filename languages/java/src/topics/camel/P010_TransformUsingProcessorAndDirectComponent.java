@@ -7,6 +7,7 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.log4j.PropertyConfigurator;
 
+// Check P010_README.md
 public class P010_TransformUsingProcessorAndDirectComponent {
 
     public static void main(String[] args) {
