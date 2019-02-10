@@ -12,7 +12,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-public class P009_TransformUsingProcessor {
+public class P009_TransformUsingProcessorAndFile {
 
     public static void main(String[] args) {
         // Enable log4J Logging
@@ -34,7 +34,7 @@ public class P009_TransformUsingProcessor {
     }
 }
 
-// Custom Camel Processor
+// Implement Custom Camel Processor
 class CustomCamelFileProcessor implements Processor {
     String newLine = "";
     private String inputLine;
@@ -64,7 +64,7 @@ class CustomCamelFileProcessor implements Processor {
     }
 }
 
-// Custom Camel RouteBuilder
+// Implement Custom Camel RouteBuilder
 class CustomCamelFileProcessorRouteBuilder extends RouteBuilder {
 
     public void configure() throws Exception {
