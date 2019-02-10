@@ -1,6 +1,6 @@
 # Description: Multiple Camel Routes
 
-### Note
+### About
 * As long as Thread.sleep(5000*10) is running, file placed in input directories will be copied to output directories. 
 
 ### Libraries Needed for This Code
