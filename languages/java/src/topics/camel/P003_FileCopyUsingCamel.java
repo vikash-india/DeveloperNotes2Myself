@@ -3,16 +3,10 @@ package topics.camel;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
-import org.apache.log4j.PropertyConfigurator;
 
-public class P005_EnableLog4jLogging {
+public class P003_FileCopyUsingCamel {
 
     public static void main(String[] args) {
-        // Relative path to 'java' directory.
-        String log4jPropertiesPath = "src/topics/camel/P005_log4j.properties";
-        // Load the log4j properties file dynamically.
-        PropertyConfigurator.configure(log4jPropertiesPath);
-
         CamelContext context = new DefaultCamelContext();
 
         try {
@@ -25,9 +19,8 @@ public class P005_EnableLog4jLogging {
             });
 
             context.start();
-
+            // Change this value to run this route for a longer period of time.
             Thread.sleep(5000);
-
             context.stop();
         } catch (Exception e) {
             System.out.println("Inside Exception : " + e);

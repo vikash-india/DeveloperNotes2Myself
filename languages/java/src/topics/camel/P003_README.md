@@ -9,10 +9,27 @@
 * slf4j-1.7.25/slf4j-api-1.7.25.jar
 * apache-log4j-1.2.17/log4j-1.2.17.jar
 
-### Directory Structure Needed
-1. The following directory should exist
+### Files Directory Structure Needed
+1. The following directories should exist
     - /tmp/input
     - /tmp/output
-2. The /tmp/input should have a few sample files
-    - file1.xml
+    
+2. The `/tmp/input` directory should have a few sample files
+    - file1.txt
     - file2.txt
+
+### Bash Script for Creating Files and Directory Structure
+```
+# Create Directory Structure
+mkdir -p /tmp/input /tmp/output
+
+# Create Files
+touch /tmp/input/f1.txt
+touch /tmp/input/f2.txt
+
+# Remove files from output directory
+rm /tmp/output/*
+
+# List Directories
+ll /tmp/input/ /tmp/output/
+```

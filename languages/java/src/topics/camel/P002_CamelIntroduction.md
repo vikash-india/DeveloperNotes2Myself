@@ -13,5 +13,26 @@
   Blueprint and Guice. 
 * Camel also has extensive support for unit testing your routes.
 
+### Camel Architecture
+![](images/camel-architecture.jpg)
+
+### Camel Components
+![](images/camel-components.png)
+* Components are the various end points in a camel application.
+
+### Camel Routes 
+* Routes are the heart of a camel applications which handles and maintains the N number of routes.
+* Camel Routes URI is used to define routes in camel.
+![](images/camel-routes-uri.png)
+
+### Camel Message Processors
+* Processors are used to transform and manipulate messages.
+
+### Camel Context
+![](images/camel-context.png)
+* Camel context is the soul of camel applications.
+* All other the camel modules are enclosed inside a camel context.
+* Camel context includes routes, components, processors etc.
+
 ### TODO
 * None
