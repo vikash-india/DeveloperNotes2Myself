@@ -3,10 +3,15 @@ package topics.camel;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
+import org.apache.log4j.PropertyConfigurator;
 
-public class P004_FileCopyUsingCamel {
+public class P006_EnableCamelLogging {
 
     public static void main(String[] args) {
+        // Enable log4J Logging
+        String log4jPropertiesPath = "src/topics/camel/P005_log4j.properties";
+        PropertyConfigurator.configure(log4jPropertiesPath);
+
         CamelContext context = new DefaultCamelContext();
 
         try {
@@ -14,13 +19,17 @@ public class P004_FileCopyUsingCamel {
                 @Override
                 public void configure() throws Exception {
                     from("file:/tmp/input?noop=true")
+                            // Enable Camel Logging
+                            .to("log:?level=INFO&showBody=true&showHeaders=true")
+                            // .log("Received Message is ${body} and Headers are ${headers}")
                             .to("file:/tmp/output");
                 }
             });
 
             context.start();
-            // Change this value to run this route for a longer period of time.
+
             Thread.sleep(5000);
+
             context.stop();
         } catch (Exception e) {
             System.out.println("Inside Exception : " + e);
