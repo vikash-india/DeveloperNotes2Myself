@@ -6,7 +6,8 @@ import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.log4j.PropertyConfigurator;
 
 /*
- * IMPORTANT: This is giving ERROR. Experiment with direct:BeanInput instead of file to make it work.
+ * ERROR: This code will give ERROR.
+ * Experiment with direct:BeanInput instead of file to make it work.
  */
 
 // Check P012_README.md
