@@ -29,7 +29,7 @@ public class P010_TransformUsingProcessorAndDirectComponent {
     }
 }
 
-// Implement Custom Camel Processor Using a Direct Component
+// Implement Custom Camel Processor On a Direct Component
 class CustomCamelFileProcessor2 implements Processor {
     public void process(Exchange exchange) throws Exception {
         System.out.println("Exchange in Processor: " + exchange.getIn().getBody());
