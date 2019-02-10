@@ -16,7 +16,7 @@ public class P005_LoggerUsingSLF4JUsingLog4J {
     private static final Logger log = LoggerFactory.getLogger(P005_LoggerUsingSLF4JUsingLog4J.class);
 
     // Relative path to 'java' directory.
-    static final String path = "src/topics/logging/P005_log4j.properties";
+    static final String path = "src/topics/logging/P003_log4j.properties";
 
     public static void main(String[] args) {
         // Load the log4j properties file dynamically.
