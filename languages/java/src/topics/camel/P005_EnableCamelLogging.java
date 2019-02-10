@@ -30,7 +30,7 @@ public class P005_EnableCamelLogging {
             Thread.sleep(5000);
             context.stop();
         } catch (Exception e) {
-            System.out.println("Inside Exception : " + e);
+            System.out.println("Exception: " + e);
         }
     }
 }

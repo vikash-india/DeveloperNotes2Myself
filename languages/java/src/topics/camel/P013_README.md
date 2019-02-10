@@ -1,16 +1,16 @@
-# Description: XML Transformation Using XSLT
+# Description: XML Transformation Using Camel XSLT Component
 
 ### About
-* This example will transform XML messages using XSLT
-* XML and XSLT Files
+* This code will transform XML messages using XSLT
+* XML and XSLT Files Used
     - Input XML             : P013_a_Input.xml
     - XSLT Transformation   : P013_b_Transformation.xslt
     - Output XML            : P013_c_Output.xml
 
-### Libraries Needed for This Code
+### Libraries Needed
 * camel-core.jar
-* slf4j-1.7.25/slf4j-api-1.7.25.jar
-* apache-log4j-1.2.17/log4j-1.2.17.jar
+* slf4j-api.jar
+* log4j.jar
 
 ### Files Directory Structure Needed
 1. The following directories should exist

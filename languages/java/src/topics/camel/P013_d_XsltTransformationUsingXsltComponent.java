@@ -5,7 +5,8 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.log4j.PropertyConfigurator;
 
-public class P013_d_CamelXsltTransformation {
+// Check P013_README.md
+public class P013_d_XsltTransformationUsingXsltComponent {
 
     public static void main(String[] args) {
         // Enable log4J Logging
@@ -30,7 +31,7 @@ public class P013_d_CamelXsltTransformation {
             Thread.sleep(5000);
             context.stop();
         } catch (Exception e) {
-            System.out.println("Inside Exception : " + e);
+            System.out.println("Exception: " + e);
         }
     }
 }

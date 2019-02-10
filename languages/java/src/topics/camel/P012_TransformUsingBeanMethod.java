@@ -27,7 +27,7 @@ public class P012_TransformUsingBeanMethod {
             Thread.sleep(5000);
             context.stop();
         } catch (Exception e) {
-            System.out.println("Inside Exception : " + e);
+            System.out.println("Exception: " + e);
         }
     }
 }
@@ -35,19 +35,16 @@ public class P012_TransformUsingBeanMethod {
 class CamelBean4 {
 
     public String map(String input) {
-
         String newBody = input.replace(",", ":");
 
         return newBody;
     }
 
-    // It can be any method name too
+    // It can be any method name
     public String map2(String input) {
-
         String newBody = input.replace(",", "*");
 
         return newBody;
-
     }
 }
 

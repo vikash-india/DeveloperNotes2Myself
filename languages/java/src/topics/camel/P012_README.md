@@ -4,16 +4,15 @@
 * This example will transform CSV file with comma (,) as separator to colon (:) as separator.
 * Example: CSV files of format `Dilbert,Single,Male,Engineer` will be transformed to `Dilbert:Single:Male:Engineer`.
 
-### Libraries Needed for This Code
+### Libraries Needed
 * camel-core.jar
-* slf4j-1.7.25/slf4j-api-1.7.25.jar
-* apache-log4j-1.2.17/log4j-1.2.17.jar
+* slf4j-api.jar
+* log4j.jar
 
 ### Files Directory Structure Needed
 1. The following directories should exist
     - /tmp/input
     - /tmp/output
-    
 2. The `/tmp/input` directory should have a few sample files
     - file1.csv with content as `Dilbert,Single,Male,Engineer`
 
