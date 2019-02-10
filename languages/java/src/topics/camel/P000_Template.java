@@ -3,17 +3,33 @@ package topics.camel;
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
-
-/*
- * 1. Library Needed
- *      - camel-core.jar
- *      - slf4j-1.7.25/slf4j-api-1.7.25.jar
- *      - apache-log4j-1.2.17/log4j-1.2.17.jar
- */
+import org.apache.log4j.PropertyConfigurator;
 
 public class P000_Template {
 
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        // Enable log4J Logging
+        String log4jPropertiesPath = "src/topics/camel/P004_log4j.properties";
+        PropertyConfigurator.configure(log4jPropertiesPath);
+
+        CamelContext context = new DefaultCamelContext();
+
+        try {
+            context.addRoutes(new RouteBuilder() {
+                @Override
+                public void configure() throws Exception {
+                    from("file:/tmp/input?noop=true")
+                            .to("log:?level=INFO&showBody=true&showHeaders=true")
+                            // TODO: Add code here
+                            .to("file:/tmp/output");
+                }
+            });
+
+            context.start();
+            Thread.sleep(5000);
+            context.stop();
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
+        }
     }
 }

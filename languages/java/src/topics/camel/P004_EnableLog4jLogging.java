@@ -30,7 +30,7 @@ public class P004_EnableLog4jLogging {
 
             context.stop();
         } catch (Exception e) {
-            System.out.println("Inside Exception : " + e);
+            System.out.println("Exception: " + e);
         }
     }
 }
