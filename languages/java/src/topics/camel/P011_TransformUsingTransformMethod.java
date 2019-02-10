@@ -1,12 +1,11 @@
 package topics.camel;
 
 import org.apache.camel.CamelContext;
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.log4j.PropertyConfigurator;
 
+// Check P011_README.md
 public class P011_TransformUsingTransformMethod {
 
     public static void main(String[] args) {

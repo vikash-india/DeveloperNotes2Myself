@@ -5,6 +5,7 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.log4j.PropertyConfigurator;
 
+// Check P008_README.md
 public class P008_MultipleCamelRoutes {
 
     public static void main(String[] args) {
@@ -40,9 +41,7 @@ public class P008_MultipleCamelRoutes {
             });
 
             context.start();
-
             Thread.sleep(5000);
-
             context.stop();
         } catch (Exception e) {
             System.out.println("Inside Exception : " + e);
