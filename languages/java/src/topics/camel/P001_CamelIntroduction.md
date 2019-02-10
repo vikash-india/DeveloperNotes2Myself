@@ -12,6 +12,6 @@
 * Apache Camel provides support for Bean Binding and seamless integration with popular frameworks such as CDI, Spring, 
   Blueprint and Guice. 
 * Camel also has extensive support for unit testing your routes.
- 
+
 ### TODO
 * None
