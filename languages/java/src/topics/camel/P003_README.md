@@ -15,8 +15,8 @@
     - /tmp/input
     - /tmp/output
 2. The `/tmp/input` directory should have a few sample files
-    - file1.txt
-    - file2.txt
+    - f1.txt
+    - f2.txt
 
 ### Bash Script for Creating Files and Directory Structure
 ```
