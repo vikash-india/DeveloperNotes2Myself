@@ -30,7 +30,7 @@ public class P018_CamelHttp4Component {
 
             context.start();
 
-            // Send a direct start to begin processing
+            // Send a direct start to begin the route processing
             ProducerTemplate producer = context.createProducerTemplate();
             Exchange exchange = new DefaultExchange(context);
             producer.send("direct:start", exchange);
