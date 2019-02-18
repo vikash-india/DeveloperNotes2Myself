@@ -5,7 +5,7 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.log4j.PropertyConfigurator;
 
-public class P017_ComponentExample {
+public class P017_CustomComponentMain {
 
     public static void main(String[] args) {
         // Enable log4J Logging
