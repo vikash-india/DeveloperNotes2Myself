@@ -1,12 +1,13 @@
 package topics.camel;
 
-import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.CamelContext;
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.http.common.CamelServlet;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.log4j.PropertyConfigurator;
 
 // Check P013_README.md
-public class P013_d_XsltTransformationUsingXsltComponent {
+public class P103_CamelServlet {
 
     public static void main(String[] args) {
         // Enable log4J Logging
@@ -16,6 +17,7 @@ public class P013_d_XsltTransformationUsingXsltComponent {
         CamelContext context = new DefaultCamelContext();
 
         try {
+            // /camel?servletName=CamelServlet
             context.addRoutes(new RouteBuilder() {
                 @Override
                 public void configure() throws Exception {
