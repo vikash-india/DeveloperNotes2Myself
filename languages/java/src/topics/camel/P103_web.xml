@@ -27,18 +27,12 @@
      Welcome to Tomcat
   </description>
 
-  <!-- Added by Vikash -->
-  <servlet>
-    <servlet-name>HelloWorldServlet</servlet-name>
-    <servlet-class>HelloWorldServlet</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>HelloWorldServlet</servlet-name>
-    <url-pattern>/HelloWorldServlet</url-pattern>
-  </servlet-mapping>
-
-  <!-- Another Servlet -->
+  <!--
+      Description: Tomcat Servlet
+      Map URL '/hello' to
+      Servlet Name 'HelloServlet' implemented in
+      Class  'topics.servlet.HelloWorldServlet'
+  -->
   <servlet>
     <servlet-name>HelloServlet</servlet-name>
     <servlet-class>topics.servlet.HelloWorldServlet</servlet-class>
@@ -47,6 +41,35 @@
   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+
+  <!--
+      Description: Apache Camel Servlet
+      Map URL '/camel/*' to
+      Servlet Name 'CamelServlet' implemented in
+      Class  'topics.camel.P103_CamelServlet'
+  -->
+
+  <!-- The listener that kick-starts Camel -->
+  <listener>
+    <listener-class>org.apache.camel.component.servletlistener.JndiCamelServletContextListener</listener-class>
+  </listener>
+
+  <!-- Camel servlet used in the Camel application -->
+  <servlet>
+    <servlet-name>CamelServlet</servlet-name>
+    <!--
+      <servlet-class>topics.camel.P103_CamelServlet</servlet-class>
+      <servlet-class>topics.servlet.HelloWorldServlet</servlet-class>
+    -->
+    <servlet-class>org.apache.camel.component.servlet.CamelHttpTransportServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <!-- Camel servlet mapping -->
+  <servlet-mapping>
+    <servlet-name>CamelServlet</servlet-name>
+    <url-pattern>/camel/*</url-pattern>
   </servlet-mapping>
 
 </web-app>
