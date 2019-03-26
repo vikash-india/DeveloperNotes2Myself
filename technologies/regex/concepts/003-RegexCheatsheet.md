@@ -1,17 +1,11 @@
-# Description: Regular Expression in Python
+# Description: Regular Expression Cheatsheet
 
-### Python Re Module
-1. The re module provides full support for Perl-like regular expressions in Python.
-2. Both patterns and strings to be searched can be Unicode strings as well as 8-bit strings.
-3. Regular expression operations are available as module-level functions and RegexObject methods. 
-4. Python has raw string notation for regular expression patterns where backslashes are not handled in any special way 
-   in a string literal prefixed with 'r'. So r"\n" is a two-character string containing '\' and 'n', while "\n" is a 
-   one-character string containing a newline.
+### Note
+* The following theory applies to any Perl Compatible Regular Expressions (PCRE) library.
 
 ### Metacharacters
-- Except for meta characters, (^ $ . * + ? | ( ) [ ] { } \), all characters match themselves. 
-- Escape a control character by preceding it with a backslash to match these meta characters.
-
+* All characters match themselves except for these 14 meta characters ^ $ . * + ? | ( ) [ ] { } \ 
+* Escape a meta character by preceding it with a backslash to match the meta characters literally.
 ```
 ^               Beginning of string or negation of character class.
 $               End of string.
@@ -51,9 +45,8 @@ re{m,n}         At least m but at most n re. m defaults to 0 and n defaults to i
 ```
 
 ### Lazy Quantifiers
-- Lazy quantifiers are specified using a ? at the end of a greedy quantifiers. In general, repetition? is same as 
+* Lazy quantifiers are specified using a ? at the end of a greedy quantifiers. In general, repetition? is same as 
   repetition but the shortest match is taken.
-
 ```
 re*?             Zero or more re not greedily.
 re+?             One or more re not greedily.
@@ -90,9 +83,8 @@ $               End of string.
 ```
 
 ### Lookarounds
-- Lookarounds do not consume texts.
-- (?: ...) is called non-capturing parenthesis or Grouping-only parenthesis.
-
+* Lookarounds do not consume texts.
+* (?: ...) is called non-capturing parenthesis or Grouping-only parenthesis.
 ```
 (?=...)         Positive lookahead.
 (?!...)         Negative lookahead.
@@ -102,8 +94,7 @@ $               End of string.
 ```
 
 ### Special Characters
-- Special character escapes are like escaped Python string literals. Hence regex '\n' is same as regex '\\n'.
-
+* Special character escapes are like escaped Python string literals. Hence regex '\n' is same as regex '\\n'.
 ```
 \a              ASCII Bell (BEL).
 \f              ASCII Formfeed.
@@ -116,3 +107,6 @@ $               End of string.
 \OOO            Three digit octal char (or just use an initial zero, e.g. \0, \09).
 \DD             Decimal number 1 to 99, match previous numbered group.
 ```
+
+### TODO
+* None
