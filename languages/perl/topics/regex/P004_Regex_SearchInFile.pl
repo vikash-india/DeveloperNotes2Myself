@@ -19,7 +19,7 @@
 #          after m|s
 ###################################################################################################
 # A simple example
-open(IN, "P082-RegEx-SampleData.txt") || die "Could not open file: $!";
+open(IN, "P004_Regex_SampleData.txt") || die "Could not open file: $!";
 
 # Find all the lines containing a particular string.
 print "Looking for abc\n";
