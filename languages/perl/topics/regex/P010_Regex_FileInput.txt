@@ -1,0 +1,19 @@
+# Description: File Content for Regex Tester
+
+# Matches
+name.surname@blah.com
+name.surname@department.company.com
+name.surname@blah.museum
+blah@127.0.0.1
+
+# Non-Matches
+name surname@blah.com
+name."surname"@blah.com
+__@__.__
+a--b@c__d.ef
+hello@worl_d.com
+.hello@wor#.co.uk
+broken@@example.com
+name@bla-.com
+-a-@-b-.cd
+foo@bar.infp

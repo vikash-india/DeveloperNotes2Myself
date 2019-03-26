@@ -11,7 +11,7 @@ use Data::Dumper;
 use Benchmark;
 
 # Enter the regex file name
-my $fileName = "004-EmailIds.txt";
+my $fileName = "P010_Regex_FileInput.txt";
 
 # Config parameters
 my $debugFlag = 0;                      # 0 - False or No, 1 - True or Yes
