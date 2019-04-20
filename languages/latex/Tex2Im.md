@@ -22,7 +22,10 @@
 ### Manual Patching of tex2im
 * Open file `tex2im-1.8/tex2im` and add the following packages before `ENDHEADER1`
 ```
-\usepackage{amsmath}    % For matrices
+% Begin - Added by Vikash
+\usepackage{amsmath}				% For Matrices
+\usetikzlibrary{datavisualization}	% For drawing
+% End - Added by Vikash
 ```
 
 #### Usage Example
