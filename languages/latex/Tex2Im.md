@@ -19,6 +19,12 @@
 4. Place the contained script "tex2im" in a directory in your path. 
 5. Make it executable.
 
+### Manual Patching of tex2im
+* Open file `tex2im-1.8/tex2im` and add the following packages before `ENDHEADER1`
+```
+\usepackage{amsmath}    % For matrices
+```
+
 #### Usage Example
 ```bash
 # View help
