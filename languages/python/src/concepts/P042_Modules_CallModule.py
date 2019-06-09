@@ -13,12 +13,10 @@
 import P041_Modules_DefineModule
 
 # Variant 2: To import ONLY a set of functions from a module
-from P041_Modules_DefineModule import fibonacci, fibonacci2
 
 # Variant 3: To import all functions from a module
 # 1. In general the practice of importing * from a module or package is frowned upon, since it often causes poorly
 # readable code
-from P041_Modules_DefineModule import *
 
 
 # Call methods from the imported module
