@@ -21,14 +21,14 @@ dictionary2 = dict(sape=4139, guido=4127, jack=4098)    # When the keys are simp
                                                         # specify pairs using keyword arguments.
 # Accessing Dictionary
 print(info)
-print(info['jack'])
+print(info['CCCC'])
 print(list(info.keys()))                                # Return a list of keys
 print(sorted(info.keys()))                              # A list of SORTED keys
 print(dictionary1)
 print(dictionary2)
 
 # Modifying dictionary
-del info['sape']
+del info['CCCC']
 info['irv'] = 4127
 
 # The 'in' operator

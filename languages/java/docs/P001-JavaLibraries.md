@@ -1,10 +1,8 @@
 # Description: List of Java Libraries
 
-
 A curated list of awesome Java frameworks, libraries and software.
 
-### Contents
-
+### Table of Content
 - [Bean Mapping](#bean-mapping)
 - [Build](#build)
 - [Bytecode Manipulation](#bytecode-manipulation)

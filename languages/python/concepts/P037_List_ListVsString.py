@@ -21,7 +21,7 @@ print(table)
 # 1. Syntax is [begin:end:step]
 # 2. By leaving begin and end off and specifying a step of -1, it reverses a string or a list
 str_value = 'Hello'
-print str_value[::-1]
+print(str_value[::-1])
 
 list_values = ['One', 'Two', 'Three']
-print list_values[::-1]
+print(list_values[::-1])

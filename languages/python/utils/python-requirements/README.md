@@ -1,13 +1,24 @@
-# Description: Python Setup For Crystal Project
+# Description: Python Modules Requirements
 
-### Generate Requirements File
+### Note
+* Use the virtual environment DeveloperNotes2Myself for python in this project.
+
+### Python Requirement File
 ```
-v DeveloperNotes2Myself
+# Generate Requirements File
+workon DeveloperNotes2Myself
 pip freeze > requirements.txt
+
+# Install From Requirements File
+workon DeveloperNotes2Myself
+pip install -r requirements.txt
 ```
 
-### Install From Requirements File
+### List of Python Modules
+* Python modules needed for this project
+```bash
+
 ```
-v DeveloperNotes2Myself
-pip install -r requirements.txt
-``` 
+
+### TODO
+* None
