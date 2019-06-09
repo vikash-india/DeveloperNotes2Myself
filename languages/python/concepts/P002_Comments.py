@@ -1,6 +1,6 @@
 # Description: Comments in Python
 
-# Notes:
+# Notes
 # 1. Comment symbol (#) is used for commenting the rest of the line.
 # 2. This symbol is also known as Octothorpe, Hash, Mesh, Pound.
 # 3. """ is used for multiline comments.

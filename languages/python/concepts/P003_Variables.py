@@ -13,4 +13,4 @@ PI = 3.14159
 # Multiple variables can be assigned simultaneously
 x = y = z = 0
 
-print "Variable: ", variable
+print ("Variable: ", variable)

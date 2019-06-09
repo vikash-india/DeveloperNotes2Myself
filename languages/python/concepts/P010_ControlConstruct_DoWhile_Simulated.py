@@ -1,5 +1,6 @@
 # Description: Control Construct - do-while loop SIMULATED in Python
 
+# Note
 # 1. There is no do-while in Python.
 # 2. The do-while loop can be simulated in Python using a while loop.
 i = 0

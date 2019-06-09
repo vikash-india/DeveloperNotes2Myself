@@ -35,7 +35,8 @@ rightShift              = 4 >> 1            # Binary 2 ie 100 becomes 10 ie 2. S
 # 3. Python represents a binary number with infinite series
 
 # Ternary Operator
-print '{0} is {1} Prime.'.format(13, '' if 13 else 'NOT')
+print('{0} is {1} Prime.'.format(13, '' if 13 else 'NOT'))
+'' if 13 else 'NOT'
 
 # Relational Operators: Shows relation between two similar items by comparing
 equalTo                 = (4 + 4 == 8)      # Also used for string.

@@ -17,7 +17,7 @@ def fibonacci(n):
     while b < n:
         # print b
         a, b = b, a + b
-    print a
+    print(a)
 
 
 def fibonacci2(n):
@@ -37,4 +37,4 @@ def fibonacci2(n):
 #    imported by other module.
 if __name__ == "__main__":
     fibonacci(10)
-    print fibonacci2(10)
+    print(fibonacci2(10))

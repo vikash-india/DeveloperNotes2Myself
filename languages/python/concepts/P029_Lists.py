@@ -34,7 +34,7 @@ values = ['One', "Two"]
 
 # Nesting of Lists
 nested_list = [111, values, 222]    # [111, ['One', 'Two', 300], 222]. List within a list.
-print len(nested_list)              # 3. Length of outer list.
-print len(nested_list[1])           # 2. Length of nested list.
+print(len(nested_list))             # 3. Length of outer list.
+print(len(nested_list[1]))          # 2. Length of nested list.
 print(nested_list[1])               # ['One', 'Two']. Content of inner list.
 print(nested_list[1][0])            # One. 0th element of the inner list.

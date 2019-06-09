@@ -1,6 +1,6 @@
 # Description: Control Structure if-elif-else
 
-# Note:
+# Note
 # 1. elif is optional
 # 2. else is optional
 number = 2

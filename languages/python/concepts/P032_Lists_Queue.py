@@ -23,7 +23,7 @@ print("Peek: %s" % queue[0])
 #    because all of the other elements have to be shifted by one.
 # 3. The collections.deque was designed to have fast appends and pops from both ends.
 from collections import deque
-print '-' * 40, 'Using collections.dequeue'
+print('-' * 40, 'Using collections.dequeue')
 
 # Queue creation
 queue = deque(["A", "B", "C"])

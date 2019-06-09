@@ -23,7 +23,7 @@ from P041_Modules_DefineModule import *
 
 # Call methods from the imported module
 P041_Modules_DefineModule.fibonacci(100)
-print P041_Modules_DefineModule.fibonacci2(100)
+print(P041_Modules_DefineModule.fibonacci2(100))
 
 # The dir() function
 # 1. The built-in function dir() is used to find out which names a module defines.

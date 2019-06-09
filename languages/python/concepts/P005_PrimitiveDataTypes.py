@@ -25,6 +25,6 @@ listDataType = ["oranges", "apples", "bananas"]
 setDataType = set(['a', 'b', 'c', 'c', 'd'])
 
 # Dictionaries Data Type
-dictionariedDataType = { 'key 1': 'Value 1', 'key 2': 'Value 2', 'key 3': 'Value 2' }
+dictionariedDataType = {'key 1': 'Value 1', 'key 2': 'Value 2', 'key 3': 'Value 2'}
 
 print(complexNumberDataType)

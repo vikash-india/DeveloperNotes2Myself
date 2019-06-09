@@ -38,6 +38,6 @@ setA = {x for x in 'abracadabra' if x not in 'abc'}
 s1 = set([1,2,4,5]);
 s2 = set([2,4,5,1]);
 if s1 == s2:
-    print 'Set Equal'
+    print('Set Equal')
 else:
-    print 'Set NOT Equal'
+    print('Set NOT Equal')

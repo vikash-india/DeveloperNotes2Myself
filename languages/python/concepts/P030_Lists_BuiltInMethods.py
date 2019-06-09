@@ -21,14 +21,14 @@ values.reverse()            # Reverse the elements of the list, IN PLACE.
 # Note: The keyword in or not in can be used to check the presence or absence of an element before calling certain
 # methods which gives error.
 if "One" in values:
-    print 'Present!'
+    print('Present!')
 else:
-    print 'Not present!'
+    print('Not present!')
 
 if "X" in values:
     values.index("X")       # Return the index in the list of the first item whose value is "X". It gives ERROR if there
                             # is no such item
-if "X" in list:
+if "X" in values:
     values.remove("X")      # Remove the FIRST item from the list whose value is "X". It gives ERROR if there is no
                             # such item.
 

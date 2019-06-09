@@ -2,8 +2,8 @@
 
 
 def functionWithFixedArguments(arg):
-    print "Arguments to functionWithFixedArguments:", arg
-    print
+    print("Arguments to functionWithFixedArguments:", arg)
+    print()
 
 
 # 1. The *args is used to send a non-keyworded variable length argument list to the function.
@@ -12,9 +12,9 @@ def functionWithFixedArguments(arg):
 # 3. The *args can have zero or more formal parameters before it.
 # 4. Any formal parameters which occur after the *args parameter are 'keyword-only' arguments.
 def functionWithVariableArgumentsList(*argv):
-    print "Arguments to functionWithVariableArgumentsList: "
+    print("Arguments to functionWithVariableArgumentsList: ")
     for arg in argv:
-        print "The arg in *argv:", arg
+        print("The arg in *argv:", arg)
     print
 
 
@@ -25,34 +25,34 @@ def functionWithVariableArgumentsList(*argv):
 # 4. It may also have a formal parameter of the form *argv which receives a tuple containing the positional arguments
 #    after the formal parameter list.
 def functionWithNamedVariableArguments(**kwargs):
-    print "Arguments to functionWithNamedVariableArguments: "
+    print("Arguments to functionWithNamedVariableArguments: ")
     if kwargs is not None:
-        for key, value in kwargs.iteritems():
-            print "The named argument %s in **kwargs: %s" % (key, value)
+        for key, value in kwargs.items():
+            print("The named argument %s in **kwargs: %s" % (key, value))
     print
 
 
 # 1. Define a function as function_name(fargs,*args,**kwargs) to use all 3 in the same function
 # 2. The *argv must occur before **kwargs.
 def functionWithVariableArguments(arg1, arg2, namedArg1="One", namedArg2="Two", *argv, **kwargs):
-    print "Arguments to functionWithVariableArguments: "
+    print("Arguments to functionWithVariableArguments: ")
 
-    print "Fixed arguments:", arg1, arg2
+    print("Fixed arguments:", arg1, arg2)
+    print()
+
+    print( "Named arguments:", namedArg1, namedArg2)
     print
 
-    print "Named arguments:", namedArg1, namedArg2
-    print
-
-    print "Non-Named Variable Arguments List"
+    print("Non-Named Variable Arguments List")
     for arg in argv:
-        print "The arg in *argv:", arg
-    print
+        print("The arg in *argv:", arg)
+    print()
 
-    print "Named Variable Arguments"
+    print("Named Variable Arguments")
     if kwargs is not None:
-        for key, value in kwargs.iteritems():
-            print "The named argument %s in **kwargs: %s" % (key, value)
-    print
+        for key, value in kwargs.items():
+            print("The named argument %s in **kwargs: %s" % (key, value))
+    print()
 
 
 # Call functions
