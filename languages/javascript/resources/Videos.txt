@@ -1,9 +1,0 @@
-Recommended JavaScript resources from the web world
-
-1. A YouTube playlist of recommended JavaScript videos!
-   URL: http://www.youtube.com/playlist?list=PLo2eYdZ-E16FpsnAeqlG_bC_cVVEH_Clf
-
-   About the URL: 
-   A list of good and recommended video resources related to JavaScript. This
-   playlist keeps changing as new contents are added and the old contents are
-   removed periodically.
