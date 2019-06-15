@@ -1,5 +1,8 @@
 # Description: Nested List Comprehensions
 
+# Note
+# 1. Nested comprehensions can create a list with complex rules.
+
 matrix = [
     [1, 2, 3, 4],
     [5, 6, 7, 8],
