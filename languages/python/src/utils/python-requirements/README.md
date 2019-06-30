@@ -16,8 +16,10 @@ pip install -r requirements.txt
 
 ### List of Python Modules
 * Python modules needed for this project
+* The `requirements.txt` contains the complete list including the dependencies.
 ```bash
-
+pip install pytz            # For Python Timezone
+pip install jupyter         # For Jupyter Notebook
 ```
 
 ### TODO
