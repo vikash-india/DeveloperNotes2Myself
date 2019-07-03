@@ -1,0 +1,3 @@
+# Description: Python Requirements File
+
+* Output of command `pip freeze`
