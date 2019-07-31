@@ -9,3 +9,7 @@
 - HTTP is a plain text protocol.
 - Client makes a request for a resource to the server by sending an HTTP Request Message in plain text.
 - The server sends back an HTTP Response Message in plain text.
+
+![](images/http-request.jpg)
+
+![](images/htto-response.png)

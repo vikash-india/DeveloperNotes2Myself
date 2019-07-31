@@ -1,19 +1,25 @@
 # Description: Send HTTP Request Using an HTTP Web Client
 
-### Visit an HTTP Web Client like https://www.hurl.it/ using any web browser.
+### Open an HTTP Web Client
+* There are many HTTP Web Clients like `https://www.apirequest.io/`. Choose any one.
+* Open the HTTP web client in a web browser.
 ```
-https://www.hurl.it/
+https://www.apirequest.io/
 ```
-- There are many HTTP Web Clients like `https://www.hurl.it/`. Choose any one.
 
-### Create an HTTP Request message using the UI.
-- Destination: Select `GET` from the dropdown. Type URL as `posttestserver.com/post.php`.
-- Authentication: Leave it blank.
-- Headers: Add the following headers.
-    - `Host` with value `posttestserver.com`.
+### Create an HTTP Request
+* Destination: Select `GET` from the drop down. Type URL as `http://ptsv2.com/`.
+* Headers: Add the following headers.
+    - `Host` with value `http://ptsv2.com/`.
     - `Connection` with value `Close`.
-- Parameters: Leave it blank.
+* Parameters: Leave it blank.
+* Request Bodu: Leave it blank.
+
 - Click on Launch Button. This will make an HTTP Request and show the HTTP Response.
+* Click on 'Generate curl command
+```
+curl -X GET -H 'Host: http://ptsv2.com/' -H 'Connection: Close' -v -i 'http://ptsv2.com/'
+```
 
 ### HTTP Request message sent to the server.
 ```
@@ -21,13 +27,14 @@ https://www.hurl.it/
 Accept: */*
 Accept-Encoding: gzip, deflate
 Connection: Close
-Host: posttestserver.com
+Host: ptsv2.com
 User-Agent: runscope/0.1
 
 ---
 ```
-- For clarity, the beginning & end of HTTP message is marked with '---' above but it is NOT a part of actual HTTP message protocol.
-- The HTTP Headers Accept, Accept-Encoding and User-Agent were added by the HTTP web client.
+
+* For clarity, the beginning & end of HTTP message is marked with '---' above but it is NOT a part of actual HTTP message protocol.
+* The HTTP Headers Accept, Accept-Encoding and User-Agent were added by the HTTP web client.
 
 ### HTTP Response message received from the server.
 ```
