@@ -1,9 +1,6 @@
-# Description
+# Description: pfSense
 
-### About
-* Hands-on pfSense 2.x for Firewalls and Routers
-
-### Concepts
+### Session 1
 * Content
 ![](images/IMG_1667.PNG)
 
@@ -193,3 +190,5 @@
 * Content
 ![](images/IMG_1732.PNG)
 
+### Session 2
+* TODO
