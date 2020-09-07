@@ -1,0 +1,31 @@
+# Set the default handler
+DirectoryIndex index.php index.html index.htm
+
+################################################################################ Begin - # Mod Rewrite
+#<IfModule mod_rewrite.c>
+#	RewriteEngine on
+#       # Note the MISSING / before redirect because the path are relative to this virtual host.
+#   	RewriteRule abc rewrite_test.html
+#       # Note the MISSING / before redirect because the path are relative to this virtual host.
+#   	RewriteRule rewrite_foo.html rewrite_bar.html
+#</IfModule>
+
+################################################################################ Begin - Enabling .htpassword
+# This sets the location for your .htpasswd file.
+AuthUserFile /eureka/apache/sites/example.com/www/.htpasswd
+
+# When not using a group, comment this line
+# AuthGroupFile /dev/null
+
+# This is the prompt to the user. This can be  rephrase if needed.
+AuthName "Please Enter Password"
+
+# Type of authentication
+AuthType Basic
+
+# Allows any one of several authorized people to log on. This can be changed to
+# Require user new_user to restrict access only to someone with the username
+# new_user.
+Require valid-user
+# Require user dilbert
+################################################################################
