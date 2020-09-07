@@ -23,9 +23,10 @@ fibonacci(20)
 print(fibonacci(20)) # Function returns None
 
 # Example 2: All functions are first class data members. They can be assigned to other svariables.
-recursive_function = fibonacci(20)   # Assigning a function.
-recursive_function                   # Calling the function.
+recursive_function = fibonacci(20)   # Assigning the value returned by the function
+print(recursive_function)            # Display the value of the variable.
 
 # Example 3: All functions are first class data members. They can be assigned to other variables.
 recursive_function = fibonacci       # Assigning a function.
+print(recursive_function)            # Display the address of the function.
 recursive_function(8)                # Calling the function by passing arguments.
