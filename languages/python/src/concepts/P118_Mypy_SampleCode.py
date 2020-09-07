@@ -1,13 +1,13 @@
 # Description: Sample Code to Run mypy
 
 # Variables without types
-i = 200
-f = 2.34
+i:int = 200
+f:float = 2.34
 str = "Hello"
 
 
 # A function without type annotations
-def greet(name):
+def greet(name:str)-> str:
     return str + " " + name
 
 
