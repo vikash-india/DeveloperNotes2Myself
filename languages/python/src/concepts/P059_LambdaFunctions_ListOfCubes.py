@@ -14,4 +14,5 @@ print(list(result))                         # Convert return object of map to an
 
 # List of cubes using map function and lambda function
 cubes = map(lambda x: x * x * x, numbers)   # Use map function and lambda function to find cubes of every element.
+print(cubes)                                # <map object at 0x7f1e3f364dd8>
 print(list(cubes))                          # Convert return object of map to any iterable object like list, tuple etc.
