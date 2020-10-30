@@ -2,6 +2,9 @@
 # Ignore PyCharm related files.
 .idea
 
+# All private keys
+*.pem
+
 # Exclude IntelliJ Java Project Files
 languages/java/JavaNotes2Myself.iml
 languages/java/build/
